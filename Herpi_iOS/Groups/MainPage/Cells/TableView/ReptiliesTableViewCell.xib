@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="markgeo_semibold.ttf">
+            <string>MarkGEO-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReptiliesTableViewCell" rowHeight="200" id="vj6-4R-4H0" customClass="ReptiliesTableViewCell" customModule="Herpi_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="528" height="199"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vj6-4R-4H0" id="3Dv-V3-eke">
+                <rect key="frame" x="0.0" y="0.0" width="528" height="199"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSI-4q-t1g">
+                        <rect key="frame" x="30" y="10" width="468" height="175"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lcb-da-eyK">
+                                <rect key="frame" x="0.0" y="0.0" width="468" height="175"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf3-lb-4KD">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="175"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-Yz-bxk">
+                                                <rect key="frame" x="15" y="15" width="14" height="14"/>
+                                                <color key="tintColor" red="0.086274509803921567" green="0.2196078431372549" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="atU-AN-PLj"/>
+                                                    <constraint firstAttribute="height" constant="14" id="g9a-lU-Gyq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="უშხამო" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dry-GX-baQ">
+                                                <rect key="frame" x="37" y="14.333333333333332" width="45.333333333333343" height="15.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="12"/>
+                                                <color key="textColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ანკარისებრნი" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFp-Pn-vqi">
+                                                <rect key="frame" x="15.000000000000007" y="51.666666666666664" width="113.66666666666669" height="20.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.74117647058823533" green="0.75686274509803919" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ჩვეულებრივი ანკარა" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEM-h6-byE">
+                                                <rect key="frame" x="14" y="72" width="165.33333333333334" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="15"/>
+                                                <color key="textColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-JR-Lx0">
+                                                <rect key="frame" x="14.000000000000007" y="130" width="103.66666666666669" height="32"/>
+                                                <color key="backgroundColor" red="0.13725490870000001" green="0.32549020649999999" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="gnv-8C-yfe"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="დეტალურად">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="MarkGEO-SemiBold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="gEM-h6-byE" firstAttribute="top" secondItem="jFp-Pn-vqi" secondAttribute="bottom" id="3NC-8u-MQI"/>
+                                            <constraint firstItem="gEM-h6-byE" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="14" id="9E1-gB-AMo"/>
+                                            <constraint firstAttribute="bottom" secondItem="ju2-JR-Lx0" secondAttribute="bottom" constant="13" id="Cik-dn-CJm"/>
+                                            <constraint firstItem="Tzx-Yz-bxk" firstAttribute="top" secondItem="wf3-lb-4KD" secondAttribute="top" constant="15" id="Q0N-cz-BWb"/>
+                                            <constraint firstItem="Tzx-Yz-bxk" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="15" id="bue-N2-1WW"/>
+                                            <constraint firstItem="dry-GX-baQ" firstAttribute="centerY" secondItem="Tzx-Yz-bxk" secondAttribute="centerY" id="erM-xf-UY1"/>
+                                            <constraint firstItem="jFp-Pn-vqi" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="15" id="lBf-lI-8UX"/>
+                                            <constraint firstItem="jFp-Pn-vqi" firstAttribute="top" secondItem="dry-GX-baQ" secondAttribute="bottom" constant="22" id="n5h-Le-vV3"/>
+                                            <constraint firstItem="dry-GX-baQ" firstAttribute="leading" secondItem="Tzx-Yz-bxk" secondAttribute="trailing" constant="8" id="wce-FG-DUJ"/>
+                                            <constraint firstItem="ju2-JR-Lx0" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="14" id="xK2-ki-gy3"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fot-SO-HM9">
+                                        <rect key="frame" x="234" y="0.0" width="234" height="175"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lcb-da-eyK" firstAttribute="top" secondItem="FSI-4q-t1g" secondAttribute="top" id="F8i-qM-oBL"/>
+                            <constraint firstItem="lcb-da-eyK" firstAttribute="leading" secondItem="FSI-4q-t1g" secondAttribute="leading" id="Sgo-Vc-h6Q"/>
+                            <constraint firstAttribute="bottom" secondItem="lcb-da-eyK" secondAttribute="bottom" id="j4i-MB-8uT"/>
+                            <constraint firstAttribute="trailing" secondItem="lcb-da-eyK" secondAttribute="trailing" id="naW-nY-CoM"/>
+                            <constraint firstAttribute="height" constant="175" id="xrH-IF-dvW"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="FSI-4q-t1g" secondAttribute="bottom" constant="10" id="M8H-XB-yNr"/>
+                    <constraint firstAttribute="trailing" secondItem="FSI-4q-t1g" secondAttribute="trailing" constant="30" id="Uvg-yy-Ct9"/>
+                    <constraint firstItem="FSI-4q-t1g" firstAttribute="top" secondItem="3Dv-V3-eke" secondAttribute="top" constant="10" id="Z0V-fM-a5f"/>
+                    <constraint firstItem="FSI-4q-t1g" firstAttribute="leading" secondItem="3Dv-V3-eke" secondAttribute="leading" constant="30" id="aog-iG-16i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="detailedButton" destination="ju2-JR-Lx0" id="XKi-zB-9Me"/>
+                <outlet property="familyLabel" destination="jFp-Pn-vqi" id="jR1-xh-ijd"/>
+                <outlet property="infoIcon" destination="Tzx-Yz-bxk" id="BLU-yq-H0u"/>
+                <outlet property="infoLabel" destination="dry-GX-baQ" id="3lc-KA-Qln"/>
+                <outlet property="nameLabel" destination="gEM-h6-byE" id="fjZ-Db-wIr"/>
+                <outlet property="picture" destination="fot-SO-HM9" id="9d0-n5-Jfo"/>
+            </connections>
+            <point key="canvasLocation" x="268.70229007633588" y="44.014084507042256"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="info_icon" width="14.440999984741211" height="14.440999984741211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
