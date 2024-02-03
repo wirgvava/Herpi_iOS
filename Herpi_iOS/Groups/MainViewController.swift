@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Herpi_iOS
 //
 //  Created by Konstantine Tsirgvava on 03.02.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
