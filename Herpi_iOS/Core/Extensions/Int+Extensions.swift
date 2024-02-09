@@ -11,4 +11,8 @@ extension Int {
     func toString() -> String {
         return "\(self)"
     }
+    
+    func toCGFloat() -> CGFloat {
+        return CGFloat(self)
+    }
 }

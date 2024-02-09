@@ -5,11 +5,10 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="markgeo_semibold.ttf">
+        <array key="MarkGEO-Semibold.ttf">
             <string>MarkGEO-SemiBold</string>
         </array>
     </customFonts>
@@ -17,41 +16,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoriesCollectionViewCell" id="gTV-IL-0wX" customClass="CategoriesCollectionViewCell" customModule="Herpi_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="258" height="153"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="258" height="153"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHJ-Hc-FHs">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPX-IN-j0w">
-                                <rect key="frame" x="104" y="25" width="50" height="50"/>
+                                <rect key="frame" x="25" y="25" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ghh-ZR-L2a"/>
                                     <constraint firstAttribute="width" constant="50" id="guL-pt-mnf"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mPX-IN-j0w" firstAttribute="centerX" secondItem="KHJ-Hc-FHs" secondAttribute="centerX" id="J1Y-2H-gHe"/>
                             <constraint firstItem="mPX-IN-j0w" firstAttribute="centerY" secondItem="KHJ-Hc-FHs" secondAttribute="centerY" id="JUs-zX-qRz"/>
-                            <constraint firstAttribute="height" constant="100" id="Vyd-oG-xP3"/>
+                            <constraint firstAttribute="height" constant="100" id="hlw-fv-RDl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="12"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ყველა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pem-bj-ebV">
-                        <rect key="frame" x="105" y="112" width="48" height="18"/>
+                        <rect key="frame" x="26" y="112" width="48" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="rpY-sQ-gRo"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="14"/>
                         <color key="textColor" red="0.32941176470588235" green="0.36470588235294116" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
                 </subviews>
             </view>
@@ -60,21 +78,20 @@
                 <constraint firstItem="Pem-bj-ebV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Csb-8w-tTc"/>
                 <constraint firstItem="KHJ-Hc-FHs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JBJ-7T-gko"/>
                 <constraint firstItem="Pem-bj-ebV" firstAttribute="top" secondItem="KHJ-Hc-FHs" secondAttribute="bottom" constant="12" id="Ksb-SR-vMW"/>
+                <constraint firstAttribute="bottom" secondItem="Pem-bj-ebV" secondAttribute="bottom" id="SDL-Co-dfX"/>
                 <constraint firstItem="KHJ-Hc-FHs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Xss-8s-EuR"/>
                 <constraint firstAttribute="trailing" secondItem="KHJ-Hc-FHs" secondAttribute="trailing" id="rAw-4i-7LB"/>
             </constraints>
-            <size key="customSize" width="258" height="153"/>
+            <size key="customSize" width="100" height="130"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bgView" destination="KHJ-Hc-FHs" id="d5n-lr-YN2"/>
                 <outlet property="icon" destination="mPX-IN-j0w" id="fRk-er-weT"/>
                 <outlet property="title" destination="Pem-bj-ebV" id="sSE-pr-nrB"/>
             </connections>
-            <point key="canvasLocation" x="140.45801526717557" y="25"/>
+            <point key="canvasLocation" x="19.847328244274809" y="16.901408450704228"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

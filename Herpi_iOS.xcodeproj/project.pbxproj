@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50478112B76622C00E0CB02 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = A50478102B76622C00E0CB02 /* SkeletonView */; };
+		A50478122B766F1500E0CB02 /* MarkGEO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A583752A2B6F97B80096C4C2 /* MarkGEO-Bold.ttf */; };
+		A50478132B766F1500E0CB02 /* MarkGEO-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A58375292B6F97B80096C4C2 /* MarkGEO-Semibold.ttf */; };
+		A50478142B766F1500E0CB02 /* MarkGEO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A58375282B6F97B80096C4C2 /* MarkGEO-Regular.ttf */; };
+		A504781F2B76913E00E0CB02 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504781E2B76913E00E0CB02 /* Notifications.swift */; };
+		A507A7BF2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A7BE2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift */; };
+		A50E4F1C2B7241DA00935EB2 /* Loaf in Frameworks */ = {isa = PBXBuildFile; productRef = A50E4F1B2B7241DA00935EB2 /* Loaf */; };
+		A50E4F202B7243BA00935EB2 /* LoafPresentationStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */; };
+		A50E4F232B725A9300935EB2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50E4F222B725A9300935EB2 /* Colors.swift */; };
 		A5124E192B6E67AF00956A37 /* ReptiliesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5124E182B6E67AF00956A37 /* ReptiliesTableViewCell.swift */; };
 		A51EA2812B6E9C00000FEF0A /* MainVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51EA2802B6E9C00000FEF0A /* MainVCDataSource.swift */; };
 		A51EA2852B6E9F5F000FEF0A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51EA2842B6E9F5F000FEF0A /* Int+Extensions.swift */; };
@@ -16,20 +25,36 @@
 		A51EA2912B6EA0D5000FEF0A /* NearbyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51EA28F2B6EA0D5000FEF0A /* NearbyCollectionViewCell.xib */; };
 		A51EA2932B6EA136000FEF0A /* ReptiliesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51EA2922B6EA136000FEF0A /* ReptiliesTableViewCell.xib */; };
 		A51EA2952B6EA2A8000FEF0A /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51EA2942B6EA2A8000FEF0A /* NSObject+Extensions.swift */; };
+		A529F7332B6F74A600078534 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529F7322B6F74A600078534 /* MenuView.swift */; };
+		A529F7352B6F74BC00078534 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A529F7342B6F74BC00078534 /* MenuView.xib */; };
+		A529F7382B6F770C00078534 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529F7372B6F770C00078534 /* UIView+Extensions.swift */; };
+		A529F73A2B6F862F00078534 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529F7392B6F862F00078534 /* UIFont+Extensions.swift */; };
+		A55CCD202B6FC63200E68F41 /* ReptiliesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55CCD1F2B6FC63200E68F41 /* ReptiliesModel.swift */; };
+		A55CCD222B6FC7F200E68F41 /* HandleResponseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55CCD212B6FC7F200E68F41 /* HandleResponseMethods.swift */; };
+		A583752F2B6F9B150096C4C2 /* MainVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583752E2B6F9B150096C4C2 /* MainVCLayout.swift */; };
+		A58375322B6F9D900096C4C2 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58375312B6F9D900096C4C2 /* MenuDelegate.swift */; };
+		A58375382B6FA7770096C4C2 /* ApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58375372B6FA7770096C4C2 /* ApiType.swift */; };
+		A583753A2B6FA9480096C4C2 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58375392B6FA9480096C4C2 /* CategoryModel.swift */; };
+		A583753C2B6FA9FF0096C4C2 /* MainVCServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583753B2B6FA9FF0096C4C2 /* MainVCServiceManager.swift */; };
 		A58449892B6E26750036C3D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58449882B6E26750036C3D2 /* AppDelegate.swift */; };
 		A584498B2B6E26750036C3D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584498A2B6E26750036C3D2 /* SceneDelegate.swift */; };
 		A584498D2B6E26750036C3D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584498C2B6E26750036C3D2 /* MainViewController.swift */; };
 		A58449902B6E26750036C3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A584498E2B6E26750036C3D2 /* Main.storyboard */; };
 		A58449922B6E26760036C3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58449912B6E26760036C3D2 /* Assets.xcassets */; };
 		A58449952B6E26760036C3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58449932B6E26760036C3D2 /* LaunchScreen.storyboard */; };
-		A5F9C1912B6EC40B000ECDE2 /* markgeo_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5124E1B2B6E8C3E00956A37 /* markgeo_regular.ttf */; };
-		A5F9C1922B6EC40F000ECDE2 /* markgeo_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5124E1C2B6E8C3E00956A37 /* markgeo_semibold.ttf */; };
+		A5B8A7282B700D3B0062BF28 /* NearbyReptileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8A7272B700D3B0062BF28 /* NearbyReptileModel.swift */; };
+		A5DD165D2B76AA3800424882 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */; };
+		A5F6F9242B7578ED002E5011 /* ReptiliesHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F6F9232B7578ED002E5011 /* ReptiliesHeaderTableViewCell.xib */; };
+		A5FE31B32B6FAE0100469448 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A5FE31B22B6FAE0100469448 /* Moya */; };
+		A5FE31B62B6FB3A800469448 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A5FE31B52B6FB3A800469448 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A504781E2B76913E00E0CB02 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		A507A7BE2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReptiliesHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoafPresentationStyles.swift; sourceTree = "<group>"; };
+		A50E4F222B725A9300935EB2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A5124E182B6E67AF00956A37 /* ReptiliesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReptiliesTableViewCell.swift; sourceTree = "<group>"; };
-		A5124E1B2B6E8C3E00956A37 /* markgeo_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = markgeo_regular.ttf; sourceTree = "<group>"; };
-		A5124E1C2B6E8C3E00956A37 /* markgeo_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = markgeo_semibold.ttf; sourceTree = "<group>"; };
 		A51EA2802B6E9C00000FEF0A /* MainVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCDataSource.swift; sourceTree = "<group>"; };
 		A51EA2842B6E9F5F000FEF0A /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		A51EA28A2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -38,6 +63,20 @@
 		A51EA28F2B6EA0D5000FEF0A /* NearbyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearbyCollectionViewCell.xib; sourceTree = "<group>"; };
 		A51EA2922B6EA136000FEF0A /* ReptiliesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReptiliesTableViewCell.xib; sourceTree = "<group>"; };
 		A51EA2942B6EA2A8000FEF0A /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		A529F7322B6F74A600078534 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A529F7342B6F74BC00078534 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		A529F7372B6F770C00078534 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A529F7392B6F862F00078534 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		A55CCD1F2B6FC63200E68F41 /* ReptiliesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReptiliesModel.swift; sourceTree = "<group>"; };
+		A55CCD212B6FC7F200E68F41 /* HandleResponseMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponseMethods.swift; sourceTree = "<group>"; };
+		A58375282B6F97B80096C4C2 /* MarkGEO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkGEO-Regular.ttf"; sourceTree = "<group>"; };
+		A58375292B6F97B80096C4C2 /* MarkGEO-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkGEO-Semibold.ttf"; sourceTree = "<group>"; };
+		A583752A2B6F97B80096C4C2 /* MarkGEO-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkGEO-Bold.ttf"; sourceTree = "<group>"; };
+		A583752E2B6F9B150096C4C2 /* MainVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCLayout.swift; sourceTree = "<group>"; };
+		A58375312B6F9D900096C4C2 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
+		A58375372B6FA7770096C4C2 /* ApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiType.swift; sourceTree = "<group>"; };
+		A58375392B6FA9480096C4C2 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		A583753B2B6FA9FF0096C4C2 /* MainVCServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCServiceManager.swift; sourceTree = "<group>"; };
 		A58449852B6E26750036C3D2 /* Herpi_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Herpi_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58449882B6E26750036C3D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A584498A2B6E26750036C3D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +85,9 @@
 		A58449912B6E26760036C3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58449942B6E26760036C3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58449962B6E26760036C3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B8A7272B700D3B0062BF28 /* NearbyReptileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyReptileModel.swift; sourceTree = "<group>"; };
+		A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		A5F6F9232B7578ED002E5011 /* ReptiliesHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReptiliesHeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +95,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50478112B76622C00E0CB02 /* SkeletonView in Frameworks */,
+				A5FE31B62B6FB3A800469448 /* Kingfisher in Frameworks */,
+				A5FE31B32B6FAE0100469448 /* Moya in Frameworks */,
+				A50E4F1C2B7241DA00935EB2 /* Loaf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50478192B76857500E0CB02 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				A507A7BE2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift */,
+				A5F6F9232B7578ED002E5011 /* ReptiliesHeaderTableViewCell.xib */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		A504781A2B76858500E0CB02 /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5124E182B6E67AF00956A37 /* ReptiliesTableViewCell.swift */,
+				A51EA2922B6EA136000FEF0A /* ReptiliesTableViewCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		A504781D2B76912900E0CB02 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A504781E2B76913E00E0CB02 /* Notifications.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		A50E4F212B725A8700935EB2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A50E4F222B725A9300935EB2 /* Colors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		A5124E1A2B6E8C2E00956A37 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A5124E1B2B6E8C3E00956A37 /* markgeo_regular.ttf */,
-				A5124E1C2B6E8C3E00956A37 /* markgeo_semibold.ttf */,
+				A58375282B6F97B80096C4C2 /* MarkGEO-Regular.ttf */,
+				A58375292B6F97B80096C4C2 /* MarkGEO-Semibold.ttf */,
+				A583752A2B6F97B80096C4C2 /* MarkGEO-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -71,7 +152,9 @@
 		A51EA27B2B6E9B2A000FEF0A /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				A58375302B6F9D760096C4C2 /* Protocols */,
 				A51EA27E2B6E9B46000FEF0A /* Cells */,
+				A58375242B6F91600096C4C2 /* Manager */,
 				A51EA27F2B6E9BBE000FEF0A /* DataSource */,
 				A51EA27C2B6E9B37000FEF0A /* ViewController */,
 				A51EA27D2B6E9B3E000FEF0A /* Storyboard */,
@@ -117,6 +200,8 @@
 			children = (
 				A51EA2842B6E9F5F000FEF0A /* Int+Extensions.swift */,
 				A51EA2942B6EA2A8000FEF0A /* NSObject+Extensions.swift */,
+				A529F7372B6F770C00078534 /* UIView+Extensions.swift */,
+				A529F7392B6F862F00078534 /* UIFont+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -124,8 +209,8 @@
 		A51EA2862B6EA081000FEF0A /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				A5124E182B6E67AF00956A37 /* ReptiliesTableViewCell.swift */,
-				A51EA2922B6EA136000FEF0A /* ReptiliesTableViewCell.xib */,
+				A50478192B76857500E0CB02 /* HeaderCell */,
+				A504781A2B76858500E0CB02 /* ListCell */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -155,6 +240,74 @@
 				A51EA28B2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.xib */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		A529F7312B6F737800078534 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A529F7362B6F74C200078534 /* Menu */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A529F7362B6F74C200078534 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A529F7322B6F74A600078534 /* MenuView.swift */,
+				A529F7342B6F74BC00078534 /* MenuView.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A58375242B6F91600096C4C2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A583753D2B6FAA110096C4C2 /* Service */,
+				A58375252B6F916A0096C4C2 /* Layout */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A58375252B6F916A0096C4C2 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A583752E2B6F9B150096C4C2 /* MainVCLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		A58375302B6F9D760096C4C2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A58375312B6F9D900096C4C2 /* MenuDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A58375332B6FA6EA0096C4C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A58375392B6FA9480096C4C2 /* CategoryModel.swift */,
+				A5B8A7272B700D3B0062BF28 /* NearbyReptileModel.swift */,
+				A55CCD1F2B6FC63200E68F41 /* ReptiliesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A58375342B6FA6F10096C4C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A58375372B6FA7770096C4C2 /* ApiType.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A583753D2B6FAA110096C4C2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A583753B2B6FA9FF0096C4C2 /* MainVCServiceManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		A584497C2B6E26740036C3D2 = {
@@ -216,6 +369,11 @@
 		A584499F2B6E2FBE0036C3D2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A529F7312B6F737800078534 /* Views */,
+				A5B8A7252B7007EC0062BF28 /* Common */,
+				A50E4F212B725A8700935EB2 /* Constants */,
+				A5DD165B2B76AA2300424882 /* UserDefaults */,
+				A504781D2B76912900E0CB02 /* Notifications */,
 				A51EA2822B6E9F3A000FEF0A /* Extensions */,
 			);
 			path = Core;
@@ -224,8 +382,35 @@
 		A58449A02B6E2FD40036C3D2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A58375342B6FA6F10096C4C2 /* Services */,
+				A58375332B6FA6EA0096C4C2 /* Models */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		A5B8A7252B7007EC0062BF28 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A5B8A7262B7007FC0062BF28 /* Methods */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A5B8A7262B7007FC0062BF28 /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				A55CCD212B6FC7F200E68F41 /* HandleResponseMethods.swift */,
+				A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */,
+			);
+			path = Methods;
+			sourceTree = "<group>";
+		};
+		A5DD165B2B76AA2300424882 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +429,12 @@
 			dependencies = (
 			);
 			name = Herpi_iOS;
+			packageProductDependencies = (
+				A5FE31B22B6FAE0100469448 /* Moya */,
+				A5FE31B52B6FB3A800469448 /* Kingfisher */,
+				A50E4F1B2B7241DA00935EB2 /* Loaf */,
+				A50478102B76622C00E0CB02 /* SkeletonView */,
+			);
 			productName = Herpi_iOS;
 			productReference = A58449852B6E26750036C3D2 /* Herpi_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +463,12 @@
 				Base,
 			);
 			mainGroup = A584497C2B6E26740036C3D2;
+			packageReferences = (
+				A5FE31B12B6FAE0100469448 /* XCRemoteSwiftPackageReference "Moya" */,
+				A5FE31B42B6FB3A800469448 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A50E4F1A2B7241DA00935EB2 /* XCRemoteSwiftPackageReference "Loaf" */,
+				A504780F2B76622C00E0CB02 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = A58449862B6E26750036C3D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -288,12 +485,15 @@
 			files = (
 				A58449952B6E26760036C3D2 /* LaunchScreen.storyboard in Resources */,
 				A58449922B6E26760036C3D2 /* Assets.xcassets in Resources */,
+				A50478132B766F1500E0CB02 /* MarkGEO-Semibold.ttf in Resources */,
 				A51EA28D2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.xib in Resources */,
 				A51EA2912B6EA0D5000FEF0A /* NearbyCollectionViewCell.xib in Resources */,
-				A5F9C1922B6EC40F000ECDE2 /* markgeo_semibold.ttf in Resources */,
+				A50478122B766F1500E0CB02 /* MarkGEO-Bold.ttf in Resources */,
+				A5F6F9242B7578ED002E5011 /* ReptiliesHeaderTableViewCell.xib in Resources */,
+				A529F7352B6F74BC00078534 /* MenuView.xib in Resources */,
 				A58449902B6E26750036C3D2 /* Main.storyboard in Resources */,
-				A5F9C1912B6EC40B000ECDE2 /* markgeo_regular.ttf in Resources */,
 				A51EA2932B6EA136000FEF0A /* ReptiliesTableViewCell.xib in Resources */,
+				A50478142B766F1500E0CB02 /* MarkGEO-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,15 +504,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A504781F2B76913E00E0CB02 /* Notifications.swift in Sources */,
 				A51EA2952B6EA2A8000FEF0A /* NSObject+Extensions.swift in Sources */,
+				A50E4F232B725A9300935EB2 /* Colors.swift in Sources */,
 				A584498D2B6E26750036C3D2 /* MainViewController.swift in Sources */,
 				A51EA2902B6EA0D5000FEF0A /* NearbyCollectionViewCell.swift in Sources */,
 				A51EA28C2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.swift in Sources */,
+				A5DD165D2B76AA3800424882 /* UserDefaultsManager.swift in Sources */,
 				A51EA2812B6E9C00000FEF0A /* MainVCDataSource.swift in Sources */,
+				A529F7332B6F74A600078534 /* MenuView.swift in Sources */,
+				A55CCD222B6FC7F200E68F41 /* HandleResponseMethods.swift in Sources */,
 				A58449892B6E26750036C3D2 /* AppDelegate.swift in Sources */,
+				A583753C2B6FA9FF0096C4C2 /* MainVCServiceManager.swift in Sources */,
+				A58375382B6FA7770096C4C2 /* ApiType.swift in Sources */,
 				A51EA2852B6E9F5F000FEF0A /* Int+Extensions.swift in Sources */,
+				A583752F2B6F9B150096C4C2 /* MainVCLayout.swift in Sources */,
 				A584498B2B6E26750036C3D2 /* SceneDelegate.swift in Sources */,
+				A50E4F202B7243BA00935EB2 /* LoafPresentationStyles.swift in Sources */,
 				A5124E192B6E67AF00956A37 /* ReptiliesTableViewCell.swift in Sources */,
+				A529F73A2B6F862F00078534 /* UIFont+Extensions.swift in Sources */,
+				A583753A2B6FA9480096C4C2 /* CategoryModel.swift in Sources */,
+				A55CCD202B6FC63200E68F41 /* ReptiliesModel.swift in Sources */,
+				A529F7382B6F770C00078534 /* UIView+Extensions.swift in Sources */,
+				A5B8A7282B700D3B0062BF28 /* NearbyReptileModel.swift in Sources */,
+				A507A7BF2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift in Sources */,
+				A58375322B6F9D900096C4C2 /* MenuDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,9 +688,11 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,9 +722,11 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,6 +763,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A504780F2B76622C00E0CB02 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.30.4;
+			};
+		};
+		A50E4F1A2B7241DA00935EB2 /* XCRemoteSwiftPackageReference "Loaf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/schmidyy/Loaf";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+		A5FE31B12B6FAE0100469448 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		A5FE31B42B6FB3A800469448 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A50478102B76622C00E0CB02 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A504780F2B76622C00E0CB02 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		A50E4F1B2B7241DA00935EB2 /* Loaf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A50E4F1A2B7241DA00935EB2 /* XCRemoteSwiftPackageReference "Loaf" */;
+			productName = Loaf;
+		};
+		A5FE31B22B6FAE0100469448 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5FE31B12B6FAE0100469448 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		A5FE31B52B6FB3A800469448 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5FE31B42B6FB3A800469448 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A584497D2B6E26740036C3D2 /* Project object */;
 }

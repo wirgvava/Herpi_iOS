@@ -8,7 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="markgeo_semibold.ttf">
+        <array key="MarkGEO-Bold.ttf">
+            <string>MarkGEO-Bold</string>
+        </array>
+        <array key="MarkGEO-Regular.ttf">
+            <string>MarkGEO-Regular</string>
+        </array>
+        <array key="MarkGEO-Semibold.ttf">
             <string>MarkGEO-SemiBold</string>
         </array>
     </customFonts>
@@ -23,13 +29,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSI-4q-t1g">
-                        <rect key="frame" x="30" y="10" width="468" height="175"/>
+                        <rect key="frame" x="20" y="10" width="488" height="175"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lcb-da-eyK">
-                                <rect key="frame" x="0.0" y="0.0" width="468" height="175"/>
+                                <rect key="frame" x="0.0" y="0.0" width="488" height="175"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf3-lb-4KD">
-                                        <rect key="frame" x="0.0" y="0.0" width="234" height="175"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="175"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-Yz-bxk">
                                                 <rect key="frame" x="15" y="15" width="14" height="14"/>
@@ -38,26 +44,47 @@
                                                     <constraint firstAttribute="width" constant="14" id="atU-AN-PLj"/>
                                                     <constraint firstAttribute="height" constant="14" id="g9a-lU-Gyq"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="უშხამო" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dry-GX-baQ">
                                                 <rect key="frame" x="37" y="14.333333333333332" width="45.333333333333343" height="15.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="12"/>
                                                 <color key="textColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ანკარისებრნი" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFp-Pn-vqi">
-                                                <rect key="frame" x="15.000000000000007" y="51.666666666666664" width="113.66666666666669" height="20.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="15" y="51.666666666666664" width="96" height="16.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="13"/>
                                                 <color key="textColor" red="0.74117647058823533" green="0.75686274509803919" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ჩვეულებრივი ანკარა" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEM-h6-byE">
-                                                <rect key="frame" x="14" y="72" width="165.33333333333334" height="19.333333333333329"/>
-                                                <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="15"/>
+                                                <rect key="frame" x="14" y="68.333333333333329" width="210" height="15"/>
+                                                <fontDescription key="fontDescription" name="MarkGEO-Bold" family="Mark GEO" pointSize="15"/>
                                                 <color key="textColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-JR-Lx0">
                                                 <rect key="frame" x="14.000000000000007" y="130" width="103.66666666666669" height="32"/>
@@ -82,6 +109,10 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="16"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -91,6 +122,7 @@
                                             <constraint firstItem="gEM-h6-byE" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="14" id="9E1-gB-AMo"/>
                                             <constraint firstAttribute="bottom" secondItem="ju2-JR-Lx0" secondAttribute="bottom" constant="13" id="Cik-dn-CJm"/>
                                             <constraint firstItem="Tzx-Yz-bxk" firstAttribute="top" secondItem="wf3-lb-4KD" secondAttribute="top" constant="15" id="Q0N-cz-BWb"/>
+                                            <constraint firstAttribute="trailing" secondItem="gEM-h6-byE" secondAttribute="trailing" constant="20" id="U9e-Xq-9fe"/>
                                             <constraint firstItem="Tzx-Yz-bxk" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="15" id="bue-N2-1WW"/>
                                             <constraint firstItem="dry-GX-baQ" firstAttribute="centerY" secondItem="Tzx-Yz-bxk" secondAttribute="centerY" id="erM-xf-UY1"/>
                                             <constraint firstItem="jFp-Pn-vqi" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="15" id="lBf-lI-8UX"/>
@@ -98,11 +130,23 @@
                                             <constraint firstItem="dry-GX-baQ" firstAttribute="leading" secondItem="Tzx-Yz-bxk" secondAttribute="trailing" constant="8" id="wce-FG-DUJ"/>
                                             <constraint firstItem="ju2-JR-Lx0" firstAttribute="leading" secondItem="wf3-lb-4KD" secondAttribute="leading" constant="14" id="xK2-ki-gy3"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fot-SO-HM9">
-                                        <rect key="frame" x="234" y="0.0" width="234" height="175"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fot-SO-HM9">
+                                        <rect key="frame" x="244" y="0.0" width="244" height="175"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,18 +162,28 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="16"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="FSI-4q-t1g" secondAttribute="bottom" constant="10" id="M8H-XB-yNr"/>
-                    <constraint firstAttribute="trailing" secondItem="FSI-4q-t1g" secondAttribute="trailing" constant="30" id="Uvg-yy-Ct9"/>
+                    <constraint firstAttribute="trailing" secondItem="FSI-4q-t1g" secondAttribute="trailing" constant="20" id="Uvg-yy-Ct9"/>
                     <constraint firstItem="FSI-4q-t1g" firstAttribute="top" secondItem="3Dv-V3-eke" secondAttribute="top" constant="10" id="Z0V-fM-a5f"/>
-                    <constraint firstItem="FSI-4q-t1g" firstAttribute="leading" secondItem="3Dv-V3-eke" secondAttribute="leading" constant="30" id="aog-iG-16i"/>
+                    <constraint firstItem="FSI-4q-t1g" firstAttribute="leading" secondItem="3Dv-V3-eke" secondAttribute="leading" constant="20" id="aog-iG-16i"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="detailedButton" destination="ju2-JR-Lx0" id="XKi-zB-9Me"/>
                 <outlet property="familyLabel" destination="jFp-Pn-vqi" id="jR1-xh-ijd"/>

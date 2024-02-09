@@ -21,14 +21,25 @@ class ReptiliesTableViewCell: UITableViewCell {
         super.awakeFromNib()
         configure()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     private func configure(){
         detailedButton.layer.cornerRadius = detailedButton.frame.height / 2
+    }
+    
+    func set(with data: ReptileModel){
+        nameLabel.text = data.name
+        familyLabel.text = data.family?.name
+        picture.kf.setImage(with: URL(string: data.image!))
+        
+        if data.hasMildVenom == true {
+            infoIcon.tintColor = Colors.venomType(.midVenom)
+            infoLabel.text = "სუსტად შხამიანი"
+        } else if data.venomous == true {
+            infoIcon.tintColor = Colors.venomType(.venomous)
+            infoLabel.text = "შხამიანი"
+        } else {
+            infoIcon.tintColor = Colors.venomType(.noVenom)
+            infoLabel.text = "უშხამო"
+        }
     }
 }

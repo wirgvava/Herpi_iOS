@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
     
@@ -22,11 +23,28 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.translatesAutoresizingMaskIntoConstraints = false
+        bgView.widthAnchor.constraint(
+            equalToConstant: (UIScreen.main.bounds.size.width - 108) / 3).isActive = true
     }
     
 //  MARK: - Methods
+    func set(with data: CategoryModel){
+        title.text = data.titleTurned
+        icon.kf.setImage(with: URL(string: data.iconURL!)) { result in
+            switch result {
+            case .success:
+                self.icon.image = self.icon.image?.withRenderingMode(.alwaysTemplate)
+                self.icon.tintColor = self.isSelected ? Colors.white : Colors.defaultDark
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     private func updateCellSelection() {
-        let greenColor = UIColor(red: 4/255, green: 84/255, blue: 70/255, alpha: 1)
-        bgView.backgroundColor = isSelected ? greenColor : UIColor.white
+        bgView.backgroundColor = isSelected ? Colors.selectedTint : Colors.white
+        icon.image = icon.image?.withRenderingMode(.alwaysTemplate)
+        icon.tintColor = isSelected ? Colors.white : Colors.defaultDark
     }
 }

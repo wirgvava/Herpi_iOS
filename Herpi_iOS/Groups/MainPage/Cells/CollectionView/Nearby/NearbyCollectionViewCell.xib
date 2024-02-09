@@ -4,86 +4,116 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="markgeo_semibold.ttf">
+        <array key="MarkGEO-Semibold.ttf">
             <string>MarkGEO-SemiBold</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NearbyCollectionViewCell" id="gTV-IL-0wX" customClass="NearbyCollectionViewCell" customModule="Herpi_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="193" height="142"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NearbyCollectionViewCell" id="AyW-qF-SxJ" customClass="NearbyCollectionViewCell" customModule="Herpi_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="167" height="155"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="193" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="167" height="155"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="szN-Nw-pHK">
-                        <rect key="frame" x="0.0" y="0.0" width="193" height="90"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="90" id="IxK-Dg-FQw"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lCa-56-vPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="167" height="100"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="12"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ჩვეულებრივი ანკარა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se9-Pv-yS0">
-                        <rect key="frame" x="0.0" y="99" width="143.33333333333334" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ჩვეულებრივი ანკარა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGf-e6-w10">
+                        <rect key="frame" x="0.0" y="108" width="167" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="TDa-aQ-Jkl"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="13"/>
-                        <color key="textColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" red="0.40784313725490196" green="0.45882352941176469" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqC-0U-4ka">
-                        <rect key="frame" x="0.0" y="120" width="57.666666666666664" height="22"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iro-H9-Pke">
+                        <rect key="frame" x="0.0" y="133" width="57.666666666666664" height="22"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="უშხამო" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyD-BP-p2l">
-                                <rect key="frame" x="10" y="4.6666666666666714" width="37.666666666666664" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="უშხამო" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQx-qi-tUo">
+                                <rect key="frame" x="10" y="4.6666666666666572" width="37.666666666666664" height="13"/>
                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.039215687659999998" green="0.71372550729999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="noVenomous"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="22" id="0Eb-X9-i75"/>
-                            <constraint firstItem="OyD-BP-p2l" firstAttribute="centerY" secondItem="UqC-0U-4ka" secondAttribute="centerY" id="Cd9-8t-0pM"/>
-                            <constraint firstItem="OyD-BP-p2l" firstAttribute="leading" secondItem="UqC-0U-4ka" secondAttribute="leading" constant="10" id="LzG-ad-gH4"/>
-                            <constraint firstAttribute="trailing" secondItem="OyD-BP-p2l" secondAttribute="trailing" constant="10" id="XJ5-SJ-3lO"/>
+                            <constraint firstItem="BQx-qi-tUo" firstAttribute="centerY" secondItem="Iro-H9-Pke" secondAttribute="centerY" id="R5w-II-Oat"/>
+                            <constraint firstItem="BQx-qi-tUo" firstAttribute="leading" secondItem="Iro-H9-Pke" secondAttribute="leading" constant="10" id="UNB-oY-DvL"/>
+                            <constraint firstAttribute="trailing" secondItem="BQx-qi-tUo" secondAttribute="trailing" constant="10" id="YTL-Zv-Yx0"/>
+                            <constraint firstAttribute="height" constant="22" id="ZDl-bG-lpv"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="11"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <viewLayoutGuide key="safeArea" id="RET-Dj-OIk"/>
             <constraints>
-                <constraint firstItem="szN-Nw-pHK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="45z-fc-h7E"/>
-                <constraint firstItem="se9-Pv-yS0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bdz-nl-fvd"/>
-                <constraint firstItem="UqC-0U-4ka" firstAttribute="top" secondItem="se9-Pv-yS0" secondAttribute="bottom" constant="5" id="a7G-66-0vR"/>
-                <constraint firstItem="UqC-0U-4ka" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cOY-4h-pqW"/>
-                <constraint firstAttribute="trailing" secondItem="szN-Nw-pHK" secondAttribute="trailing" id="hdL-g6-eCn"/>
-                <constraint firstItem="szN-Nw-pHK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xuO-0U-tJM"/>
-                <constraint firstItem="se9-Pv-yS0" firstAttribute="top" secondItem="szN-Nw-pHK" secondAttribute="bottom" constant="9" id="yWy-Ql-yif"/>
+                <constraint firstItem="Iro-H9-Pke" firstAttribute="leading" secondItem="AyW-qF-SxJ" secondAttribute="leading" id="2aS-TN-k7d"/>
+                <constraint firstItem="HGf-e6-w10" firstAttribute="top" secondItem="lCa-56-vPJ" secondAttribute="bottom" constant="8" id="8At-ki-HXi"/>
+                <constraint firstAttribute="bottom" secondItem="Iro-H9-Pke" secondAttribute="bottom" id="LNu-44-oUl"/>
+                <constraint firstItem="Iro-H9-Pke" firstAttribute="top" secondItem="HGf-e6-w10" secondAttribute="bottom" constant="5" id="Pk2-vC-0j0"/>
+                <constraint firstAttribute="trailing" secondItem="HGf-e6-w10" secondAttribute="trailing" id="Pmx-hp-scG"/>
+                <constraint firstItem="lCa-56-vPJ" firstAttribute="top" secondItem="AyW-qF-SxJ" secondAttribute="top" id="SZm-vm-RDe"/>
+                <constraint firstAttribute="trailing" secondItem="lCa-56-vPJ" secondAttribute="trailing" id="XRI-hz-HrM"/>
+                <constraint firstItem="HGf-e6-w10" firstAttribute="leading" secondItem="AyW-qF-SxJ" secondAttribute="leading" id="fAK-E8-AWo"/>
+                <constraint firstItem="lCa-56-vPJ" firstAttribute="leading" secondItem="AyW-qF-SxJ" secondAttribute="leading" id="hNT-eu-3Vp"/>
             </constraints>
-            <size key="customSize" width="453" height="142"/>
+            <size key="customSize" width="427" height="155"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="infoLabel" destination="OyD-BP-p2l" id="g1v-ry-ac3"/>
-                <outlet property="infoView" destination="UqC-0U-4ka" id="fVl-a1-3sL"/>
-                <outlet property="nameLabel" destination="se9-Pv-yS0" id="rgP-gc-GFu"/>
-                <outlet property="picture" destination="szN-Nw-pHK" id="Fn1-vL-KWj"/>
+                <outlet property="infoLabel" destination="BQx-qi-tUo" id="mXE-Pf-MgL"/>
+                <outlet property="infoView" destination="Iro-H9-Pke" id="EIO-ar-ZWy"/>
+                <outlet property="nameLabel" destination="HGf-e6-w10" id="q71-0k-XFX"/>
+                <outlet property="picture" destination="lCa-56-vPJ" id="fT2-Ed-vls"/>
             </connections>
-            <point key="canvasLocation" x="350.38167938931298" y="19.718309859154932"/>
+            <point key="canvasLocation" x="319.84732824427482" y="175"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="noVenomous">
+            <color red="0.0" green="0.72549019607843135" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
