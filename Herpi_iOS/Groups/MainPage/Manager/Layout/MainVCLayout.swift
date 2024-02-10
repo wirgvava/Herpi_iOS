@@ -27,13 +27,13 @@ class MainVCLayout: NSObject {
 // MARK: - Configure
 extension MainVCLayout {
     private func configure(){
-        viewController.view.showAnimatedSkeleton()
+//        viewController.view.showAnimatedSkeleton()
         setupRefreshController()
         setTopCategoryViewHeight()
         setCollectionViewHeights()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        UserDefaultsManager.shared.save(value: true, data: .firstLoginSelected)
+        UserDefaultsManager.shared.save(value: true, forKey: .firstLoginSelected)
     }
     
     private func setupRefreshController(){
@@ -49,7 +49,7 @@ extension MainVCLayout {
     }
     
     @objc func refresh(){
-        viewController.getReptilies()
+        AppDelegate.shared.getData()
         viewController.scrollView.reloadInputViews()
         refreshControl.endRefreshing()
     }

@@ -7,8 +7,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location for XYZ</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MarkGEO-Regular.ttf</string>
@@ -29,7 +27,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>LoadingViewController</string>
 				</dict>
 			</array>
 		</dict>

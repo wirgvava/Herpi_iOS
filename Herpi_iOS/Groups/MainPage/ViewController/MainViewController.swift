@@ -28,16 +28,7 @@ class MainViewController: UIViewController {
 //  - Managers
     private var dataSource: MainVCDataSource!
     private var layout: MainVCLayout!
-    private var serviceManager = MainVCServiceManager()
-    
-//  - Data
-    var categories: [CategoryModel] = []
-    var nearbyReptiles: [NearbyReptileModel] = []
-    var allTypeReptile: [ReptileModel]? {
-        didSet{
-            dataSource.updateData()
-        }
-    }
+    private var serviceManager = ApiManager()
 
 //  MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -66,10 +57,8 @@ class MainViewController: UIViewController {
 // MARK: - Configure
 extension MainViewController {
     private func configure(){
-        getCategories()
-        getReptilies()
-        setDataSource()
         setLayout()
+        setDataSource()
         subscribe()
     }
     
@@ -84,34 +73,13 @@ extension MainViewController {
 
 // MARK: - Handle Responses
 extension MainViewController {
-    func getCategories(){
-        serviceManager.getCategories { categoryModel, error in
-            if let error = error {
-                showError(message: error, sender: self)
-            } else if let model = categoryModel {
-                self.categories = model
-                self.categoriesCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func getReptilies(){
-        serviceManager.getReptiliesList() { model, error in
-            if let error = error {
-                showError(message: error, sender: self)
-            } else if let model = model {
-                self.allTypeReptile = model
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
     func getNearbyReptiles(lat: Double, lng: Double){
-        serviceManager.getNearbyReptileList(lat: lat, lng: lng) { model, error in
+        serviceManager.getNearbyReptileList(lat: lat, lng: lng) { [weak self] model, error in
+            guard let self = self else { return }
             if let error = error {
                 showError(message: error, sender: self)
             } else if let model = model {
-                self.nearbyReptiles = model
+                DataManager.shared.nearbyReptiles = model
                 self.dataSource.nearbyReptiles = model
                 self.pageController.numberOfPages = (model.count / 2 == 0) ? (model.count / 4) : (model.count / 3)
                 self.nearbyCollectionView.reloadData()
@@ -135,11 +103,14 @@ extension MainViewController {
     
     @objc func updateConstraints(_ sender: Notification){
         DispatchQueue.main.async {
-            self.layout.setTopCategoryViewHeight()
-            self.dataSource.contentSize()
-            self.nearbyCollectionView.reloadData()
-            self.tableView.reloadData()
-            self.scrollView.reloadInputViews()
+            UIView.animate(withDuration: 0.25) {
+                self.layout.setTopCategoryViewHeight()
+                self.dataSource.contentSize()
+                self.nearbyCollectionView.reloadData()
+                self.tableView.reloadData()
+                self.scrollView.reloadInputViews()
+                self.view.layoutIfNeeded()
+            }
         }
     }
 }

@@ -16,8 +16,11 @@ class MainVCDataSource: NSObject {
     fileprivate weak var nearbyCollectionView: UICollectionView!
     fileprivate weak var pageController: UIPageControl!
     
+//  - Filtered Data
     var reptile: [ReptileModel] = []
     var nearbyReptiles: [NearbyReptileModel] = []
+    
+//  - Selected category
     var selectedCategoryIndex: IndexPath?
     
 //  MARK: - Init
@@ -42,25 +45,21 @@ extension MainVCDataSource {
         nearbyCollectionView.dataSource = self
         nearbyCollectionView.delegate = self
         registerCells()
+        setContent()
     }
     
-    func updateData(){
-        fillReptilesData()
-        contentSize()
-        viewController.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.5))
+    private func setContent(){
+        self.reptile = DataManager.shared.reptiles
+        self.contentSize()
+//        self.viewController.view.hideSkeleton()
         self.tableView.reloadData()
-    }
-    
-    private func fillReptilesData(){
-        self.reptile = viewController.allTypeReptile!
-        contentSize()
     }
     
     func contentSize(){
         let reptiliesCount = self.reptile.count.toCGFloat()
         let tableViewContentSize = (200 * reptiliesCount) + 80
         let totalHeight = viewController.topCategoriesHeight.constant + tableViewContentSize
-        viewController.contentViewHeight.constant = totalHeight
+        self.viewController.contentViewHeight.constant = totalHeight
     }
 
     private func registerCells(){
@@ -85,16 +84,16 @@ extension MainVCDataSource {
 
 // MARK: - TableView
 extension MainVCDataSource: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:     return 60
         case 1:     return 200
         default:    return 0
         }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,13 +108,13 @@ extension MainVCDataSource: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:     return reptileHeaderCell(indexPath: indexPath)
         case 1:     return reptileCell(indexPath: indexPath)
-        default:    fatalError("Unexpected section")
+        default:    return UITableViewCell()
         }
     }
     
     private func reptileHeaderCell(indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier.tableViewHeader, for: indexPath) as! ReptiliesHeaderTableViewCell
-        cell.set(data: viewController.categories, indexPath: self.selectedCategoryIndex)
+        cell.set(data: DataManager.shared.categories, indexPath: self.selectedCategoryIndex)
         return cell
     }
     
@@ -131,29 +130,23 @@ extension MainVCDataSource: UITableViewDataSource, UITableViewDelegate {
 extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case categoriesCollectionView:
-            return viewController.categories.count
-        case nearbyCollectionView:
-            return self.nearbyReptiles.count
-        default:
-            return 0
+        case categoriesCollectionView:  return DataManager.shared.categories.count
+        case nearbyCollectionView:      return self.nearbyReptiles.count
+        default:                        return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
-        case categoriesCollectionView:
-            return categoriesCell(indexPath: indexPath)
-        case nearbyCollectionView:
-            return nearbyCell(indexPath: indexPath)
-        default:
-            return UICollectionViewCell()
+        case categoriesCollectionView:  return categoriesCell(indexPath: indexPath)
+        case nearbyCollectionView:      return nearbyCell(indexPath: indexPath)
+        default:                        return UICollectionViewCell()
         }
     }
     
     private func categoriesCell(indexPath: IndexPath) -> UICollectionViewCell {
         let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: identifier.categoriesCollectionView, for: indexPath) as! CategoriesCollectionViewCell
-        let data = viewController.categories[indexPath.item]
+        let data = DataManager.shared.categories[indexPath.item]
         if UserDefaultsManager.shared.getBool(data: .firstLoginSelected) == true {
             self.categoriesCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
         }
@@ -184,19 +177,21 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
         updateNearbyCollectionViewLayout()
         updatePageControllerLayout()
         postNotificationAboutChanges()
-        UserDefaultsManager.shared.save(value: false, data: .firstLoginSelected)
+        UserDefaultsManager.shared.save(value: false, forKey: .firstLoginSelected)
     }
     
     private func filterArrays(with indexPath: IndexPath){
-        let data = viewController.categories[indexPath.item]
+        let storedReptiles = DataManager.shared.reptiles
+        let storedNearby = DataManager.shared.nearbyReptiles
+        let categories = DataManager.shared.categories[indexPath.item]
         self.selectedCategoryIndex = indexPath
         
         if indexPath.item == 0 {
-            self.reptile = viewController.allTypeReptile!
-            self.nearbyReptiles = viewController.nearbyReptiles
+            self.reptile = storedReptiles
+            self.nearbyReptiles = storedNearby
         } else {
-            self.reptile = (viewController.allTypeReptile?.filter({$0.type == data.id!}))!
-            self.nearbyReptiles = (viewController.nearbyReptiles.filter({$0.type == data.id}))
+            self.reptile = (storedReptiles.filter({$0.type == categories.id!}))
+            self.nearbyReptiles = (storedNearby.filter({$0.type == categories.id}))
         }
     }
     
@@ -245,16 +240,13 @@ extension MainVCDataSource: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+// MARK: - Skeleton
 extension MainVCDataSource: SkeletonCollectionViewDataSource, SkeletonTableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
         switch skeletonView {
-        case categoriesCollectionView:
-            return identifier.categoriesCollectionView
-        case nearbyCollectionView:
-            return identifier.nearbyCollectionView
-        default:
-            return identifier.tableView
+        case categoriesCollectionView:      return identifier.categoriesCollectionView
+        case nearbyCollectionView:          return identifier.nearbyCollectionView
+        default:                            return identifier.tableView
         }
     }
     

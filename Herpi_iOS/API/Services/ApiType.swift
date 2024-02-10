@@ -10,7 +10,7 @@ import Moya
 
 enum ApiType: TargetType {
     case categories
-    case reptilies
+    case reptiles
     case nearby(lat: Double, lng: Double)
     
     var baseURL: URL {
@@ -21,7 +21,7 @@ enum ApiType: TargetType {
         switch self {
         case .categories: 
             return "/api/v1/reptiles/categories"
-        case .reptilies:
+        case .reptiles:
             return "/api/v1/reptiles"
         case .nearby:
             return "/api/v1/reptiles/nearby"
@@ -32,7 +32,7 @@ enum ApiType: TargetType {
         switch self {
         case .categories:
             return .get
-        case .reptilies:
+        case .reptiles:
             return .get
         case .nearby:
             return .get
@@ -43,7 +43,7 @@ enum ApiType: TargetType {
         switch self {
         case .categories:
             return .requestPlain
-        case .reptilies:
+        case .reptiles:
             return .requestPlain
         case .nearby(let lat, let lng):
             return .requestParameters(parameters: ["lat": lat, 
