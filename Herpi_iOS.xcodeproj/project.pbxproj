@@ -59,9 +59,6 @@
 		A5A159DD2B779BCA00F00D7C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159DB2B779BCA00F00D7C /* LoadingViewController.swift */; };
 		A5A159E02B779C0000F00D7C /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A159DF2B779C0000F00D7C /* LoadingViewController.storyboard */; };
 		A5A159E32B77D10F00F00D7C /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159E22B77D10F00F00D7C /* PresenterManager.swift */; };
-		A5B0C5BB2B7A037F007AA73D /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = A5B0C5BA2B7A037F007AA73D /* GoogleMaps */; };
-		A5B0C5BD2B7A037F007AA73D /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = A5B0C5BC2B7A037F007AA73D /* GoogleMapsBase */; };
-		A5B0C5BF2B7A037F007AA73D /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = A5B0C5BE2B7A037F007AA73D /* GoogleMapsCore */; };
 		A5B0C5C22B7A074F007AA73D /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0C5C12B7A074F007AA73D /* ChooseLocationViewController.swift */; };
 		A5B0C5C42B7A0759007AA73D /* ChooseLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B0C5C32B7A0759007AA73D /* ChooseLocationViewController.storyboard */; };
 		A5B0C5C52B7A11BB007AA73D /* MarkGEO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A583752A2B6F97B80096C4C2 /* MarkGEO-Bold.ttf */; };
@@ -154,11 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A50478112B76622C00E0CB02 /* SkeletonView in Frameworks */,
-				A5B0C5BD2B7A037F007AA73D /* GoogleMapsBase in Frameworks */,
 				A5FE31B62B6FB3A800469448 /* Kingfisher in Frameworks */,
-				A5B0C5BB2B7A037F007AA73D /* GoogleMaps in Frameworks */,
 				A5A159D42B776E6E00F00D7C /* Reachability in Frameworks */,
-				A5B0C5BF2B7A037F007AA73D /* GoogleMapsCore in Frameworks */,
 				A5FE31B32B6FAE0100469448 /* Moya in Frameworks */,
 				A50E4F1C2B7241DA00935EB2 /* Loaf in Frameworks */,
 			);
@@ -716,9 +710,6 @@
 				A50E4F1B2B7241DA00935EB2 /* Loaf */,
 				A50478102B76622C00E0CB02 /* SkeletonView */,
 				A5A159D32B776E6E00F00D7C /* Reachability */,
-				A5B0C5BA2B7A037F007AA73D /* GoogleMaps */,
-				A5B0C5BC2B7A037F007AA73D /* GoogleMapsBase */,
-				A5B0C5BE2B7A037F007AA73D /* GoogleMapsCore */,
 			);
 			productName = Herpi_iOS;
 			productReference = A58449852B6E26750036C3D2 /* Herpi_iOS.app */;
@@ -754,7 +745,6 @@
 				A50E4F1A2B7241DA00935EB2 /* XCRemoteSwiftPackageReference "Loaf" */,
 				A504780F2B76622C00E0CB02 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				A5A159D22B776E6E00F00D7C /* XCRemoteSwiftPackageReference "Reachability" */,
-				A5B0C5B92B7A037F007AA73D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
 			);
 			productRefGroup = A58449862B6E26750036C3D2 /* Products */;
 			projectDirPath = "";
@@ -1105,14 +1095,6 @@
 				kind = branch;
 			};
 		};
-		A5B0C5B92B7A037F007AA73D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
-			requirement = {
-				kind = exactVersion;
-				version = 8.4.0;
-			};
-		};
 		A5FE31B12B6FAE0100469448 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -1146,21 +1128,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5A159D22B776E6E00F00D7C /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
-		};
-		A5B0C5BA2B7A037F007AA73D /* GoogleMaps */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A5B0C5B92B7A037F007AA73D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
-			productName = GoogleMaps;
-		};
-		A5B0C5BC2B7A037F007AA73D /* GoogleMapsBase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A5B0C5B92B7A037F007AA73D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
-			productName = GoogleMapsBase;
-		};
-		A5B0C5BE2B7A037F007AA73D /* GoogleMapsCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A5B0C5B92B7A037F007AA73D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
-			productName = GoogleMapsCore;
 		};
 		A5FE31B22B6FAE0100469448 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
