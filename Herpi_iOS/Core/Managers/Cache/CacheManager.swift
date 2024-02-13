@@ -11,6 +11,7 @@ enum CacheForKey: String {
     case categories
     case reptilies
     case nearby
+    case detailedReptile
 }
 
 class CacheManager {
@@ -19,6 +20,7 @@ class CacheManager {
     private var cachedCategories: CategoriesModel?
     private var cachedReptiles: ReptiliesModel?
     private var cachedNearbyReptiles: NearbyReptilesModel?
+    private var cachedDetailedReptiles: DetailedInfoResponseModel?
 
     func updateCache<T: Codable>(data: T, forKey key: CacheForKey) {
         switch key {
@@ -37,6 +39,11 @@ class CacheManager {
                 UserDefaultsManager.shared.save(value: nearbyReptilesData, forKey: .nearby)
                 cachedNearbyReptiles = data as? NearbyReptilesModel
             }
+        case .detailedReptile:
+            if let detailedReptilesData = try? JSONEncoder().encode(data) {
+                UserDefaultsManager.shared.save(value: detailedReptilesData, forKey: .detailedReptile)
+                cachedDetailedReptiles = data as? DetailedInfoResponseModel
+            }
         }
         UserDefaultsManager.shared.synchronize()
     }
@@ -54,6 +61,10 @@ class CacheManager {
         case .nearby:
             if let data = UserDefaultsManager.shared.get(data: .nearby) {
                 return try? JSONDecoder().decode(NearbyReptilesModel.self, from: data) as? T
+            }
+        case .detailedReptile:
+            if let data = UserDefaultsManager.shared.get(data: .detailedReptile) {
+                return try? JSONDecoder().decode(DetailedInfoResponseModel.self, from: data) as? T
             }
         }
         return nil

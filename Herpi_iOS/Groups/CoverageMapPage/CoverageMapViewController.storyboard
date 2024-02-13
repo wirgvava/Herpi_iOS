@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coverage Map View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="mapVC" id="Y6W-OH-hqX" customClass="CoverageMapViewController" customModule="Herpi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ogh-OC-kGz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-iR-niV">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <imageryMapConfiguration key="preferredConfiguration" elevationStyle="realistic"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evu-l4-vrc">
+                                <rect key="frame" x="50" y="722" width="293" height="46"/>
+                                <color key="backgroundColor" name="selectedCategoryTint"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="SZZ-ea-6gr"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="დახურვა"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapCloseButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gie-RA-8Kv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1hA-3L-rFA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1hA-3L-rFA" firstAttribute="trailing" secondItem="Evu-l4-vrc" secondAttribute="trailing" constant="50" id="1Ex-nK-sBI"/>
+                            <constraint firstItem="1hA-3L-rFA" firstAttribute="trailing" secondItem="mcO-iR-niV" secondAttribute="trailing" id="MFt-KX-3yr"/>
+                            <constraint firstItem="mcO-iR-niV" firstAttribute="top" secondItem="Ogh-OC-kGz" secondAttribute="top" id="Yn7-nf-ndX"/>
+                            <constraint firstItem="Evu-l4-vrc" firstAttribute="leading" secondItem="1hA-3L-rFA" secondAttribute="leading" constant="50" id="ZLT-gn-mqk"/>
+                            <constraint firstAttribute="bottom" secondItem="mcO-iR-niV" secondAttribute="bottom" id="Zff-iU-9Ot"/>
+                            <constraint firstItem="mcO-iR-niV" firstAttribute="leading" secondItem="1hA-3L-rFA" secondAttribute="leading" id="ewO-U7-4KC"/>
+                            <constraint firstAttribute="bottom" secondItem="Evu-l4-vrc" secondAttribute="bottom" constant="84" id="wPf-49-bCE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Evu-l4-vrc" id="50u-5F-2Nq"/>
+                        <outlet property="mapView" destination="mcO-iR-niV" id="Lli-HV-51Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="selectedCategoryTint">
+            <color red="0.015686274509803921" green="0.32941176470588235" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -24,11 +24,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var nearbyCollectionView: UICollectionView!
     @IBOutlet weak var emptyNearbyList: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
+    @IBOutlet weak var currentLocationLbl: UILabel!
     
 //  - Managers
     private var dataSource: MainVCDataSource!
     private var layout: MainVCLayout!
     private var serviceManager = ApiManager()
+    
+//  - Default Location
+    var lat = Constants.lat
+    var lng = Constants.lng
 
 //  MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -50,7 +55,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTapOnSearch(){
-        print("Search is Tapped!")
+        PresenterManager.shared.navigate(from: self, to: .searchPage)
+    }
+    
+    @IBAction func didTapChooseLocationManually(){
+        layout.openLocationSheet()
     }
 }
 
@@ -85,6 +94,14 @@ extension MainViewController {
                 self.nearbyCollectionView.reloadData()
             }
         }
+    }
+}
+
+// MARK: - Did Changed location
+extension MainViewController: LocationDelegate {
+    func didChangedLocationWith(lat: Double, lng: Double, name: String) {
+        currentLocationLbl.text = name
+        getNearbyReptiles(lat: lat, lng: lng)
     }
 }
 

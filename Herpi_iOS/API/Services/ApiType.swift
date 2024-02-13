@@ -12,6 +12,9 @@ enum ApiType: TargetType {
     case categories
     case reptiles
     case nearby(lat: Double, lng: Double)
+    case search(query: String)
+    case detailedInfo(reptileId: Int)
+    case coverage(reptileId: Int)
     
     var baseURL: URL {
         return URL(string: "https://api.herpi.ge")!
@@ -25,6 +28,12 @@ enum ApiType: TargetType {
             return "/api/v1/reptiles"
         case .nearby:
             return "/api/v1/reptiles/nearby"
+        case .search:
+            return "/api/v1/reptiles/search"
+        case .detailedInfo(let reptileId):
+            return "/api/v1/reptiles/\(reptileId)"
+        case .coverage(let reptileId):
+            return "api/v1/reptiles/\(reptileId)/coverage"
         }
     }
     
@@ -35,6 +44,12 @@ enum ApiType: TargetType {
         case .reptiles:
             return .get
         case .nearby:
+            return .get
+        case .search:
+            return .get
+        case .detailedInfo:
+            return .get
+        case .coverage:
             return .get
         }
     }
@@ -49,6 +64,12 @@ enum ApiType: TargetType {
             return .requestParameters(parameters: ["lat": lat, 
                                                    "lng": lng],
                                       encoding: URLEncoding.default)
+        case .search(let query):
+            return .requestParameters(parameters: ["query" : query], encoding: URLEncoding.default)
+        case .detailedInfo:
+            return .requestPlain
+        case .coverage:
+            return .requestPlain
         }
     }
     

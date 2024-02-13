@@ -32,6 +32,12 @@ class LoadingViewController: UIViewController {
     }
     
     @objc func openMainPage(_ sender: Notification){
-        PresenterManager.shared.navigate(to: .mainPage)
+        let vc = UIStoryboard(name: MainViewController.className, bundle: nil).instantiateViewController(withIdentifier: "navController")
+        
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
+            window.rootViewController = vc
+            UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil)
+        }
     }
 }

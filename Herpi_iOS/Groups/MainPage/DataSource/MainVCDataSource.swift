@@ -124,6 +124,14 @@ extension MainVCDataSource: UITableViewDataSource, UITableViewDelegate {
         cell.set(with: data)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = self.reptile[indexPath.row]
+        let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
+        vc.getDetailedInfo(for: data.id!)
+        vc.getCoverageInfo(for: data.id!)
+        self.viewController.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - CollectioView
@@ -166,10 +174,18 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
         case categoriesCollectionView:
             didSelectCategoryAt(indexPath: indexPath)
         case nearbyCollectionView:
-            print("cell tapped!")
+            didSelectNearbyItemAt(indexPath: indexPath)
         default:
             break
         }
+    }
+    
+    private func didSelectNearbyItemAt(indexPath: IndexPath){
+        let data = self.nearbyReptiles[indexPath.item]
+        let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
+        vc.getDetailedInfo(for: data.id!)
+        vc.getCoverageInfo(for: data.id!)
+        self.viewController.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func didSelectCategoryAt(indexPath: IndexPath){

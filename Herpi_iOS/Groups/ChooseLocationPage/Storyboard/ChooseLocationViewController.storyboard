@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MarkGEO-Bold.ttf">
+            <string>MarkGEO-Bold</string>
+        </array>
+        <array key="MarkGEO-Regular.ttf">
+            <string>MarkGEO-Regular</string>
+        </array>
+        <array key="MarkGEO-Semibold.ttf">
+            <string>MarkGEO-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Choose Location View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="chooseLocationPage" id="Y6W-OH-hqX" customClass="ChooseLocationViewController" customModule="Herpi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="რეგიონის არჩევა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRw-ff-9Tn">
+                                <rect key="frame" x="30" y="84" width="145.33333333333334" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="16"/>
+                                <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsCompass="NO" showsPointsOfInterest="NO" pitchButtonVisibility="adaptive" showsUserTrackingButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXV-Qx-tjD">
+                                <rect key="frame" x="0.0" y="174" width="393" height="513"/>
+                                <standardMapConfiguration key="preferredConfiguration" elevationStyle="realistic"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="სასურველი ადგილის მოსანიშნად რუკაზე თითის ერთი შეხებით დასვი პინი და შემდეგ დააჭირე &quot;მონიშვნა&quot;-ს." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-ls-Dic">
+                                <rect key="frame" x="30" y="104.33333333333333" width="333" height="49.666666666666671"/>
+                                <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="13"/>
+                                <color key="textColor" red="0.40000003579999999" green="0.45098042490000001" blue="0.48235297199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gldani VII, Tbilisi, Georgia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwh-G3-fc9">
+                                <rect key="frame" x="84.333333333333329" y="707" width="224.33333333333337" height="16"/>
+                                <fontDescription key="fontDescription" name="MarkGEO-Bold" family="Mark GEO" pointSize="16"/>
+                                <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="N3U-CS-JA9">
+                                <rect key="frame" x="30" y="743" width="333" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-sL-a1m">
+                                        <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="50"/>
+                                        <color key="tintColor" name="venomous"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="გაუქმება"/>
+                                        <connections>
+                                            <action selector="didTapCancelBtn" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DcE-XJ-bJR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-T3-1MP">
+                                        <rect key="frame" x="191.66666666666663" y="0.0" width="141.33333333333337" height="50"/>
+                                        <color key="backgroundColor" name="selectedCategoryTint"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="მონიშვნა"/>
+                                        <connections>
+                                            <action selector="didTapAcceptBtn" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PIC-t3-KOU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cao-Bd-CJU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0r0-ls-Dic" secondAttribute="trailing" constant="30" id="1CA-ig-2zc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="N3U-CS-JA9" secondAttribute="bottom" constant="25" id="7uZ-Qv-C29"/>
+                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="DLX-5K-lZR"/>
+                            <constraint firstItem="0r0-ls-Dic" firstAttribute="top" secondItem="MRw-ff-9Tn" secondAttribute="bottom" id="GFj-MR-cnO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="N3U-CS-JA9" secondAttribute="trailing" constant="30" id="HJ5-PU-OxL"/>
+                            <constraint firstItem="N3U-CS-JA9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Ngg-6d-GCW"/>
+                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Z2g-GT-UPw"/>
+                            <constraint firstItem="gwh-G3-fc9" firstAttribute="top" secondItem="PXV-Qx-tjD" secondAttribute="bottom" constant="20" id="gUK-0B-k13"/>
+                            <constraint firstItem="0r0-ls-Dic" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="h8x-ul-zV7"/>
+                            <constraint firstItem="N3U-CS-JA9" firstAttribute="top" secondItem="gwh-G3-fc9" secondAttribute="bottom" constant="20" id="lPF-nT-8Jg"/>
+                            <constraint firstItem="MRw-ff-9Tn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ogi-jq-rAx"/>
+                            <constraint firstItem="MRw-ff-9Tn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="rjg-Z7-7ty"/>
+                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="top" secondItem="0r0-ls-Dic" secondAttribute="bottom" constant="20" id="tfP-AF-0Us"/>
+                            <constraint firstItem="gwh-G3-fc9" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tgP-8O-BK9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="acceptBtn" destination="cBB-T3-1MP" id="wOa-iG-1Xd"/>
+                        <outlet property="cancelBtn" destination="0Sv-sL-a1m" id="ARq-tt-NJe"/>
+                        <outlet property="currentLocationLbl" destination="gwh-G3-fc9" id="eoJ-QR-I5A"/>
+                        <outlet property="descriptionTitle" destination="0r0-ls-Dic" id="l9i-TF-kcv"/>
+                        <outlet property="headerTitle" destination="MRw-ff-9Tn" id="drp-8L-Hzb"/>
+                        <outlet property="mapView" destination="PXV-Qx-tjD" id="Xex-GN-XCk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="-28.169014084507044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="selectedCategoryTint">
+            <color red="0.015686274509803921" green="0.32941176470588235" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="venomous">
+            <color red="1" green="0.0" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

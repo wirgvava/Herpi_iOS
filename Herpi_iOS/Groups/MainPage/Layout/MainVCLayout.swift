@@ -27,12 +27,12 @@ class MainVCLayout: NSObject {
 // MARK: - Configure
 extension MainVCLayout {
     private func configure(){
-//        viewController.view.showAnimatedSkeleton()
         setupRefreshController()
         setTopCategoryViewHeight()
         setCollectionViewHeights()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        viewController.navigationController?.navigationBar.isHidden = true
         UserDefaultsManager.shared.save(value: true, forKey: .firstLoginSelected)
     }
     
@@ -90,6 +90,17 @@ extension MainVCLayout {
         menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         menuView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
+    
+    func openLocationSheet(){
+        let locationSheet = UIStoryboard(name: ChooseLocationViewController.className, bundle: nil).instantiateViewController(withIdentifier: "chooseLocationPage") as! ChooseLocationViewController
+        
+        locationSheet.delegate = viewController
+        locationSheet.lat = viewController.lat
+        locationSheet.lng = viewController.lng
+        locationSheet.currentLocation = viewController.currentLocationLbl.text ?? ""
+        locationSheet.modalPresentationStyle = .automatic
+        viewController.present(locationSheet, animated: true)
+    }
 }
 
 // MARK: - Location
@@ -97,20 +108,57 @@ extension MainVCLayout: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
-            let coordinates = manager.location?.coordinate
-            let lat = coordinates?.latitude ?? 0
-            let lng = coordinates?.longitude ?? 0
             locationManager.startUpdatingLocation()
-            viewController.getNearbyReptiles(lat: lat, lng: lng)
-            viewController.emptyNearbyList.text = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა"
         case .denied, .restricted:
+            locationManager.stopUpdatingLocation()
             viewController.nearbyCollectionView.isHidden = true
             viewController.emptyNearbyList.isHidden = false
-            locationManager.stopUpdatingLocation()
             viewController.emptyNearbyList.text = "შენს არეალში გავრცელებული სახეობების სანახავად გაგვიზიარე ადგილმდებარეობა ან მონიშნე ხელით. პრობლემის შემთხვევაში დაგვიკავშირდი"
             showInfo(message: "Check location settings", sender: viewController)
         default:
             break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        
+        let lat = location.coordinate.latitude
+        let lng = location.coordinate.longitude
+        viewController.lat = lat
+        viewController.lng = lng
+        viewController.getNearbyReptiles(lat: lat, lng: lng)
+        viewController.emptyNearbyList.text = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა"
+    
+        // Perform reverse geocoding to get location name
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
+            guard let self = self else { return }
+            if let error = error {
+                showError(message: error, sender: self.viewController)
+            } else if let placemark = placemarks?.first {
+                fillInfo(with: placemark)
+                locationManager.stopUpdatingLocation()
+            }
+        }
+    }
+    
+    private func fillInfo(with placeMark: CLPlacemark){
+        var streetName = (placeMark.thoroughfare != nil) ? placeMark.thoroughfare! : ""
+        let city = (placeMark.locality != nil) ? placeMark.locality! + " , " : ""
+        let country = (placeMark.country != nil) ? placeMark.country! : ""
+     
+        if streetName.contains("Street") {
+            streetName.removeLast(6)
+            streetName.append("St. , ")
+        } else if streetName != "" {
+            streetName.append(" , ")
+        }
+        
+        if streetName == "" && city == "" && country == "" {
+            viewController.currentLocationLbl.text = "Please enter location manually."
+        } else {
+            viewController.currentLocationLbl.text = streetName + city + country
         }
     }
     

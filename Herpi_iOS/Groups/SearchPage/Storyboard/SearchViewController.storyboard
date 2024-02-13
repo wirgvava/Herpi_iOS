@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MarkGEO-Bold.ttf">
+            <string>MarkGEO-Bold</string>
+        </array>
+        <array key="MarkGEO-Regular.ttf">
+            <string>MarkGEO-Regular</string>
+        </array>
+        <array key="MarkGEO-Semibold.ttf">
+            <string>MarkGEO-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="searchPage" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="Herpi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfQ-gZ-iVg">
+                                <rect key="frame" x="70" y="94" width="293" height="54"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="O4O-kA-PPk">
+                                        <rect key="frame" x="16" y="13.666666666666671" width="27" height="27"/>
+                                        <color key="tintColor" red="0.62352943419999995" green="0.68235301969999995" blue="0.70980393890000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="3QJ-Iz-OF7"/>
+                                            <constraint firstAttribute="width" constant="27" id="W7L-99-1BY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="მოძებნე აქ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHv-Te-cbZ">
+                                        <rect key="frame" x="53" y="0.0" width="230" height="54"/>
+                                        <color key="tintColor" name="selectedCategoryTint"/>
+                                        <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="HHv-Te-cbZ" firstAttribute="leading" secondItem="O4O-kA-PPk" secondAttribute="trailing" constant="10" id="90g-r1-F2J"/>
+                                    <constraint firstAttribute="height" constant="54" id="Ccd-i2-8lK"/>
+                                    <constraint firstAttribute="trailing" secondItem="HHv-Te-cbZ" secondAttribute="trailing" constant="10" id="KBH-DV-RzH"/>
+                                    <constraint firstItem="HHv-Te-cbZ" firstAttribute="top" secondItem="YfQ-gZ-iVg" secondAttribute="top" id="Vfb-gg-JTP"/>
+                                    <constraint firstAttribute="bottom" secondItem="HHv-Te-cbZ" secondAttribute="bottom" id="pai-y2-rge"/>
+                                    <constraint firstItem="O4O-kA-PPk" firstAttribute="leading" secondItem="YfQ-gZ-iVg" secondAttribute="leading" constant="16" id="tfN-oe-WFr"/>
+                                    <constraint firstItem="O4O-kA-PPk" firstAttribute="centerY" secondItem="YfQ-gZ-iVg" secondAttribute="centerY" id="xYd-Ws-IDj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SU-rQ-GGy">
+                                <rect key="frame" x="0.0" y="183" width="393" height="669"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-yW-KvG">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="669"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="Szr-V8-Tga">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="61"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-BN-X7C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="61"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ძიების შედეგები" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-j9-jbh">
+                                                            <rect key="frame" x="30" y="10" width="333" height="51"/>
+                                                            <fontDescription key="fontDescription" name="MarkGEO-Bold" family="Mark GEO" pointSize="16"/>
+                                                            <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="JPH-j9-jbh" firstAttribute="leading" secondItem="0uw-BN-X7C" secondAttribute="leading" constant="30" id="KYt-mi-uPo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JPH-j9-jbh" secondAttribute="trailing" constant="30" id="Sla-Us-6OT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JPH-j9-jbh" secondAttribute="bottom" id="Zkd-KO-HSU"/>
+                                                        <constraint firstAttribute="height" constant="50" id="mOA-B3-K9T"/>
+                                                        <constraint firstItem="JPH-j9-jbh" firstAttribute="top" secondItem="0uw-BN-X7C" secondAttribute="top" constant="10" id="nV0-5f-1by"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="0uw-BN-X7C" secondAttribute="trailing" id="1J1-gf-6G5"/>
+                                                <constraint firstAttribute="bottom" secondItem="0uw-BN-X7C" secondAttribute="bottom" id="ZGO-M7-YVx"/>
+                                                <constraint firstItem="0uw-BN-X7C" firstAttribute="top" secondItem="Szr-V8-Tga" secondAttribute="top" id="b0a-O7-p2Y"/>
+                                                <constraint firstItem="0uw-BN-X7C" firstAttribute="leading" secondItem="Szr-V8-Tga" secondAttribute="leading" id="lSg-0s-x7i"/>
+                                            </constraints>
+                                        </view>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="121" id="fBe-hz-veg" customClass="SearchTableViewCell" customModule="Herpi_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="111" width="393" height="121"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBe-hz-veg" id="KeQ-aS-RVB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="121"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingfisher-9.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-bp-pek">
+                                                            <rect key="frame" x="20" y="10" width="170" height="101"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="90" id="fIS-vE-ybI"/>
+                                                                <constraint firstAttribute="width" constant="170" id="toQ-jy-BpH"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ჩვეულებრივი ანკარა" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2d-om-3Fg">
+                                                            <rect key="frame" x="206" y="10" width="167" height="18"/>
+                                                            <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="14"/>
+                                                            <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natrix Natrix" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPu-yl-k2d">
+                                                            <rect key="frame" x="206" y="30" width="167" height="18"/>
+                                                            <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="14"/>
+                                                            <color key="textColor" red="0.58823531870000001" green="0.58823531870000001" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckU-yB-quP">
+                                                            <rect key="frame" x="206" y="60" width="51.666666666666686" height="22"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="უშხამო" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-Vq-KWc">
+                                                                    <rect key="frame" x="7" y="5" width="37.666666666666664" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="10"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="noVenomous"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="2Xh-Vq-KWc" secondAttribute="trailing" constant="7" id="JjD-5N-hDr"/>
+                                                                <constraint firstItem="2Xh-Vq-KWc" firstAttribute="leading" secondItem="ckU-yB-quP" secondAttribute="leading" constant="7" id="WJT-X9-zI7"/>
+                                                                <constraint firstItem="2Xh-Vq-KWc" firstAttribute="top" secondItem="ckU-yB-quP" secondAttribute="top" constant="5" id="c3a-qn-PMl"/>
+                                                                <constraint firstAttribute="height" constant="22" id="h35-Xb-VqB"/>
+                                                                <constraint firstAttribute="bottom" secondItem="2Xh-Vq-KWc" secondAttribute="bottom" constant="5" id="lKU-1q-9nk"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="fPu-yl-k2d" firstAttribute="top" secondItem="E2d-om-3Fg" secondAttribute="bottom" constant="2" id="Aqd-wt-F5h"/>
+                                                        <constraint firstItem="ckU-yB-quP" firstAttribute="top" secondItem="fPu-yl-k2d" secondAttribute="bottom" constant="12" id="GCa-M4-4kW"/>
+                                                        <constraint firstItem="E8O-bp-pek" firstAttribute="leading" secondItem="KeQ-aS-RVB" secondAttribute="leading" constant="20" id="J2l-3S-tIO"/>
+                                                        <constraint firstItem="ckU-yB-quP" firstAttribute="leading" secondItem="E8O-bp-pek" secondAttribute="trailing" constant="16" id="JdF-Qq-PEs"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fPu-yl-k2d" secondAttribute="trailing" constant="20" id="LVN-ve-h5f"/>
+                                                        <constraint firstItem="fPu-yl-k2d" firstAttribute="leading" secondItem="E8O-bp-pek" secondAttribute="trailing" constant="16" id="UwR-BS-Xq5"/>
+                                                        <constraint firstItem="E8O-bp-pek" firstAttribute="top" secondItem="KeQ-aS-RVB" secondAttribute="top" constant="10" id="egb-Sv-i3w"/>
+                                                        <constraint firstAttribute="trailing" secondItem="E2d-om-3Fg" secondAttribute="trailing" constant="20" id="nLy-LZ-Xe7"/>
+                                                        <constraint firstItem="E2d-om-3Fg" firstAttribute="leading" secondItem="E8O-bp-pek" secondAttribute="trailing" constant="16" id="stt-S8-tIW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="E8O-bp-pek" secondAttribute="bottom" constant="10" id="wL5-tI-ElS"/>
+                                                        <constraint firstItem="E2d-om-3Fg" firstAttribute="top" secondItem="E8O-bp-pek" secondAttribute="top" id="xSz-Bj-emu"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="nameLbl" destination="E2d-om-3Fg" id="kPH-wd-aOC"/>
+                                                    <outlet property="photo" destination="E8O-bp-pek" id="izi-1K-iib"/>
+                                                    <outlet property="scientificName" destination="fPu-yl-k2d" id="gUw-tI-r5j"/>
+                                                    <outlet property="venomTypeLbl" destination="2Xh-Vq-KWc" id="sZy-ko-Nsd"/>
+                                                    <outlet property="venomTypeView" destination="ckU-yB-quP" id="C3S-Ov-3ZA"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509804249999996" green="0.96078431610000004" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="dqm-yW-KvG" firstAttribute="top" secondItem="3SU-rQ-GGy" secondAttribute="top" id="3ln-eQ-GyX"/>
+                                    <constraint firstAttribute="bottom" secondItem="dqm-yW-KvG" secondAttribute="bottom" id="AlS-zO-fu8"/>
+                                    <constraint firstItem="dqm-yW-KvG" firstAttribute="leading" secondItem="3SU-rQ-GGy" secondAttribute="leading" id="agN-4O-ovY"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqm-yW-KvG" secondAttribute="trailing" id="ruD-C4-D2w"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="399-18-6Lk" userLabel="backButton">
+                                <rect key="frame" x="20" y="108.66666666666667" width="25" height="25.000000000000014"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrow" translatesAutoresizingMaskIntoConstraints="NO" id="RUo-ME-Oeh">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ2-CK-63Z" userLabel="backButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="."/>
+                                        <connections>
+                                            <action selector="didTapBackButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lYF-ea-QxT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RUo-ME-Oeh" secondAttribute="trailing" id="A0f-mY-BRs"/>
+                                    <constraint firstAttribute="bottom" secondItem="RUo-ME-Oeh" secondAttribute="bottom" id="K0w-fp-Q1B"/>
+                                    <constraint firstAttribute="trailing" secondItem="xJ2-CK-63Z" secondAttribute="trailing" id="VgZ-1d-mzd"/>
+                                    <constraint firstItem="RUo-ME-Oeh" firstAttribute="leading" secondItem="399-18-6Lk" secondAttribute="leading" id="ZCb-2g-aDq"/>
+                                    <constraint firstItem="xJ2-CK-63Z" firstAttribute="leading" secondItem="399-18-6Lk" secondAttribute="leading" id="ZDD-0K-Yf8"/>
+                                    <constraint firstItem="RUo-ME-Oeh" firstAttribute="top" secondItem="399-18-6Lk" secondAttribute="top" id="ewp-H4-mV2"/>
+                                    <constraint firstItem="xJ2-CK-63Z" firstAttribute="top" secondItem="399-18-6Lk" secondAttribute="top" id="fc4-Bh-itq"/>
+                                    <constraint firstAttribute="width" constant="25" id="ixd-r4-76M"/>
+                                    <constraint firstAttribute="height" constant="25" id="kv8-7u-BQb"/>
+                                    <constraint firstAttribute="bottom" secondItem="xJ2-CK-63Z" secondAttribute="bottom" id="yWN-AB-uBT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="selectedCategoryTint"/>
+                        <constraints>
+                            <constraint firstItem="YfQ-gZ-iVg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="35" id="9xN-Rx-Ew1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3SU-rQ-GGy" secondAttribute="trailing" id="DzP-p8-mKH"/>
+                            <constraint firstItem="3SU-rQ-GGy" firstAttribute="top" secondItem="YfQ-gZ-iVg" secondAttribute="bottom" constant="35" id="ErC-qW-BAg"/>
+                            <constraint firstItem="YfQ-gZ-iVg" firstAttribute="leading" secondItem="399-18-6Lk" secondAttribute="trailing" constant="25" id="HQP-ma-FXZ"/>
+                            <constraint firstItem="3SU-rQ-GGy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Obu-VB-EBZ"/>
+                            <constraint firstAttribute="bottom" secondItem="3SU-rQ-GGy" secondAttribute="bottom" id="WwA-O7-VK4"/>
+                            <constraint firstItem="399-18-6Lk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="e3F-UZ-wjt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YfQ-gZ-iVg" secondAttribute="trailing" constant="30" id="gAd-0o-KdM"/>
+                            <constraint firstItem="399-18-6Lk" firstAttribute="centerY" secondItem="YfQ-gZ-iVg" secondAttribute="centerY" id="tTB-L5-nu5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="HHv-Te-cbZ" id="JLX-QC-3hV"/>
+                        <outlet property="tableView" destination="dqm-yW-KvG" id="jVq-kI-nWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backArrow" width="24" height="23.392000198364258"/>
+        <image name="kingfisher-9.jpg" width="250" height="250"/>
+        <image name="search" width="30.621000289916992" height="30.621000289916992"/>
+        <namedColor name="noVenomous">
+            <color red="0.0" green="0.72549019607843135" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selectedCategoryTint">
+            <color red="0.015686274509803921" green="0.32941176470588235" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
