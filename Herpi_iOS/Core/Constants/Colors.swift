@@ -13,6 +13,9 @@ class Colors {
     static var selectedTint = UIColor(named: "selectedCategoryTint")
     static var defaultDark = UIColor(named: "defaultDark")
     static var white = UIColor.white
+    static var headerTitle = UIColor(named: "HeaderTitle")
+    static var greenTitle = UIColor(named: "GreenTitle")
+    static var secondaryTitle = UIColor(named: "SecondaryTitle")
     
     // - Venomous type colors
     enum venomTypes {

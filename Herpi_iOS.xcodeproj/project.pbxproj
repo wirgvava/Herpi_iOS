@@ -13,6 +13,18 @@
 		A50E4F1C2B7241DA00935EB2 /* Loaf in Frameworks */ = {isa = PBXBuildFile; productRef = A50E4F1B2B7241DA00935EB2 /* Loaf */; };
 		A50E4F202B7243BA00935EB2 /* LoafPresentationStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */; };
 		A50E4F232B725A9300935EB2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50E4F222B725A9300935EB2 /* Colors.swift */; };
+		A50F83092B7E75F000FBF5FD /* OpenChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F83082B7E75F000FBF5FD /* OpenChat.swift */; };
+		A50F830A2B7E769B00FBF5FD /* MarkGEO-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A58375292B6F97B80096C4C2 /* MarkGEO-Semibold.ttf */; };
+		A50F830B2B7E769B00FBF5FD /* MarkGEO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A58375282B6F97B80096C4C2 /* MarkGEO-Regular.ttf */; };
+		A50F830C2B7E769B00FBF5FD /* MarkGEO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A583752A2B6F97B80096C4C2 /* MarkGEO-Bold.ttf */; };
+		A50F83112B7E78EC00FBF5FD /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F83102B7E78EC00FBF5FD /* FAQViewController.swift */; };
+		A50F83142B7E790400FBF5FD /* FAQViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50F83132B7E790400FBF5FD /* FAQViewController.storyboard */; };
+		A50F83182B7E7CBC00FBF5FD /* FAQHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F83172B7E7CBC00FBF5FD /* FAQHeaderTableViewCell.swift */; };
+		A50F831A2B7E7DD300FBF5FD /* FAQDescrtiptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F83192B7E7DD300FBF5FD /* FAQDescrtiptionTableViewCell.swift */; };
+		A50F831C2B7E800300FBF5FD /* FAQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F831B2B7E800300FBF5FD /* FAQModel.swift */; };
+		A50F831F2B7E812D00FBF5FD /* FAQVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F831E2B7E812D00FBF5FD /* FAQVCDataSource.swift */; };
+		A50F83222B7E915700FBF5FD /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F83212B7E915700FBF5FD /* ContactViewController.swift */; };
+		A50F83242B7E915F00FBF5FD /* ContactViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50F83232B7E915F00FBF5FD /* ContactViewController.storyboard */; };
 		A50FB00B2B7A9A86000F013C /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FB0092B7A9A86000F013C /* GalleryCollectionViewCell.swift */; };
 		A50FB00C2B7A9A86000F013C /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FB00A2B7A9A86000F013C /* GalleryCollectionViewCell.xib */; };
 		A50FB00F2B7A9C6E000F013C /* DetailVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FB00E2B7A9C6E000F013C /* DetailVCDataSource.swift */; };
@@ -59,11 +71,16 @@
 		A5A159DD2B779BCA00F00D7C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159DB2B779BCA00F00D7C /* LoadingViewController.swift */; };
 		A5A159E02B779C0000F00D7C /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A159DF2B779C0000F00D7C /* LoadingViewController.storyboard */; };
 		A5A159E32B77D10F00F00D7C /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159E22B77D10F00F00D7C /* PresenterManager.swift */; };
+		A5AA881B2B7E162D00B505D6 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA881A2B7E162D00B505D6 /* TeamViewController.swift */; };
+		A5AA881D2B7E163900B505D6 /* TeamViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5AA881C2B7E163900B505D6 /* TeamViewController.storyboard */; };
+		A5AA88252B7E1DF600B505D6 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA88242B7E1DF600B505D6 /* TeamTableViewCell.swift */; };
+		A5AA882A2B7E1FF800B505D6 /* SocialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA88282B7E1FF800B505D6 /* SocialsCollectionViewCell.swift */; };
+		A5AA882B2B7E1FF800B505D6 /* SocialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AA88292B7E1FF800B505D6 /* SocialsCollectionViewCell.xib */; };
+		A5AA882D2B7E21CB00B505D6 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA882C2B7E21CB00B505D6 /* TeamModel.swift */; };
+		A5AA88302B7E249900B505D6 /* TeamVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA882F2B7E249900B505D6 /* TeamVCDataSource.swift */; };
+		A5AA88322B7E47C000B505D6 /* TeamSocialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA88312B7E47C000B505D6 /* TeamSocialsTableViewCell.swift */; };
 		A5B0C5C22B7A074F007AA73D /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0C5C12B7A074F007AA73D /* ChooseLocationViewController.swift */; };
 		A5B0C5C42B7A0759007AA73D /* ChooseLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B0C5C32B7A0759007AA73D /* ChooseLocationViewController.storyboard */; };
-		A5B0C5C52B7A11BB007AA73D /* MarkGEO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A583752A2B6F97B80096C4C2 /* MarkGEO-Bold.ttf */; };
-		A5B0C5C62B7A11BB007AA73D /* MarkGEO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A58375282B6F97B80096C4C2 /* MarkGEO-Regular.ttf */; };
-		A5B0C5C72B7A11BB007AA73D /* MarkGEO-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A58375292B6F97B80096C4C2 /* MarkGEO-Semibold.ttf */; };
 		A5B0C5C92B7A1C51007AA73D /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0C5C82B7A1C51007AA73D /* SearchResponseModel.swift */; };
 		A5B8A7282B700D3B0062BF28 /* NearbyReptileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8A7272B700D3B0062BF28 /* NearbyReptileModel.swift */; };
 		A5D47C0D2B7A371B005ADFBC /* SearchVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D47C0C2B7A371B005ADFBC /* SearchVCLayout.swift */; };
@@ -82,6 +99,15 @@
 		A507A7BE2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReptiliesHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoafPresentationStyles.swift; sourceTree = "<group>"; };
 		A50E4F222B725A9300935EB2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A50F83082B7E75F000FBF5FD /* OpenChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChat.swift; sourceTree = "<group>"; };
+		A50F83102B7E78EC00FBF5FD /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		A50F83132B7E790400FBF5FD /* FAQViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQViewController.storyboard; sourceTree = "<group>"; };
+		A50F83172B7E7CBC00FBF5FD /* FAQHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		A50F83192B7E7DD300FBF5FD /* FAQDescrtiptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDescrtiptionTableViewCell.swift; sourceTree = "<group>"; };
+		A50F831B2B7E800300FBF5FD /* FAQModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQModel.swift; sourceTree = "<group>"; };
+		A50F831E2B7E812D00FBF5FD /* FAQVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQVCDataSource.swift; sourceTree = "<group>"; };
+		A50F83212B7E915700FBF5FD /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		A50F83232B7E915F00FBF5FD /* ContactViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactViewController.storyboard; sourceTree = "<group>"; };
 		A50FB0092B7A9A86000F013C /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A50FB00A2B7A9A86000F013C /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
 		A50FB00E2B7A9C6E000F013C /* DetailVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCDataSource.swift; sourceTree = "<group>"; };
@@ -132,6 +158,14 @@
 		A5A159DB2B779BCA00F00D7C /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A5A159DF2B779C0000F00D7C /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
 		A5A159E22B77D10F00F00D7C /* PresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
+		A5AA881A2B7E162D00B505D6 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		A5AA881C2B7E163900B505D6 /* TeamViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamViewController.storyboard; sourceTree = "<group>"; };
+		A5AA88242B7E1DF600B505D6 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		A5AA88282B7E1FF800B505D6 /* SocialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5AA88292B7E1FF800B505D6 /* SocialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialsCollectionViewCell.xib; sourceTree = "<group>"; };
+		A5AA882C2B7E21CB00B505D6 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		A5AA882F2B7E249900B505D6 /* TeamVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamVCDataSource.swift; sourceTree = "<group>"; };
+		A5AA88312B7E47C000B505D6 /* TeamSocialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSocialsTableViewCell.swift; sourceTree = "<group>"; };
 		A5B0C5C12B7A074F007AA73D /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
 		A5B0C5C32B7A0759007AA73D /* ChooseLocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseLocationViewController.storyboard; sourceTree = "<group>"; };
 		A5B0C5C82B7A1C51007AA73D /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
@@ -194,6 +228,75 @@
 				A57C05A32B7BC5C00039F7AE /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A50F830D2B7E780A00FBF5FD /* SocialsCollectoin */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA88312B7E47C000B505D6 /* TeamSocialsTableViewCell.swift */,
+			);
+			path = SocialsCollectoin;
+			sourceTree = "<group>";
+		};
+		A50F830E2B7E782000FBF5FD /* ShortInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA88242B7E1DF600B505D6 /* TeamTableViewCell.swift */,
+			);
+			path = ShortInfo;
+			sourceTree = "<group>";
+		};
+		A50F830F2B7E78CB00FBF5FD /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				A50F83162B7E7CA100FBF5FD /* Cells */,
+				A50F831D2B7E811900FBF5FD /* DataSource */,
+				A50F83122B7E78F500FBF5FD /* ViewController */,
+				A50F83152B7E7C9700FBF5FD /* Storyboard */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		A50F83122B7E78F500FBF5FD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A50F83102B7E78EC00FBF5FD /* FAQViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A50F83152B7E7C9700FBF5FD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A50F83132B7E790400FBF5FD /* FAQViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A50F83162B7E7CA100FBF5FD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A50F83172B7E7CBC00FBF5FD /* FAQHeaderTableViewCell.swift */,
+				A50F83192B7E7DD300FBF5FD /* FAQDescrtiptionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A50F831D2B7E811900FBF5FD /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A50F831E2B7E812D00FBF5FD /* FAQVCDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A50F83202B7E913500FBF5FD /* ContactPage */ = {
+			isa = PBXGroup;
+			children = (
+				A50F83212B7E915700FBF5FD /* ContactViewController.swift */,
+				A50F83232B7E915F00FBF5FD /* ContactViewController.storyboard */,
+			);
+			path = ContactPage;
 			sourceTree = "<group>";
 		};
 		A50FB0082B7A9A72000F013C /* Cells */ = {
@@ -392,6 +495,8 @@
 				A5B0C5C82B7A1C51007AA73D /* SearchResponseModel.swift */,
 				A5D47C1A2B7A6F02005ADFBC /* DetailedInfoResponseModel.swift */,
 				A57C059E2B7BA8C50039F7AE /* CoverageModel.swift */,
+				A5AA882C2B7E21CB00B505D6 /* TeamModel.swift */,
+				A50F831B2B7E800300FBF5FD /* FAQModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -462,6 +567,9 @@
 				A584796D2B794BA200BD4577 /* SearchPage */,
 				A5D47C132B7A4E7C005ADFBC /* DetailPage */,
 				A57C05A52B7BCC950039F7AE /* CoverageMapPage */,
+				A50F83202B7E913500FBF5FD /* ContactPage */,
+				A5AA88192B7E160A00B505D6 /* TeamPage */,
+				A50F830F2B7E78CB00FBF5FD /* FAQ */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -592,6 +700,68 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		A5AA88192B7E160A00B505D6 /* TeamPage */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA88232B7E1DDF00B505D6 /* Cells */,
+				A5AA882E2B7E248500B505D6 /* DataSource */,
+				A5AA88212B7E1D5D00B505D6 /* ViewController */,
+				A5AA88222B7E1D6500B505D6 /* Storyboard */,
+			);
+			path = TeamPage;
+			sourceTree = "<group>";
+		};
+		A5AA88212B7E1D5D00B505D6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA881A2B7E162D00B505D6 /* TeamViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A5AA88222B7E1D6500B505D6 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA881C2B7E163900B505D6 /* TeamViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A5AA88232B7E1DDF00B505D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA88262B7E1FCD00B505D6 /* TableView */,
+				A5AA88272B7E1FD800B505D6 /* CollectionView */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A5AA88262B7E1FCD00B505D6 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A50F830E2B7E782000FBF5FD /* ShortInfo */,
+				A50F830D2B7E780A00FBF5FD /* SocialsCollectoin */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		A5AA88272B7E1FD800B505D6 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA88282B7E1FF800B505D6 /* SocialsCollectionViewCell.swift */,
+				A5AA88292B7E1FF800B505D6 /* SocialsCollectionViewCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		A5AA882E2B7E248500B505D6 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA882F2B7E249900B505D6 /* TeamVCDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		A5B0C5C02B7A06F6007AA73D /* ChooseLocationPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +786,7 @@
 			children = (
 				A55CCD212B6FC7F200E68F41 /* HandleResponseMethods.swift */,
 				A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */,
+				A50F83082B7E75F000FBF5FD /* OpenChat.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -760,22 +931,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50F830B2B7E769B00FBF5FD /* MarkGEO-Regular.ttf in Resources */,
 				A58449952B6E26760036C3D2 /* LaunchScreen.storyboard in Resources */,
+				A50F830A2B7E769B00FBF5FD /* MarkGEO-Semibold.ttf in Resources */,
+				A50F830C2B7E769B00FBF5FD /* MarkGEO-Bold.ttf in Resources */,
 				A58479712B794BCB00BD4577 /* SearchViewController.storyboard in Resources */,
 				A58449922B6E26760036C3D2 /* Assets.xcassets in Resources */,
+				A50F83142B7E790400FBF5FD /* FAQViewController.storyboard in Resources */,
 				A51EA28D2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.xib in Resources */,
-				A5B0C5C52B7A11BB007AA73D /* MarkGEO-Bold.ttf in Resources */,
+				A5AA881D2B7E163900B505D6 /* TeamViewController.storyboard in Resources */,
 				A50FB00C2B7A9A86000F013C /* GalleryCollectionViewCell.xib in Resources */,
 				A51EA2912B6EA0D5000FEF0A /* NearbyCollectionViewCell.xib in Resources */,
-				A5B0C5C72B7A11BB007AA73D /* MarkGEO-Semibold.ttf in Resources */,
 				A5D47C172B7A4EFC005ADFBC /* DetailViewController.storyboard in Resources */,
 				A5F6F9242B7578ED002E5011 /* ReptiliesHeaderTableViewCell.xib in Resources */,
 				A57C05A92B7BCD030039F7AE /* CoverageMapViewController.storyboard in Resources */,
 				A529F7352B6F74BC00078534 /* MenuView.xib in Resources */,
 				A5B0C5C42B7A0759007AA73D /* ChooseLocationViewController.storyboard in Resources */,
-				A5B0C5C62B7A11BB007AA73D /* MarkGEO-Regular.ttf in Resources */,
 				A5A159E02B779C0000F00D7C /* LoadingViewController.storyboard in Resources */,
+				A5AA882B2B7E1FF800B505D6 /* SocialsCollectionViewCell.xib in Resources */,
 				A58449902B6E26750036C3D2 /* MainViewController.storyboard in Resources */,
+				A50F83242B7E915F00FBF5FD /* ContactViewController.storyboard in Resources */,
 				A51EA2932B6EA136000FEF0A /* ReptiliesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -787,35 +962,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AA88302B7E249900B505D6 /* TeamVCDataSource.swift in Sources */,
 				A57C059A2B7B9BAC0039F7AE /* LocationDelegate.swift in Sources */,
 				A584796F2B794BC300BD4577 /* SearchViewController.swift in Sources */,
 				A5A159D12B7762C200F00D7C /* CacheManager.swift in Sources */,
 				A5A159D72B778C5800F00D7C /* DataManager.swift in Sources */,
 				A504781F2B76913E00E0CB02 /* Notifications.swift in Sources */,
 				A5A159DD2B779BCA00F00D7C /* LoadingViewController.swift in Sources */,
+				A50F83182B7E7CBC00FBF5FD /* FAQHeaderTableViewCell.swift in Sources */,
 				A51EA2952B6EA2A8000FEF0A /* NSObject+Extensions.swift in Sources */,
 				A57C059F2B7BA8C50039F7AE /* CoverageModel.swift in Sources */,
+				A5AA881B2B7E162D00B505D6 /* TeamViewController.swift in Sources */,
 				A50E4F232B725A9300935EB2 /* Colors.swift in Sources */,
 				A5A159E32B77D10F00F00D7C /* PresenterManager.swift in Sources */,
+				A50F831C2B7E800300FBF5FD /* FAQModel.swift in Sources */,
 				A584498D2B6E26750036C3D2 /* MainViewController.swift in Sources */,
 				A51EA2902B6EA0D5000FEF0A /* NearbyCollectionViewCell.swift in Sources */,
 				A50FB00F2B7A9C6E000F013C /* DetailVCDataSource.swift in Sources */,
 				A51EA28C2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.swift in Sources */,
 				A5DD165D2B76AA3800424882 /* UserDefaultsManager.swift in Sources */,
+				A5AA882D2B7E21CB00B505D6 /* TeamModel.swift in Sources */,
 				A5D47C1B2B7A6F02005ADFBC /* DetailedInfoResponseModel.swift in Sources */,
 				A51EA2812B6E9C00000FEF0A /* MainVCDataSource.swift in Sources */,
 				A58479792B79573D00BD4577 /* SearchVCDataSource.swift in Sources */,
 				A5D47C1E2B7A7AE8005ADFBC /* DetailVCLayout.swift in Sources */,
 				A5B0C5C92B7A1C51007AA73D /* SearchResponseModel.swift in Sources */,
+				A50F831A2B7E7DD300FBF5FD /* FAQDescrtiptionTableViewCell.swift in Sources */,
 				A529F7332B6F74A600078534 /* MenuView.swift in Sources */,
 				A55CCD222B6FC7F200E68F41 /* HandleResponseMethods.swift in Sources */,
 				A58449892B6E26750036C3D2 /* AppDelegate.swift in Sources */,
 				A5B0C5C22B7A074F007AA73D /* ChooseLocationViewController.swift in Sources */,
+				A50F83222B7E915700FBF5FD /* ContactViewController.swift in Sources */,
 				A58375382B6FA7770096C4C2 /* ApiType.swift in Sources */,
 				A51EA2852B6E9F5F000FEF0A /* Int+Extensions.swift in Sources */,
 				A5D47C0D2B7A371B005ADFBC /* SearchVCLayout.swift in Sources */,
+				A5AA88252B7E1DF600B505D6 /* TeamTableViewCell.swift in Sources */,
+				A50F831F2B7E812D00FBF5FD /* FAQVCDataSource.swift in Sources */,
 				A583752F2B6F9B150096C4C2 /* MainVCLayout.swift in Sources */,
 				A584498B2B6E26750036C3D2 /* SceneDelegate.swift in Sources */,
+				A5AA882A2B7E1FF800B505D6 /* SocialsCollectionViewCell.swift in Sources */,
+				A50F83092B7E75F000FBF5FD /* OpenChat.swift in Sources */,
 				A50E4F202B7243BA00935EB2 /* LoafPresentationStyles.swift in Sources */,
 				A5124E192B6E67AF00956A37 /* ReptiliesTableViewCell.swift in Sources */,
 				A57C05A72B7BCCE80039F7AE /* CoverageMapViewController.swift in Sources */,
@@ -823,6 +1009,7 @@
 				A5D47C152B7A4EBD005ADFBC /* DetailViewController.swift in Sources */,
 				A57C059D2B7B9C480039F7AE /* ChooseLocationVCLayout.swift in Sources */,
 				A583753A2B6FA9480096C4C2 /* CategoryModel.swift in Sources */,
+				A5AA88322B7E47C000B505D6 /* TeamSocialsTableViewCell.swift in Sources */,
 				A57C05A42B7BC5C00039F7AE /* Constants.swift in Sources */,
 				A55CCD202B6FC63200E68F41 /* ReptiliesModel.swift in Sources */,
 				A529F7382B6F770C00078534 /* UIView+Extensions.swift in Sources */,
@@ -831,6 +1018,7 @@
 				A507A7BF2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift in Sources */,
 				A57C05A22B7BBFC00039F7AE /* MKPolygon+Extensions.swift in Sources */,
 				A58479762B79562000BD4577 /* SearchTableViewCell.swift in Sources */,
+				A50F83112B7E78EC00FBF5FD /* FAQViewController.swift in Sources */,
 				A50FB00B2B7A9A86000F013C /* GalleryCollectionViewCell.swift in Sources */,
 				A58375322B6F9D900096C4C2 /* MenuDelegate.swift in Sources */,
 			);

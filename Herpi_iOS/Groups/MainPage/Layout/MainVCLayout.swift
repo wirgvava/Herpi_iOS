@@ -170,15 +170,15 @@ extension MainVCLayout: CLLocationManagerDelegate {
 // MARK: - Menu Actions
 extension MainVCLayout: MenuDelegate {
     func didTapContactButton() {
-        print("Contact tapped")
+        PresenterManager.shared.navigate(from: viewController, to: .contactPage)
     }
     
     func didTapTeamButton() {
-        print("Team tapped")
+        PresenterManager.shared.navigate(from: viewController, to: .teamPage)
     }
     
     func didTapFaqButton() {
-        print("Faq tapped")
+        PresenterManager.shared.navigate(from: viewController, to: .faqPage)
     }
     
     func didTapSettingsButton() {

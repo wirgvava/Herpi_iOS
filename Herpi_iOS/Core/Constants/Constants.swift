@@ -17,5 +17,11 @@ class Constants {
     static func shareURL(for reptileId: Int) -> String {
         return "https://herpi.ge/reptiles/\(reptileId)/details"
     }
+    
+    // ChatURL
+    static let chatUrl = "https://m.me/reptiledb"
+    
+    // ContactURL
+    static let contactUrl = "https://herpi.ge/contact"
 
 }

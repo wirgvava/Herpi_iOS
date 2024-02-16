@@ -80,3 +80,21 @@ extension ApiManager {
         }
     }
 }
+
+// MARK: - Team
+extension ApiManager {
+    func getTeam(completion: @escaping (TeamModel?, Error?) -> ()){
+        serverProvider.request(.team) { result in
+            handleResponse(result: result, completion: completion)
+        }
+    }
+}
+
+// MARK: - FAQ
+extension ApiManager {
+    func getFAQ(completion: @escaping (FAQModel?, Error?) -> ()){
+        serverProvider.request(.faq) { result in
+            handleResponse(result: result, completion: completion)
+        }
+    }
+}

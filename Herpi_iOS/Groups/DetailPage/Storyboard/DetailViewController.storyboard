@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRn-0e-THr">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="851.99999999999977"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI1-qp-0ke" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="-50" width="393" height="1533.6666666666667"/>
@@ -225,7 +225,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natrix Natrix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEt-49-Ccz">
                                                                 <rect key="frame" x="0.0" y="37" width="189" height="16.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="13"/>
-                                                                <color key="textColor" red="0.40392160420000001" green="0.45098042490000001" blue="0.48627454040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="textColor" red="0.40392156862745099" green="0.45098039215686275" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -237,7 +237,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ანკარისებრნი" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L47-nb-7kb">
                                                                 <rect key="frame" x="0.0" y="65.666666666666686" width="189" height="16.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="13"/>
-                                                                <color key="textColor" red="0.0039215688589999999" green="0.49803921579999999" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="textColor" red="0.0039215686274509803" green="0.49803921568627452" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>

@@ -376,6 +376,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="selectedCategoryTint"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rhB-Va-qLi" secondAttribute="trailing" id="12U-YM-AlM"/>
                             <constraint firstItem="rhB-Va-qLi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="21K-YX-uXM"/>

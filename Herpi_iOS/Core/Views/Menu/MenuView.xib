@@ -273,7 +273,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ghk-BM-o1w"/>
-            <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="w7D-pB-X6c" secondAttribute="bottom" id="SXP-1c-i6X"/>
                 <constraint firstItem="ghk-BM-o1w" firstAttribute="bottom" secondItem="L4b-gX-PU8" secondAttribute="bottom" constant="30" id="Sob-br-nQa"/>

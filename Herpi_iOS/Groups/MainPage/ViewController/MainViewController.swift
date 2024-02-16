@@ -26,12 +26,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var currentLocationLbl: UILabel!
     
-//  - Managers
+    // Managers
     private var dataSource: MainVCDataSource!
     private var layout: MainVCLayout!
     private var serviceManager = ApiManager()
     
-//  - Default Location
+    // Default Location
     var lat = Constants.lat
     var lng = Constants.lng
 
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTapChatButton(){
-        print("Chat Button Tapped!")
+        openChat()
     }
     
     @IBAction func didTapOnSearch(){
