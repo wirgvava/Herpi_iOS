@@ -27,11 +27,12 @@ class ContactViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setWebView()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     //  MARK: - IBActions
     @IBAction func didTapMenu(){
-        print("menu tapped")
+        openSideMenu(on: self)
     }
     
     @IBAction func didTapChat(){

@@ -28,11 +28,11 @@ class LoadingViewController: UIViewController {
     func subscribe(){
         let center = NotificationCenter.default
         let didLoadedData = Notifications.didLoadedData.notificationName
-        center.addObserver(self, selector: #selector(openMainPage(_:)), name: didLoadedData, object: nil)
+        center.addObserver(self, selector: #selector(openTopVC(_:)), name: didLoadedData, object: nil)
     }
     
-    @objc func openMainPage(_ sender: Notification){
-        let vc = UIStoryboard(name: MainViewController.className, bundle: nil).instantiateViewController(withIdentifier: "navController")
+    @objc func openTopVC(_ sender: Notification){
+        let vc = UIStoryboard(name: SideMenuViewController.className, bundle: nil).instantiateViewController(withIdentifier: "topVC")
         
         if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
            let window = sceneDelegate.window {

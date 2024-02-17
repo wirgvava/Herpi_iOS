@@ -63,14 +63,8 @@ extension ApiManager {
 // MARK: - Detailed Info Requests
 extension ApiManager {
     func getDetailedInfo(for reptileId: Int, completion: @escaping (DetailedInfoResponseModel?, Error?) -> ()){
-        if reachability.connection != .unavailable {
-            serverProvider.request(.detailedInfo(reptileId: reptileId)) { result in
-                handleResponseWithCache(result: result, key: .detailedReptile, completion: completion)
-            }
-        } else {
-            if let cachedData: DetailedInfoResponseModel = CacheManager.shared.retrieveData(forKey: .detailedReptile) {
-                completion(cachedData, nil)
-            }
+        serverProvider.request(.detailedInfo(reptileId: reptileId)) { result in
+            handleResponse(result: result, completion: completion)
         }
     }
     

@@ -114,9 +114,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didTapDetailedBtn" destination="vj6-4R-4H0" eventType="touchUpInside" id="Gf3-e8-bKK"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

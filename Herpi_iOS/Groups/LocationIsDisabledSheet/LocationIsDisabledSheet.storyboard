@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MarkGEO-Regular.ttf">
+            <string>MarkGEO-Regular</string>
+        </array>
+        <array key="MarkGEO-Semibold.ttf">
+            <string>MarkGEO-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Location Is Disabled Sheet-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="locationIsDisabledPage" id="Y6W-OH-hqX" customClass="LocationIsDisabledSheet" customModule="Herpi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-slash" translatesAutoresizingMaskIntoConstraints="NO" id="1DQ-Qf-aCD">
+                                <rect key="frame" x="138.66666666666666" y="441.66666666666669" width="116" height="90.000000000000057"/>
+                                <color key="tintColor" name="venomous"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Vgv-GK-GMl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ადგილმდებარეობა გამორთულია" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMl-Wo-lhL">
+                                <rect key="frame" x="45" y="561.66666666666663" width="303" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="15"/>
+                                <color key="textColor" name="HeaderTitle"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcb-ZU-dlm">
+                                <rect key="frame" x="25" y="586" width="343" height="137"/>
+                                <mutableString key="text">თქვენი ადგილმდებარეობის დადგენა ვერ მოხერხდა, რადგან თქვენი GPS გამორთულია. ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად, შესაბამისად ამ ფუნქციით სარგებლობას ვერ შეძლებთ.
+
+ადგილმდებარეობის ჩასართავად შეამოწმეთ ლოკაციის პარამეტრები</mutableString>
+                                <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="12"/>
+                                <color key="textColor" name="SecondaryTitle"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-6R-q1S">
+                                <rect key="frame" x="30" y="748" width="333" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu3-hY-rRB">
+                                        <rect key="frame" x="0.0" y="0.0" width="156.66666666666666" height="50"/>
+                                        <color key="tintColor" name="selectedCategoryTint"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="გასაგებია"/>
+                                        <connections>
+                                            <action selector="didTapOkBtn" destination="Y6W-OH-hqX" eventType="touchUpInside" id="03s-X1-FQF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IE-bs-VGh">
+                                        <rect key="frame" x="176.66666666666663" y="0.0" width="156.33333333333337" height="50"/>
+                                        <color key="backgroundColor" name="selectedCategoryTint"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="UlW-dI-xrb"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="პარამეტრები"/>
+                                        <connections>
+                                            <action selector="didTapSettings" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gFl-CL-1a4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hao-Aq-jqd"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Fcb-ZU-dlm" secondAttribute="trailing" constant="25" id="55Y-xC-5SZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WMl-Wo-lhL" secondAttribute="trailing" constant="45" id="71E-q9-SGY"/>
+                            <constraint firstItem="1DQ-Qf-aCD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8d4-XR-tf5"/>
+                            <constraint firstItem="WMl-Wo-lhL" firstAttribute="top" secondItem="1DQ-Qf-aCD" secondAttribute="bottom" constant="30" id="Csc-J6-JhX"/>
+                            <constraint firstItem="Fcb-ZU-dlm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="Egx-Cs-znj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hUV-6R-q1S" secondAttribute="trailing" constant="30" id="QAH-6b-01d"/>
+                            <constraint firstItem="Fcb-ZU-dlm" firstAttribute="top" secondItem="WMl-Wo-lhL" secondAttribute="bottom" constant="5" id="QuA-Gm-Fmh"/>
+                            <constraint firstItem="hUV-6R-q1S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Ur1-DC-XaR"/>
+                            <constraint firstItem="hUV-6R-q1S" firstAttribute="top" secondItem="Fcb-ZU-dlm" secondAttribute="bottom" constant="25" id="ebg-vV-yeY"/>
+                            <constraint firstItem="WMl-Wo-lhL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="giX-ws-8HC"/>
+                            <constraint firstItem="WMl-Wo-lhL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="45" id="uu2-Hb-dF8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hUV-6R-q1S" secondAttribute="bottom" constant="20" id="xGE-QZ-tkd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descr" destination="Fcb-ZU-dlm" id="EcJ-F4-dmi"/>
+                        <outlet property="header" destination="WMl-Wo-lhL" id="0TM-5T-7EO"/>
+                        <outlet property="okBtn" destination="Iu3-hY-rRB" id="Vrw-Rk-hCt"/>
+                        <outlet property="settingsBtn" destination="5IE-bs-VGh" id="cfB-sB-yXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location-slash" width="116" height="116"/>
+        <namedColor name="HeaderTitle">
+            <color red="0.28627450980392155" green="0.30196078431372547" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryTitle">
+            <color red="0.40392156862745099" green="0.45098039215686275" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selectedCategoryTint">
+            <color red="0.015686274509803921" green="0.32941176470588235" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="venomous">
+            <color red="1" green="0.0" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -16,9 +16,6 @@ class TeamViewController: UIViewController {
     // Managers
     private var serverManager = ApiManager()
     private var dataSource: TeamVCDataSource?
-    
-    // Data
-    var team: [TeamData] = []
 
 //  MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -26,9 +23,13 @@ class TeamViewController: UIViewController {
         configure()
     }
     
+    deinit {
+        unsubscribe()
+    }
+    
 //  MARK: - IBActions
     @IBAction func didTapMenuButton(){
-        print("menu tapped")
+        openSideMenu(on: self)
     }
     
     @IBAction func didTapChatButton(){
@@ -39,8 +40,9 @@ class TeamViewController: UIViewController {
 // MARK: - Configure
 extension TeamViewController {
     private func configure(){
-        getTeam()
         setDataSource()
+        subscribe()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setDataSource(){
@@ -56,11 +58,30 @@ extension TeamViewController {
             if let error = error {
                 showError(message: error, sender: self)
             } else if let model = model {
+                DataManager.shared.team.removeAll()
                 model.forEach { model in
-                    self.team.append(TeamData(opened: false, teamElement: model))
+                    DataManager.shared.team.append(TeamData(opened: false, teamElement: model))
                 }
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+// MARK: - Notifications
+extension TeamViewController {
+    func unsubscribe(){
+        let center = NotificationCenter.default
+        center.removeObserver(self)
+    }
+    
+    func subscribe(){
+        let center = NotificationCenter.default
+        let languageSwitched = Notifications.languageSwitched.notificationName
+        center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+    }
+    
+    @objc func languageSwitched(_ sender: Notification){
+        getTeam()
     }
 }

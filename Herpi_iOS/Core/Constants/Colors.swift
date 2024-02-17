@@ -17,6 +17,9 @@ class Colors {
     static var greenTitle = UIColor(named: "GreenTitle")
     static var secondaryTitle = UIColor(named: "SecondaryTitle")
     
+    // menu buttons
+    static var menuBtnSelected = UIColor(named: "MenuBtnSelectedTint")
+    
     // - Venomous type colors
     enum venomTypes {
         case venomous

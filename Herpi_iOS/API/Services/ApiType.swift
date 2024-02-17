@@ -88,6 +88,7 @@ enum ApiType: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Accept-Language" : "ka"]
+        let language = UserDefaultsManager.shared.get(data: .language) ?? "ka"
+        return ["Accept-Language" : language]
     }
 }

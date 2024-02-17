@@ -77,20 +77,6 @@ extension MainVCLayout {
 
 // MARK: - Navigation
 extension MainVCLayout {
-    func openMenu(){
-        let menuView = MenuView.instantiateFromNib()
-        guard let view = self.viewController.view else { return }
-        menuView.delegate = self
-        menuView.set()
-        menuView.setupGestures(view: view)
-        view.addSubview(menuView)
-        menuView.translatesAutoresizingMaskIntoConstraints = false
-        menuView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        menuView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    }
-    
     func openLocationSheet(){
         let locationSheet = UIStoryboard(name: ChooseLocationViewController.className, bundle: nil).instantiateViewController(withIdentifier: "chooseLocationPage") as! ChooseLocationViewController
         
@@ -100,6 +86,12 @@ extension MainVCLayout {
         locationSheet.currentLocation = viewController.currentLocationLbl.text ?? ""
         locationSheet.modalPresentationStyle = .automatic
         viewController.present(locationSheet, animated: true)
+    }
+    
+    func showLocationIsDisabledAlert(){
+        let locationIsDisabledSheet = UIStoryboard(name: LocationIsDisabledSheet.className, bundle: nil).instantiateViewController(withIdentifier: "locationIsDisabledPage") as! LocationIsDisabledSheet
+        locationIsDisabledSheet.modalPresentationStyle = .automatic
+        viewController.present(locationIsDisabledSheet, animated: true)
     }
 }
 
@@ -114,7 +106,7 @@ extension MainVCLayout: CLLocationManagerDelegate {
             viewController.nearbyCollectionView.isHidden = true
             viewController.emptyNearbyList.isHidden = false
             viewController.emptyNearbyList.text = "შენს არეალში გავრცელებული სახეობების სანახავად გაგვიზიარე ადგილმდებარეობა ან მონიშნე ხელით. პრობლემის შემთხვევაში დაგვიკავშირდი"
-            showInfo(message: "Check location settings", sender: viewController)
+            showLocationIsDisabledAlert()
         default:
             break
         }
@@ -164,28 +156,5 @@ extension MainVCLayout: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         showError(message: error, sender: viewController)
-    }
-}
-
-// MARK: - Menu Actions
-extension MainVCLayout: MenuDelegate {
-    func didTapContactButton() {
-        PresenterManager.shared.navigate(from: viewController, to: .contactPage)
-    }
-    
-    func didTapTeamButton() {
-        PresenterManager.shared.navigate(from: viewController, to: .teamPage)
-    }
-    
-    func didTapFaqButton() {
-        PresenterManager.shared.navigate(from: viewController, to: .faqPage)
-    }
-    
-    func didTapSettingsButton() {
-        print("Settings tapped")
-    }
-    
-    func didSwitchedLanguage() {
-        print("language switched")
     }
 }

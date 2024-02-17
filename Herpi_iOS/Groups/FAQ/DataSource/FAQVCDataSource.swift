@@ -42,11 +42,11 @@ extension FAQVCDataSource: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewController.faq.count
+        return DataManager.shared.faq.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewController.faq[section].opened == true {
+        if DataManager.shared.faq[section].opened == true {
             return 2
         } else {
             return 1
@@ -56,12 +56,12 @@ extension FAQVCDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "faqHeaderCell", for: indexPath) as! FAQHeaderTableViewCell
-            let model = viewController.faq[indexPath.section]
+            let model = DataManager.shared.faq[indexPath.section]
             cell.set(with: model)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "faqDescriptionCell", for: indexPath) as! FAQDescrtiptionTableViewCell
-            let data = viewController.faq[indexPath.section].faqElement
+            let data = DataManager.shared.faq[indexPath.section].faqElement
             cell.descriptionLbl.text = data.answer
             return cell
         }
@@ -69,12 +69,12 @@ extension FAQVCDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if viewController.faq[indexPath.section].opened == true {
-                viewController.faq[indexPath.section].opened = false
+            if DataManager.shared.faq[indexPath.section].opened == true {
+                DataManager.shared.faq[indexPath.section].opened = false
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .automatic)
             } else {
-                viewController.faq[indexPath.section].opened = true
+                DataManager.shared.faq[indexPath.section].opened = true
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .automatic)
             }

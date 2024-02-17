@@ -27,6 +27,16 @@ class SearchViewController: UIViewController {
         configure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        removePanGesture(on: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        addPanGesture(on: self)
+    }
+    
 //  MARK: - IBActions
     @IBAction func didTapBackButton(){
         PresenterManager.shared.pop(self)

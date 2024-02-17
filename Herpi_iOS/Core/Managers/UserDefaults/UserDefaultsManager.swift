@@ -43,3 +43,24 @@ class UserDefaultsManager: NSObject {
         UserDefaults.standard.synchronize()
     }
 }
+
+// MARK: - Language
+extension UserDefaultsManager {
+    
+    enum Language: String {
+        case ka
+        case en
+    }
+    
+    func save(value: Language, forKey key: Constant){
+        UserDefaults.standard.setValue(value.rawValue, forKey: key.rawValue)
+    }
+    
+    func get(data: Constant) -> String? {
+        return UserDefaults.standard.string(forKey: data.rawValue)
+    }
+    
+    enum Constant: String {
+        case language
+    }
+}

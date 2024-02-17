@@ -22,10 +22,6 @@ class ReptiliesTableViewCell: UITableViewCell {
         configure()
     }
     
-    @IBAction func didTapDetailedBtn(){
-        print("detailed tapped!")
-    }
-    
     private func configure(){
         detailedButton.layer.cornerRadius = detailedButton.frame.height / 2
     }

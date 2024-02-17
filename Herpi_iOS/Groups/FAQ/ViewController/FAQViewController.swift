@@ -15,9 +15,6 @@ class FAQViewController: UIViewController {
     // Managers
     private var serverManager = ApiManager()
     private var dataSource: FAQVCDataSource?
-    
-    // Data
-    var faq: [FAQData] = []
 
 //  MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -25,9 +22,13 @@ class FAQViewController: UIViewController {
         configure()
     }
     
+    deinit {
+        unsubscribe()
+    }
+    
 //  MARK: - IBActions
     @IBAction func didTapMenu(){
-        print("menu tapped")
+        openSideMenu(on: self)
     }
     
     @IBAction func didTapChat(){
@@ -38,8 +39,9 @@ class FAQViewController: UIViewController {
 // MARK: - Configure
 extension FAQViewController {
     private func configure(){
-        getFAQ()
         setDataSource()
+        subscribe()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setDataSource(){
@@ -55,12 +57,31 @@ extension FAQViewController {
             if let error = error {
                 showError(message: error, sender: self)
             } else if let model = model {
+                DataManager.shared.faq.removeAll()
                 model.forEach { model in
-                    self.faq.append(FAQData(opened: false, faqElement: model))
+                    DataManager.shared.faq.append(FAQData(opened: false, faqElement: model))
                 }
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+// MARK: - Notifications
+extension FAQViewController {
+    func unsubscribe(){
+        let center = NotificationCenter.default
+        center.removeObserver(self)
+    }
+    
+    func subscribe(){
+        let center = NotificationCenter.default
+        let languageSwitched = Notifications.languageSwitched.notificationName
+        center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+    }
+    
+    @objc func languageSwitched(_ sender: Notification){
+        getFAQ()
     }
 }
 

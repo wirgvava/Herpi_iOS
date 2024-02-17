@@ -10,6 +10,7 @@ import Foundation
 enum Notifications: String {
     
     case didLoadedData = "DidLoadedData"
+    case languageSwitched = "LanguageSwitched"
     case updateHeightConstraints = "UpdateHeightConstraints"
     
     var notificationName: Notification.Name {

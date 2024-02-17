@@ -42,12 +42,12 @@ extension TeamVCDataSource: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewController.team.count
+        return DataManager.shared.team.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewController.team[section].opened == true {
-            return viewController.team.count
+        if DataManager.shared.team[section].opened == true {
+            return DataManager.shared.team.count
         } else {
             return 1
         }
@@ -56,12 +56,12 @@ extension TeamVCDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! TeamTableViewCell
-            let data = viewController.team[indexPath.section]
+            let data = DataManager.shared.team[indexPath.section]
             cell.set(with: data)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "socialsCell", for: indexPath) as! TeamSocialsTableViewCell
-            let data = viewController.team[indexPath.section].teamElement.socialNetworks
+            let data = DataManager.shared.team[indexPath.section].teamElement.socialNetworks
             cell.socialNetworks = data!
             return cell
         }
@@ -69,12 +69,12 @@ extension TeamVCDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if viewController.team[indexPath.section].opened == true {
-                viewController.team[indexPath.section].opened = false
+            if DataManager.shared.team[indexPath.section].opened == true {
+                DataManager.shared.team[indexPath.section].opened = false
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .automatic)
             } else {
-                viewController.team[indexPath.section].opened = true
+                DataManager.shared.team[indexPath.section].opened = true
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .automatic)
             }

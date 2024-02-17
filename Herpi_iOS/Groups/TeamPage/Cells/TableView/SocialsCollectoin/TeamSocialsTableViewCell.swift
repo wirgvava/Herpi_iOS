@@ -25,7 +25,6 @@ class TeamSocialsTableViewCell: UITableViewCell {
 // MARK: - CollectionView
 extension TeamSocialsTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(socialNetworks.count)
         return socialNetworks.count
     }
     

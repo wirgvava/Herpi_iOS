@@ -11,9 +11,9 @@ class DataManager {
     
     static let shared = DataManager()
     
-    // - Main page data
     var categories: [CategoryModel] = []
     var nearbyReptiles: [NearbyReptileModel] = []
     var reptiles: [ReptileModel] = []
-    
+    var team: [TeamData] = []
+    var faq: [FAQData] = []
 }

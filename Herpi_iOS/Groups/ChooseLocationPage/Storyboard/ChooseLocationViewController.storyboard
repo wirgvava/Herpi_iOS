@@ -36,7 +36,7 @@
                                 <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsCompass="NO" showsPointsOfInterest="NO" pitchButtonVisibility="adaptive" showsUserTrackingButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXV-Qx-tjD">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXV-Qx-tjD">
                                 <rect key="frame" x="0.0" y="174" width="393" height="513"/>
                                 <standardMapConfiguration key="preferredConfiguration" elevationStyle="realistic"/>
                             </mapView>

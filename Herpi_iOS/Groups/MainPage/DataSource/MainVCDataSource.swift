@@ -183,8 +183,8 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
     private func didSelectNearbyItemAt(indexPath: IndexPath){
         let data = self.nearbyReptiles[indexPath.item]
         let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
-        vc.getDetailedInfo(for: data.id!)
-        vc.getCoverageInfo(for: data.id!)
+        vc.getDetailedInfo(for: data.id ?? 0)
+        vc.getCoverageInfo(for: data.id ?? 0)
         self.viewController.navigationController?.pushViewController(vc, animated: true)
     }
     
