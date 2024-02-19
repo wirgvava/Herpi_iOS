@@ -37,6 +37,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="main.button"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="mainButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aFC-UJ-K5M"/>
                                                 </connections>
@@ -55,6 +58,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="contact.button"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="contactButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ljs-EZ-VeW"/>
                                                 </connections>
@@ -73,6 +79,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="team.button"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="teamButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="da4-lo-K09"/>
                                                 </connections>
@@ -91,6 +100,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="faq.button"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="faqButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2yI-P8-npi"/>
                                                 </connections>
@@ -260,6 +272,7 @@
                         <outlet property="decorBubble4" destination="5vy-PH-b4Q" id="M9N-L0-81U"/>
                         <outlet property="faqBtn" destination="g7b-bE-qsV" id="NaF-MJ-jA9"/>
                         <outlet property="languageSwitcher" destination="W1x-be-usT" id="zM9-zp-0vN"/>
+                        <outlet property="languageSwitcherBGView" destination="zEx-zS-v5a" id="hOo-TH-Lg5"/>
                         <outlet property="mainBtn" destination="GgZ-ig-Lyk" id="Q7m-oG-SYg"/>
                         <outlet property="teamBtn" destination="2Xp-s7-m6P" id="VAk-F0-tzh"/>
                     </connections>

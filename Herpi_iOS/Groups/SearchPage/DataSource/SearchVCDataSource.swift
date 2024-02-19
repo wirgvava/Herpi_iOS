@@ -45,8 +45,7 @@ extension SearchVCDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = viewController.results?[indexPath.row]
         let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
-        vc.getDetailedInfo(for: (model?.id) ?? 0)
-        vc.getCoverageInfo(for: (model?.id) ?? 0)
+        vc.reptileId = model?.id ?? 0
         self.viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }

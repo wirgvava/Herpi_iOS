@@ -44,6 +44,9 @@
                                         <color key="tintColor" name="selectedCategoryTint"/>
                                         <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="search.bar"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -81,6 +84,9 @@
                                                             <fontDescription key="fontDescription" name="MarkGEO-Bold" family="Mark GEO" pointSize="16"/>
                                                             <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="search.results"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

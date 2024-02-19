@@ -19,11 +19,6 @@ class ReptiliesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configure()
-    }
-    
-    private func configure(){
-        detailedButton.layer.cornerRadius = detailedButton.frame.height / 2
     }
     
     func set(with data: ReptileModel){
@@ -33,13 +28,23 @@ class ReptiliesTableViewCell: UITableViewCell {
         
         if data.hasMildVenom == true {
             infoIcon.tintColor = Colors.venomType(.midVenom)
-            infoLabel.text = "სუსტად შხამიანი"
+            infoLabel.text = Localized.midVenom.localized
         } else if data.venomous == true {
             infoIcon.tintColor = Colors.venomType(.venomous)
-            infoLabel.text = "შხამიანი"
+            infoLabel.text = Localized.venomous.localized
         } else {
             infoIcon.tintColor = Colors.venomType(.noVenom)
-            infoLabel.text = "უშხამო"
+            infoLabel.text = Localized.noVenom.localized
         }
+        
+        detailedButton.layer.cornerRadius = detailedButton.frame.height / 2
+        detailedButton.setAttrString(string: Localized.readMore.localized, fontSize: 12)
+    }
+    
+    private enum Localized {
+        static let venomous = "venomous"
+        static let midVenom = "mid.venomous"
+        static let noVenom = "no.venomous"
+        static let readMore = "list.detailed.button"
     }
 }

@@ -23,6 +23,6 @@ class ReptiliesHeaderTableViewCell: UITableViewCell {
         }
         
         title.text = model?.titleTurned
-        descr.text = "მთელი ქვეყნის სახეობები"
+        descr.text = "list.description".localized
     }
 }

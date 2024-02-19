@@ -43,11 +43,9 @@ extension DetailVCLayout {
         let authorLastname = data.addedBy?.lastName ?? ""
         vc.authorNameLbl.text = authorName + " " + authorLastname
         vc.descrLbl.text = data.description
-        vc.infoCard.addShadow(shadowColor: .gray, shadowOpacity: 0.5, shadowOffset: CGSize(width: -1, height: -1), shadowRadius: 8)
-        
-        let attrString = NSAttributedString(string: "რუკის გაშლა", attributes: [.font : UIFont.herpi(type: .semiBold, size: 16)])
-        vc.openMapBtn.setAttributedTitle(attrString, for: .normal)
+        vc.openMapBtn.setAttrString(string: "detailed.openMap.button".localized, fontSize: 16)
         vc.openMapBtn.addShadow(shadowColor: .black, shadowOpacity: 0.8, shadowOffset: CGSize(width: -1, height: -1), shadowRadius: 8)
+        vc.infoCard.addShadow(shadowColor: .gray, shadowOpacity: 0.5, shadowOffset: CGSize(width: -1, height: -1), shadowRadius: 8)
     }
     
     private func checkVenom(){
@@ -55,13 +53,13 @@ extension DetailVCLayout {
         guard let data = viewController.detailedInfo else { return }
         if data.venomous == true {
             vc.venomView.backgroundColor = Colors.venomType(.venomous)
-            vc.venomInfoLbl.text = "შხამიანი"
+            vc.venomInfoLbl.text = "venomous".localized
         } else if data.hasMildVenom == true {
             vc.venomView.backgroundColor = Colors.venomType(.midVenom)
-            vc.venomInfoLbl.text = "სუსტად შხამიანი"
+            vc.venomInfoLbl.text = "mid.venomous".localized
         } else {
             vc.venomView.backgroundColor = Colors.venomType(.noVenom)
-            vc.venomInfoLbl.text = "უშხამო"
+            vc.venomInfoLbl.text = "no.venomous".localized
         }
     }
     

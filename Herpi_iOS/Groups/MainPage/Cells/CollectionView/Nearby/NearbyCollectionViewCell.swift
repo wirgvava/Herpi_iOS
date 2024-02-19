@@ -30,13 +30,13 @@ class NearbyCollectionViewCell: UICollectionViewCell {
         
         if data.hasMildVenom == true {
             infoView.backgroundColor = Colors.venomType(.midVenom)
-            infoLabel.text = "სუსტად შხამიანი"
+            infoLabel.text = "mid.venomous".localized
         } else if data.venomous == true {
             infoView.backgroundColor = Colors.venomType(.venomous)
-            infoLabel.text = "შხამიანი"
+            infoLabel.text = "venomous".localized
         } else {
             infoView.backgroundColor = Colors.venomType(.noVenom)
-            infoLabel.text = "უშხამო"
+            infoLabel.text = "no.venomous".localized
         }
     }
 }

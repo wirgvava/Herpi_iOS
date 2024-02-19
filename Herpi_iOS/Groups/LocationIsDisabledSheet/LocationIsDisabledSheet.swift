@@ -24,6 +24,11 @@ class LocationIsDisabledSheet: UIViewController, UISheetPresentationControllerDe
         super.viewDidLoad()
         setSheetPresentationController()
         setUI()
+        subscribe()
+    }
+    
+    deinit {
+        unsubscribe()
     }
  
 //  MARK: - IBActions
@@ -46,22 +51,36 @@ class LocationIsDisabledSheet: UIViewController, UISheetPresentationControllerDe
     }
     
     private func setUI(){
-        header.text = Localized.header
-        descr.text = Localized.description
-        
-        let okAttrString = NSAttributedString(string: Localized.okBtn, attributes: [.font : UIFont.herpi(type: .semiBold, size: 15)])
-        okBtn.setAttributedTitle(okAttrString, for: .normal)
-        
-        let settingsAttrString = NSAttributedString(string: Localized.settingsBtn, attributes: [.font : UIFont.herpi(type: .semiBold, size: 15)])
-        settingsBtn.setAttributedTitle(settingsAttrString, for: .normal)
+        header.text = Localized.header.localized
+        descr.text = Localized.description.localized
+        okBtn.setAttrString(string: Localized.okBtn.localized, fontSize: 15)
+        settingsBtn.setAttrString(string: Localized.settingsBtn.localized, fontSize: 15)
         okBtn.layer.cornerRadius = okBtn.frame.height / 2
         settingsBtn.layer.cornerRadius = settingsBtn.frame.height / 2
     }
     
     private enum Localized {
-        static let header = "ადგილმდებარეობა გამორთულია"
-        static let description = "თქვენი ადგილმდებარეობის დადგენა ვერ მოხერხდა, რადგან თქვენი GPS გამორთულია. ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად, შესაბამისად ამ ფუნქციით სარგებლობას ვერ შეძლებთ.\nადგილმდებარეობის ჩასართავად შეამოწმეთ ლოკაციის პარამეტრები"
-        static let okBtn = "გასაგებია"
-        static let settingsBtn = "პარამეტრები"
+        static let header = "disabled.location.header"
+        static let description = "disabled.location.description"
+        static let okBtn = "disabled.location.ok.button"
+        static let settingsBtn = "disabled.location.settins.button"
+    }
+}
+
+// MARK: - Notifications
+extension LocationIsDisabledSheet {
+    func unsubscribe(){
+        let center = NotificationCenter.default
+        center.removeObserver(self)
+    }
+    
+    func subscribe(){
+        let center = NotificationCenter.default
+        let languageSwitched = Notifications.languageSwitched.notificationName
+        center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+    }
+    
+    @objc func languageSwitched(_ sender: Notification){
+        setUI()
     }
 }

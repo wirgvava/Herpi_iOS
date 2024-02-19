@@ -29,13 +29,13 @@ class SearchTableViewCell: UITableViewCell {
         
         if model.hasMildVenom == true {
             venomTypeView.backgroundColor = Colors.venomType(.midVenom)
-            venomTypeLbl.text = "სუსტად შხამიანი"
+            venomTypeLbl.text = "mid.venomous".localized
         } else if model.venomous == true {
             venomTypeView.backgroundColor = Colors.venomType(.venomous)
-            venomTypeLbl.text = "შხამიანი"
+            venomTypeLbl.text = "venomous".localized
         } else {
             venomTypeView.backgroundColor = Colors.venomType(.noVenom)
-            venomTypeLbl.text = "უშხამო"
+            venomTypeLbl.text = "no.venomous".localized
         }
     }
 }

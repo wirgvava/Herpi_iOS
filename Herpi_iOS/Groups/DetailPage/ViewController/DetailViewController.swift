@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import SkeletonView
 
 class DetailViewController: UIViewController {
     
@@ -43,13 +44,13 @@ class DetailViewController: UIViewController {
     private var dataSource: DetailVCDataSource?
     
 //  - Data
+    var reptileId = 0
     var detailedInfo: DetailedInfoResponseModel?
     var coverage: [CoverageModelElement] = []
 
 //  MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.showAnimatedSkeleton()
         configure()
     }
     
@@ -80,6 +81,9 @@ class DetailViewController: UIViewController {
 // MARK: - Configure
 extension DetailViewController {
     private func configure(){
+        view.showAnimatedSkeleton()
+        getDetailedInfo(for: reptileId)
+        getCoverageInfo(for: reptileId)
         setLayout()
         setDataSource()
     }
@@ -101,10 +105,11 @@ extension DetailViewController {
             if let error = error {
                 showError(message: error, sender: self)
             } else if let response = response {
+                self.view.hideSkeleton()
                 self.detailedInfo = response
                 self.layout?.configure()
                 self.galleryCollectionView.reloadData()
-                self.view.hideSkeleton()
+                
             }
         }
     }

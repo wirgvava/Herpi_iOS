@@ -23,6 +23,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet private weak var decorBubble2: UIView!
     @IBOutlet private weak var decorBubble3: UIView!
     @IBOutlet private weak var decorBubble4: UIView!
+    @IBOutlet private weak var languageSwitcherBGView: UIView!
     @IBOutlet weak var languageSwitcher: UISegmentedControl!
     // Buttons
     @IBOutlet weak var mainBtn: UIButton!
@@ -54,6 +55,10 @@ class SideMenuViewController: UIViewController {
         set()
     }
     
+    deinit {
+        unsubscribe()
+    }
+    
 //  MARK: - IBActions
     @IBAction func mainButtonAction(){
         delegate?.openMainPage()
@@ -80,6 +85,8 @@ class SideMenuViewController: UIViewController {
         decorationConfigure()
         languageSwitcherConfigure()
         setButtonColors()
+        setButtonTexts()
+        subscribe()
     }
 //  MARK: - Methods
     private func decorationConfigure(){
@@ -112,11 +119,11 @@ class SideMenuViewController: UIViewController {
                 languageSwitcher.selectedSegmentIndex = 1
             }
             
-            languageSwitcher.layer.isHidden = false
+            languageSwitcherBGView.layer.isHidden = false
             languageSwitcher.layer.masksToBounds = true
             languageSwitcher.layer.cornerRadius = languageSwitcher.frame.height / 2
         } else {
-            languageSwitcher.layer.isHidden = true
+            languageSwitcherBGView.layer.isHidden = true
         }
     }
     
@@ -143,5 +150,37 @@ class SideMenuViewController: UIViewController {
             teamBtn.tintColor = Colors.white
             faqBtn.tintColor = Colors.menuBtnSelected
         }
+    }
+    
+    private func setButtonTexts(){
+        mainBtn.setAttrString(string: Localized.mainBtn.localized, fontSize: 16)
+        contactBtn.setAttrString(string: Localized.contactBtn.localized, fontSize: 16)
+        teamBtn.setAttrString(string: Localized.teamBtn.localized, fontSize: 16)
+        faqBtn.setAttrString(string: Localized.faqBtn.localized, fontSize: 16)
+    }
+    
+    private enum Localized {
+        static let mainBtn = "main.button"
+        static let contactBtn = "contact.button"
+        static let teamBtn = "team.button"
+        static let faqBtn = "faq.button"
+    }
+}
+
+// MARK: - Notification
+extension SideMenuViewController {
+    func unsubscribe(){
+        let center = NotificationCenter.default
+        center.removeObserver(self)
+    }
+    
+    func subscribe(){
+        let center = NotificationCenter.default
+        let languageSwitched = Notifications.languageSwitched.notificationName
+        center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+    }
+    
+    @objc func languageSwitched(_ sender: Notification){
+        setButtonTexts()
     }
 }

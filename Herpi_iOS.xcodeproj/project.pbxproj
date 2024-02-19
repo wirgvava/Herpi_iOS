@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A501B3782B81447C00059F95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A501B37A2B81447C00059F95 /* Localizable.strings */; };
 		A50478112B76622C00E0CB02 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = A50478102B76622C00E0CB02 /* SkeletonView */; };
 		A504781F2B76913E00E0CB02 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504781E2B76913E00E0CB02 /* Notifications.swift */; };
 		A507A7BF2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A7BE2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift */; };
@@ -54,7 +55,6 @@
 		A58449892B6E26750036C3D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58449882B6E26750036C3D2 /* AppDelegate.swift */; };
 		A584498B2B6E26750036C3D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584498A2B6E26750036C3D2 /* SceneDelegate.swift */; };
 		A584498D2B6E26750036C3D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584498C2B6E26750036C3D2 /* MainViewController.swift */; };
-		A58449902B6E26750036C3D2 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A584498E2B6E26750036C3D2 /* MainViewController.storyboard */; };
 		A58449922B6E26760036C3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58449912B6E26760036C3D2 /* Assets.xcassets */; };
 		A58449952B6E26760036C3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58449932B6E26760036C3D2 /* LaunchScreen.storyboard */; };
 		A584796F2B794BC300BD4577 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584796E2B794BC300BD4577 /* SearchViewController.swift */; };
@@ -88,6 +88,11 @@
 		A5D47C1B2B7A6F02005ADFBC /* DetailedInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D47C1A2B7A6F02005ADFBC /* DetailedInfoResponseModel.swift */; };
 		A5D47C1E2B7A7AE8005ADFBC /* DetailVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D47C1D2B7A7AE8005ADFBC /* DetailVCLayout.swift */; };
 		A5DD165D2B76AA3800424882 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */; };
+		A5EC55302B839A2C00EFB4CC /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EC55312B839A2C00EFB4CC /* MainViewController.storyboard */; };
+		A5EC55332B83AAAB00EFB4CC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC55322B83AAAB00EFB4CC /* String+Extensions.swift */; };
+		A5EC55352B83AC6A00EFB4CC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC55342B83AC6A00EFB4CC /* UIButton+Extensions.swift */; };
+		A5EC55372B83ACA500EFB4CC /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC55362B83ACA500EFB4CC /* UILabel+Extensions.swift */; };
+		A5EC55392B83ACE400EFB4CC /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC55382B83ACE400EFB4CC /* UITextField+Extensions.swift */; };
 		A5EF14462B7F861000A6AF30 /* SideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EF14452B7F861000A6AF30 /* SideMenuViewController.storyboard */; };
 		A5EF14482B7F876900A6AF30 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EF14472B7F876900A6AF30 /* SideMenuViewController.swift */; };
 		A5EF144C2B7F974B00A6AF30 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EF144B2B7F974B00A6AF30 /* TopViewController.swift */; };
@@ -99,6 +104,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A501B3792B81447C00059F95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A501B37B2B8144A400059F95 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A504781E2B76913E00E0CB02 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A507A7BE2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReptiliesHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoafPresentationStyles.swift; sourceTree = "<group>"; };
@@ -145,7 +152,6 @@
 		A58449882B6E26750036C3D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A584498A2B6E26750036C3D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A584498C2B6E26750036C3D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A584498F2B6E26750036C3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		A58449912B6E26760036C3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58449942B6E26760036C3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58449962B6E26760036C3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,6 +185,11 @@
 		A5D47C1A2B7A6F02005ADFBC /* DetailedInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedInfoResponseModel.swift; sourceTree = "<group>"; };
 		A5D47C1D2B7A7AE8005ADFBC /* DetailVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCLayout.swift; sourceTree = "<group>"; };
 		A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		A5EC55312B839A2C00EFB4CC /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		A5EC55322B83AAAB00EFB4CC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		A5EC55342B83AC6A00EFB4CC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		A5EC55362B83ACA500EFB4CC /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		A5EC55382B83ACE400EFB4CC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		A5EF14452B7F861000A6AF30 /* SideMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuViewController.storyboard; sourceTree = "<group>"; };
 		A5EF14472B7F876900A6AF30 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A5EF144B2B7F974B00A6AF30 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -365,7 +376,7 @@
 		A51EA27D2B6E9B3E000FEF0A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				A584498E2B6E26750036C3D2 /* MainViewController.storyboard */,
+				A5EC55312B839A2C00EFB4CC /* MainViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -396,6 +407,10 @@
 				A529F7392B6F862F00078534 /* UIFont+Extensions.swift */,
 				A57C05A12B7BBFC00039F7AE /* MKPolygon+Extensions.swift */,
 				A5EF144D2B7F9CD100A6AF30 /* UIViewController+Extensions.swift */,
+				A5EC55322B83AAAB00EFB4CC /* String+Extensions.swift */,
+				A5EC55342B83AC6A00EFB4CC /* UIButton+Extensions.swift */,
+				A5EC55362B83ACA500EFB4CC /* UILabel+Extensions.swift */,
+				A5EC55382B83ACE400EFB4CC /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -500,6 +515,7 @@
 				A58449862B6E26750036C3D2 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		A58449862B6E26750036C3D2 /* Products */ = {
 			isa = PBXGroup;
@@ -534,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				A5124E1A2B6E8C2E00956A37 /* Fonts */,
+				A501B37A2B81447C00059F95 /* Localizable.strings */,
 				A58449912B6E26760036C3D2 /* Assets.xcassets */,
 				A58449932B6E26760036C3D2 /* LaunchScreen.storyboard */,
 				A58449962B6E26760036C3D2 /* Info.plist */,
@@ -915,11 +932,12 @@
 			};
 			buildConfigurationList = A58449802B6E26740036C3D2 /* Build configuration list for PBXProject "Herpi_iOS" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ka;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ka,
 			);
 			mainGroup = A584497C2B6E26740036C3D2;
 			packageReferences = (
@@ -945,6 +963,7 @@
 			files = (
 				A50F830B2B7E769B00FBF5FD /* MarkGEO-Regular.ttf in Resources */,
 				A58449952B6E26760036C3D2 /* LaunchScreen.storyboard in Resources */,
+				A501B3782B81447C00059F95 /* Localizable.strings in Resources */,
 				A50F830A2B7E769B00FBF5FD /* MarkGEO-Semibold.ttf in Resources */,
 				A50F830C2B7E769B00FBF5FD /* MarkGEO-Bold.ttf in Resources */,
 				A58479712B794BCB00BD4577 /* SearchViewController.storyboard in Resources */,
@@ -962,7 +981,7 @@
 				A5A159E02B779C0000F00D7C /* LoadingViewController.storyboard in Resources */,
 				A5EF14462B7F861000A6AF30 /* SideMenuViewController.storyboard in Resources */,
 				A5AA882B2B7E1FF800B505D6 /* SocialsCollectionViewCell.xib in Resources */,
-				A58449902B6E26750036C3D2 /* MainViewController.storyboard in Resources */,
+				A5EC55302B839A2C00EFB4CC /* MainViewController.storyboard in Resources */,
 				A50F83242B7E915F00FBF5FD /* ContactViewController.storyboard in Resources */,
 				A51EA2932B6EA136000FEF0A /* ReptiliesTableViewCell.xib in Resources */,
 			);
@@ -991,12 +1010,14 @@
 				A50E4F232B725A9300935EB2 /* Colors.swift in Sources */,
 				A5A159E32B77D10F00F00D7C /* PresenterManager.swift in Sources */,
 				A50F831C2B7E800300FBF5FD /* FAQModel.swift in Sources */,
+				A5EC55372B83ACA500EFB4CC /* UILabel+Extensions.swift in Sources */,
 				A584498D2B6E26750036C3D2 /* MainViewController.swift in Sources */,
 				A51EA2902B6EA0D5000FEF0A /* NearbyCollectionViewCell.swift in Sources */,
 				A50FB00F2B7A9C6E000F013C /* DetailVCDataSource.swift in Sources */,
 				A51EA28C2B6EA0BF000FEF0A /* CategoriesCollectionViewCell.swift in Sources */,
 				A5DD165D2B76AA3800424882 /* UserDefaultsManager.swift in Sources */,
 				A5AA882D2B7E21CB00B505D6 /* TeamModel.swift in Sources */,
+				A5EC55332B83AAAB00EFB4CC /* String+Extensions.swift in Sources */,
 				A5D47C1B2B7A6F02005ADFBC /* DetailedInfoResponseModel.swift in Sources */,
 				A51EA2812B6E9C00000FEF0A /* MainVCDataSource.swift in Sources */,
 				A58479792B79573D00BD4577 /* SearchVCDataSource.swift in Sources */,
@@ -1006,6 +1027,7 @@
 				A55CCD222B6FC7F200E68F41 /* HandleResponseMethods.swift in Sources */,
 				A58449892B6E26750036C3D2 /* AppDelegate.swift in Sources */,
 				A5B0C5C22B7A074F007AA73D /* ChooseLocationViewController.swift in Sources */,
+				A5EC55392B83ACE400EFB4CC /* UITextField+Extensions.swift in Sources */,
 				A50F83222B7E915700FBF5FD /* ContactViewController.swift in Sources */,
 				A5EF14482B7F876900A6AF30 /* SideMenuViewController.swift in Sources */,
 				A58375382B6FA7770096C4C2 /* ApiType.swift in Sources */,
@@ -1015,6 +1037,7 @@
 				A50F831F2B7E812D00FBF5FD /* FAQVCDataSource.swift in Sources */,
 				A583752F2B6F9B150096C4C2 /* MainVCLayout.swift in Sources */,
 				A584498B2B6E26750036C3D2 /* SceneDelegate.swift in Sources */,
+				A5EC55352B83AC6A00EFB4CC /* UIButton+Extensions.swift in Sources */,
 				A5AA882A2B7E1FF800B505D6 /* SocialsCollectionViewCell.swift in Sources */,
 				A50F83092B7E75F000FBF5FD /* OpenChat.swift in Sources */,
 				A5EF144C2B7F974B00A6AF30 /* TopViewController.swift in Sources */,
@@ -1043,12 +1066,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A584498E2B6E26750036C3D2 /* MainViewController.storyboard */ = {
+		A501B37A2B81447C00059F95 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A584498F2B6E26750036C3D2 /* Base */,
+				A501B3792B81447C00059F95 /* en */,
+				A501B37B2B8144A400059F95 /* ka */,
 			);
-			name = MainViewController.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		A58449932B6E26760036C3D2 /* LaunchScreen.storyboard */ = {
@@ -1067,6 +1091,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1115,7 +1140,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1130,6 +1155,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1172,7 +1198,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1193,7 +1219,7 @@
 				INFOPLIST_FILE = Herpi_iOS/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Herpi;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for XYZ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად, შესაბამისად ამ ფუნქციით სარგებლობას ვერ შეძლებთ.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
@@ -1228,7 +1254,7 @@
 				INFOPLIST_FILE = Herpi_iOS/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Herpi;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for XYZ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად, შესაბამისად ამ ფუნქციით სარგებლობას ვერ შეძლებთ.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;

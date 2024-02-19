@@ -1,0 +1,45 @@
+
+/* Class = "UIButton"; configuration.title = "."; ObjectID = "8Us-Jo-khf"; */
+"8Us-Jo-khf.configuration.title" = ".";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8Us-Jo-khf"; */
+"8Us-Jo-khf.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "Main Page"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Main Page";
+
+/* Class = "UILabel"; text = "Please set location manually"; ObjectID = "HUo-jd-b3y"; */
+"HUo-jd-b3y.text" = "Please set location manually";
+
+/* Class = "UILabel"; text = "რეგიონი"; ObjectID = "KMn-BW-Dtb"; */
+"KMn-BW-Dtb.text" = "რეგიონი";
+
+/* Class = "UIButton"; configuration.title = "."; ObjectID = "P56-aS-AUv"; */
+"P56-aS-AUv.configuration.title" = ".";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "P56-aS-AUv"; */
+"P56-aS-AUv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "შენს არეალში გავრცელებული სახეობები"; ObjectID = "PrC-kK-ffa"; */
+"PrC-kK-ffa.text" = "შენს არეალში გავრცელებული სახეობები";
+
+/* Class = "UILabel"; text = "შენს არეალში"; ObjectID = "VNo-eR-rUH"; */
+"VNo-eR-rUH.text" = "შენს არეალში";
+
+/* Class = "UIButton"; configuration.title = "."; ObjectID = "cqE-UV-35M"; */
+"cqE-UV-35M.configuration.title" = ".";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cqE-UV-35M"; */
+"cqE-UV-35M.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა"; ObjectID = "igw-Sf-NWG"; */
+"igw-Sf-NWG.text" = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა";
+
+/* Class = "UILabel"; text = "მოძებნე აქ..."; ObjectID = "uJT-kI-ReN"; */
+"uJT-kI-ReN.text" = "მოძებნე აქ...";
+
+/* Class = "UIButton"; configuration.title = "."; ObjectID = "xQx-wa-Gt9"; */
+"xQx-wa-Gt9.configuration.title" = ".";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xQx-wa-Gt9"; */
+"xQx-wa-Gt9.normalTitle" = "Button";

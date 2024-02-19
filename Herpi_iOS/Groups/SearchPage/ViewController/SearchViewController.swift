@@ -37,6 +37,10 @@ class SearchViewController: UIViewController {
         addPanGesture(on: self)
     }
     
+    deinit {
+        unsubscribe()
+    }
+    
 //  MARK: - IBActions
     @IBAction func didTapBackButton(){
         PresenterManager.shared.pop(self)
@@ -48,6 +52,7 @@ extension SearchViewController {
     private func configure(){
         setDataSource()
         setLayout()
+        subscribe()
     }
     
     private func setDataSource(){
@@ -71,5 +76,23 @@ extension SearchViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+// MARK: - Notifications
+extension SearchViewController {
+    func unsubscribe(){
+        let center = NotificationCenter.default
+        center.removeObserver(self)
+    }
+    
+    func subscribe(){
+        let center = NotificationCenter.default
+        let languageSwitched = Notifications.languageSwitched.notificationName
+        center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+    }
+    
+    @objc func languageSwitched(_ sender: Notification){
+        self.tableView.reloadData()
     }
 }

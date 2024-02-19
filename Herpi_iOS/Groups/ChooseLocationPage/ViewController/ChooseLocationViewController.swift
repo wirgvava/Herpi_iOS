@@ -48,6 +48,10 @@ class ChooseLocationViewController: UIViewController, UISheetPresentationControl
         super.viewWillDisappear(animated)
         addPanGesture(on: self)
     }
+    
+    deinit {
+        unsubscribe()
+    }
    
 //  MARK: - IBActions
     @IBAction func didTapCancelBtn(){
@@ -65,6 +69,7 @@ extension ChooseLocationViewController {
     private func configure(){
         setLayout()
         setMapKit()
+        subscribe()
     }
     
     private func setLayout(){
@@ -131,5 +136,23 @@ extension ChooseLocationViewController: MKMapViewDelegate, CLLocationManagerDele
         
         self.lat = coordinate.latitude
         self.lng = coordinate.longitude
+    }
+}
+
+// MARK: - Notifications
+extension ChooseLocationViewController {
+    func unsubscribe(){
+        let center = NotificationCenter.default
+        center.removeObserver(self)
+    }
+    
+    func subscribe(){
+        let center = NotificationCenter.default
+        let languageSwitched = Notifications.languageSwitched.notificationName
+        center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+    }
+    
+    @objc func languageSwitched(_ sender: Notification){
+        setLayout()
     }
 }

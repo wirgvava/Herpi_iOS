@@ -37,20 +37,18 @@ extension ChooseLocationVCLayout {
     
     private func setUI(){
         guard let vc = viewController else { return }
-        let cancelAttrString = NSAttributedString(string: Localized.cancelBtn, attributes: [.font : UIFont.herpi(type: .semiBold, size: 15)])
-        let acceptAttrString = NSAttributedString(string: Localized.acceptBtn, attributes: [.font : UIFont.herpi(type: .semiBold, size: 15)])
-        vc.cancelBtn.setAttributedTitle(cancelAttrString, for: .normal)
-        vc.acceptBtn.setAttributedTitle(acceptAttrString, for: .normal)
+        vc.cancelBtn.setAttrString(string: Localized.cancelBtn.localized, fontSize: 15)
+        vc.acceptBtn.setAttrString(string: Localized.acceptBtn.localized, fontSize: 15)
         vc.acceptBtn.layer.cornerRadius = vc.acceptBtn.frame.height / 2
-        vc.headerTitle.text = Localized.header
-        vc.descriptionTitle.text = Localized.description
+        vc.headerTitle.text = Localized.header.localized
+        vc.descriptionTitle.text = Localized.description.localized
         vc.currentLocationLbl.text = vc.currentLocation
     }
     
     private enum Localized {
-        static let header = "რეგიონის არჩევა"
-        static let description = "სასურველი ადგილის მოსანიშნად რუკაზე თითის ერთი შეხების დასვით პინი და შემდეგ დააჭირე 'მონიშვნა'-ს."
-        static let cancelBtn = "გაუქმება"
-        static let acceptBtn = "მონიშვნა"
+        static let header = "currentLoc.header"
+        static let description = "currentLoc.description"
+        static let cancelBtn = "currentLoc.dismiss.button"
+        static let acceptBtn = "currentLoc.pin.button"
     }
 }

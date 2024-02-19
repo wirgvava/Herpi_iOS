@@ -145,6 +145,9 @@
                                             <fontDescription key="fontDescription" name="MarkGEO-Bold" family="Mark GEO" pointSize="16"/>
                                             <color key="textColor" red="0.28627452250000002" green="0.30196079609999998" blue="0.31372550129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="faq.button"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

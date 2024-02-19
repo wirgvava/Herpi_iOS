@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  Herpi_iOS
+
+  Created by Konstantine Tsirgvava on 17.02.24.
+  
+*/
+
+// Main Page
+"region" = "Region";
+"set.location.manually" = "Pick Region Manually";
+"search.bar" = "Search here...";
+"nearby.header" = "Near You";
+"nearby.description" = "Species you encounter based on your location";
+"list.description" = "Every officially registered specie in the country";
+"list.detailed.button" = "Read More";
+"empty.nearby.list" = "No species were found in this area";
+"empty.nearby.location.is.disabled" = "Nearby species not found... This may be because you are outside of the supported countries, your GPS is turned off or you did not allow us to access your location. Please turn GPS on and try again or pick your location manually. If the problem persists, contact us.";
+
+"loading" = "Loading";
+
+
+// Menu
+"main.button" = "Home";
+"contact.button" = "Contact";
+"team.button" = "Team";
+"faq.button" = "Frequently Asked \nQuestions";
+
+// Search Page
+"search.results" = "Search Results";
+
+// Detailed Page
+"venomous" = "Venomous";
+"mid.venomous" = "Mild Venom";
+"no.venomous" = "Harmless";
+"red.flag.description" = "It is included in the red list of Georgia";
+"detailed.author" = "author";
+"detailed.description" = "Description";
+"detailed.gallery" = "Gallery";
+"detailed.distribution.areas" = "Distribution";
+"detailed.openMap.button" = "Expand Map";
+"detailed.closeMap.button" = "Close";
+
+// Current Location Page
+"currentLoc.header" = "Pick Location Manually";
+"currentLoc.description" = "Pick your location manually tapping on desired area";
+"currentLoc.dismiss.button" = "Cancel";
+"currentLoc.pin.button" = "Complete";
+
+// Disabled Location Alert
+"disabled.location.header" = "Location Service is not Available";
+"disabled.location.description" = "Couldn't retrieve your current location. Current location is used to find species you may encounter in your area, so you won't be able to use this feature right now. \nCheck your location settings to turn on GPS.";
+"disabled.location.ok.button" = "Understood";
+"disabled.location.settins.button" = "Settings";

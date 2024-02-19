@@ -37,8 +37,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXV-Qx-tjD">
-                                <rect key="frame" x="0.0" y="174" width="393" height="513"/>
+                                <rect key="frame" x="20" y="174" width="353" height="513"/>
                                 <standardMapConfiguration key="preferredConfiguration" elevationStyle="realistic"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="სასურველი ადგილის მოსანიშნად რუკაზე თითის ერთი შეხებით დასვი პინი და შემდეგ დააჭირე &quot;მონიშვნა&quot;-ს." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-ls-Dic">
                                 <rect key="frame" x="30" y="104.33333333333333" width="333" height="49.666666666666671"/>
@@ -46,8 +52,8 @@
                                 <color key="textColor" red="0.40000003579999999" green="0.45098042490000001" blue="0.48235297199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gldani VII, Tbilisi, Georgia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwh-G3-fc9">
-                                <rect key="frame" x="84.333333333333329" y="707" width="224.33333333333337" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gldani VII, Tbilisi, Georgia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwh-G3-fc9">
+                                <rect key="frame" x="20" y="707" width="353" height="16"/>
                                 <fontDescription key="fontDescription" name="MarkGEO-Bold" family="Mark GEO" pointSize="16"/>
                                 <color key="textColor" red="0.40784314269999999" green="0.4588235021" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -84,14 +90,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0r0-ls-Dic" secondAttribute="trailing" constant="30" id="1CA-ig-2zc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gwh-G3-fc9" secondAttribute="trailing" constant="20" id="23x-Ie-BdH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="N3U-CS-JA9" secondAttribute="bottom" constant="25" id="7uZ-Qv-C29"/>
-                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="DLX-5K-lZR"/>
                             <constraint firstItem="0r0-ls-Dic" firstAttribute="top" secondItem="MRw-ff-9Tn" secondAttribute="bottom" id="GFj-MR-cnO"/>
+                            <constraint firstItem="gwh-G3-fc9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Gh8-Fq-740"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="N3U-CS-JA9" secondAttribute="trailing" constant="30" id="HJ5-PU-OxL"/>
                             <constraint firstItem="N3U-CS-JA9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Ngg-6d-GCW"/>
-                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Z2g-GT-UPw"/>
+                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="WEu-57-6VC"/>
                             <constraint firstItem="gwh-G3-fc9" firstAttribute="top" secondItem="PXV-Qx-tjD" secondAttribute="bottom" constant="20" id="gUK-0B-k13"/>
                             <constraint firstItem="0r0-ls-Dic" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="h8x-ul-zV7"/>
+                            <constraint firstItem="PXV-Qx-tjD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ihQ-BM-NH7"/>
                             <constraint firstItem="N3U-CS-JA9" firstAttribute="top" secondItem="gwh-G3-fc9" secondAttribute="bottom" constant="20" id="lPF-nT-8Jg"/>
                             <constraint firstItem="MRw-ff-9Tn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ogi-jq-rAx"/>
                             <constraint firstItem="MRw-ff-9Tn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="rjg-Z7-7ty"/>

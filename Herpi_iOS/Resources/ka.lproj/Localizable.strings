@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Herpi_iOS
+
+  Created by Konstantine Tsirgvava on 17.02.24.
+  
+*/
+// Main Page
+"region" = "რეგიონი";
+"set.location.manually" = "რეგიონის არჩევა";
+"search.bar" = "მოძებნე აქ...";
+"nearby.header" = "შენს არეალში";
+"nearby.description" = "შენს არეალში გავრცელებული სახეობები";
+"list.description" = "მთელი ქვეყნის სახეობები";
+"list.detailed.button" = "დეტალურად";
+"empty.nearby.list" = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა";
+"empty.nearby.location.is.disabled" = "შენს არეალში გავრცელებული სახეობების სანახავად გაგვიზიარე ადგილმდებარეობა ან მონიშნე ხელით. პრობლემის შემთხვევაში დაგვიკავშირდი";
+
+"loading" = "იტვირთება";
+
+// Menu
+"main.button" = "მთავარი";
+"contact.button" = "კონტაქტი";
+"team.button" = "გუნდი";
+"faq.button" = "ხშირად დასმული \nკითხვები";
+
+// Search Page
+"search.results" = "ძიების შედეგები";
+
+// Detailed Page
+"venomous" = "შხამიანი";
+"mid.venomous" = "სუსტად შხამიანი";
+"no.venomous" = "უშხამო";
+"red.flag.description" = "შეტანილია საქართველოს წითელ ნუსხაში";
+"detailed.author" = "ავტორი";
+"detailed.description" = "აღწერა";
+"detailed.gallery" = "გალერეა";
+"detailed.distribution.areas" = "გავრცელების არეალები";
+"detailed.openMap.button" = "რუკის გაშლა";
+"detailed.closeMap.button" = "დახურვა";
+
+// Current Location Page
+"currentLoc.header" = "რეგიონის არჩევა";
+"currentLoc.description" = "სასურველი ადგილის მოსანიშნად რუკაზე თითის ერთი შეხებით დასვით პინი და შემდეგ დააჭირე 'მონიშვნა'-ს.";
+"currentLoc.dismiss.button" = "გაუქმება";
+"currentLoc.pin.button" = "მონიშვნა";
+
+// Disabled Location Alert
+"disabled.location.header" = "ადგილმდებარეობა გამორთულია";
+"disabled.location.description" = "თქვენი ადგილმდებარეობის დადგენა ვერ მოხერხდა, რადგან თქვენი GPS გამორთულია. ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად, შესაბამისად ამ ფუნქციით სარგებლობას ვერ შეძლებთ. \nადგილმდებარეობის ჩასართავად შეამოწმეთ ლოკაციის პარამეტრები.";
+"disabled.location.ok.button" = "გასაგებია";
+"disabled.location.settins.button" = "პარამეტრები";

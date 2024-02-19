@@ -57,7 +57,7 @@ extension UserDefaultsManager {
     }
     
     func get(data: Constant) -> String? {
-        return UserDefaults.standard.string(forKey: data.rawValue)
+        return UserDefaults.standard.string(forKey: data.rawValue) ?? "ka"
     }
     
     enum Constant: String {

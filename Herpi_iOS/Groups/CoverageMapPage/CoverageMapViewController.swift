@@ -29,8 +29,8 @@ class CoverageMapViewController: UIViewController {
     }
     
     func configure(){
-        let attrString = NSAttributedString(string: "დახურვა", attributes: [.font : UIFont.herpi(type: .semiBold, size: 16)])
-        closeButton.setAttributedTitle(attrString, for: .normal)
+        closeButton.setAttrString(string: "detailed.closeMap.button".localized, fontSize: 16)
+        closeButton.addShadow(shadowColor: .black, shadowOpacity: 0.8, shadowOffset: CGSize(width: -1, height: -1), shadowRadius: 8)
     }
 }
 

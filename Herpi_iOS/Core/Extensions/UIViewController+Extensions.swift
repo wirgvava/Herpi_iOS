@@ -22,4 +22,6 @@ extension UIViewController {
         }
         return viewController as? TopViewController
     }
+    
+    @IBInspectable var localizedTitle : String { get { return self.title ?? "" } set { self.title = newValue.localized } }
 }

@@ -16,6 +16,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var topCategoriesHeight: NSLayoutConstraint!
+    @IBOutlet weak var searchBarLbl: UILabel!
+    @IBOutlet weak var nearYouLbl: UILabel!
+    @IBOutlet weak var nearYouDescription: UILabel!
     @IBOutlet weak var categoryCollectionHeight: NSLayoutConstraint!
     @IBOutlet weak var nearbyCollectionHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -196,5 +199,6 @@ extension MainViewController {
         getReptiles()
         getTeamData()
         getFaq()
+        layout.configure()
     }
 }

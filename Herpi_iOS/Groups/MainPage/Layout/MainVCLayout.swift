@@ -26,10 +26,11 @@ class MainVCLayout: NSObject {
 
 // MARK: - Configure
 extension MainVCLayout {
-    private func configure(){
+    func configure(){
         setupRefreshController()
         setTopCategoryViewHeight()
         setCollectionViewHeights()
+        setupLocalizedTexts()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         viewController.navigationController?.navigationBar.isHidden = true
@@ -42,7 +43,7 @@ extension MainVCLayout {
             .font: font,
             .foregroundColor: Colors.defaultDark!]
         refreshControl.backgroundColor = UIColor.clear
-        refreshControl.attributedTitle = NSAttributedString(string: "იტვირთება", attributes: attributes)
+        refreshControl.attributedTitle = NSAttributedString(string: "loading".localized, attributes: attributes)
         refreshControl.tintColor = UIColor.lightGray
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         viewController.scrollView.refreshControl = refreshControl
@@ -72,6 +73,12 @@ extension MainVCLayout {
         if let nearbyCollectionViewLayout = viewController.nearbyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             nearbyCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
+    }
+    
+    private func setupLocalizedTexts(){
+        viewController.searchBarLbl.text = "search.bar".localized
+        viewController.nearYouLbl.text = "nearby.header".localized
+        viewController.nearYouDescription.text = "nearby.description".localized
     }
 }
 
@@ -105,7 +112,7 @@ extension MainVCLayout: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             viewController.nearbyCollectionView.isHidden = true
             viewController.emptyNearbyList.isHidden = false
-            viewController.emptyNearbyList.text = "შენს არეალში გავრცელებული სახეობების სანახავად გაგვიზიარე ადგილმდებარეობა ან მონიშნე ხელით. პრობლემის შემთხვევაში დაგვიკავშირდი"
+            viewController.emptyNearbyList.text = "empty.nearby.location.is.disabled".localized
             showLocationIsDisabledAlert()
         default:
             break
@@ -120,7 +127,7 @@ extension MainVCLayout: CLLocationManagerDelegate {
         viewController.lat = lat
         viewController.lng = lng
         viewController.getNearbyReptiles(lat: lat, lng: lng)
-        viewController.emptyNearbyList.text = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა"
+        viewController.emptyNearbyList.text = "empty.nearby.list".localized
     
         // Perform reverse geocoding to get location name
         let geocoder = CLGeocoder()
@@ -148,7 +155,7 @@ extension MainVCLayout: CLLocationManagerDelegate {
         }
         
         if streetName == "" && city == "" && country == "" {
-            viewController.currentLocationLbl.text = "Please enter location manually."
+            viewController.currentLocationLbl.text = "set.location.manually".localized
         } else {
             viewController.currentLocationLbl.text = streetName + city + country
         }
