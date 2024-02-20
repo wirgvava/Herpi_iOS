@@ -48,16 +48,41 @@ extension MainVCDataSource {
         setContent()
     }
     
-    private func setContent(){
-        self.reptile = DataManager.shared.reptiles
-        self.contentSize()
-//        self.viewController.view.hideSkeleton()
-        self.tableView.reloadData()
+    func setContent(){
+        DispatchQueue.main.async {
+            self.reptile = DataManager.shared.reptiles
+            self.setCollectionViewHeights()
+            self.setTopCategoryViewHeight()
+            self.contentSize()
+    //        self.viewController.view.hideSkeleton()
+            self.tableView.reloadData()
+        }
+    }
+    
+    func setTopCategoryViewHeight(){
+        var totalHeightOfViews = 0.toCGFloat()
+        viewController.topCategoryViews.forEach { view in
+            totalHeightOfViews += view.frame.height
+        }
+        
+        let totalTopCategoryHeight = totalHeightOfViews + 167
+        viewController.topCategoriesHeight.constant = totalTopCategoryHeight
+        viewController.nearbyCollectionView.reloadData()
+    }
+    
+    private func setCollectionViewHeights(){
+        if let categoryCollectionViewLayout = viewController.categoriesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            categoryCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+        
+        if let nearbyCollectionViewLayout = viewController.nearbyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            nearbyCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
     
     func contentSize(){
         let reptiliesCount = self.reptile.count.toCGFloat()
-        let tableViewContentSize = (200 * reptiliesCount) + 80
+        let tableViewContentSize = (200 * reptiliesCount) + 112
         let totalHeight = viewController.topCategoriesHeight.constant + tableViewContentSize
         self.viewController.contentViewHeight.constant = totalHeight
     }
@@ -207,6 +232,8 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
             self.reptile = (storedReptiles.filter({$0.type == categories.id!}))
             self.nearbyReptiles = (storedNearby.filter({$0.type == categories.id}))
         }
+        tableView.reloadData()
+        nearbyCollectionView.reloadData()
     }
     
     private func updateNearbyCollectionViewLayout(){
@@ -218,7 +245,7 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
             viewController.emptyNearbyList.isHidden = true
         }
 
-        if self.nearbyReptiles.count == 0 || self.nearbyReptiles.count == 1 || self.nearbyReptiles.count == 2 {
+        if self.nearbyReptiles.count <= 2 {
             viewController.nearbyCollectionHeight.constant = 162.5
         } else {
             viewController.nearbyCollectionHeight.constant = 325

@@ -78,8 +78,14 @@ extension ApiManager {
 // MARK: - Team
 extension ApiManager {
     func getTeam(completion: @escaping (TeamModel?, Error?) -> ()){
-        serverProvider.request(.team) { result in
-            handleResponse(result: result, completion: completion)
+        if reachability.connection != .unavailable {
+            serverProvider.request(.team) { result in
+                handleResponseWithCache(result: result, key: .team, completion: completion)
+            }
+        } else {
+            if let cachedData: TeamModel = CacheManager.shared.retrieveData(forKey: .team) {
+                completion(cachedData, nil)
+            }
         }
     }
 }
@@ -87,8 +93,14 @@ extension ApiManager {
 // MARK: - FAQ
 extension ApiManager {
     func getFAQ(completion: @escaping (FAQModel?, Error?) -> ()){
-        serverProvider.request(.faq) { result in
-            handleResponse(result: result, completion: completion)
+        if reachability.connection != .unavailable {
+            serverProvider.request(.faq) { result in
+                handleResponseWithCache(result: result, key: .faq, completion: completion)
+            }
+        } else {
+            if let cachedData: FAQModel = CacheManager.shared.retrieveData(forKey: .faq) {
+                completion(cachedData, nil)
+            }
         }
     }
 }

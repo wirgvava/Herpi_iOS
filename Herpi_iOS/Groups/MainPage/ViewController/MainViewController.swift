@@ -181,15 +181,12 @@ extension MainViewController {
     }
     
     @objc func updateConstraints(_ sender: Notification){
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.25) {
-                self.layout.setTopCategoryViewHeight()
-                self.dataSource.contentSize()
-                self.nearbyCollectionView.reloadData()
-                self.tableView.reloadData()
-                self.scrollView.reloadInputViews()
-                self.view.layoutIfNeeded()
-            }
+        UIView.animate(withDuration: 0.25) {
+            self.dataSource.setContent()
+            self.nearbyCollectionView.reloadData()
+            self.tableView.reloadData()
+            self.scrollView.reloadInputViews()
+            self.view.layoutIfNeeded()
         }
     }
     

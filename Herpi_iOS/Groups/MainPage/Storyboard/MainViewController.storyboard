@@ -158,7 +158,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-Va-qLi">
-                                <rect key="frame" x="0.0" y="228" width="393" height="624"/>
+                                <rect key="frame" x="0.0" y="228" width="393" height="656"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcs-Qp-QuM">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
@@ -342,7 +342,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="maw-r0-hHu">
-                                                <rect key="frame" x="0.0" y="900" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="900" width="393" height="48"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -358,7 +358,7 @@
                                             <constraint firstAttribute="height" constant="1000" id="SKx-an-HP7"/>
                                             <constraint firstItem="Fa1-FN-p5M" firstAttribute="leading" secondItem="Tcs-Qp-QuM" secondAttribute="leading" id="YRs-f1-Ahn"/>
                                             <constraint firstItem="maw-r0-hHu" firstAttribute="leading" secondItem="Tcs-Qp-QuM" secondAttribute="leading" id="a9b-Jb-WbO"/>
-                                            <constraint firstAttribute="bottom" secondItem="maw-r0-hHu" secondAttribute="bottom" constant="20" id="y0J-nt-4Pl"/>
+                                            <constraint firstAttribute="bottom" secondItem="maw-r0-hHu" secondAttribute="bottom" constant="52" id="y0J-nt-4Pl"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -393,7 +393,7 @@
                             <constraint firstItem="Qg9-TV-Sdc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SBY-3R-tLh"/>
                             <constraint firstItem="rhB-Va-qLi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="a4q-Nk-cJ8"/>
                             <constraint firstItem="rhB-Va-qLi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aax-4U-TiH"/>
-                            <constraint firstAttribute="bottom" secondItem="rhB-Va-qLi" secondAttribute="bottom" id="e1y-Hf-Qgq"/>
+                            <constraint firstAttribute="bottom" secondItem="rhB-Va-qLi" secondAttribute="bottom" constant="-32" id="e1y-Hf-Qgq"/>
                             <constraint firstItem="Qg9-TV-Sdc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mwl-t5-zYh"/>
                             <constraint firstItem="rhB-Va-qLi" firstAttribute="top" secondItem="Qg9-TV-Sdc" secondAttribute="bottom" id="wYx-4U-f0W"/>
                         </constraints>

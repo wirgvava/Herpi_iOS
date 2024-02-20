@@ -28,8 +28,6 @@ class MainVCLayout: NSObject {
 extension MainVCLayout {
     func configure(){
         setupRefreshController()
-        setTopCategoryViewHeight()
-        setCollectionViewHeights()
         setupLocalizedTexts()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -53,26 +51,6 @@ extension MainVCLayout {
         AppDelegate.shared.getData()
         viewController.scrollView.reloadInputViews()
         refreshControl.endRefreshing()
-    }
-    
-    func setTopCategoryViewHeight(){
-        var totalHeightOfViews = 0.toCGFloat()
-        viewController.topCategoryViews.forEach { view in
-            totalHeightOfViews += view.frame.height
-        }
-        
-        let totalTopCategoryHeight = totalHeightOfViews + 167
-        viewController.topCategoriesHeight.constant = totalTopCategoryHeight
-    }
-    
-    private func setCollectionViewHeights(){
-        if let categoryCollectionViewLayout = viewController.categoriesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            categoryCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-        
-        if let nearbyCollectionViewLayout = viewController.nearbyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            nearbyCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
     }
     
     private func setupLocalizedTexts(){

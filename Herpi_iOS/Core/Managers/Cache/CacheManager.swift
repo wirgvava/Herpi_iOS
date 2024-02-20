@@ -11,7 +11,8 @@ enum CacheForKey: String {
     case categories
     case reptilies
     case nearby
-    case detailedReptile
+    case team
+    case faq
 }
 
 class CacheManager {
@@ -20,7 +21,8 @@ class CacheManager {
     private var cachedCategories: CategoriesModel?
     private var cachedReptiles: ReptiliesModel?
     private var cachedNearbyReptiles: NearbyReptilesModel?
-    private var cachedDetailedReptiles: DetailedInfoResponseModel?
+    private var cachedTeamData: TeamModel?
+    private var cachedFaqData: FAQModel?
 
     func updateCache<T: Codable>(data: T, forKey key: CacheForKey) {
         switch key {
@@ -39,12 +41,18 @@ class CacheManager {
                 UserDefaultsManager.shared.save(value: nearbyReptilesData, forKey: .nearby)
                 cachedNearbyReptiles = data as? NearbyReptilesModel
             }
-        case .detailedReptile:
-            if let detailedReptilesData = try? JSONEncoder().encode(data) {
-                UserDefaultsManager.shared.save(value: detailedReptilesData, forKey: .detailedReptile)
-                cachedDetailedReptiles = data as? DetailedInfoResponseModel
+        case .team:
+            if let teamData = try? JSONEncoder().encode(data) {
+                UserDefaultsManager.shared.save(value: teamData, forKey: .team)
+                cachedTeamData = data as? TeamModel
+            }
+        case .faq:
+            if let faqData = try? JSONEncoder().encode(data) {
+                UserDefaultsManager.shared.save(value: faqData, forKey: .faq)
+                cachedFaqData = data as? FAQModel
             }
         }
+        
         UserDefaultsManager.shared.synchronize()
     }
 
@@ -62,9 +70,13 @@ class CacheManager {
             if let data = UserDefaultsManager.shared.get(data: .nearby) {
                 return try? JSONDecoder().decode(NearbyReptilesModel.self, from: data) as? T
             }
-        case .detailedReptile:
-            if let data = UserDefaultsManager.shared.get(data: .detailedReptile) {
-                return try? JSONDecoder().decode(DetailedInfoResponseModel.self, from: data) as? T
+        case .team:
+            if let data = UserDefaultsManager.shared.get(data: .team) {
+                return try? JSONDecoder().decode(TeamModel.self, from: data) as? T
+            }
+        case .faq:
+            if let data = UserDefaultsManager.shared.get(data: .faq) {
+                return try? JSONDecoder().decode(FAQModel.self, from: data) as? T
             }
         }
         return nil

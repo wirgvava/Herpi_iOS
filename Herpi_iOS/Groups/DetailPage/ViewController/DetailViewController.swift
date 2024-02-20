@@ -109,7 +109,6 @@ extension DetailViewController {
                 self.detailedInfo = response
                 self.layout?.configure()
                 self.galleryCollectionView.reloadData()
-                
             }
         }
     }
