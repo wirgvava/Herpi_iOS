@@ -60,6 +60,7 @@ class ChooseLocationViewController: UIViewController, UISheetPresentationControl
     
     @IBAction func didTapAcceptBtn(){
         delegate?.didChangedLocationWith(lat: lat, lng: lng, name: currentLocationLbl.text ?? "")
+        AppAnalytics.logEvents(with: .pick_location_manually, paramName: nil, paramData: nil)
         self.dismiss(animated: true)
     }
 }

@@ -153,7 +153,9 @@ extension MainVCDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = self.reptile[indexPath.row]
         let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
-        vc.reptileId = data.id ?? 0
+        guard let id = data.id else { return }
+        vc.reptileId = id
+        AppAnalytics.logEvents(with: .open_details, paramName: .specie_id, paramData: id)
         self.viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -207,7 +209,9 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
     private func didSelectNearbyItemAt(indexPath: IndexPath){
         let data = self.nearbyReptiles[indexPath.item]
         let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
-        vc.reptileId = data.id ?? 0
+        guard let id = data.id else { return }
+        vc.reptileId = id
+        AppAnalytics.logEvents(with: .open_nearby_specie_details, paramName: .specie_id, paramData: id)
         self.viewController.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -216,7 +220,14 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
         updateNearbyCollectionViewLayout()
         updatePageControllerLayout()
         postNotificationAboutChanges()
+        sendEvent(indexPath: indexPath)
         UserDefaultsManager.shared.save(value: false, forKey: .firstLoginSelected)
+    }
+    
+    private func sendEvent(indexPath: IndexPath){
+        let categories = DataManager.shared.categories[indexPath.item]
+        guard let categoryId = categories.id else { return }
+        AppAnalytics.logEvents(with: .select_category, paramName: .category_id, paramData: categoryId)
     }
     
     private func filterArrays(with indexPath: IndexPath){
@@ -240,6 +251,7 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
         if self.nearbyReptiles.count == 0 {
             nearbyCollectionView.isHidden = true
             viewController.emptyNearbyList.isHidden = false
+            AppAnalytics.logEvents(with: .nearby_species_not_found, paramName: .reason, paramData: "no species found in the area")
         } else {
             nearbyCollectionView.isHidden = false
             viewController.emptyNearbyList.isHidden = true

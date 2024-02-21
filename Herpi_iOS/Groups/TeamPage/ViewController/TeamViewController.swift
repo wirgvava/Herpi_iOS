@@ -43,6 +43,7 @@ extension TeamViewController {
         setDataSource()
         subscribe()
         self.navigationController?.navigationBar.isHidden = true
+        AppAnalytics.logEvents(with: .open_team, paramName: nil, paramData: nil)
     }
     
     private func setDataSource(){

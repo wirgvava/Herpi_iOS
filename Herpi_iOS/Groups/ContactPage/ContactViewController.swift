@@ -28,6 +28,7 @@ class ContactViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         setWebView()
         self.navigationController?.navigationBar.isHidden = true
+        AppAnalytics.logEvents(with: .open_contact, paramName: nil, paramData: nil)
     }
     
     //  MARK: - IBActions

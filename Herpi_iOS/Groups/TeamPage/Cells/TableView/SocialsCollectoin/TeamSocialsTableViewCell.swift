@@ -12,6 +12,7 @@ class TeamSocialsTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var socialNetworks = [SocialNetwork]()
+    var memberEmail = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,9 @@ extension TeamSocialsTableViewCell: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = socialNetworks[indexPath.item]
         if let url = URL(string: data.url!) {
+            AppAnalytics.logEvents(with: .click_team_social_link,
+                                   parameters: ["member" : self.memberEmail,
+                                                "network" : data.network!])
             UIApplication.shared.open(url, options: [:])
         }
     }

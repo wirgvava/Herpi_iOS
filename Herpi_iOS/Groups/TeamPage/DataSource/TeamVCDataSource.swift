@@ -61,8 +61,9 @@ extension TeamVCDataSource: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "socialsCell", for: indexPath) as! TeamSocialsTableViewCell
-            let data = DataManager.shared.team[indexPath.section].teamElement.socialNetworks
-            cell.socialNetworks = data!
+            let data = DataManager.shared.team[indexPath.section].teamElement
+            cell.socialNetworks = data.socialNetworks!
+            cell.memberEmail = data.email!
             return cell
         }
     }

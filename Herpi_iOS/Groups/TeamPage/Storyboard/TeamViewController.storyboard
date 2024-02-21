@@ -215,18 +215,6 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="koka.wirgvava@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO8-t8-zki">
-                                                            <rect key="frame" x="90" y="31" width="199" height="16.666666666666671"/>
-                                                            <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="13"/>
-                                                            <color key="textColor" red="0.0039215686274509803" green="0.49803921568627452" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
-                                                                    <integer key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9SM-zz-P2j">
                                                             <rect key="frame" x="304" y="20.333333333333332" width="24" height="13.999999999999996"/>
                                                             <color key="tintColor" red="0.4039215686" green="0.45098039220000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -242,7 +230,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWY-2m-rhz">
-                                                            <rect key="frame" x="90" y="47.666666666666664" width="238" height="16.666666666666664"/>
+                                                            <rect key="frame" x="90" y="48" width="238" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="13"/>
                                                             <color key="textColor" red="0.40392156862745099" green="0.45098039215686275" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -253,22 +241,34 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvI-OW-YKc">
+                                                            <rect key="frame" x="90" y="31" width="199" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="JQb-fQ-S3g"/>
+                                                            </constraints>
+                                                            <color key="tintColor" name="GreenTitle"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="email@email.com"/>
+                                                            <connections>
+                                                                <action selector="didTapOnMail" destination="hCo-Jb-YLS" eventType="touchUpInside" id="sHu-eq-ngx"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="MvI-OW-YKc" firstAttribute="top" secondItem="jQS-cF-Qn2" secondAttribute="bottom" id="0KW-vZ-2S4"/>
                                                         <constraint firstItem="jQS-cF-Qn2" firstAttribute="leading" secondItem="oQb-BT-2XU" secondAttribute="trailing" constant="15" id="5HQ-yT-v5I"/>
                                                         <constraint firstAttribute="trailing" secondItem="9SM-zz-P2j" secondAttribute="trailing" constant="15" id="Fvm-8T-IQ3"/>
                                                         <constraint firstAttribute="bottom" secondItem="oQb-BT-2XU" secondAttribute="bottom" constant="20" id="GJc-k9-NOx"/>
                                                         <constraint firstItem="9SM-zz-P2j" firstAttribute="leading" secondItem="jQS-cF-Qn2" secondAttribute="trailing" constant="15" id="OvS-xG-9tS"/>
-                                                        <constraint firstItem="DO8-t8-zki" firstAttribute="top" secondItem="jQS-cF-Qn2" secondAttribute="bottom" id="PuQ-Xe-qF7"/>
+                                                        <constraint firstItem="MvI-OW-YKc" firstAttribute="leading" secondItem="oQb-BT-2XU" secondAttribute="trailing" constant="15" id="PbX-6P-CTp"/>
                                                         <constraint firstItem="oQb-BT-2XU" firstAttribute="top" secondItem="swK-sP-vUk" secondAttribute="top" constant="20" id="Qgy-Yi-rwh"/>
                                                         <constraint firstItem="jQS-cF-Qn2" firstAttribute="top" secondItem="swK-sP-vUk" secondAttribute="top" constant="15" id="R27-VK-vPE"/>
                                                         <constraint firstItem="vWY-2m-rhz" firstAttribute="leading" secondItem="oQb-BT-2XU" secondAttribute="trailing" constant="15" id="anv-6Y-OXH"/>
-                                                        <constraint firstItem="vWY-2m-rhz" firstAttribute="top" secondItem="DO8-t8-zki" secondAttribute="bottom" id="g6i-ko-iqq"/>
                                                         <constraint firstAttribute="trailing" secondItem="vWY-2m-rhz" secondAttribute="trailing" constant="15" id="gJ7-1D-ume"/>
                                                         <constraint firstItem="9SM-zz-P2j" firstAttribute="top" secondItem="swK-sP-vUk" secondAttribute="top" constant="15" id="jY1-7V-TiG"/>
-                                                        <constraint firstItem="DO8-t8-zki" firstAttribute="leading" secondItem="oQb-BT-2XU" secondAttribute="trailing" constant="15" id="k42-xo-z28"/>
-                                                        <constraint firstItem="DO8-t8-zki" firstAttribute="trailing" secondItem="9SM-zz-P2j" secondAttribute="leading" constant="-15" id="pxZ-4X-2cY"/>
+                                                        <constraint firstItem="9SM-zz-P2j" firstAttribute="leading" secondItem="MvI-OW-YKc" secondAttribute="trailing" constant="15" id="qRN-NH-Cyu"/>
+                                                        <constraint firstItem="vWY-2m-rhz" firstAttribute="top" secondItem="MvI-OW-YKc" secondAttribute="bottom" id="tNN-g4-LBh"/>
                                                         <constraint firstItem="oQb-BT-2XU" firstAttribute="leading" secondItem="swK-sP-vUk" secondAttribute="leading" constant="15" id="u6V-Gn-0fH"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -310,7 +310,7 @@
                                         <connections>
                                             <outlet property="avatar" destination="oQb-BT-2XU" id="UiY-oO-qzY"/>
                                             <outlet property="bottomCorners" destination="Xw8-rk-xqW" id="ypE-H0-bgQ"/>
-                                            <outlet property="email" destination="DO8-t8-zki" id="6jq-Ui-6e8"/>
+                                            <outlet property="emailBtn" destination="MvI-OW-YKc" id="lOe-L2-CnT"/>
                                             <outlet property="expandIcon" destination="9SM-zz-P2j" id="f6W-eo-sSg"/>
                                             <outlet property="fullName" destination="jQS-cF-Qn2" id="EKb-iG-25y"/>
                                             <outlet property="role" destination="vWY-2m-rhz" id="AXT-Br-WfK"/>
@@ -443,6 +443,9 @@
         <image name="logo" width="512" height="512"/>
         <image name="menu" width="25" height="21"/>
         <image name="message" width="32" height="32"/>
+        <namedColor name="GreenTitle">
+            <color red="0.0039215686274509803" green="0.49803921568627452" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="selectedCategoryTint">
             <color red="0.015686274509803921" green="0.32941176470588235" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -31,6 +31,7 @@ extension SearchVCLayout {
         setupGestures()
         searchTextField.delegate = self
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        AppAnalytics.logEvents(with: .open_search, paramName: nil, paramData: nil)
     }
     
     @objc func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {

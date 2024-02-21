@@ -70,6 +70,7 @@ extension MainVCLayout {
         locationSheet.lng = viewController.lng
         locationSheet.currentLocation = viewController.currentLocationLbl.text ?? ""
         locationSheet.modalPresentationStyle = .automatic
+        AppAnalytics.logEvents(with: .click_pick_location_manually, paramName: nil, paramData: nil)
         viewController.present(locationSheet, animated: true)
     }
     
@@ -91,6 +92,7 @@ extension MainVCLayout: CLLocationManagerDelegate {
             viewController.nearbyCollectionView.isHidden = true
             viewController.emptyNearbyList.isHidden = false
             viewController.emptyNearbyList.text = "empty.nearby.location.is.disabled".localized
+            AppAnalytics.logEvents(with: .nearby_species_not_found, paramName: .reason, paramData: "location_off")
             showLocationIsDisabledAlert()
         default:
             break

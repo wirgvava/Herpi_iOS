@@ -83,6 +83,12 @@ extension MainViewController {
     private func setLayout(){
         layout = MainVCLayout(viewController: self, tableView: tableView)
     }
+    
+    func sendEvent(model: NearbyReptilesModel){
+        if model.count == 0 {
+            AppAnalytics.logEvents(with: .nearby_species_not_found, paramName: .reason, paramData: "no species found in the area")
+        }
+    }
 }
 
 // MARK: - Handle Responses
@@ -97,6 +103,7 @@ extension MainViewController {
                 self.dataSource.nearbyReptiles = model
                 self.pageController.numberOfPages = (model.count / 2 == 0) ? (model.count / 4) : (model.count / 3)
                 self.nearbyCollectionView.reloadData()
+                self.sendEvent(model: model)
             }
         }
     }

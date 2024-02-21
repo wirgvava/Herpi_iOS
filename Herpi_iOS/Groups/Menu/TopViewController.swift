@@ -195,8 +195,10 @@ extension TopViewController: MenuDelegate {
     func didChangedLanguage() {
         if self.sideMenuViewController.languageSwitcher.selectedSegmentIndex == 0 {
             UserDefaultsManager.shared.save(value: .ka, forKey: .language)
+            AppAnalytics.logEvents(with: .set_language, paramName: .language_code, paramData: "ka")
         } else {
             UserDefaultsManager.shared.save(value: .en, forKey: .language)
+            AppAnalytics.logEvents(with: .set_language, paramName: .language_code, paramData: "en")
         }
         let center = NotificationCenter.default
         let languageSwitched = Notifications.languageSwitched.notificationName

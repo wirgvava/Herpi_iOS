@@ -23,6 +23,7 @@ class ApiManager {
             if let cachedData: CategoriesModel = CacheManager.shared.retrieveData(forKey: .categories) {
                 completion(cachedData, nil)
             }
+            AppAnalytics.logEvents(with: .open_in_offline_mode, paramName: nil, paramData: nil)
         }
     }
     

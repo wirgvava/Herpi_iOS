@@ -42,6 +42,7 @@ extension FAQViewController {
         setDataSource()
         subscribe()
         self.navigationController?.navigationBar.isHidden = true
+        AppAnalytics.logEvents(with: .open_faq, paramName: nil, paramData: nil)
     }
     
     private func setDataSource(){

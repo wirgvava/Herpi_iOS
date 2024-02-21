@@ -133,9 +133,10 @@ extension DetailVCLayout {
     func openMap(){
         var coverageCoordinates: [Coordinate] = []
         for coverage in viewController.coverage { coverageCoordinates = coverage.coordinates }
-        
+        let specieId = viewController.detailedInfo?.id
         let mapVC = UIStoryboard(name: CoverageMapViewController.className, bundle: nil).instantiateViewController(withIdentifier: "mapVC") as! CoverageMapViewController
         mapVC.coverageCoordinates = coverageCoordinates
+        AppAnalytics.logEvents(with: .expand_distribution_map, paramName: .specie_id, paramData: specieId)
         viewController.navigationController?.pushViewController(mapVC, animated: true)
     }
     
@@ -146,6 +147,7 @@ extension DetailVCLayout {
             let objectsToShare = [link]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+            AppAnalytics.logEvents(with: .share, paramName: .specie_id, paramData: reptileId)
             viewController.present(activityVC, animated: true)
         }
     }
