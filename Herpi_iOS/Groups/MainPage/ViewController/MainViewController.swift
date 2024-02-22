@@ -7,6 +7,8 @@
 
 import UIKit
 import Loaf
+import GoogleMobileAds
+import Reachability
 
 class MainViewController: UIViewController {
     
@@ -28,11 +30,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak var emptyNearbyList: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var currentLocationLbl: UILabel!
+    @IBOutlet weak var adBanner: UIView!
+    // banner ad
+    var bannerView: GADBannerView!
+    // interstitial ad
+    var interstitial: GADInterstitialAd?
     
     // Managers
     private var dataSource: MainVCDataSource!
     private var layout: MainVCLayout!
     private var serviceManager = ApiManager()
+    fileprivate let reachability = try! Reachability()
     
     // Default Location
     var lat = Constants.lat
@@ -74,6 +82,8 @@ extension MainViewController {
         subscribe()
         getTeamData()
         getFaq()
+        loadIntersisialAd()
+        setBannerAd()
     }
     
     private func setDataSource(){
@@ -87,6 +97,30 @@ extension MainViewController {
     func sendEvent(model: NearbyReptilesModel){
         if model.count == 0 {
             AppAnalytics.logEvents(with: .nearby_species_not_found, paramName: .reason, paramData: "no species found in the area")
+        }
+    }
+    
+    private func setBannerAd(){
+        if reachability.connection == .unavailable {
+            adBanner.layer.isHidden = true
+        } else {
+            adBanner.layer.isHidden = false
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            addBannerView(to: adBanner, rootVC: self, bannerView: bannerView)
+        }
+    }
+    
+    private func loadIntersisialAd(){
+        let request = GADRequest()
+        let adUnitID = Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? ""
+
+        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { [weak self] ad, error in
+            guard let self = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let ad = ad {
+                interstitial = ad
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ class ReptiliesTableViewCell: UITableViewCell {
     func set(with data: ReptileModel){
         nameLabel.text = data.name
         familyLabel.text = data.family?.name
-        picture.kf.setImage(with: URL(string: data.image!))
+        picture.kf.setImage(with: URL(string: data.transparentThumbnail!))
         
         if data.hasMildVenom == true {
             infoIcon.tintColor = Colors.venomType(.midVenom)

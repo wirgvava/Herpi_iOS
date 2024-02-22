@@ -137,6 +137,10 @@ extension DetailVCLayout {
         let mapVC = UIStoryboard(name: CoverageMapViewController.className, bundle: nil).instantiateViewController(withIdentifier: "mapVC") as! CoverageMapViewController
         mapVC.coverageCoordinates = coverageCoordinates
         AppAnalytics.logEvents(with: .expand_distribution_map, paramName: .specie_id, paramData: specieId)
+        
+        if viewController.interstitial != nil {
+            viewController.interstitial?.present(fromRootViewController: viewController)
+        }
         viewController.navigationController?.pushViewController(mapVC, animated: true)
     }
     

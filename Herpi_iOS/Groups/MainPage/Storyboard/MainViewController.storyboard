@@ -314,6 +314,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </pageControl>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3b-KF-BGS">
+                                                        <rect key="frame" x="30" y="719.33333333333337" width="333" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="x8T-2Y-OUF"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94509804249999996" green="0.96078431610000004" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -324,11 +331,14 @@
                                                     <constraint firstAttribute="trailing" secondItem="igw-Sf-NWG" secondAttribute="trailing" constant="30" id="5QJ-UU-Bz8"/>
                                                     <constraint firstAttribute="trailing" secondItem="TyS-J5-wZe" secondAttribute="trailing" constant="30" id="JVD-Tq-6pV"/>
                                                     <constraint firstItem="igw-Sf-NWG" firstAttribute="centerX" secondItem="Fa1-FN-p5M" secondAttribute="centerX" id="KnK-8C-aIU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="m3b-KF-BGS" secondAttribute="trailing" constant="30" id="Mc5-Si-pcP"/>
                                                     <constraint firstItem="y8s-hw-Rvf" firstAttribute="top" secondItem="Fa1-FN-p5M" secondAttribute="top" constant="30" id="OdJ-C6-tP8"/>
                                                     <constraint firstItem="FCt-ZQ-JHb" firstAttribute="top" secondItem="y8s-hw-Rvf" secondAttribute="bottom" constant="36" id="OeU-yE-UkJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="FCt-ZQ-JHb" secondAttribute="trailing" constant="30" id="R9v-uu-cpf"/>
                                                     <constraint firstItem="eaz-UQ-RbB" firstAttribute="centerX" secondItem="Fa1-FN-p5M" secondAttribute="centerX" id="RG3-3C-edt"/>
                                                     <constraint firstItem="y8s-hw-Rvf" firstAttribute="leading" secondItem="Fa1-FN-p5M" secondAttribute="leading" constant="30" id="UyH-PZ-06d"/>
+                                                    <constraint firstItem="m3b-KF-BGS" firstAttribute="leading" secondItem="Fa1-FN-p5M" secondAttribute="leading" constant="30" id="VPQ-TE-Pgt"/>
+                                                    <constraint firstItem="m3b-KF-BGS" firstAttribute="top" secondItem="eaz-UQ-RbB" secondAttribute="bottom" constant="20" id="Y6C-mq-8Hp"/>
                                                     <constraint firstItem="TyS-J5-wZe" firstAttribute="leading" secondItem="Fa1-FN-p5M" secondAttribute="leading" constant="30" id="Zff-mP-HaN"/>
                                                     <constraint firstItem="eaz-UQ-RbB" firstAttribute="top" secondItem="igw-Sf-NWG" secondAttribute="bottom" constant="50" id="apv-Tb-MEU"/>
                                                     <constraint firstAttribute="height" constant="900" id="hMu-Dn-bwu"/>
@@ -403,6 +413,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ahg-Jg-oAK"/>
                     <connections>
+                        <outlet property="adBanner" destination="m3b-KF-BGS" id="xgh-4v-Uow"/>
                         <outlet property="categoriesCollectionView" destination="FCt-ZQ-JHb" id="ewy-X7-fEH"/>
                         <outlet property="categoryCollectionHeight" destination="va5-X6-jy8" id="MyY-Hj-INV"/>
                         <outlet property="contentView" destination="Tcs-Qp-QuM" id="BSt-2B-GNY"/>
@@ -424,6 +435,7 @@
                         <outletCollection property="topCategoryViews" destination="TyS-J5-wZe" collectionClass="NSMutableArray" id="zxX-UM-5Va"/>
                         <outletCollection property="topCategoryViews" destination="PRQ-Kp-apb" collectionClass="NSMutableArray" id="XTN-oV-DFy"/>
                         <outletCollection property="topCategoryViews" destination="eaz-UQ-RbB" collectionClass="NSMutableArray" id="K23-Ir-r4V"/>
+                        <outletCollection property="topCategoryViews" destination="m3b-KF-BGS" collectionClass="NSMutableArray" id="Y55-YS-Pat"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

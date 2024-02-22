@@ -7,6 +7,7 @@
 
 import UIKit
 import SkeletonView
+import Reachability
 
 class MainVCDataSource: NSObject {
     
@@ -15,6 +16,7 @@ class MainVCDataSource: NSObject {
     fileprivate weak var categoriesCollectionView: UICollectionView!
     fileprivate weak var nearbyCollectionView: UICollectionView!
     fileprivate weak var pageController: UIPageControl!
+    fileprivate let reachability = try! Reachability()
     
 //  - Filtered Data
     var reptile: [ReptileModel] = []
@@ -65,8 +67,14 @@ extension MainVCDataSource {
             totalHeightOfViews += view.frame.height
         }
         
-        let totalTopCategoryHeight = totalHeightOfViews + 167
-        viewController.topCategoriesHeight.constant = totalTopCategoryHeight
+        var totalTopCategoryHeight = 0
+        if reachability.connection == .unavailable {
+            totalTopCategoryHeight = Int(totalHeightOfViews + 167)
+        } else {
+            totalTopCategoryHeight = Int(totalHeightOfViews + 187)
+        }
+    
+        viewController.topCategoriesHeight.constant = totalTopCategoryHeight.toCGFloat()
         viewController.nearbyCollectionView.reloadData()
     }
     
@@ -212,6 +220,9 @@ extension MainVCDataSource: UICollectionViewDataSource, UICollectionViewDelegate
         guard let id = data.id else { return }
         vc.reptileId = id
         AppAnalytics.logEvents(with: .open_nearby_specie_details, paramName: .specie_id, paramData: id)
+        if viewController.interstitial != nil {
+            viewController.interstitial?.present(fromRootViewController: viewController)
+        }
         self.viewController.navigationController?.pushViewController(vc, animated: true)
     }
     

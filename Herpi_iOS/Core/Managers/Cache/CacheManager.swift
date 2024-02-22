@@ -11,6 +11,7 @@ enum CacheForKey: String {
     case categories
     case reptilies
     case nearby
+    case detailed
     case team
     case faq
 }
@@ -21,6 +22,7 @@ class CacheManager {
     private var cachedCategories: CategoriesModel?
     private var cachedReptiles: ReptiliesModel?
     private var cachedNearbyReptiles: NearbyReptilesModel?
+    private var cachedDetailedReptiles: DetailedInfoResponseModel?
     private var cachedTeamData: TeamModel?
     private var cachedFaqData: FAQModel?
 
@@ -40,6 +42,11 @@ class CacheManager {
             if let nearbyReptilesData = try? JSONEncoder().encode(data) {
                 UserDefaultsManager.shared.save(value: nearbyReptilesData, forKey: .nearby)
                 cachedNearbyReptiles = data as? NearbyReptilesModel
+            }
+        case .detailed:
+            if let detailedReptileData = try? JSONEncoder().encode(data) {
+                UserDefaultsManager.shared.save(value: detailedReptileData, forKey: .detailed)
+                cachedDetailedReptiles = data as? DetailedInfoResponseModel
             }
         case .team:
             if let teamData = try? JSONEncoder().encode(data) {
@@ -69,6 +76,10 @@ class CacheManager {
         case .nearby:
             if let data = UserDefaultsManager.shared.get(data: .nearby) {
                 return try? JSONDecoder().decode(NearbyReptilesModel.self, from: data) as? T
+            }
+        case .detailed:
+            if let data = UserDefaultsManager.shared.get(data: .detailed) {
+                return try? JSONDecoder().decode(DetailedInfoResponseModel.self, from: data) as? T
             }
         case .team:
             if let data = UserDefaultsManager.shared.get(data: .team) {

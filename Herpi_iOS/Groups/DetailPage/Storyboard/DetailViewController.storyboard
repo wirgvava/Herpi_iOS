@@ -31,10 +31,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRn-0e-THr">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="851.99999999999977"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI1-qp-0ke" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="-60" width="393" height="1533.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="-60" width="393" height="1678.6666666666667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-N4-ufi">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="420"/>
@@ -62,7 +62,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="აღწერა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8q-oj-mtC">
-                                                <rect key="frame" x="29.999999999999996" y="669.33333333333337" width="62.666666666666657" height="20.333333333333371"/>
+                                                <rect key="frame" x="29.999999999999996" y="724.33333333333337" width="62.666666666666657" height="20.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="16"/>
                                                 <color key="textColor" red="0.25098040700000002" green="0.34901961679999999" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSH-v9-rd3">
-                                                <rect key="frame" x="30" y="701.66666666666663" width="333" height="213.33333333333337"/>
+                                                <rect key="frame" x="30" y="756.66666666666663" width="333" height="213.33333333333337"/>
                                                 <string key="text">ჩვეულებრივი ანკარა ერთ-ერთი ყველაზე გავრცელებული, უშხამო და უწყინარი სახეობაა საქართველოში. სხვა გველებისგან მარტივად განირჩევა თავზე ორი ყვითელი ლაქის არსებობის გამო, თუმცა გვხვდება მელანისტი, ანუ სულ მთლად შავი ინდივიდებიც. ბინადრობს ძირითადად წყალთან ახლოს, იკვებება ამფიბიებით, სიგრძეში 1.6 მეტრამდე იზრდება. ძირითადად არ არის აგრესიული და ადამიანს გაურბის. თავდაცვის მიზნით თავის გაბერვა და მომკვდარუნებაც კი შეუძლია</string>
                                                 <fontDescription key="fontDescription" name="MarkGEO-Regular" family="Mark GEO" pointSize="14"/>
                                                 <color key="textColor" red="0.57254904510000004" green="0.59607845540000004" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -88,7 +88,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გალერეა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDx-Je-p7o">
-                                                <rect key="frame" x="30" y="935" width="76" height="20.333333333333371"/>
+                                                <rect key="frame" x="30" y="1060" width="76" height="20.333333333333258"/>
                                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="16"/>
                                                 <color key="textColor" red="0.25098040700000002" green="0.34901961679999999" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zp2-gM-oRf">
-                                                <rect key="frame" x="0.0" y="967.33333333333348" width="393" height="120"/>
+                                                <rect key="frame" x="0.0" y="1092.3333333333333" width="393" height="120"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="ig7-GL-TZ3"/>
@@ -121,7 +121,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გავრცელების არეალები" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkA-9b-jaU">
-                                                <rect key="frame" x="29.999999999999986" y="1111.3333333333333" width="204.66666666666663" height="20.333333333333258"/>
+                                                <rect key="frame" x="29.999999999999986" y="1236.3333333333333" width="204.66666666666663" height="20.333333333333258"/>
                                                 <fontDescription key="fontDescription" name="MarkGEO-SemiBold" family="Mark GEO" pointSize="16"/>
                                                 <color key="textColor" red="0.25098040700000002" green="0.34901961679999999" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbu-cG-hej">
-                                                <rect key="frame" x="30" y="1147.6666666666667" width="333" height="326"/>
+                                                <rect key="frame" x="30" y="1272.6666666666667" width="333" height="326"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="326" id="bu0-Pa-LQ2"/>
                                                 </constraints>
@@ -151,7 +151,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </mapView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tE-Jm-Rsy">
-                                                <rect key="frame" x="50" y="1403.6666666666667" width="293" height="46"/>
+                                                <rect key="frame" x="50" y="1528.6666666666667" width="293" height="46"/>
                                                 <color key="backgroundColor" name="selectedCategoryTint"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="bPB-Ic-COV"/>
@@ -461,20 +461,47 @@
                                                     <constraint firstAttribute="height" constant="25" id="w2A-zt-Ih3"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDv-Wd-m07">
+                                                <rect key="frame" x="30" y="654.33333333333337" width="333" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ROQ-Lx-XEl"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5a-aB-J9D">
+                                                <rect key="frame" x="30" y="990" width="333" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="OKv-x0-x3N"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="da6-HF-3tF">
+                                                <rect key="frame" x="30" y="1613.6666666666667" width="333" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bg5-AX-N6Y"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94509804249999996" green="0.96078431610000004" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="e5a-aB-J9D" secondAttribute="trailing" constant="30" id="1Ak-Va-6lp"/>
                                             <constraint firstItem="7tE-Jm-Rsy" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="50" id="5oq-uS-fRd"/>
                                             <constraint firstItem="tkf-Df-jsq" firstAttribute="top" secondItem="bOK-N4-ufi" secondAttribute="bottom" constant="-62" id="617-CU-mei"/>
+                                            <constraint firstItem="PDv-Wd-m07" firstAttribute="top" secondItem="tkf-Df-jsq" secondAttribute="bottom" constant="20" id="71u-pW-IAR"/>
                                             <constraint firstItem="MDx-Je-p7o" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="30" id="BfM-17-A1d"/>
+                                            <constraint firstItem="PDv-Wd-m07" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="30" id="Ebs-D2-JDP"/>
                                             <constraint firstAttribute="trailing" secondItem="tkf-Df-jsq" secondAttribute="trailing" constant="30" id="FeR-AZ-gkT"/>
                                             <constraint firstItem="bOK-N4-ufi" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" id="FrG-tx-LUT"/>
+                                            <constraint firstItem="MDx-Je-p7o" firstAttribute="top" secondItem="e5a-aB-J9D" secondAttribute="bottom" constant="20" id="JRr-U0-Cu7"/>
                                             <constraint firstItem="zp2-gM-oRf" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" id="Jsz-7u-NVI"/>
                                             <constraint firstItem="fwa-qB-t9W" firstAttribute="top" secondItem="FI1-qp-0ke" secondAttribute="top" constant="90" id="KJm-F5-Sj1"/>
                                             <constraint firstAttribute="trailing" secondItem="7tE-Jm-Rsy" secondAttribute="trailing" constant="50" id="MHf-ma-bmm"/>
-                                            <constraint firstItem="V8q-oj-mtC" firstAttribute="top" secondItem="tkf-Df-jsq" secondAttribute="bottom" constant="35" id="Mgp-YU-dDk"/>
+                                            <constraint firstItem="V8q-oj-mtC" firstAttribute="top" secondItem="PDv-Wd-m07" secondAttribute="bottom" constant="20" id="NbT-bU-92m"/>
                                             <constraint firstAttribute="trailing" secondItem="Cbu-cG-hej" secondAttribute="trailing" constant="30" id="OhE-26-McC"/>
+                                            <constraint firstAttribute="trailing" secondItem="PDv-Wd-m07" secondAttribute="trailing" constant="30" id="Oyc-A4-9Js"/>
                                             <constraint firstItem="qET-7R-KeD" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" id="P7G-R9-c1A"/>
+                                            <constraint firstItem="e5a-aB-J9D" firstAttribute="top" secondItem="BSH-v9-rd3" secondAttribute="bottom" constant="20" id="QGH-Zh-2Sg"/>
                                             <constraint firstItem="tkf-Df-jsq" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="30" id="QOT-Eu-PUp"/>
                                             <constraint firstItem="YkA-9b-jaU" firstAttribute="top" secondItem="zp2-gM-oRf" secondAttribute="bottom" constant="24" id="RNz-rz-DVp"/>
                                             <constraint firstItem="Cbu-cG-hej" firstAttribute="top" secondItem="YkA-9b-jaU" secondAttribute="bottom" constant="16" id="Rer-Mr-6oG"/>
@@ -483,13 +510,17 @@
                                             <constraint firstItem="qET-7R-KeD" firstAttribute="top" secondItem="FI1-qp-0ke" secondAttribute="top" id="YfC-Pd-vMB"/>
                                             <constraint firstItem="r9W-Sw-WfG" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="25" id="Ys1-63-och"/>
                                             <constraint firstItem="zp2-gM-oRf" firstAttribute="top" secondItem="MDx-Je-p7o" secondAttribute="bottom" constant="12" id="ZXt-Pu-iv2"/>
+                                            <constraint firstAttribute="bottom" secondItem="da6-HF-3tF" secondAttribute="bottom" constant="15" id="ae8-rL-d1c"/>
                                             <constraint firstItem="bOK-N4-ufi" firstAttribute="top" secondItem="FI1-qp-0ke" secondAttribute="top" id="awe-eN-dWd"/>
-                                            <constraint firstItem="MDx-Je-p7o" firstAttribute="top" secondItem="BSH-v9-rd3" secondAttribute="bottom" constant="20" id="g3O-KA-6hj"/>
+                                            <constraint firstItem="da6-HF-3tF" firstAttribute="top" secondItem="Cbu-cG-hej" secondAttribute="bottom" constant="15" id="gEb-f1-EhP"/>
                                             <constraint firstAttribute="trailing" secondItem="qET-7R-KeD" secondAttribute="trailing" id="gOs-6O-R1g"/>
                                             <constraint firstAttribute="trailing" secondItem="BSH-v9-rd3" secondAttribute="trailing" constant="30" id="iL9-3L-o99"/>
-                                            <constraint firstAttribute="bottom" secondItem="Cbu-cG-hej" secondAttribute="bottom" constant="60" id="inn-P3-j1O"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cbu-cG-hej" secondAttribute="bottom" constant="80" id="inn-P3-j1O"/>
+                                            <constraint firstItem="da6-HF-3tF" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="30" id="mOh-gF-SiW"/>
+                                            <constraint firstItem="e5a-aB-J9D" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="30" id="okp-ju-TcC"/>
                                             <constraint firstAttribute="trailing" secondItem="fwa-qB-t9W" secondAttribute="trailing" constant="25" id="ova-2o-sED"/>
-                                            <constraint firstAttribute="bottom" secondItem="7tE-Jm-Rsy" secondAttribute="bottom" constant="84" id="rVC-7q-STY"/>
+                                            <constraint firstAttribute="trailing" secondItem="da6-HF-3tF" secondAttribute="trailing" constant="30" id="pUQ-7v-gOU"/>
+                                            <constraint firstAttribute="bottom" secondItem="7tE-Jm-Rsy" secondAttribute="bottom" constant="104" id="rVC-7q-STY"/>
                                             <constraint firstAttribute="trailing" secondItem="zp2-gM-oRf" secondAttribute="trailing" id="sgg-hl-3Hc"/>
                                             <constraint firstItem="Cbu-cG-hej" firstAttribute="leading" secondItem="FI1-qp-0ke" secondAttribute="leading" constant="30" id="ssB-Ms-MPl"/>
                                             <constraint firstItem="r9W-Sw-WfG" firstAttribute="top" secondItem="FI1-qp-0ke" secondAttribute="top" constant="90" id="u3W-dA-eeL"/>
@@ -528,6 +559,9 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="adBanner_1" destination="PDv-Wd-m07" id="6Da-O0-rmI"/>
+                        <outlet property="adBanner_2" destination="e5a-aB-J9D" id="KFU-Fz-Bw2"/>
+                        <outlet property="adBanner_3" destination="da6-HF-3tF" id="8bY-Kf-Nlw"/>
                         <outlet property="authorAvatar" destination="mmp-cD-Edk" id="gP1-5O-t0u"/>
                         <outlet property="authorLbl" destination="iT9-CW-Kqh" id="M1Z-Yg-3Dd"/>
                         <outlet property="authorNameLbl" destination="fBS-T6-nMB" id="WzG-Ot-ctj"/>
@@ -569,6 +603,9 @@
         <namedColor name="venomous">
             <color red="1" green="0.0" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

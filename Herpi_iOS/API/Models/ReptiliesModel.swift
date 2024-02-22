@@ -13,7 +13,7 @@ struct ReptileModel: Codable {
     let family: Family?
     let type: String?
     let hasRedFlag, hasMildVenom, venomous: Bool?
-    let image: String?
+    let transparentThumbnail: String?
     let addedBy: AddedBy?
 }
 

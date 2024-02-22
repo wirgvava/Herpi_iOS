@@ -114,7 +114,7 @@ extension MainVCLayout: CLLocationManagerDelegate {
         geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
             guard let self = self else { return }
             if let error = error {
-                showError(message: error, sender: self.viewController)
+                print(error.localizedDescription)
             } else if let placemark = placemarks?.first {
                 fillInfo(with: placemark)
                 locationManager.stopUpdatingLocation()

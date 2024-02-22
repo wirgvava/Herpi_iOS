@@ -43,6 +43,7 @@
 		A552A00A2B8615AD00B1F89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552A0092B8615AD00B1F89E /* AppDelegate.swift */; };
 		A55CCD202B6FC63200E68F41 /* ReptiliesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55CCD1F2B6FC63200E68F41 /* ReptiliesModel.swift */; };
 		A55CCD222B6FC7F200E68F41 /* HandleResponseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55CCD212B6FC7F200E68F41 /* HandleResponseMethods.swift */; };
+		A563BE952B876FBA00887E82 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A563BE942B876FBA00887E82 /* GoogleMobileAds */; };
 		A57C059A2B7B9BAC0039F7AE /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C05992B7B9BAC0039F7AE /* LocationDelegate.swift */; };
 		A57C059D2B7B9C480039F7AE /* ChooseLocationVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C059C2B7B9C480039F7AE /* ChooseLocationVCLayout.swift */; };
 		A57C059F2B7BA8C50039F7AE /* CoverageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C059E2B7BA8C50039F7AE /* CoverageModel.swift */; };
@@ -81,6 +82,8 @@
 		A5B0C5C22B7A074F007AA73D /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0C5C12B7A074F007AA73D /* ChooseLocationViewController.swift */; };
 		A5B0C5C42B7A0759007AA73D /* ChooseLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B0C5C32B7A0759007AA73D /* ChooseLocationViewController.storyboard */; };
 		A5B0C5C92B7A1C51007AA73D /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0C5C82B7A1C51007AA73D /* SearchResponseModel.swift */; };
+		A5B231EC2B8788BD006F7718 /* AdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B231EB2B8788BD006F7718 /* AdMob.swift */; };
+		A5B231EE2B878BA8006F7718 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A5B231ED2B878BA8006F7718 /* Release.xcconfig */; };
 		A5B8A7282B700D3B0062BF28 /* NearbyReptileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8A7272B700D3B0062BF28 /* NearbyReptileModel.swift */; };
 		A5D47C0D2B7A371B005ADFBC /* SearchVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D47C0C2B7A371B005ADFBC /* SearchVCLayout.swift */; };
 		A5D47C152B7A4EBD005ADFBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D47C142B7A4EBD005ADFBC /* DetailViewController.swift */; };
@@ -183,6 +186,8 @@
 		A5B0C5C12B7A074F007AA73D /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
 		A5B0C5C32B7A0759007AA73D /* ChooseLocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseLocationViewController.storyboard; sourceTree = "<group>"; };
 		A5B0C5C82B7A1C51007AA73D /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
+		A5B231EB2B8788BD006F7718 /* AdMob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMob.swift; sourceTree = "<group>"; };
+		A5B231ED2B878BA8006F7718 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		A5B8A7272B700D3B0062BF28 /* NearbyReptileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyReptileModel.swift; sourceTree = "<group>"; };
 		A5D47C0C2B7A371B005ADFBC /* SearchVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCLayout.swift; sourceTree = "<group>"; };
 		A5D47C142B7A4EBD005ADFBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +218,7 @@
 				A50478112B76622C00E0CB02 /* SkeletonView in Frameworks */,
 				A5FE31B62B6FB3A800469448 /* Kingfisher in Frameworks */,
 				A5DA09FE2B8501EC0001F46B /* FirebaseAnalytics in Frameworks */,
+				A563BE952B876FBA00887E82 /* GoogleMobileAds in Frameworks */,
 				A5DA0A0E2B8501EC0001F46B /* FirebaseCrashlytics in Frameworks */,
 				A5DA0A142B8501EC0001F46B /* FirebaseDynamicLinks in Frameworks */,
 				A5A159D42B776E6E00F00D7C /* Reachability in Frameworks */,
@@ -563,6 +569,7 @@
 				A501B37A2B81447C00059F95 /* Localizable.strings */,
 				A58449912B6E26760036C3D2 /* Assets.xcassets */,
 				A58449932B6E26760036C3D2 /* LaunchScreen.storyboard */,
+				A5B231ED2B878BA8006F7718 /* Release.xcconfig */,
 				A5DA09FA2B85007A0001F46B /* GoogleService-Info.plist */,
 				A58449962B6E26760036C3D2 /* Info.plist */,
 			);
@@ -810,6 +817,7 @@
 				A50E4F1F2B7243BA00935EB2 /* LoafPresentationStyles.swift */,
 				A50F83082B7E75F000FBF5FD /* OpenChat.swift */,
 				A5EF144F2B7FA5D900A6AF30 /* OpenSideMenu.swift */,
+				A5B231EB2B8788BD006F7718 /* AdMob.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -934,6 +942,7 @@
 				A5DA09FD2B8501EC0001F46B /* FirebaseAnalytics */,
 				A5DA0A0D2B8501EC0001F46B /* FirebaseCrashlytics */,
 				A5DA0A132B8501EC0001F46B /* FirebaseDynamicLinks */,
+				A563BE942B876FBA00887E82 /* GoogleMobileAds */,
 			);
 			productName = Herpi_iOS;
 			productReference = A58449852B6E26750036C3D2 /* Herpi_iOS.app */;
@@ -971,6 +980,7 @@
 				A504780F2B76622C00E0CB02 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				A5A159D22B776E6E00F00D7C /* XCRemoteSwiftPackageReference "Reachability" */,
 				A5DA09FC2B8501EC0001F46B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A563BE932B876FBA00887E82 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = A58449862B6E26750036C3D2 /* Products */;
 			projectDirPath = "";
@@ -1005,6 +1015,7 @@
 				A5B0C5C42B7A0759007AA73D /* ChooseLocationViewController.storyboard in Resources */,
 				A5DA09FB2B85007A0001F46B /* GoogleService-Info.plist in Resources */,
 				A5A159E02B779C0000F00D7C /* LoadingViewController.storyboard in Resources */,
+				A5B231EE2B878BA8006F7718 /* Release.xcconfig in Resources */,
 				A5EF14462B7F861000A6AF30 /* SideMenuViewController.storyboard in Resources */,
 				A5AA882B2B7E1FF800B505D6 /* SocialsCollectionViewCell.xib in Resources */,
 				A5EC55302B839A2C00EFB4CC /* MainViewController.storyboard in Resources */,
@@ -1018,6 +1029,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A5DA0A1F2B8503B00001F46B /* Run Script 'Crashlytics' */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1107,6 +1119,7 @@
 				A55CCD202B6FC63200E68F41 /* ReptiliesModel.swift in Sources */,
 				A529F7382B6F770C00078534 /* UIView+Extensions.swift in Sources */,
 				A5A159D92B778D7900F00D7C /* ApiManager.swift in Sources */,
+				A5B231EC2B8788BD006F7718 /* AdMob.swift in Sources */,
 				A5B8A7282B700D3B0062BF28 /* NearbyReptileModel.swift in Sources */,
 				A507A7BF2B75574300B184FF /* ReptiliesHeaderTableViewCell.swift in Sources */,
 				A57C05A22B7BBFC00039F7AE /* MKPolygon+Extensions.swift in Sources */,
@@ -1269,6 +1282,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NW6K64987Z;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GADApplicationID = "ca-app-pub-7386410973532338~3583647437";
+				GADBannerID = "ca-app-pub-7386410973532338/9709577243";
+				GADInterstitialID = "ca-app-pub-7386410973532338/6129919725";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Herpi_iOS/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Herpi;
@@ -1288,6 +1305,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ge.herpi.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1304,6 +1322,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NW6K64987Z;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GADApplicationID = "ca-app-pub-7386410973532338~3583647437";
+				GADBannerID = "ca-app-pub-7386410973532338/9709577243";
+				GADInterstitialID = "ca-app-pub-7386410973532338/6129919725";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Herpi_iOS/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Herpi;
@@ -1323,6 +1345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ge.herpi.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1371,6 +1394,14 @@
 				minimumVersion = 0.7.0;
 			};
 		};
+		A563BE932B876FBA00887E82 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.1;
+			};
+		};
 		A5A159D22B776E6E00F00D7C /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
@@ -1415,6 +1446,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A50E4F1A2B7241DA00935EB2 /* XCRemoteSwiftPackageReference "Loaf" */;
 			productName = Loaf;
+		};
+		A563BE942B876FBA00887E82 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A563BE932B876FBA00887E82 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 		A5A159D32B776E6E00F00D7C /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
