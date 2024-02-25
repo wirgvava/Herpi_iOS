@@ -5,13 +5,15 @@
 //  Created by Konstantine Tsirgvava on 12.02.24.
 //
 
-import Foundation
 import UIKit
 import MapKit
+import Reachability
+import GoogleMobileAds
 
 class DetailVCLayout: NSObject {
     
     fileprivate weak var viewController: DetailViewController!
+    fileprivate let reachability = try! Reachability()
     
 //  - Init
     init(viewController: DetailViewController!) {
@@ -28,6 +30,8 @@ extension DetailVCLayout {
         checkVenom()
         setCollectionHeight()
         setupMapView()
+        setAdBanners()
+        loadIntersisialAd()
     }
     
     private func setUI(){
@@ -125,6 +129,62 @@ extension DetailVCLayout: MKMapViewDelegate {
             return renderer
         }
         return MKOverlayRenderer()
+    }
+}
+
+// MARK: - setup Ads
+extension DetailVCLayout {
+    private func setAdBanners(){
+        guard let vc = viewController else { return }
+        if reachability.connection == .unavailable {
+            vc.adBanner_1.layer.isHidden = true
+            vc.adBanner_2.layer.isHidden = true
+            vc.adBanner_3.layer.isHidden = true
+        } else {
+            vc.adBanner_1.layer.isHidden = false
+            vc.adBanner_2.layer.isHidden = false
+            vc.adBanner_3.layer.isHidden = false
+            vc.bannerView_1 = GADBannerView(adSize: GADAdSizeBanner)
+            addBannerView(to: vc.adBanner_1, rootVC: vc, bannerView: vc.bannerView_1)
+            vc.bannerView_2 = GADBannerView(adSize: GADAdSizeBanner)
+            addBannerView(to: vc.adBanner_2, rootVC: vc, bannerView: vc.bannerView_2)
+            vc.bannerView_3 = GADBannerView(adSize: GADAdSizeBanner)
+            vc.bannerView_1.delegate = self
+            vc.bannerView_2.delegate = self
+            vc.bannerView_3.delegate = self
+            addBannerView(to: vc.adBanner_3, rootVC: vc, bannerView: vc.bannerView_3)
+        }
+    }
+    
+    private func loadIntersisialAd(){
+        let request = GADRequest()
+        let adUnitID = Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? ""
+        guard let vc = viewController else { return }
+
+        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { ad, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let ad = ad {
+                vc.interstitial = ad
+            }
+        }
+    }
+}
+
+// MARK: - Ad appears only if loaded
+extension DetailVCLayout: GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        // Ad loaded successfully
+        viewController.adBanner_1.layer.isHidden = false
+        viewController.adBanner_2.layer.isHidden = false
+        viewController.adBanner_3.layer.isHidden = false
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        // Failed to load ad
+        viewController.adBanner_1.layer.isHidden = true
+        viewController.adBanner_2.layer.isHidden = true
+        viewController.adBanner_3.layer.isHidden = true
     }
 }
 

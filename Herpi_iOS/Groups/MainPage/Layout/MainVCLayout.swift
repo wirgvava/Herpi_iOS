@@ -7,11 +7,14 @@
 
 import UIKit
 import CoreLocation
+import Reachability
+import GoogleMobileAds
 
 class MainVCLayout: NSObject {
     
     fileprivate weak var viewController: MainViewController!
     fileprivate weak var tableView: UITableView!
+    fileprivate let reachability = try! Reachability()
     let locationManager = CLLocationManager()
     let refreshControl = UIRefreshControl()
     
@@ -29,6 +32,8 @@ extension MainVCLayout {
     func configure(){
         setupRefreshController()
         setupLocalizedTexts()
+        loadIntersisialAd()
+        setBannerAd()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         viewController.navigationController?.navigationBar.isHidden = true
@@ -59,6 +64,50 @@ extension MainVCLayout {
         viewController.nearYouDescription.text = "nearby.description".localized
     }
 }
+
+// MARK: - Setup Ads
+extension MainVCLayout {
+    private func setBannerAd(){
+        guard let vc = viewController else { return }
+        if reachability.connection == .unavailable {
+            vc.adBanner.layer.isHidden = true
+        } else {
+            vc.adBanner.layer.isHidden = false
+            vc.bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            vc.bannerView.delegate = self
+            addBannerView(to: vc.adBanner, rootVC: vc, bannerView: vc.bannerView)
+        }
+    }
+    
+    private func loadIntersisialAd(){
+        let request = GADRequest()
+        let adUnitID = Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? ""
+        guard let vc = viewController else { return }
+        
+        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { [weak self] ad, error in
+            guard let self = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let ad = ad {
+                vc.interstitial = ad
+            }
+        }
+    }
+}
+
+// MARK: - Ad appears only if loaded
+extension MainVCLayout: GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        // Ad loaded successfully
+        viewController.adBanner.layer.isHidden = false
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        // Failed to load ad
+        viewController.adBanner.layer.isHidden = true
+    }
+}
+
 
 // MARK: - Navigation
 extension MainVCLayout {
