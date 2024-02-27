@@ -30,16 +30,11 @@ class TopViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         self.animateCoordinator(coordinator: coordinator)
     }
-    
-    deinit {
-        unsubscribe()
-    }
 }
 
 // MARK: - Configure
 extension TopViewController {
     private func configure(){
-        subscribe()
         setSideMenuShadow()
         setSideMenu()
         setSideMenuAutoLayout()
@@ -315,23 +310,5 @@ extension TopViewController: UIGestureRecognizerDelegate {
                 }
             }
         }
-    }
-}
-
-// MARK: - Notifications
-extension TopViewController {
-    func unsubscribe(){
-        let center = NotificationCenter.default
-        center.removeObserver(self)
-    }
-    
-    func subscribe(){
-        let center = NotificationCenter.default
-        let openFaq = Notifications.openFaqLink.notificationName
-        center.addObserver(self, selector: #selector(openFaqDeepLink(_:)), name: openFaq, object: nil)
-    }
-    
-    @objc func openFaqDeepLink(_ sender: Notification){
-        openFaqPage()
     }
 }

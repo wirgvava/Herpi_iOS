@@ -20,5 +20,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88BE6962-D944-4079-B44B-B1A5EBEBA21C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herpi_iOS/Groups/MainPage/Layout/MainVCLayout.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "bannerView(_:didFailToReceiveAdWithError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "88BE6962-D944-4079-B44B-B1A5EBEBA21C - 23631ea0845d3118"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Herpi_iOS.MainVCLayout.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Herpi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantine/Desktop/Herpi/Herpi_iOS/Herpi_iOS/Groups/MainPage/Layout/MainVCLayout.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "88BE6962-D944-4079-B44B-B1A5EBEBA21C - c8392a35e1e296c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Herpi_iOS.MainVCLayout.bannerView(_: __C.GADBannerView, didFailToReceiveAdWithError: Swift.Error) -&gt; ()"
+                  moduleName = "Herpi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantine/Desktop/Herpi/Herpi_iOS/Herpi_iOS/Groups/MainPage/Layout/MainVCLayout.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2006F61B-CFC9-4D3D-9CDF-C29AECA0807E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herpi_iOS/Groups/MainPage/Layout/MainVCLayout.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "bannerViewDidReceiveAd(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2006F61B-CFC9-4D3D-9CDF-C29AECA0807E - 23631ea0845d319c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Herpi_iOS.MainVCLayout.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Herpi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantine/Desktop/Herpi/Herpi_iOS/Herpi_iOS/Groups/MainPage/Layout/MainVCLayout.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "2006F61B-CFC9-4D3D-9CDF-C29AECA0807E - 964c9dbdf944dba2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Herpi_iOS.MainVCLayout.bannerViewDidReceiveAd(__C.GADBannerView) -&gt; ()"
+                  moduleName = "Herpi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantine/Desktop/Herpi/Herpi_iOS/Herpi_iOS/Groups/MainPage/Layout/MainVCLayout.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

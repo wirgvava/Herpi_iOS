@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRn-0e-THr">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="851.99999999999977"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI1-qp-0ke" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="-60" width="393" height="1678.6666666666667"/>
@@ -467,12 +467,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ROQ-Lx-XEl"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5a-aB-J9D">
                                                 <rect key="frame" x="30" y="990" width="333" height="50"/>
@@ -480,12 +474,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OKv-x0-x3N"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="da6-HF-3tF">
                                                 <rect key="frame" x="30" y="1613.6666666666667" width="333" height="50"/>
@@ -493,12 +481,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="bg5-AX-N6Y"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94509804249999996" green="0.96078431610000004" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
