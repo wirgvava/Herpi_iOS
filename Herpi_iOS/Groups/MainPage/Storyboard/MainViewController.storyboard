@@ -414,6 +414,7 @@
                     <navigationItem key="navigationItem" id="ahg-Jg-oAK"/>
                     <connections>
                         <outlet property="adBanner" destination="m3b-KF-BGS" id="xgh-4v-Uow"/>
+                        <outlet property="adBannerHeight" destination="x8T-2Y-OUF" id="WBK-Vd-R5D"/>
                         <outlet property="categoriesCollectionView" destination="FCt-ZQ-JHb" id="ewy-X7-fEH"/>
                         <outlet property="categoryCollectionHeight" destination="va5-X6-jy8" id="MyY-Hj-INV"/>
                         <outlet property="contentView" destination="Tcs-Qp-QuM" id="BSt-2B-GNY"/>

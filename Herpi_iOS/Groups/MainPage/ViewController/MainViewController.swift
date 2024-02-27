@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var currentLocationLbl: UILabel!
     @IBOutlet weak var adBanner: UIView!
+    @IBOutlet weak var adBannerHeight: NSLayoutConstraint!
     // banner ad
     var bannerView: GADBannerView!
     // interstitial ad
@@ -189,8 +190,10 @@ extension MainViewController {
         let center = NotificationCenter.default
         let updateHeightConstraint = Notifications.updateHeightConstraints.notificationName
         let languageSwitched = Notifications.languageSwitched.notificationName
+        let openDetailsLink = Notifications.openDetailsLink.notificationName
         center.addObserver(self, selector: #selector(updateConstraints(_:)), name: updateHeightConstraint, object: nil)
         center.addObserver(self, selector: #selector(languageSwitched(_:)), name: languageSwitched, object: nil)
+        center.addObserver(self, selector: #selector(openDetailsLink(_:)), name: openDetailsLink, object: nil)
     }
     
     @objc func updateConstraints(_ sender: Notification){
@@ -210,5 +213,15 @@ extension MainViewController {
         getTeamData()
         getFaq()
         layout.configure()
+    }
+    
+    @objc func openDetailsLink(_ sender: Notification){
+        let vc = UIStoryboard(name: DetailViewController.className, bundle: nil).instantiateViewController(withIdentifier: "detailPage") as! DetailViewController
+       
+        guard let reptileId = sender.userInfo?["id"] as? String else { return }
+        
+        vc.reptileId = Int(reptileId) ?? 15
+        AppAnalytics.logEvents(with: .open_details, paramName: .specie_id, paramData: reptileId)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

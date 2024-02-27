@@ -10,7 +10,27 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+              let url = userActivity.webpageURL,
+              let components = URLComponents(url: url,
+                                             resolvingAgainstBaseURL: true) else {
+            return
+        }
+   
+        let center = NotificationCenter.default
+        let openFaq = Notifications.openFaqLink.notificationName
+        let openDetails = Notifications.openDetailsLink.notificationName
+        
+        if components.path == "/faq" {
+            center.post(name: openFaq, object: nil)
+        } else if components.path.contains("reptiles") {
+            let reptileId = url.pathComponents[2]
+            let data = ["id" : reptileId]
+            center.post(name: openDetails, object: nil, userInfo: data)
+        }
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
