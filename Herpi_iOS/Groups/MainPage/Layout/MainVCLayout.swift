@@ -71,8 +71,10 @@ extension MainVCLayout {
         guard let vc = viewController else { return }
         if reachability.connection == .unavailable {
             vc.adBanner.layer.isHidden = true
+            vc.adBannerHeight.constant = 0
         } else {
             vc.adBanner.layer.isHidden = false
+            vc.adBannerHeight.constant = 50
             vc.bannerView = GADBannerView(adSize: GADAdSizeBanner)
             vc.bannerView.delegate = self
             addBannerView(to: vc.adBanner, rootVC: vc, bannerView: vc.bannerView)
@@ -84,8 +86,7 @@ extension MainVCLayout {
         let adUnitID = Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? ""
         guard let vc = viewController else { return }
         
-        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { [weak self] ad, error in
-            guard let self = self else { return }
+        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { ad, error in
             if let error = error {
                 print(error.localizedDescription)
             } else if let ad = ad {
