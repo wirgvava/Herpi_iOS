@@ -144,6 +144,7 @@
 		A552A0092B8615AD00B1F89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55CCD1F2B6FC63200E68F41 /* ReptiliesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReptiliesModel.swift; sourceTree = "<group>"; };
 		A55CCD212B6FC7F200E68F41 /* HandleResponseMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponseMethods.swift; sourceTree = "<group>"; };
+		A56524EB2B8E50D80031136C /* Herpi_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Herpi_iOS.entitlements; sourceTree = "<group>"; };
 		A57C05992B7B9BAC0039F7AE /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		A57C059C2B7B9C480039F7AE /* ChooseLocationVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationVCLayout.swift; sourceTree = "<group>"; };
 		A57C059E2B7BA8C50039F7AE /* CoverageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageModel.swift; sourceTree = "<group>"; };
@@ -544,6 +545,7 @@
 		A58449872B6E26750036C3D2 /* Herpi_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A56524EB2B8E50D80031136C /* Herpi_iOS.entitlements */,
 				A58449A02B6E2FD40036C3D2 /* API */,
 				A584499E2B6E2FA30036C3D2 /* Groups */,
 				A584499F2B6E2FBE0036C3D2 /* Core */,
