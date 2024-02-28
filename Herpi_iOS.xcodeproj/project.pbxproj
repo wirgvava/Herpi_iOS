@@ -62,7 +62,6 @@
 		A58479712B794BCB00BD4577 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58479702B794BCB00BD4577 /* SearchViewController.storyboard */; };
 		A58479762B79562000BD4577 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58479752B79562000BD4577 /* SearchTableViewCell.swift */; };
 		A58479792B79573D00BD4577 /* SearchVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58479782B79573D00BD4577 /* SearchVCDataSource.swift */; };
-		A58BCE5B2B8E202800D4C156 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58BCE5A2B8E202800D4C156 /* GoogleService-Info.plist */; };
 		A59F14792B813301000C2031 /* LocationIsDisabledSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F14782B813301000C2031 /* LocationIsDisabledSheet.swift */; };
 		A59F147B2B81330A000C2031 /* LocationIsDisabledSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59F147A2B81330A000C2031 /* LocationIsDisabledSheet.storyboard */; };
 		A5A159D12B7762C200F00D7C /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159D02B7762C200F00D7C /* CacheManager.swift */; };
@@ -72,6 +71,7 @@
 		A5A159DD2B779BCA00F00D7C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159DB2B779BCA00F00D7C /* LoadingViewController.swift */; };
 		A5A159E02B779C0000F00D7C /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A159DF2B779C0000F00D7C /* LoadingViewController.storyboard */; };
 		A5A159E32B77D10F00F00D7C /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A159E22B77D10F00F00D7C /* PresenterManager.swift */; };
+		A5A6D9842B8F36860042216C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5A6D9862B8F36860042216C /* InfoPlist.strings */; };
 		A5AA881B2B7E162D00B505D6 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA881A2B7E162D00B505D6 /* TeamViewController.swift */; };
 		A5AA881D2B7E163900B505D6 /* TeamViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5AA881C2B7E163900B505D6 /* TeamViewController.storyboard */; };
 		A5AA88252B7E1DF600B505D6 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA88242B7E1DF600B505D6 /* TeamTableViewCell.swift */; };
@@ -96,6 +96,7 @@
 		A5DA0A142B8501EC0001F46B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = A5DA0A132B8501EC0001F46B /* FirebaseDynamicLinks */; };
 		A5DA0A222B8509470001F46B /* AppAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0A212B8509470001F46B /* AppAnalytics.swift */; };
 		A5DD165D2B76AA3800424882 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */; };
+		A5E36D512B8E66A500DA295E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E36D502B8E66A500DA295E /* GoogleService-Info.plist */; };
 		A5EC55302B839A2C00EFB4CC /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EC55312B839A2C00EFB4CC /* MainViewController.storyboard */; };
 		A5EC55332B83AAAB00EFB4CC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC55322B83AAAB00EFB4CC /* String+Extensions.swift */; };
 		A5EC55352B83AC6A00EFB4CC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC55342B83AC6A00EFB4CC /* UIButton+Extensions.swift */; };
@@ -168,7 +169,6 @@
 		A58479702B794BCB00BD4577 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		A58479752B79562000BD4577 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		A58479782B79573D00BD4577 /* SearchVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCDataSource.swift; sourceTree = "<group>"; };
-		A58BCE5A2B8E202800D4C156 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A59F14782B813301000C2031 /* LocationIsDisabledSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIsDisabledSheet.swift; sourceTree = "<group>"; };
 		A59F147A2B81330A000C2031 /* LocationIsDisabledSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationIsDisabledSheet.storyboard; sourceTree = "<group>"; };
 		A5A159D02B7762C200F00D7C /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
@@ -177,6 +177,8 @@
 		A5A159DB2B779BCA00F00D7C /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A5A159DF2B779C0000F00D7C /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
 		A5A159E22B77D10F00F00D7C /* PresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
+		A5A6D9852B8F36860042216C /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A5A6D9872B8F36880042216C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5AA881A2B7E162D00B505D6 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		A5AA881C2B7E163900B505D6 /* TeamViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamViewController.storyboard; sourceTree = "<group>"; };
 		A5AA88242B7E1DF600B505D6 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		A5D47C1D2B7A7AE8005ADFBC /* DetailVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCLayout.swift; sourceTree = "<group>"; };
 		A5DA0A212B8509470001F46B /* AppAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalytics.swift; sourceTree = "<group>"; };
 		A5DD165C2B76AA3800424882 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		A5E36D502B8E66A500DA295E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5EC55312B839A2C00EFB4CC /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		A5EC55322B83AAAB00EFB4CC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A5EC55342B83AC6A00EFB4CC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
@@ -569,10 +572,11 @@
 			children = (
 				A5124E1A2B6E8C2E00956A37 /* Fonts */,
 				A501B37A2B81447C00059F95 /* Localizable.strings */,
+				A5A6D9862B8F36860042216C /* InfoPlist.strings */,
 				A58449912B6E26760036C3D2 /* Assets.xcassets */,
 				A58449932B6E26760036C3D2 /* LaunchScreen.storyboard */,
 				A5B231ED2B878BA8006F7718 /* Release.xcconfig */,
-				A58BCE5A2B8E202800D4C156 /* GoogleService-Info.plist */,
+				A5E36D502B8E66A500DA295E /* GoogleService-Info.plist */,
 				A58449962B6E26760036C3D2 /* Info.plist */,
 			);
 			path = Resources;
@@ -1000,7 +1004,8 @@
 			files = (
 				A50F830B2B7E769B00FBF5FD /* MarkGEO-Regular.ttf in Resources */,
 				A58449952B6E26760036C3D2 /* LaunchScreen.storyboard in Resources */,
-				A58BCE5B2B8E202800D4C156 /* GoogleService-Info.plist in Resources */,
+				A5E36D512B8E66A500DA295E /* GoogleService-Info.plist in Resources */,
+				A5A6D9842B8F36860042216C /* InfoPlist.strings in Resources */,
 				A501B3782B81447C00059F95 /* Localizable.strings in Resources */,
 				A50F830A2B7E769B00FBF5FD /* MarkGEO-Semibold.ttf in Resources */,
 				A50F830C2B7E769B00FBF5FD /* MarkGEO-Bold.ttf in Resources */,
@@ -1151,6 +1156,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		A5A6D9862B8F36860042216C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5A6D9852B8F36860042216C /* ka */,
+				A5A6D9872B8F36880042216C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1283,7 +1297,7 @@
 				CODE_SIGN_ENTITLEMENTS = Herpi_iOS/Herpi_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NW6K64987Z;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1294,7 +1308,6 @@
 				INFOPLIST_FILE = Herpi_iOS/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Herpi;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
@@ -1327,7 +1340,7 @@
 				CODE_SIGN_ENTITLEMENTS = Herpi_iOS/Herpi_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NW6K64987Z;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GADApplicationID = "ca-app-pub-7386410973532338~3583647437";
@@ -1337,7 +1350,6 @@
 				INFOPLIST_FILE = Herpi_iOS/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Herpi;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;

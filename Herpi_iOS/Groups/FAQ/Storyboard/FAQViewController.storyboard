@@ -133,6 +133,13 @@
                                     <constraint firstItem="gbR-GM-ge1" firstAttribute="centerY" secondItem="dcd-DM-De9" secondAttribute="centerY" id="bnd-a9-swe"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-x0-hwH">
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OyY-ve-uOR"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KCq-x9-aoD">
                                 <rect key="frame" x="0.0" y="228" width="393" height="624"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.96078431369999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -300,11 +307,14 @@
                         <color key="backgroundColor" name="selectedCategoryTint"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Mg2-x0-hwH" secondAttribute="bottom" id="2Ji-pq-Qy2"/>
                             <constraint firstAttribute="bottom" secondItem="KCq-x9-aoD" secondAttribute="bottom" id="KFI-IV-O0u"/>
                             <constraint firstItem="KCq-x9-aoD" firstAttribute="leading" secondItem="dXP-gq-U9r" secondAttribute="leading" id="Ntm-aB-pf9"/>
+                            <constraint firstItem="dXP-gq-U9r" firstAttribute="trailing" secondItem="Mg2-x0-hwH" secondAttribute="trailing" id="Pd8-XD-l4E"/>
                             <constraint firstItem="dXP-gq-U9r" firstAttribute="trailing" secondItem="KCq-x9-aoD" secondAttribute="trailing" id="UMc-eP-c18"/>
                             <constraint firstItem="dcd-DM-De9" firstAttribute="top" secondItem="dXP-gq-U9r" secondAttribute="top" id="UUn-Ut-Ls1"/>
                             <constraint firstItem="dcd-DM-De9" firstAttribute="leading" secondItem="dXP-gq-U9r" secondAttribute="leading" id="YAp-xB-Hl4"/>
+                            <constraint firstItem="Mg2-x0-hwH" firstAttribute="leading" secondItem="dXP-gq-U9r" secondAttribute="leading" id="YoD-Mj-Z62"/>
                             <constraint firstItem="KCq-x9-aoD" firstAttribute="top" secondItem="dcd-DM-De9" secondAttribute="bottom" id="dXC-hv-bv4"/>
                             <constraint firstItem="KCq-x9-aoD" firstAttribute="top" secondItem="dXP-gq-U9r" secondAttribute="top" constant="125" id="hif-hU-58h"/>
                             <constraint firstItem="dcd-DM-De9" firstAttribute="trailing" secondItem="dXP-gq-U9r" secondAttribute="trailing" id="xvJ-Rp-tTa"/>
