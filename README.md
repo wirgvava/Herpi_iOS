@@ -50,7 +50,7 @@ Herpi is The Georgian Reptile Database that helps users gain knowledge and learn
 
 The app is available on App Store and Google Play Store
 
-[<img src="https://github.com/wirgvava/Herpi_iOS/assets/43795921/5f0fff6e-ed45-4a24-891c-51edfd33494e" height="80">]()
+[<img src="https://github.com/wirgvava/Herpi_iOS/assets/43795921/5f0fff6e-ed45-4a24-891c-51edfd33494e" height="80">](https://apps.apple.com/ge/app/herpi/id6478537718)
 [<img src="https://github.com/wirgvava/Herpi_iOS/assets/43795921/9dc1d88d-00ea-4e1e-a17a-3674c63f30f4" height="80">](https://play.google.com/store/apps/details?id=com.gigauri.reptiledb&hl=en&gl=US)
     
 ## Related
