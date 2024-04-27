@@ -25,6 +25,7 @@ class DetailVCDataSource: NSObject {
 extension DetailVCDataSource {
     private func configure(){
         galleryCollection.dataSource = self
+        galleryCollection.delegate = self
         registerCell()
     }
     
@@ -45,6 +46,14 @@ extension DetailVCDataSource: UICollectionViewDataSource, UICollectionViewDelega
         let gallery = viewController.detailedInfo?.gallery?[indexPath.item]
         cell.set(with: gallery!)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let galleryBrowserVC = UIStoryboard(name: GalleryBrowserViewController.className, bundle: nil).instantiateViewController(withIdentifier: "galleryBrowser") as! GalleryBrowserViewController
+        galleryBrowserVC.gallery = viewController.detailedInfo?.gallery ?? []
+        galleryBrowserVC.selectedImageIndex = indexPath.item
+        galleryBrowserVC.modalPresentationStyle = .overFullScreen
+        viewController.present(galleryBrowserVC, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
