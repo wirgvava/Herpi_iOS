@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Herpi_iOS
+
+  Created by Konstantine Tsirgvava on 28.02.24.
+  
+*/
+
+NSLocationWhenInUseUsageDescription = "Location is used to find species you may encounter in your area.";

@@ -130,6 +130,13 @@
                                     <constraint firstItem="LQw-vD-AhU" firstAttribute="centerX" secondItem="dQW-1Q-5Xn" secondAttribute="centerX" id="bkY-rK-bCl"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAA-6I-vPf">
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HA8-Pd-pa2"/>
+                                </constraints>
+                            </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymS-l9-NzH">
                                 <rect key="frame" x="0.0" y="228" width="393" height="624"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,11 +154,14 @@
                         <constraints>
                             <constraint firstItem="ymS-l9-NzH" firstAttribute="top" secondItem="dQW-1Q-5Xn" secondAttribute="bottom" id="19H-ig-ayk"/>
                             <constraint firstItem="ymS-l9-NzH" firstAttribute="top" secondItem="KMs-dr-Dqv" secondAttribute="top" constant="125" id="1rz-uN-sBK"/>
+                            <constraint firstItem="KMs-dr-Dqv" firstAttribute="trailing" secondItem="jAA-6I-vPf" secondAttribute="trailing" id="1uT-PO-mWs"/>
+                            <constraint firstItem="jAA-6I-vPf" firstAttribute="leading" secondItem="KMs-dr-Dqv" secondAttribute="leading" id="E0R-rx-gMm"/>
                             <constraint firstItem="dQW-1Q-5Xn" firstAttribute="top" secondItem="KMs-dr-Dqv" secondAttribute="top" id="E0j-dO-8DX"/>
                             <constraint firstItem="ymS-l9-NzH" firstAttribute="leading" secondItem="KMs-dr-Dqv" secondAttribute="leading" id="HQw-bf-miN"/>
                             <constraint firstItem="dQW-1Q-5Xn" firstAttribute="leading" secondItem="KMs-dr-Dqv" secondAttribute="leading" id="XiT-ke-Vo5"/>
                             <constraint firstAttribute="bottom" secondItem="ymS-l9-NzH" secondAttribute="bottom" id="hip-sf-XJy"/>
                             <constraint firstItem="dQW-1Q-5Xn" firstAttribute="trailing" secondItem="KMs-dr-Dqv" secondAttribute="trailing" id="klY-V5-8kV"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="jAA-6I-vPf" secondAttribute="bottom" id="rDg-sN-ieg"/>
                             <constraint firstItem="KMs-dr-Dqv" firstAttribute="trailing" secondItem="ymS-l9-NzH" secondAttribute="trailing" id="zlb-ah-TD6"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
