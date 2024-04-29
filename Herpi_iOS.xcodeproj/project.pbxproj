@@ -1357,7 +1357,7 @@
 				CODE_SIGN_ENTITLEMENTS = Herpi_iOS/Herpi_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NW6K64987Z;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1381,7 +1381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ge.kdot.herpi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1400,7 +1400,7 @@
 				CODE_SIGN_ENTITLEMENTS = Herpi_iOS/Herpi_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NW6K64987Z;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GADApplicationID = "ca-app-pub-7386410973532338~3583647437";
@@ -1423,7 +1423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ge.kdot.herpi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
