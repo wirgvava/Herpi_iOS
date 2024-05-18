@@ -31,7 +31,6 @@ extension DetailVCLayout {
         setCollectionHeight()
         setupMapView()
         setAdBanners()
-        loadIntersisialAd()
     }
     
     private func setUI(){
@@ -156,7 +155,7 @@ extension DetailVCLayout {
         }
     }
     
-    private func loadIntersisialAd(){
+    func loadInterstitialAd(){
         let request = GADRequest()
         let adUnitID = Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? ""
         guard let vc = viewController else { return }

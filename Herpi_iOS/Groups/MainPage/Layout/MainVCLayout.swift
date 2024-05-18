@@ -32,7 +32,6 @@ extension MainVCLayout {
     func configure(){
         setupRefreshController()
         setupLocalizedTexts()
-        loadIntersisialAd()
         setBannerAd()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -81,7 +80,7 @@ extension MainVCLayout {
         }
     }
     
-    private func loadIntersisialAd(){
+    func loadInterstitialAd(){
         let request = GADRequest()
         let adUnitID = Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? ""
         guard let vc = viewController else { return }

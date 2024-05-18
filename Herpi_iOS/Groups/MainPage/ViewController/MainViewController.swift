@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     
     // Managers
     private var dataSource: MainVCDataSource!
-    private var layout: MainVCLayout!
+    private var layout: MainVCLayout?
     private var serviceManager = ApiManager()
     
     // Default Location
@@ -49,6 +49,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        layout?.loadInterstitialAd()
     }
     
     deinit{
@@ -69,7 +74,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTapChooseLocationManually(){
-        layout.openLocationSheet()
+        layout?.openLocationSheet()
     }
 }
 
@@ -212,7 +217,7 @@ extension MainViewController {
         getReptiles()
         getTeamData()
         getFaq()
-        layout.configure()
+        layout?.configure()
     }
     
     @objc func openDetailsLink(_ sender: Notification){

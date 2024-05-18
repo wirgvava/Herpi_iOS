@@ -56,7 +56,6 @@ extension MainVCDataSource {
             self.setCollectionViewHeights()
             self.setTopCategoryViewHeight()
             self.contentSize()
-    //        self.viewController.view.hideSkeleton()
             self.tableView.reloadData()
         }
     }

@@ -61,14 +61,19 @@ class DetailViewController: UIViewController {
     var coverage: [CoverageModelElement] = []
 
 //  MARK: - View Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        removePanGesture(on: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        removePanGesture(on: self)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        layout?.loadInterstitialAd()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
