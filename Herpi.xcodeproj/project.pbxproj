@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5E2894F2DF888BD0076343E /* HerpiUI in Frameworks */ = {isa = PBXBuildFile; productRef = A5E2894E2DF888BD0076343E /* HerpiUI */; };
+		A50516212F17BEE900B73505 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A50516202F17BEE900B73505 /* ComposableArchitecture */; };
+		A514EFB62F180F5400F5EEB2 /* HerpiUI in Frameworks */ = {isa = PBXBuildFile; productRef = A514EFB52F180F5400F5EEB2 /* HerpiUI */; };
 		A5E2896D2DF88C200076343E /* HerpiFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A5E2896C2DF88C200076343E /* HerpiFoundation */; };
 		A5E289702DF88E3E0076343E /* HerpiModels in Frameworks */ = {isa = PBXBuildFile; productRef = A5E2896F2DF88E3E0076343E /* HerpiModels */; };
 /* End PBXBuildFile section */
@@ -20,6 +21,7 @@
 		A57864162DF7187300677FC7 /* Exceptions for "Libraries" folder in "Herpi" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				HerpiFoundation,
 				HerpiModels,
 				HerpiUI,
 			);
@@ -59,7 +61,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E2896D2DF88C200076343E /* HerpiFoundation in Frameworks */,
-				A5E2894F2DF888BD0076343E /* HerpiUI in Frameworks */,
+				A514EFB62F180F5400F5EEB2 /* HerpiUI in Frameworks */,
+				A50516212F17BEE900B73505 /* ComposableArchitecture in Frameworks */,
 				A5E289702DF88E3E0076343E /* HerpiModels in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57863FF2DF715EB00677FC7 /* Build configuration list for PBXNativeTarget "Herpi" */;
 			buildPhases = (
+				A50655162F190D2100B79C6B /* Prepare Main Resources and Assets */,
 				A57863ED2DF715EA00677FC7 /* Sources */,
 				A57863EE2DF715EA00677FC7 /* Frameworks */,
 				A57863EF2DF715EA00677FC7 /* Resources */,
@@ -113,9 +117,10 @@
 			);
 			name = Herpi;
 			packageProductDependencies = (
-				A5E2894E2DF888BD0076343E /* HerpiUI */,
 				A5E2896C2DF88C200076343E /* HerpiFoundation */,
 				A5E2896F2DF88E3E0076343E /* HerpiModels */,
+				A50516202F17BEE900B73505 /* ComposableArchitecture */,
+				A514EFB52F180F5400F5EEB2 /* HerpiUI */,
 			);
 			productName = Herpi;
 			productReference = A57863F12DF715EA00677FC7 /* Herpi.app */;
@@ -146,6 +151,9 @@
 			);
 			mainGroup = A57863E82DF715EA00677FC7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A505161F2F17BEE900B73505 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A57863F22DF715EA00677FC7 /* Products */;
 			projectDirPath = "";
@@ -165,6 +173,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A50655162F190D2100B79C6B /* Prepare Main Resources and Assets */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Herpi/Resources/Localizable/en.lproj/Localizable.strings",
+				"$(SRCROOT)/Herpi/Resources/Scripts/BuildPhaseScripts/SwiftGenAssets/strings-swift4.stencil",
+			);
+			name = "Prepare Main Resources and Assets";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Herpi/Resources/Generated/Localizable.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -x\n\nSWIFTGEN_DIRECTORY_PATH=\"${PROJECT_DIR}/Herpi/Resources/Scripts/BuildPhaseScripts/SwiftGenAssets\"\ncd \"$SWIFTGEN_DIRECTORY_PATH\"\n\nROOT_PATH=\"${PROJECT_DIR}/Herpi/Resources\"\n\nLOCALIZATION_PATH=\"${ROOT_PATH}/Localizable/en.lproj/Localizable.strings\"\nLOCALIZATION_OUTPUT=\"${ROOT_PATH}/Generated/Localizable.swift\"\n\nmkdir -p \"${ROOT_PATH}/Generated\"\n\nSWIFTGEN_PATH=\"${PROJECT_DIR}/Herpi/Resources/Scripts/BuildPhaseScripts/3rdparty/swiftgen/bin/swiftgen\"\n\n$SWIFTGEN_PATH run strings $LOCALIZATION_PATH --output $LOCALIZATION_OUTPUT -p \"strings-swift4.stencil\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A57863ED2DF715EA00677FC7 /* Sources */ = {
@@ -307,7 +340,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Herpi/Preview Content\"";
 				DEVELOPMENT_TEAM = NW6K64987Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -345,7 +377,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Herpi/Preview Content\"";
 				DEVELOPMENT_TEAM = NW6K64987Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -399,8 +430,24 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		A505161F2F17BEE900B73505 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.23.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		A5E2894E2DF888BD0076343E /* HerpiUI */ = {
+		A50516202F17BEE900B73505 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A505161F2F17BEE900B73505 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		A514EFB52F180F5400F5EEB2 /* HerpiUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HerpiUI;
 		};
