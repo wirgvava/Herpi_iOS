@@ -8,15 +8,17 @@
 import Foundation
 
 final class AppLanguage {
-    
+        
     enum Language: String {
         case en
         case ka
     }
     
-    @MainActor static var currentLanguage = UserDefaultsManager.appLanguage
+    static var currentLanguage: String {
+        UserDefaultsManager.shared.get(forKey: .appLanguage)
+    }
     
-    @MainActor static func setLanguage(_ language: Language) {
-        UserDefaultsManager.appLanguage = language.rawValue
+    static func setLanguage(_ language: Language) {
+        UserDefaultsManager.shared.set(language.rawValue, forKey: .appLanguage)
     }
 }

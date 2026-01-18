@@ -1,10 +1,6 @@
-/* 
-  Localizable.strings
-  Herpi
-
-  Created by Konstantine Tsirgvava on 15.01.26.
-  
-*/
 
 
-"Main.Test" = "Test text";
+
+// MARK: - MainPage
+"MainPage.Header.Region" = "Region";
+"MainPage.Header.PickLocation" = "Pick Region Manually";

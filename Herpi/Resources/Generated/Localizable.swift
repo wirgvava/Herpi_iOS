@@ -6,10 +6,17 @@ import HerpiFoundation
 
 enum L {
 
-  enum Main {
-    /// Test text
-     static var test: String {
-        return L.tr("Localizable", "Main.Test")
+  enum MainPage {
+
+    enum Header {
+      /// Pick Region Manually
+       static var pickLocation: String {
+          return L.tr("Localizable", "MainPage.Header.PickLocation")
+      }
+      /// Region
+       static var region: String {
+          return L.tr("Localizable", "MainPage.Header.Region")
+      }
     }
   }
 }

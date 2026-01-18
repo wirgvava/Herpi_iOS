@@ -10,6 +10,7 @@ import HerpiFoundation
 
 public enum HerpiColor {
     
+    public static let background: Color = .init(hex: "#F1F5F4")
     public static let white: Color = .init(hex: "#FFFFFF")
     public static let tint: Color = .init(hex: "#045446")
     public static let dark: Color = .init(hex: "#4B5556")

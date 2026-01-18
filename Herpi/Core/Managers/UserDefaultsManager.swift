@@ -6,33 +6,22 @@
 //
 
 import Foundation
+import HerpiFoundation
 
-@propertyWrapper
-struct UserDefault<T> {
-    let key: String
-    let defaultValue: T
-    let storage: UserDefaults
+final class UserDefaultsManager: Sendable {
     
-    init(_ key: String, defaultValue: T, storage: UserDefaults = .standard) {
-        self.key = key
-        self.defaultValue = defaultValue
-        self.storage = storage
+    static let shared = UserDefaultsManager()
+  
+    enum Keys: String {
+        case appLanguage
     }
     
-    var wrappedValue: T {
-        get {
-            return storage.object(forKey: key) as? T ?? defaultValue
-        }
-        set {
-            storage.set(newValue, forKey: key)
-        }
+    // - Strings
+    func set(_ value: String, forKey key: Keys) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
     }
-}
-
-@MainActor 
-final class UserDefaultsManager {
     
-    @UserDefault("appLanguage", defaultValue: AppLanguage.Language.en.rawValue)
-    static var appLanguage: String
-    
+    func get(forKey key: Keys) -> String {
+        return UserDefaults.standard.string(forKey: key.rawValue) ?? .empty
+    }
 }
