@@ -18,9 +18,7 @@ extension MainPageView {
         var body: some View {
             HStack {
                 MenuButton { menuAction() }
-                
                 Spacer()
-                
                 VStack(spacing: Constants.verticalSpacing) {
                     Text(L.MainPage.Header.region)
                         .font(HerpiFont.semibold_15)
@@ -42,9 +40,7 @@ extension MainPageView {
                         }
                     }
                 }
-                
                 Spacer()
-                
                 ChatButton { chatAction() }
             }
             .padding(.horizontal, Constants.horizontalPadding)

@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct Family: Codable, Sendable, Identifiable {
+public struct Family: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var name: String
     public var image: String

@@ -17,13 +17,13 @@ public enum HerpiColor {
     public static let creme: Color = .init(hex: "#FFE3B3")
     public static let gray: Color = .init(hex: "#7F8B91")
     
-    enum Title {
+    public enum Title {
         public static let primary: Color = .init(hex: "#494D50")
         public static let secondary: Color = .init(hex: "#67737C")
         public static let green: Color = .init(hex: "#017F71")
     }
     
-    enum VenomType {
+    public enum VenomType {
         public static let midVenomous: Color = .init(hex: "#FFC000")
         public static let noVenomous: Color = .init(hex: "#00B988")
         public static let venomous: Color = .init(hex: "#FF0050")

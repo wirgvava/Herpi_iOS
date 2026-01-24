@@ -27,6 +27,8 @@ public enum HerpiFont {
     public static let regular_18 = HerpiFont.font(forType: .regular, size: 18)
     
     /// `Semibold` fonts
+    public static let semibold_10 = HerpiFont.font(forType: .semibold, size: 10)
+    public static let semibold_13 = HerpiFont.font(forType: .semibold, size: 13)
     public static let semibold_14 = HerpiFont.font(forType: .semibold, size: 14)
     public static let semibold_15 = HerpiFont.font(forType: .semibold, size: 15)
     public static let semibold_16 = HerpiFont.font(forType: .semibold, size: 16)

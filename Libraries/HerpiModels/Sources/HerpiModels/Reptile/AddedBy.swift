@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct AddedBy: Codable, Sendable, Identifiable {
+public struct AddedBy: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var firstName: String
     public var lastName: String

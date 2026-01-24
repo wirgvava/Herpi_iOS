@@ -1,0 +1,58 @@
+//
+//  NearbyReptilesView.swift
+//  Herpi
+//
+//  Created by Konstantine Tsirgvava on 22.01.26.
+//
+
+import SwiftUI
+import HerpiUI
+import HerpiModels
+import HerpiFoundation
+import ComposableArchitecture
+
+struct NearbyReptilesView: View {
+    
+    let store: StoreOf<NearbyReptilesFeature>
+    
+    var body: some View {
+        WithPerceptionTracking {
+            VStack(spacing: .zero) {
+                if store.reptiles.isEmpty {
+                    EmptyNearbyReptilesView()
+                        .skeleton(isLoading: store.isLoading)
+                } else {
+                    SectionHeader(
+                        header: L.MainPage.NearbyReptiles.header,
+                        description: L.MainPage.NearbyReptiles.description
+                    )
+                    
+                    NearbyReptilesCollection(
+                        reptiles: store.reptiles,
+                        currentPage: store.currentPage,
+                        isLoading: store.isLoading,
+                        pageChanged: { page in
+                            store.send(.pageChanged(page))
+                        }
+                    )
+                    .padding(.top, Constants.collectionTopPadding)
+                }
+            }
+            .onAppear {
+                store.send(.fetchReptiles)
+            }
+        }
+    }
+    
+    struct Constants {
+        static let collectionTopPadding: CGFloat = 16
+    }
+}
+
+#Preview {
+    NearbyReptilesView(
+        store: .init(initialState: NearbyReptilesFeature.State()) {
+            NearbyReptilesFeature()
+        }
+    )
+}

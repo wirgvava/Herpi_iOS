@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct NearbyReptileModel: Codable, Sendable, Identifiable {
+public struct NearbyReptileModel: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var name: String
     public var scientificName: String
@@ -55,7 +55,7 @@ public let mockNearbyReptile1: NearbyReptileModel = .init(
     type: "SNAKE",
     hasRedFlag: false,
     hasMildVenom: false,
-    venomous: false,
+    venomous: true,
     image: "https://api.herpi.ge/uploads/file",
     addedBy: mockAddedBy
 )
@@ -67,7 +67,7 @@ public let mockNearbyReptile2: NearbyReptileModel = .init(
     family: mockFamily,
     type: "SNAKE",
     hasRedFlag: false,
-    hasMildVenom: false,
+    hasMildVenom: true,
     venomous: false,
     image: "https://api.herpi.ge/uploads/2182.jpg",
     addedBy: mockAddedBy
@@ -94,7 +94,72 @@ public let mockNearbyReptile4: NearbyReptileModel = .init(
     type: "SCORPION",
     hasRedFlag: false,
     hasMildVenom: true,
+    venomous: true,
+    image: "https://api.herpi.ge/uploads/2141.jpg",
+    addedBy: mockAddedBy
+)
+
+public let mockNearbyReptile5: NearbyReptileModel = .init(
+    id: 4,
+    name: "Grass Snake",
+    scientificName: "Natrix Natrix",
+    family: mockFamily,
+    type: "SNAKE",
+    hasRedFlag: false,
+    hasMildVenom: false,
+    venomous: true,
+    image: "https://api.herpi.ge/uploads/file",
+    addedBy: mockAddedBy
+)
+
+public let mockNearbyReptile6: NearbyReptileModel = .init(
+    id: 5,
+    name: "Smooth snake",
+    scientificName: "Coronella austriaca",
+    family: mockFamily,
+    type: "SNAKE",
+    hasRedFlag: false,
+    hasMildVenom: true,
     venomous: false,
+    image: "https://api.herpi.ge/uploads/2182.jpg",
+    addedBy: mockAddedBy
+)
+
+public let mockNearbyReptile7: NearbyReptileModel = .init(
+    id: 6,
+    name: "Schmidt's whip snake",
+    scientificName: "Dolichophis schmidti",
+    family: mockFamily,
+    type: "SNAKE",
+    hasRedFlag: false,
+    hasMildVenom: false,
+    venomous: false,
+    image: "https://api.herpi.ge/uploads/1899.jpg",
+    addedBy: mockAddedBy
+)
+
+public let mockNearbyReptile8: NearbyReptileModel = .init(
+    id: 7,
+    name: "Lesser Asian Scorpion",
+    scientificName: "Mesobuthus eupeus",
+    family: mockFamily,
+    type: "SCORPION",
+    hasRedFlag: false,
+    hasMildVenom: true,
+    venomous: true,
+    image: "https://api.herpi.ge/uploads/2141.jpg",
+    addedBy: mockAddedBy
+)
+
+public let mockNearbyReptile9: NearbyReptileModel = .init(
+    id: 8,
+    name: "Lesser Asian Scorpion",
+    scientificName: "Mesobuthus eupeus",
+    family: mockFamily,
+    type: "SCORPION",
+    hasRedFlag: false,
+    hasMildVenom: true,
+    venomous: true,
     image: "https://api.herpi.ge/uploads/2141.jpg",
     addedBy: mockAddedBy
 )

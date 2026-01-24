@@ -14,12 +14,12 @@ public struct SearchBar: View {
     var placeholder: String
     var viewType: ViewType = .field
     
-    enum ViewType {
+    public enum ViewType {
         case button
         case field
     }
     
-    init(
+    public init(
         viewType: ViewType = .field,
         placeholder: String,
         searchText: Binding<String> = .constant(.empty)

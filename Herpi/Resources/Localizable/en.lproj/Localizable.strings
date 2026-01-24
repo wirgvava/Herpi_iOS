@@ -4,3 +4,14 @@
 // MARK: - MainPage
 "MainPage.Header.Region" = "Region";
 "MainPage.Header.PickLocation" = "Pick Region Manually";
+"MainPage.NearbyReptiles.Header" = "Near You";
+"MainPage.NearbyReptiles.Description" = "Species you encounter based on your location";
+"MainPage.NearbyReptiles.EmptyList" = "No species were found in this area";
+
+// MARK: - SearchBar
+"SearchBar.Placeholder" = "Search here...";
+
+// MARK: - VenomTypes
+"VenomType.Venomous" = "Venomous";
+"VenomType.MidVenomous" = "Mild Venom";
+"VenomType.NoVenomous" = "Harmless";

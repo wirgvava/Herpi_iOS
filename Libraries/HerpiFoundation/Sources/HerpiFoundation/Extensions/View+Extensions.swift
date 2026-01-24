@@ -11,6 +11,25 @@ public extension View {
     func topCornerRadius(_ radius: CGFloat) -> some View {
         clipShape(TopRoundedCorner(radius: radius))
     }
+    
+    func skeleton<S>(
+        _ shape: S? = nil as Rectangle?,
+        isLoading: Bool
+    ) -> some View where S: Shape {
+        guard isLoading else { return AnyView(self) }
+        let skeletonColor = Color.gray.opacity(0.3)
+        
+        let skeletonShape: AnyShape = if let shape {
+            AnyShape(shape)
+        } else {
+            AnyShape(RoundedRectangle(cornerRadius: 10))
+        }
+        
+        return AnyView(
+            opacity(0)
+                .overlay(skeletonShape.fill(skeletonColor))
+        )
+    }
 }
 
 fileprivate struct TopRoundedCorner: Shape {

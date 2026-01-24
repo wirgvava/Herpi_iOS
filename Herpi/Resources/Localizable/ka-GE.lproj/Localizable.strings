@@ -4,3 +4,14 @@
 // MARK: - MainPage
 "MainPage.Header.Region" = "რეგიონი";
 "MainPage.Header.PickLocation" = "რეგიონის არჩევა";
+"MainPage.NearbyReptiles.Header" = "შენს არეალში";
+"MainPage.NearbyReptiles.Description" = "შენს არეალში გავრცელებული სახეობები";
+"MainPage.NearbyReptiles.EmptyList" = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა";
+
+// MARK: - SearchBar
+"SearchBar.Placeholder" = "მოძებნე აქ...";
+
+// MARK: - VenomTypes
+"VenomType.Venomous" = "შხამიანი";
+"VenomType.MidVenomous" = "სუსტად შხამიანი";
+"VenomType.NoVenomous" = "უშხამო";

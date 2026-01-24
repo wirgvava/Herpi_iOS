@@ -18,6 +18,43 @@ enum L {
           return L.tr("Localizable", "MainPage.Header.Region")
       }
     }
+
+    enum NearbyReptiles {
+      /// Species you encounter based on your location
+       static var description: String {
+          return L.tr("Localizable", "MainPage.NearbyReptiles.Description")
+      }
+      /// No species were found in this area
+       static var emptyList: String {
+          return L.tr("Localizable", "MainPage.NearbyReptiles.EmptyList")
+      }
+      /// Near You
+       static var header: String {
+          return L.tr("Localizable", "MainPage.NearbyReptiles.Header")
+      }
+    }
+  }
+
+  enum SearchBar {
+    /// Search here...
+     static var placeholder: String {
+        return L.tr("Localizable", "SearchBar.Placeholder")
+    }
+  }
+
+  enum VenomType {
+    /// Mild Venom
+     static var midVenomous: String {
+        return L.tr("Localizable", "VenomType.MidVenomous")
+    }
+    /// Harmless
+     static var noVenomous: String {
+        return L.tr("Localizable", "VenomType.NoVenomous")
+    }
+    /// Venomous
+     static var venomous: String {
+        return L.tr("Localizable", "VenomType.Venomous")
+    }
   }
 }
 

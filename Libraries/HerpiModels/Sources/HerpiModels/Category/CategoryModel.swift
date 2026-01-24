@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct CategoryModel: Codable, Sendable, Identifiable {
+public struct CategoryModel: Codable, Sendable, Identifiable, Equatable {
     public var id: String
     public var title: String
     public var titleTurned: String

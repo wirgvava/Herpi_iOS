@@ -14,6 +14,7 @@
 		A5613FD62F1D2FE900A7792C /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A5613FD52F1D2FE900A7792C /* FirebaseCrashlytics */; };
 		A5E2896D2DF88C200076343E /* HerpiFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A5E2896C2DF88C200076343E /* HerpiFoundation */; };
 		A5E289702DF88E3E0076343E /* HerpiModels in Frameworks */ = {isa = PBXBuildFile; productRef = A5E2896F2DF88E3E0076343E /* HerpiModels */; };
+		A5E681B22F22421F00400A49 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A5E681B12F22421F00400A49 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 				A514EFB62F180F5400F5EEB2 /* HerpiUI in Frameworks */,
 				A50516212F17BEE900B73505 /* ComposableArchitecture in Frameworks */,
 				A5613FD62F1D2FE900A7792C /* FirebaseCrashlytics in Frameworks */,
+				A5E681B22F22421F00400A49 /* Kingfisher in Frameworks */,
 				A5613FD22F1D2FE900A7792C /* FirebaseAnalytics in Frameworks */,
 				A5613FD42F1D2FE900A7792C /* FirebaseCore in Frameworks */,
 				A5E289702DF88E3E0076343E /* HerpiModels in Frameworks */,
@@ -131,6 +133,7 @@
 				A5613FD12F1D2FE900A7792C /* FirebaseAnalytics */,
 				A5613FD32F1D2FE900A7792C /* FirebaseCore */,
 				A5613FD52F1D2FE900A7792C /* FirebaseCrashlytics */,
+				A5E681B12F22421F00400A49 /* Kingfisher */,
 			);
 			productName = Herpi;
 			productReference = A57863F12DF715EA00677FC7 /* Herpi.app */;
@@ -164,6 +167,7 @@
 			packageReferences = (
 				A505161F2F17BEE900B73505 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				A5613FD02F1D2FE900A7792C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A5E681B02F22421F00400A49 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A57863F22DF715EA00677FC7 /* Products */;
@@ -482,6 +486,14 @@
 				minimumVersion = 12.8.0;
 			};
 		};
+		A5E681B02F22421F00400A49 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -516,6 +528,11 @@
 		A5E2896F2DF88E3E0076343E /* HerpiModels */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HerpiModels;
+		};
+		A5E681B12F22421F00400A49 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5E681B02F22421F00400A49 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
