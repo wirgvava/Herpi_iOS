@@ -7,6 +7,8 @@
 "MainPage.NearbyReptiles.Header" = "შენს არეალში";
 "MainPage.NearbyReptiles.Description" = "შენს არეალში გავრცელებული სახეობები";
 "MainPage.NearbyReptiles.EmptyList" = "ამ არეალში გავრცელებული სახეობები ვერ მოიძებნა";
+"MainPage.ReptilesList.HeaderDescription" = "მთელი ქვეყნის სახეობები";
+"MainPage.ReptilesList.ReadMoreBtn" = "დეტალურად";
 
 // MARK: - SearchBar
 "SearchBar.Placeholder" = "მოძებნე აქ...";

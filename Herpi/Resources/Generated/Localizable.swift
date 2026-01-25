@@ -33,6 +33,17 @@ enum L {
           return L.tr("Localizable", "MainPage.NearbyReptiles.Header")
       }
     }
+
+    enum ReptilesList {
+      /// Every officially registered specie in the country
+       static var headerDescription: String {
+          return L.tr("Localizable", "MainPage.ReptilesList.HeaderDescription")
+      }
+      /// Read More
+       static var readMoreBtn: String {
+          return L.tr("Localizable", "MainPage.ReptilesList.ReadMoreBtn")
+      }
+    }
   }
 
   enum SearchBar {

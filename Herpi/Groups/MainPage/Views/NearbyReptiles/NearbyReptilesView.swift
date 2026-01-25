@@ -33,6 +33,8 @@ struct NearbyReptilesView: View {
                         isLoading: store.isLoading,
                         pageChanged: { page in
                             store.send(.pageChanged(page))
+                        }, cardTapped: { id in
+                            store.send(.didTappedReptileCard(id))
                         }
                     )
                     .padding(.top, Constants.collectionTopPadding)

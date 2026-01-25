@@ -15,6 +15,7 @@ struct NearbyReptilesCollection: View {
     var currentPage: Int
     var isLoading: Bool
     var pageChanged: (Int) -> Void
+    var cardTapped: (Int) -> Void
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -35,6 +36,9 @@ struct NearbyReptilesCollection: View {
                                     )
                                 }
                             )
+                            .onTapGesture {
+                                cardTapped(reptile.id)
+                            }
                     }
                 }
             }
@@ -83,7 +87,7 @@ struct NearbyReptilesCollection: View {
         @MainActor static let cardWidth: CGFloat = (
             UIScreen.main.bounds.size.width - (
                 Constants.gridSpacing +
-                (2 * MainPageView.Constants.scrollViewHorizontalPadding)
+                (2 * MainPageView.Constants.viewPadding)
             )
         ) / 2
     }

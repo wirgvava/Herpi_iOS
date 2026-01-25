@@ -7,6 +7,8 @@
 "MainPage.NearbyReptiles.Header" = "Near You";
 "MainPage.NearbyReptiles.Description" = "Species you encounter based on your location";
 "MainPage.NearbyReptiles.EmptyList" = "No species were found in this area";
+"MainPage.ReptilesList.HeaderDescription" = "Every officially registered specie in the country";
+"MainPage.ReptilesList.ReadMoreBtn" = "Read More";
 
 // MARK: - SearchBar
 "SearchBar.Placeholder" = "Search here...";

@@ -70,7 +70,7 @@ struct NearbyReptileCard: View {
         @MainActor static let imageWidth: CGFloat = (
             UIScreen.main.bounds.size.width - (
                 NearbyReptilesCollection.Constants.gridSpacing +
-                (2 * MainPageView.Constants.scrollViewHorizontalPadding)
+                (2 * MainPageView.Constants.viewPadding)
             )
         ) / 2
         

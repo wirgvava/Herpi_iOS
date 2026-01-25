@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct ReptileModel: Codable, Sendable, Identifiable {
+public struct ReptileModel: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var name: String
     public var scientificName: String
@@ -44,10 +44,10 @@ public struct ReptileModel: Codable, Sendable, Identifiable {
     }
 }
 
-public typealias ReptiliesModel = [ReptileModel]
+public typealias ReptilesModel = [ReptileModel]
 
 // MARK: - Mock
-public let mockReptiles: ReptiliesModel = [
+public let mockReptiles: ReptilesModel = [
     .init(
         id: 0,
         name: "Darevsky's Viper",
@@ -57,7 +57,7 @@ public let mockReptiles: ReptiliesModel = [
         hasRedFlag: true,
         hasMildVenom: false,
         venomous: true,
-        transparentThumbnail: "https://herpi-main-bucket.s3.amazonaws.com/thumbnail/2201",
+        transparentThumbnail: "https://api.herpi.ge/uploads/1000_F_23980448_o9L9OagUTa3hH5rIMpRjbIE63kGKVTyA.png",
         addedBy: mockAddedBy
     ),
     .init(
@@ -69,7 +69,7 @@ public let mockReptiles: ReptiliesModel = [
         hasRedFlag: true,
         hasMildVenom: false,
         venomous: false,
-        transparentThumbnail: "https://herpi-main-bucket.s3.amazonaws.com/thumbnail/2201",
+        transparentThumbnail: "https://api.herpi.ge/uploads/1000_F_23980448_o9L9OagUTa3hH5rIMpRjbIE63kGKVTyA.png",
         addedBy: mockAddedBy
     ),
     .init(
@@ -81,7 +81,7 @@ public let mockReptiles: ReptiliesModel = [
         hasRedFlag: true,
         hasMildVenom: true,
         venomous: true,
-        transparentThumbnail: "https://herpi-main-bucket.s3.amazonaws.com/thumbnail/2201",
+        transparentThumbnail: "https://api.herpi.ge/uploads/1000_F_23980448_o9L9OagUTa3hH5rIMpRjbIE63kGKVTyA.png",
         addedBy: mockAddedBy
     ),
     .init(
@@ -93,7 +93,7 @@ public let mockReptiles: ReptiliesModel = [
         hasRedFlag: false,
         hasMildVenom: false,
         venomous: false,
-        transparentThumbnail: "https://herpi-main-bucket.s3.amazonaws.com/thumbnail/2201",
+        transparentThumbnail: "https://api.herpi.ge/uploads/1000_F_23980448_o9L9OagUTa3hH5rIMpRjbIE63kGKVTyA.png",
         addedBy: mockAddedBy
     )
 ]

@@ -24,39 +24,48 @@ struct MainPageView: View {
                 )
                 
                 ScrollView {
-                    SearchBar(
-                        viewType: .button,
-                        placeholder: L.SearchBar.placeholder
-                    )
-                    .onTapGesture { store.send(.searchTapped) }
-                    
-                    CategoriesView(
-                        selectedCategoryId: store.selectedCategoryId,
-                        categories: store.categories,
-                        onCategorySelected: { categoryId in
-                            store.send(.categorySelected(categoryId))
-                        }
-                    )
-                    
-                    NearbyReptilesView(
-                        store: store.scope(
-                            state: \.nearbyReptiles,
-                            action: \.nearbyReptiles
+                    VStack(spacing: Constants.viewPadding) {
+                        SearchBar(
+                            viewType: .button,
+                            placeholder: L.SearchBar.placeholder
                         )
-                    )
+                        .onTapGesture { store.send(.searchTapped) }
+                        
+                        CategoriesView(
+                            selectedCategory: store.selectedCategory,
+                            categories: store.categories,
+                            onCategorySelected: { category in
+                                store.send(.categorySelected(category))
+                            }
+                        )
+                        
+                        NearbyReptilesView(
+                            store: store.scope(
+                                state: \.nearbyReptiles,
+                                action: \.nearbyReptiles
+                            )
+                        )
+                        
+                        ReptilesListView(
+                            store: store.scope(
+                                state: \.reptiles,
+                                action: \.reptilesList
+                            )
+                        )
+                    }
+                    .padding(Constants.viewPadding)
                 }
-                .padding(.horizontal, Constants.scrollViewHorizontalPadding)
                 .background(HerpiColor.background)
                 .topCornerRadius(Constants.scrollViewCornerRadius)
                 .ignoresSafeArea()
             }
-            .background(HerpiColor.tint)
         }
+        .background(HerpiColor.tint)
     }
     
     struct Constants {
         static let scrollViewCornerRadius: CGFloat = 32
-        static let scrollViewHorizontalPadding: CGFloat = 30
+        static let viewPadding: CGFloat = 30
     }
 }
 

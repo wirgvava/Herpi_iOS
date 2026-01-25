@@ -9,7 +9,7 @@ import SwiftUI
 import HerpiModels
 
 struct CategoriesView: View {
-    var selectedCategoryId: String
+    var selectedCategory: String
     var categories: CategoriesModel
     var onCategorySelected: (String) -> Void
     
@@ -18,13 +18,13 @@ struct CategoriesView: View {
             LazyHGrid(rows: [GridItem()], spacing: .zero) {
                 ForEach(categories) { category in
                     CategoryCard(
-                        isSelected: selectedCategoryId == category.id,
+                        isSelected: selectedCategory == category.titleTurned,
                         category: category
                     )
                     .padding(.trailing, Constants.spacing)
                     .onTapGesture {
                         withAnimation {
-                            onCategorySelected(category.id)
+                            onCategorySelected(category.titleTurned)
                         }
                     }
                 }
@@ -40,7 +40,7 @@ struct CategoriesView: View {
 
 #Preview {
     CategoriesView(
-        selectedCategoryId: mockCategories.first!.id,
+        selectedCategory: mockCategories.first!.titleTurned,
         categories: mockCategories,
         onCategorySelected: { _ in }
     )

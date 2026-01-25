@@ -1,27 +1,26 @@
 //
-//  NearbyReptilesFeature.swift
+//  ReptilesListFeature.swift
 //  Herpi
 //
-//  Created by Konstantine Tsirgvava on 24.01.26.
+//  Created by Konstantine Tsirgvava on 25.01.26.
 //
 
 import ComposableArchitecture
 import HerpiModels
 
 @Reducer
-struct NearbyReptilesFeature {
+struct ReptilesListFeature {
     
     @ObservableState
     struct State: Equatable {
-        var reptiles: NearbyReptilesModel = []
-        var currentPage: Int = .zero
+        var reptiles: ReptilesModel = []
+        var selectedCategory: String
         var isLoading: Bool = false
     }
     
     enum Action: Equatable {
         case fetchReptiles
-        case pageChanged(Int)
-        case reptilesResponse(NearbyReptilesModel)
+        case reptilesResponse(ReptilesModel)
         case didTappedReptileCard(Int)
     }
     
@@ -31,20 +30,13 @@ struct NearbyReptilesFeature {
             case .fetchReptiles:
                 state.isLoading = true
                 return .run { send in
-                    let reptiles: NearbyReptilesModel = [
-                        mockNearbyReptile1, mockNearbyReptile2, mockNearbyReptile3, mockNearbyReptile4, mockNearbyReptile5, mockNearbyReptile6, mockNearbyReptile7, mockNearbyReptile8
-                    ]
+                    let reptiles: ReptilesModel = mockReptiles
                     await send(.reptilesResponse(reptiles))
                 }
                 
             case let .reptilesResponse(reptiles):
                 state.isLoading = false
                 state.reptiles = reptiles
-                state.currentPage = .zero
-                return .none
-                
-            case let .pageChanged(page):
-                state.currentPage = page
                 return .none
                 
             case .didTappedReptileCard:

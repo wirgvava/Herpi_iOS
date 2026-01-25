@@ -23,11 +23,13 @@ public enum HerpiFont {
     // MARK: - List of Fonts
     
     /// `Regular` fonts
+    public static let regular_13 = HerpiFont.font(forType: .regular, size: 13)
     public static let regular_14 = HerpiFont.font(forType: .regular, size: 14)
     public static let regular_18 = HerpiFont.font(forType: .regular, size: 18)
     
     /// `Semibold` fonts
     public static let semibold_10 = HerpiFont.font(forType: .semibold, size: 10)
+    public static let semibold_12 = HerpiFont.font(forType: .semibold, size: 12)
     public static let semibold_13 = HerpiFont.font(forType: .semibold, size: 13)
     public static let semibold_14 = HerpiFont.font(forType: .semibold, size: 14)
     public static let semibold_15 = HerpiFont.font(forType: .semibold, size: 15)
@@ -35,4 +37,5 @@ public enum HerpiFont {
     
     /// `Bold` fonts
     public static let bold_14 = HerpiFont.font(forType: .bold, size: 14)
+    public static let bold_15 = HerpiFont.font(forType: .bold, size: 15)
 }

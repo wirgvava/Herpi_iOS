@@ -43,7 +43,7 @@ struct CategoryCard: View {
         @MainActor static let cardWidth: CGFloat = (
             UIScreen.main.bounds.size.width - (
                 (2 * CategoriesView.Constants.spacing) +
-                (2 * MainPageView.Constants.scrollViewHorizontalPadding)
+                (2 * MainPageView.Constants.viewPadding)
             )
         ) / 3
     }
