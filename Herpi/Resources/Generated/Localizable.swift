@@ -46,6 +46,25 @@ enum L {
     }
   }
 
+  enum Menu {
+    /// Contact
+     static var contact: String {
+        return L.tr("Localizable", "Menu.Contact")
+    }
+    /// Frequently Asked \nQuestions
+     static var faq: String {
+        return L.tr("Localizable", "Menu.FAQ")
+    }
+    /// Home
+     static var main: String {
+        return L.tr("Localizable", "Menu.Main")
+    }
+    /// Team
+     static var team: String {
+        return L.tr("Localizable", "Menu.Team")
+    }
+  }
+
   enum SearchBar {
     /// Search here...
      static var placeholder: String {

@@ -17,3 +17,9 @@
 "VenomType.Venomous" = "Venomous";
 "VenomType.MidVenomous" = "Mild Venom";
 "VenomType.NoVenomous" = "Harmless";
+
+// MARK: - Menu
+"Menu.Main" = "Home";
+"Menu.Contact" = "Contact";
+"Menu.Team" = "Team";
+"Menu.FAQ" = "Frequently Asked \nQuestions";

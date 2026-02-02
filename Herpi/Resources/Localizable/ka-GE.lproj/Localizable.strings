@@ -17,3 +17,9 @@
 "VenomType.Venomous" = "შხამიანი";
 "VenomType.MidVenomous" = "სუსტად შხამიანი";
 "VenomType.NoVenomous" = "უშხამო";
+
+// MARK: - Menu
+"Menu.Main" = "მთავარი";
+"Menu.Contact" = "კონტაქტი";
+"Menu.Team" = "გუნდი";
+"Menu.FAQ" = "ხშირად დასმული \nკითხვები";

@@ -15,9 +15,11 @@ struct HerpiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainPageView(
-                store: Store(initialState: MainPageView.Feature.State()) {
-                    MainPageView.Feature()
+            AppView(
+                store: Store(
+                    initialState: AppFeature.State()
+                ) {
+                    AppFeature()
                 }
             )
         }

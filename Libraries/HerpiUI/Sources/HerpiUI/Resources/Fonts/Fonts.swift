@@ -38,4 +38,5 @@ public enum HerpiFont {
     /// `Bold` fonts
     public static let bold_14 = HerpiFont.font(forType: .bold, size: 14)
     public static let bold_15 = HerpiFont.font(forType: .bold, size: 15)
+    public static let bold_16 = HerpiFont.font(forType: .bold, size: 16)
 }

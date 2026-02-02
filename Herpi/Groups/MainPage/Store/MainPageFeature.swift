@@ -16,9 +16,6 @@ extension MainPageView {
         // MARK: - State
         @ObservableState
         struct State: Equatable {
-            var isMenuOpen: Bool = false
-            var locationPickerSheetShown: Bool = false
-            
             var categories: CategoriesModel = mockCategories
             var selectedCategory: String = mockCategories.first?.titleTurned ?? .empty
             
@@ -33,18 +30,12 @@ extension MainPageView {
         enum Action: BindableAction {
             case binding(BindingAction<State>)
             
-            case menuButtonTapped
-            case pickLocationTapped
-            case chatButtonTapped
             case searchTapped
             case categorySelected(String)
             
             case nearbyReptiles(NearbyReptilesFeature.Action)
             case reptilesList(ReptilesListFeature.Action)
         }
-        
-        // MARK: - Dependencies
-        @Dependency(\.openURL) var openURL
         
         var body: some Reducer<State, Action> {
             BindingReducer()
@@ -55,23 +46,6 @@ extension MainPageView {
                     return .none
                   
                 // MARK: UI Actions
-                case .menuButtonTapped:
-                    state.isMenuOpen.toggle()
-                    return .none
-                    
-                case .pickLocationTapped:
-                    state.locationPickerSheetShown.toggle()
-                    return .none
-                    
-                case .chatButtonTapped:
-                    AppAnalytics.logEvents(with: .click_chat)
-                    
-                    return .run { _ in
-                        if let url = URL(string: AppConstants.chatUrl) {
-                            await openURL(url)
-                        }
-                    }
-                    
                 case .searchTapped:
                     print("Navigate to search page")
                     return .none

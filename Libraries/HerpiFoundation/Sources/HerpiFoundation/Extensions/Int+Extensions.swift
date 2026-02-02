@@ -9,4 +9,5 @@ public extension Int {
     
     static var zero: Int { 0 }
     
+    static var one: Int { 1 }
 }

@@ -16,51 +16,42 @@ struct MainPageView: View {
     
     var body: some View {
         WithPerceptionTracking {
-            VStack {
-                Header(
-                    menuAction: { store.send(.menuButtonTapped) },
-                    pickLocationAction: { store.send(.pickLocationTapped) },
-                    chatAction: { store.send(.chatButtonTapped) }
-                )
-                
-                ScrollView {
-                    VStack(spacing: Constants.viewPadding) {
-                        SearchBar(
-                            viewType: .button,
-                            placeholder: L.SearchBar.placeholder
+            ScrollView {
+                VStack(spacing: Constants.viewPadding) {
+                    SearchBar(
+                        viewType: .button,
+                        placeholder: L.SearchBar.placeholder
+                    )
+                    .onTapGesture { store.send(.searchTapped) }
+                    
+                    CategoriesView(
+                        selectedCategory: store.selectedCategory,
+                        categories: store.categories,
+                        onCategorySelected: { category in
+                            store.send(.categorySelected(category))
+                        }
+                    )
+                    
+                    NearbyReptilesView(
+                        store: store.scope(
+                            state: \.nearbyReptiles,
+                            action: \.nearbyReptiles
                         )
-                        .onTapGesture { store.send(.searchTapped) }
-                        
-                        CategoriesView(
-                            selectedCategory: store.selectedCategory,
-                            categories: store.categories,
-                            onCategorySelected: { category in
-                                store.send(.categorySelected(category))
-                            }
+                    )
+                    
+                    ReptilesListView(
+                        store: store.scope(
+                            state: \.reptiles,
+                            action: \.reptilesList
                         )
-                        
-                        NearbyReptilesView(
-                            store: store.scope(
-                                state: \.nearbyReptiles,
-                                action: \.nearbyReptiles
-                            )
-                        )
-                        
-                        ReptilesListView(
-                            store: store.scope(
-                                state: \.reptiles,
-                                action: \.reptilesList
-                            )
-                        )
-                    }
-                    .padding(Constants.viewPadding)
+                    )
                 }
-                .background(HerpiColor.background)
-                .topCornerRadius(Constants.scrollViewCornerRadius)
-                .ignoresSafeArea()
+                .padding(Constants.viewPadding)
             }
+            .background(HerpiColor.background)
+            .topCornerRadius(Constants.scrollViewCornerRadius)
+            .ignoresSafeArea()
         }
-        .background(HerpiColor.tint)
     }
     
     struct Constants {

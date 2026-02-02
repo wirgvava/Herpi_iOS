@@ -11,11 +11,11 @@ final class AppLanguage {
         
     enum Language: String {
         case en
-        case ka
+        case ka = "ka-GE"
     }
     
-    static var currentLanguage: String {
-        UserDefaultsManager.shared.get(forKey: .appLanguage)
+    static var currentLanguage: Language {
+        AppLanguage.Language(rawValue: UserDefaultsManager.shared.get(forKey: .appLanguage)) ?? .ka
     }
     
     static func setLanguage(_ language: Language) {
