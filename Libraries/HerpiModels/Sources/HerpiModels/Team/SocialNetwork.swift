@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct SocialNetwork: Codable, Sendable, Identifiable {
+public struct SocialNetwork: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var network: String
     public var networkLogoUrl: String

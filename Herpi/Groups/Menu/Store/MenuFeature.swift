@@ -15,7 +15,6 @@ struct MenuFeature {
     @ObservableState
     struct State: Equatable {
         var menuState: MenuStates = .main
-//        var currentLanguage: AppLanguage.Language = AppLanguage.currentLanguage
     }
     
     // MARK: - Action

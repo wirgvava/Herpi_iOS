@@ -36,16 +36,19 @@ struct AppView: View {
                         switch store.menu.menuState {
                         case .main:
                             MainPageView(
-                                store: Store(
-                                    initialState: MainPageView.Feature.State(),
-                                    reducer: { MainPageView.Feature() }
+                                store: store.scope(
+                                    state: \.mainPage,
+                                    action: \.mainPage
                                 )
                             )
                             
                         case .team:
-                            // TODO: Add TeamView
-                            Text("Team Page")
-                                .font(.largeTitle)
+                            TeamPageView(
+                                store: store.scope(
+                                    state: \.teamPage,
+                                    action: \.teamPage
+                                )
+                            )
                             
                         case .faq:
                             // TODO: Add FAQView

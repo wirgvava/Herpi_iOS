@@ -7,13 +7,19 @@
 
 import HerpiFoundation
 
-public struct TeamMember: Codable, Sendable, Identifiable {
-    public var id: Int
+public struct TeamMember: Codable, Sendable, Identifiable, Equatable {
+    public let id: Int
     public var firstName, lastName: String
     public var avatar: String
     public var email: String
     public var socialNetworks: [SocialNetwork]
     public var role: String
+    
+    public var fullName: String {
+        return firstName + " " + lastName
+    }
+    
+    public var isExpanded: Bool = false
     
     public init(
         id: Int = .zero,

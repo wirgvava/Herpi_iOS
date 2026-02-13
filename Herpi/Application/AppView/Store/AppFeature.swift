@@ -25,6 +25,8 @@ struct AppFeature {
         var currentLanguage: AppLanguage.Language = AppLanguage.currentLanguage
         
         var menu = MenuFeature.State()
+        var mainPage = MainPageView.Feature.State()
+        var teamPage = TeamPageFeature.State()
     }
     
     // MARK: - Action
@@ -40,6 +42,8 @@ struct AppFeature {
         case menuDragEnded(DragGesture.Value)
         
         case menu(MenuFeature.Action)
+        case mainPage(MainPageView.Feature.Action)
+        case teamPage(TeamPageFeature.Action)
     }
     
     // MARK: - Dependencies
@@ -122,16 +126,22 @@ struct AppFeature {
                 return .none
                 
                 // MARK: Child features
-            case .menu(.didChangeMenuState):
+            case .menu(.didChangeMenuState(_)):
                 return .run { send in
                     await send(.closeMenu, animation: .default)
                 }
                 
-            case .menu(.didSwitchedLanguage):
+            case .menu(.didSwitchedLanguage(_)):
                 state.currentLanguage = AppLanguage.currentLanguage
                 return .none
                 
             case .menu:
+                return .none
+                
+            case .mainPage:
+                return .none
+                
+            case .teamPage:
                 return .none
             }
         }
@@ -142,6 +152,20 @@ struct AppFeature {
             action: \.menu
         ) {
             MenuFeature()
+        }
+        
+        Scope(
+            state: \.mainPage,
+            action: \.mainPage
+        ) {
+            MainPageView.Feature()
+        }
+        
+        Scope(
+            state: \.teamPage,
+            action: \.teamPage
+        ) {
+            TeamPageFeature()
         }
     }
 }
