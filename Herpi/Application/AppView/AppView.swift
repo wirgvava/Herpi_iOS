@@ -51,10 +51,12 @@ struct AppView: View {
                             )
                             
                         case .faq:
-                            // TODO: Add FAQView
-                            Text("FAQ Page")
-                                .font(.largeTitle)
-                            
+                            FAQPageView(
+                                store: store.scope(
+                                    state: \.faqPage,
+                                    action: \.faqPage
+                                )
+                            )
                         }
                     }
                     .background(HerpiColor.tint)

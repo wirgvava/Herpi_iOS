@@ -23,6 +23,7 @@ public enum HerpiFont {
     // MARK: - List of Fonts
     
     /// `Regular` fonts
+    public static let regular_12 = HerpiFont.font(forType: .regular, size: 12)
     public static let regular_13 = HerpiFont.font(forType: .regular, size: 13)
     public static let regular_14 = HerpiFont.font(forType: .regular, size: 14)
     public static let regular_15 = HerpiFont.font(forType: .regular, size: 15)

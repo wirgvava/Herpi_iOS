@@ -16,41 +16,35 @@ struct TeamPageView: View {
     var body: some View {
         WithPerceptionTracking {
             ScrollView {
-                HStack {
-                    Spacer()
+                VStack(alignment: .leading, spacing: Constants.vstackSpacing) {
+                    Text(L.Menu.team)
+                        .font(HerpiFont.bold_16)
+                        .foregroundStyle(HerpiColor.Title.primary)
                     
-                    VStack(alignment: .leading, spacing: Constants.vstackSpacing) {
-                        Text(L.Menu.team)
-                            .font(HerpiFont.bold_16)
-                            .foregroundStyle(HerpiColor.Title.primary)
-                        
-                        ForEach(store.team) { member in
-                            WithPerceptionTracking {
-                                TeamMemberCard(
-                                    member: member,
-                                    didTapOnEmail: {
-                                        store.send(.didTapOnEmail(member.email))
-                                    },
-                                    didTapOnSocialNetwork: { social in
-                                        store.send(
-                                            .didTapOnSocialNetwork(
-                                                member.email,
-                                                social
-                                            )
+                    ForEach(store.team) { member in
+                        WithPerceptionTracking {
+                            TeamMemberCard(
+                                member: member,
+                                didTapOnEmail: {
+                                    store.send(.didTapOnEmail(member.email))
+                                },
+                                didTapOnSocialNetwork: { social in
+                                    store.send(
+                                        .didTapOnSocialNetwork(
+                                            member.email,
+                                            social
                                         )
-                                    }
-                                )
-                                .skeleton(isLoading: store.isLoading)
-                            }
+                                    )
+                                }
+                            )
+                            .skeleton(isLoading: store.isLoading)
                         }
                     }
-                    .padding(.vertical, Constants.vstackSpacing)
-                    .padding(.horizontal, Constants.horizontalPadding)
-                    .onAppear {
-                        store.send(.fetchTeam)
-                    }
-                    
-                    Spacer()
+                }
+                .padding(.vertical, Constants.vstackSpacing)
+                .padding(.horizontal, Constants.horizontalPadding)
+                .onAppear {
+                    store.send(.fetchTeam)
                 }
             }
             .background(HerpiColor.background)

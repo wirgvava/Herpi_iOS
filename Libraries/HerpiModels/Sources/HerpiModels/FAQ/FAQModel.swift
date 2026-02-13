@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct FAQModelElement: Codable, Sendable, Identifiable {
+public struct FAQModelElement: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var question: String
     public var answer: String

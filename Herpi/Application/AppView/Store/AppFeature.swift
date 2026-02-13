@@ -27,6 +27,7 @@ struct AppFeature {
         var menu = MenuFeature.State()
         var mainPage = MainPageView.Feature.State()
         var teamPage = TeamPageFeature.State()
+        var faqPage = FAQPageFeature.State()
     }
     
     // MARK: - Action
@@ -44,6 +45,7 @@ struct AppFeature {
         case menu(MenuFeature.Action)
         case mainPage(MainPageView.Feature.Action)
         case teamPage(TeamPageFeature.Action)
+        case faqPage(FAQPageFeature.Action)
     }
     
     // MARK: - Dependencies
@@ -143,6 +145,9 @@ struct AppFeature {
                 
             case .teamPage:
                 return .none
+                
+            case .faqPage:
+                return .none
             }
         }
         
@@ -166,6 +171,13 @@ struct AppFeature {
             action: \.teamPage
         ) {
             TeamPageFeature()
+        }
+        
+        Scope(
+            state: \.faqPage,
+            action: \.faqPage
+        ) {
+            FAQPageFeature()
         }
     }
 }
