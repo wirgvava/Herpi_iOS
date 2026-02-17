@@ -70,6 +70,10 @@ enum L {
      static var placeholder: String {
         return L.tr("Localizable", "SearchBar.Placeholder")
     }
+    /// Search Results
+     static var results: String {
+        return L.tr("Localizable", "SearchBar.Results")
+    }
   }
 
   enum VenomType {

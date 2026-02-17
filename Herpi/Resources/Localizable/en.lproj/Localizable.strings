@@ -12,6 +12,7 @@
 
 // MARK: - SearchBar
 "SearchBar.Placeholder" = "Search here...";
+"SearchBar.Results" = "Search Results";
 
 // MARK: - VenomTypes
 "VenomType.Venomous" = "Venomous";

@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct SearchResponseModel: Codable, Sendable {
+public struct SearchResponseModel: Codable, Sendable, Equatable {
     public var data: [SearchedData]?
     
     public init(data: [SearchedData]? = []) {
@@ -15,7 +15,7 @@ public struct SearchResponseModel: Codable, Sendable {
     }
 }
 
-public struct SearchedData: Codable, Sendable, Identifiable {
+public struct SearchedData: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var name: String
     public var scientificName: String
@@ -56,16 +56,57 @@ public struct SearchedData: Codable, Sendable, Identifiable {
 }
 
 // MARK: - Mock
-public let mockSearchedData: SearchedData = .init(
-    id: 0,
-    name: "Darevsky's Viper",
-    scientificName: "Vipera Darevskii",
-    family: mockFamily,
-    type: "SNAKE",
-    hasRedFlag: true,
-    hasMildVenom: false,
-    venomous: true,
-    image: "https://api.herpi.ge/uploads/2141.jpg",
-    addedBy: mockAddedBy,
-    views: 1231
-)
+public let mockSearchedData: [SearchedData] = [
+    .init(
+        id: 0,
+        name: "Darevsky's Viper",
+        scientificName: "Vipera Darevskii",
+        family: mockFamily,
+        type: "SNAKE",
+        hasRedFlag: true,
+        hasMildVenom: false,
+        venomous: true,
+        image: "https://api.herpi.ge/uploads/2141.jpg",
+        addedBy: mockAddedBy,
+        views: 1231
+    ),
+    .init(
+        id: 1,
+        name: "Darevsky's Viper",
+        scientificName: "Vipera Darevskii",
+        family: mockFamily,
+        type: "SNAKE",
+        hasRedFlag: false,
+        hasMildVenom: false,
+        venomous: true,
+        image: "https://api.herpi.ge/uploads/2141.jpg",
+        addedBy: mockAddedBy,
+        views: 1231
+    ),
+    .init(
+        id: 2,
+        name: "Darevsky's Viper",
+        scientificName: "Vipera Darevskii",
+        family: mockFamily,
+        type: "SNAKE",
+        hasRedFlag: true,
+        hasMildVenom: true,
+        venomous: false,
+        image: "https://api.herpi.ge/uploads/2141.jpg",
+        addedBy: mockAddedBy,
+        views: 1231
+    ),
+    .init(
+        id: 3,
+        name: "Darevsky's Viper",
+        scientificName: "Vipera Darevskii",
+        family: mockFamily,
+        type: "SNAKE",
+        hasRedFlag: false,
+        hasMildVenom: false,
+        venomous: true,
+        image: "https://api.herpi.ge/uploads/2141.jpg",
+        addedBy: mockAddedBy,
+        views: 1231
+    )
+]

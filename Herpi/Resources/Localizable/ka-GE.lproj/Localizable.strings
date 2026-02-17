@@ -12,6 +12,7 @@
 
 // MARK: - SearchBar
 "SearchBar.Placeholder" = "მოძებნე აქ...";
+"SearchBar.Results" = "ძიების შედეგები";
 
 // MARK: - VenomTypes
 "VenomType.Venomous" = "შხამიანი";

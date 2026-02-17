@@ -10,7 +10,9 @@ import HerpiFoundation
 
 public struct BackButton: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) public var presentationMode
+    
+    public init() { }
     
     public var body: some View {
         Button {
