@@ -24,6 +24,7 @@ struct AppFeature {
         var locationPickerSheetShown: Bool = false
         var currentLanguage: AppLanguage.Language = AppLanguage.currentLanguage
         
+        var navigation = NavigationFeature.State()
         var menu = MenuFeature.State()
         var mainPage = MainPageView.Feature.State()
         var teamPage = TeamPageFeature.State()
@@ -42,6 +43,7 @@ struct AppFeature {
         case menuDragChanged(DragGesture.Value)
         case menuDragEnded(DragGesture.Value)
         
+        case navigation(NavigationFeature.Action)
         case menu(MenuFeature.Action)
         case mainPage(MainPageView.Feature.Action)
         case teamPage(TeamPageFeature.Action)
@@ -127,6 +129,10 @@ struct AppFeature {
                 state.menuLastDragOffset = state.menuOffset
                 return .none
                 
+                // MARK: Navigation
+            case .navigation:
+                return .none
+                
                 // MARK: Child features
             case .menu(.didChangeMenuState(_)):
                 return .run { send in
@@ -140,6 +146,9 @@ struct AppFeature {
             case .menu:
                 return .none
                 
+            case .mainPage(.push(let destination)):
+                return .send(.navigation(.push(destination)))
+                
             case .mainPage:
                 return .none
                 
@@ -152,6 +161,13 @@ struct AppFeature {
         }
         
         // MARK: - Child reducers
+        Scope(
+            state: \.navigation,
+            action: \.navigation
+        ) {
+            NavigationFeature()
+        }
+        
         Scope(
             state: \.menu,
             action: \.menu
