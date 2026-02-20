@@ -78,9 +78,7 @@ struct SearchPageFeature {
 
                 // MARK: UI Actions
             case .didTappedOnCard(let id):
-                // return .send(.push(.reptileDetail(ReptileDetailFeature.State(id: id))))
-                print("Navigate to reptile detail: \(id)")
-                return .none
+                return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
             }
         }
     }

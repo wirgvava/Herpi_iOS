@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct CoverageModelElement: Codable, Sendable, Identifiable {
+public struct CoverageModelElement: Codable, Sendable, Identifiable, Equatable {
     public var id: String
     public var area: String
     public var coordinates: [Coordinate]

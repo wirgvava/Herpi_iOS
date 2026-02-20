@@ -13,6 +13,10 @@ public struct AddedBy: Codable, Sendable, Identifiable, Equatable {
     public var lastName: String
     public var avatar: String
     
+    public var fullName: String {
+        return firstName + " " + lastName
+    }
+    
     public init(
         id: Int = .zero,
         firstName: String = .empty,

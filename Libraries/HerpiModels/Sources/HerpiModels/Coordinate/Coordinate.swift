@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct Coordinate: Codable, Sendable {
+public struct Coordinate: Codable, Sendable, Equatable {
     public var lat: Double
     public var lng: Double
     

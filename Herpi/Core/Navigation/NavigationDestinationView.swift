@@ -13,6 +13,7 @@ extension NavigationFeature {
     @Reducer
     enum Path {
         case search(SearchPageFeature)
+        case reptileDetail(DetailPageFeature)
     }
 }
 
@@ -24,6 +25,9 @@ struct NavigationDestinationView: View {
         switch store.case {
         case .search(let searchStore):
             SearchPageView(store: searchStore)
+            
+        case .reptileDetail(let detailStore):
+            DetailPageView(store: detailStore)
         }
     }
 }

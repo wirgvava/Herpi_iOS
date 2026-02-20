@@ -60,17 +60,13 @@ extension MainPageView {
 
                 // MARK: Child features
                 case .nearbyReptiles(.didTappedReptileCard(let id)):
-                    // return .send(.push(.reptileDetail(ReptileDetailFeature.State(id: id))))
-                    print("Navigate to reptile detail: \(id)")
-                    return .none
+                     return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
 
                 case .nearbyReptiles:
                     return .none
 
                 case .reptilesList(.didTappedReptileCard(let id)):
-                    // return .send(.push(.reptileDetail(ReptileDetailFeature.State(id: id))))
-                    print("Navigate to reptile detail: \(id)")
-                    return .none
+                     return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
 
                 case .reptilesList:
                     return .none

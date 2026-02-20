@@ -7,7 +7,7 @@
 
 import HerpiFoundation
 
-public struct DetailedInfoResponseModel: Codable, Sendable, Identifiable {
+public struct DetailedInfoModel: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var name: String
     public var scientificName: String
@@ -65,10 +65,8 @@ public struct DetailedInfoResponseModel: Codable, Sendable, Identifiable {
     }
 }
 
-public typealias DetailedInfoResponseModels = [DetailedInfoResponseModel]
-
 // MARK: - Mock
-public let mockDetailedInfo: DetailedInfoResponseModel = .init(
+public let mockDetailedInfo: DetailedInfoModel = .init(
     id: 1914,
     name: "Darevsky's Viper",
     scientificName: "Vipera Darevskii",
@@ -80,7 +78,7 @@ public let mockDetailedInfo: DetailedInfoResponseModel = .init(
     hasMildVenom: false,
     venomous: true,
     image: "https://api.herpi.ge/uploads/1749048121588.jpg",
-    gallery: [mockGallery, mockGallery, mockGallery, mockGallery],
+    gallery: [mockGallery_1, mockGallery_2, mockGallery_3, mockGallery_4, mockGallery_5],
     addedBy: mockAddedBy,
     status: "PUBLISHED",
     views: 10237,

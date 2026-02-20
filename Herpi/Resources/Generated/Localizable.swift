@@ -6,6 +6,37 @@ import HerpiFoundation
 
 enum L {
 
+  enum DetailPage {
+    /// Author
+     static var author: String {
+        return L.tr("Localizable", "DetailPage.Author")
+    }
+    /// © %@
+     static func creditsTo(_ p1: String) -> String {
+      return L.tr("Localizable", "DetailPage.CreditsTo", p1)
+    }
+    /// Description
+     static var description: String {
+        return L.tr("Localizable", "DetailPage.Description")
+    }
+    /// Distribution areas
+     static var distributionAreas: String {
+        return L.tr("Localizable", "DetailPage.DistributionAreas")
+    }
+    /// Gallery
+     static var gallery: String {
+        return L.tr("Localizable", "DetailPage.Gallery")
+    }
+    /// Expand Map
+     static var openMapButton: String {
+        return L.tr("Localizable", "DetailPage.OpenMapButton")
+    }
+    /// It is included in the red list of Georgia
+     static var redFlagDescription: String {
+        return L.tr("Localizable", "DetailPage.RedFlagDescription")
+    }
+  }
+
   enum MainPage {
 
     enum Header {

@@ -24,3 +24,12 @@
 "Menu.Contact" = "Contact";
 "Menu.Team" = "Team";
 "Menu.FAQ" = "Frequently Asked \nQuestions";
+
+// MARK: - Detail Page
+"DetailPage.RedFlagDescription" = "It is included in the red list of Georgia";
+"DetailPage.Author" = "Author";
+"DetailPage.Description" = "Description";
+"DetailPage.Gallery" = "Gallery";
+"DetailPage.CreditsTo" = "© %@";
+"DetailPage.DistributionAreas" = "Distribution areas";
+"DetailPage.OpenMapButton" = "Expand Map";

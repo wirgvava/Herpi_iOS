@@ -24,3 +24,12 @@
 "Menu.Contact" = "კონტაქტი";
 "Menu.Team" = "გუნდი";
 "Menu.FAQ" = "ხშირად დასმული \nკითხვები";
+
+// MARK: - Detail Page
+"DetailPage.RedFlagDescription" = "შეტანილია საქართველოს წითელ ნუსხაში";
+"DetailPage.Author" = "ავტორი";
+"DetailPage.Description" = "აღწერა";
+"DetailPage.Gallery" = "გალერეა";
+"DetailPage.CreditsTo" = "© %@";
+"DetailPage.DistributionAreas" = "გავრცელების არეალები";
+"DetailPage.OpenMapButton" = "რუკის გაშლა";
