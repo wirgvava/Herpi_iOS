@@ -14,24 +14,6 @@ struct NearbyReptileCard: View {
     
     var reptile: NearbyReptileModel
     var isLoading: Bool
-    private var venomTypeString: String
-    private var venomTypeColor: Color
-    
-    init(reptile: NearbyReptileModel, isLoading: Bool) {
-        self.reptile = reptile
-        self.isLoading = isLoading
-        
-        if reptile.hasMildVenom {
-            venomTypeColor = HerpiColor.VenomType.midVenomous
-            venomTypeString = L.VenomType.midVenomous
-        } else if reptile.venomous {
-            venomTypeColor = HerpiColor.VenomType.venomous
-            venomTypeString = L.VenomType.venomous
-        } else {
-            venomTypeColor = HerpiColor.VenomType.noVenomous
-            venomTypeString = L.VenomType.noVenomous
-        }
-    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
@@ -48,12 +30,12 @@ struct NearbyReptileCard: View {
                 .skeleton(isLoading: isLoading)
                 .padding(.top, Constants.titleTopPadding)
             
-            Text(venomTypeString)
+            Text(venomTypeString(hasMildVenom: reptile.hasMildVenom, venomous: reptile.venomous))
                 .font(HerpiFont.semibold_10)
                 .foregroundStyle(HerpiColor.white)
                 .padding(.horizontal, Constants.venomousCardHorizontalPadding)
                 .padding(.vertical, Constants.venomousCardVerticalPadding)
-                .background(venomTypeColor)
+                .background(venomTypeColor(hasMildVenom: reptile.hasMildVenom, venomous: reptile.venomous))
                 .cornerRadius(.infinity)
                 .skeleton(isLoading: isLoading)
                 .padding(.top, Constants.venomousCardTopPadding)

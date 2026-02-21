@@ -13,6 +13,7 @@ import MapKit
 extension DetailPageView {
     struct DistributionArea: View {
         let coverage: CoverageModel
+        var isLoading: Bool
         var expandMap: () -> Void
         
         var body: some View {
@@ -20,6 +21,7 @@ extension DetailPageView {
                 Text(L.DetailPage.distributionAreas)
                     .font(HerpiFont.semibold_16)
                     .foregroundStyle(HerpiColor.Title.primary)
+                    .skeleton(isLoading: isLoading)
                 
                 ZStack(alignment: .bottom) {
                     DistributionMapView(
@@ -27,19 +29,22 @@ extension DetailPageView {
                         coverage: coverage
                     )
                     .frame(height: Constants.mapHeight)
+                    .skeleton(isLoading: isLoading)
                     .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
                     
-                    RoundedRectangle(cornerRadius: Constants.buttonCornerRadius)
-                        .fill(HerpiColor.tint)
-                        .frame(height: Constants.buttonHeight)
-                        .shadow(radius: Constants.buttonShadowRadius)
-                        .padding()
-                        .overlay {
-                            Text(L.DetailPage.openMapButton)
-                                .font(HerpiFont.semibold_16)
-                                .foregroundStyle(HerpiColor.white)
-                        }
-                        .onTapGesture { expandMap() }
+                    if !isLoading {
+                        RoundedRectangle(cornerRadius: Constants.buttonCornerRadius)
+                            .fill(HerpiColor.tint)
+                            .frame(height: Constants.buttonHeight)
+                            .shadow(radius: Constants.buttonShadowRadius)
+                            .padding()
+                            .overlay {
+                                Text(L.DetailPage.openMapButton)
+                                    .font(HerpiFont.semibold_16)
+                                    .foregroundStyle(HerpiColor.white)
+                            }
+                            .onTapGesture { expandMap() }
+                    }
                 }
             }
         }

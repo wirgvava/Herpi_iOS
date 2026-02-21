@@ -10,6 +10,8 @@ import HerpiUI
 
 extension DetailPageView.InfoCard {
     struct RedFlagDescription: View {
+        var isLoading: Bool
+        
         var body: some View {
             HStack {
                 Text(L.DetailPage.redFlagDescription)
@@ -21,6 +23,7 @@ extension DetailPageView.InfoCard {
             }
             .background(HerpiColor.VenomType.venomous)
             .cornerRadius(Constants.cornerRadius)
+            .skeleton(isLoading: isLoading)
             .padding(.top, Constants.topPadding)
             .padding(.bottom, Constants.bottomPadding)
         }

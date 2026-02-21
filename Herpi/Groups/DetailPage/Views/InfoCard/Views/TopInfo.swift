@@ -12,24 +12,7 @@ import HerpiModels
 extension DetailPageView.InfoCard {
     struct TopInfo: View {
         var info: DetailedInfoModel
-        
-        private var venomTypeColor: Color = .clear
-        private var venomTypeString: String = .empty
-        
-        init(info: DetailedInfoModel) {
-            self.info = info
-            
-            if info.hasMildVenom {
-                venomTypeColor = HerpiColor.VenomType.midVenomous
-                venomTypeString = L.VenomType.midVenomous
-            } else if info.venomous {
-                venomTypeColor = HerpiColor.VenomType.venomous
-                venomTypeString = L.VenomType.venomous
-            } else {
-                venomTypeColor = HerpiColor.VenomType.noVenomous
-                venomTypeString = L.VenomType.noVenomous
-            }
-        }
+        var isLoading: Bool
         
         var body: some View {
             HStack(alignment: .top) {
@@ -37,26 +20,30 @@ extension DetailPageView.InfoCard {
                     Text(info.name)
                         .font(HerpiFont.bold_16)
                         .foregroundStyle(HerpiColor.Title.primary)
+                        .skeleton(isLoading: isLoading)
                     
                     Text(info.scientificName)
                         .font(HerpiFont.semibold_13)
                         .foregroundStyle(HerpiColor.Title.secondary)
+                        .skeleton(isLoading: isLoading)
                         .padding(.top, Constants.secondTitleTopPadding)
                     
                     Text(info.family.name)
                         .font(HerpiFont.semibold_13)
                         .foregroundStyle(HerpiColor.Title.green)
+                        .skeleton(isLoading: isLoading)
                         .padding(.top, Constants.thirdTitleTopPadding)
                 }
                 
                 Spacer()
                 
-                Text(venomTypeString)
+                Text(venomTypeString(hasMildVenom: info.hasMildVenom, venomous: info.venomous))
                     .font(HerpiFont.semibold_13)
                     .foregroundStyle(HerpiColor.white)
                     .padding(.horizontal, Constants.venomBadgeHorizontalPadding)
                     .padding(.vertical, Constants.venomBadgeVerticalPadding)
-                    .background(venomTypeColor)
+                    .background(venomTypeColor(hasMildVenom: info.hasMildVenom, venomous: info.venomous))
+                    .skeleton(isLoading: isLoading)
                     .clipShape(.capsule)
             }
         }

@@ -19,18 +19,30 @@ struct DetailPageView: View {
             ZStack {
                 ScrollView {
                     BackgroundImage(url: store.detailedInfo.image.asURL())
+                        .skeleton(isLoading: store.isLoading)
                     
                     VStack(spacing: Constants.vstackSpacing) {
-                        InfoCard(info: store.detailedInfo)
-                        Description(info: store.detailedInfo)
+                        InfoCard(
+                            info: store.detailedInfo,
+                            isLoading: store.isLoading
+                        )
+                            
+                        Description(
+                            info: store.detailedInfo,
+                            isLoading: store.isLoading
+                        )
+                        
                         Gallery(
                             info: store.detailedInfo,
+                            isLoading: store.isLoading,
                             tapped: { id in
                                 store.send(.didTapOnPhoto(id))
                             }
                         )
+                        
                         DistributionArea(
                             coverage: store.coverage,
+                            isLoading: store.isLoading,
                             expandMap: {
                                 store.send(.didTapOnExpandMap)
                             }

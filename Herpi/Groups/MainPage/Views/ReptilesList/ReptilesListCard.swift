@@ -14,24 +14,6 @@ struct ReptilesListCard: View {
     
     var reptile: ReptileModel
     var isLoading: Bool
-    private var venomTypeString: String
-    private var venomTypeColor: Color
-    
-    init(reptile: ReptileModel, isLoading: Bool) {
-        self.reptile = reptile
-        self.isLoading = isLoading
-        
-        if reptile.hasMildVenom {
-            venomTypeColor = HerpiColor.VenomType.midVenomous
-            venomTypeString = L.VenomType.midVenomous
-        } else if reptile.venomous {
-            venomTypeColor = HerpiColor.VenomType.venomous
-            venomTypeString = L.VenomType.venomous
-        } else {
-            venomTypeColor = HerpiColor.VenomType.noVenomous
-            venomTypeString = L.VenomType.noVenomous
-        }
-    }
     
     var body: some View {
         HStack {
@@ -41,11 +23,11 @@ struct ReptilesListCard: View {
                 HStack(spacing: Constants.venomInfoPadding) {
                     Image(.infoIcon)
                         .resizable()
-                        .foregroundStyle(venomTypeColor)
+                        .foregroundStyle(venomTypeColor(hasMildVenom: reptile.hasMildVenom, venomous: reptile.venomous))
                         .aspectRatio(.one, contentMode: .fit)
                         .frame(width: Constants.infoIconWidth)
                     
-                    Text(venomTypeString)
+                    Text(venomTypeString(hasMildVenom: reptile.hasMildVenom, venomous: reptile.venomous))
                         .font(HerpiFont.semibold_12)
                         .foregroundStyle(HerpiColor.Title.secondary)
                 }

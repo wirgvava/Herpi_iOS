@@ -13,23 +13,6 @@ import Kingfisher
 struct SearchResultCard: View {
     
     var reptile: SearchedData
-    private var venomTypeString: String
-    private var venomTypeColor: Color
-    
-    init(reptile: SearchedData) {
-        self.reptile = reptile
-        
-        if reptile.hasMildVenom {
-            venomTypeColor = HerpiColor.VenomType.midVenomous
-            venomTypeString = L.VenomType.midVenomous
-        } else if reptile.venomous {
-            venomTypeColor = HerpiColor.VenomType.venomous
-            venomTypeString = L.VenomType.venomous
-        } else {
-            venomTypeColor = HerpiColor.VenomType.noVenomous
-            venomTypeString = L.VenomType.noVenomous
-        }
-    }
     
     var body: some View {
         HStack(alignment: .top, spacing: Constants.hstackSpacing) {
@@ -47,12 +30,12 @@ struct SearchResultCard: View {
                     .font(HerpiFont.regular_14)
                     .foregroundStyle(HerpiColor.Title.secondary)
                 
-                Text(venomTypeString)
+                Text(venomTypeString(hasMildVenom: reptile.hasMildVenom, venomous: reptile.venomous))
                     .font(HerpiFont.semibold_10)
                     .foregroundStyle(HerpiColor.white)
                     .padding(.vertical, Constants.venomousVerticalPadding)
                     .padding(.horizontal, Constants.venomousHorizontalPadding)
-                    .background(venomTypeColor)
+                    .background(venomTypeColor(hasMildVenom: reptile.hasMildVenom, venomous: reptile.venomous))
                     .clipShape(.capsule)
                     .padding(.top, Constants.venomousTopPadding)
             }

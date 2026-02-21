@@ -12,12 +12,25 @@ import HerpiModels
 extension DetailPageView {
     struct InfoCard: View {
         var info: DetailedInfoModel
+        var isLoading: Bool
         
         var body: some View {
             VStack {
-                TopInfo(info: info)
-                RedFlagDescription()
-                Author(info: info)
+                TopInfo(
+                    info: info,
+                    isLoading: isLoading
+                )
+                
+                if info.hasRedFlag {
+                    RedFlagDescription(
+                        isLoading: isLoading
+                    )
+                }
+                
+                Author(
+                    info: info,
+                    isLoading: isLoading
+                )
             }
             .padding(.horizontal, Constants.horizontalPadding)
             .padding(.vertical, Constants.verticalPadding)

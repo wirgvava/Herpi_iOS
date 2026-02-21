@@ -13,6 +13,7 @@ import Kingfisher
 extension DetailPageView {
     struct Gallery: View {
         var info: DetailedInfoModel
+        var isLoading: Bool
         var tapped: (Int) -> Void
         
         var body: some View {
@@ -20,6 +21,7 @@ extension DetailPageView {
                 Text(L.DetailPage.gallery)
                     .font(HerpiFont.semibold_16)
                     .foregroundStyle(HerpiColor.Title.primary)
+                    .skeleton(isLoading: isLoading)
                 
                 ScrollView(.horizontal) {
                     LazyHGrid(
@@ -52,9 +54,11 @@ extension DetailPageView {
                                     .padding(Constants.authorTextPadding)
                             }
                             .cornerRadius(Constants.cardCornerRadius)
+                            .skeleton(isLoading: isLoading)
                             .padding(.trailing, Constants.cardPadding)
                             .padding(.bottom, Constants.cardPadding)
                             .onTapGesture {
+                                guard !isLoading else { return }
                                 tapped(photo.id)
                             }
                         }

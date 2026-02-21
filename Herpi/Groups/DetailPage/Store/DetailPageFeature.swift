@@ -18,6 +18,7 @@ struct DetailPageFeature {
         let reptileId: Int
         var detailedInfo: DetailedInfoModel = mockDetailedInfo
         var coverage: CoverageModel = mockCoverage
+        var isLoading: Bool = false
     }
     
     // MARK: - Action

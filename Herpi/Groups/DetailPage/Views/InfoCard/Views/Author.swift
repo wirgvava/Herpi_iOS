@@ -13,6 +13,7 @@ import Kingfisher
 extension DetailPageView.InfoCard {
     struct Author: View {
         var info: DetailedInfoModel
+        var isLoading: Bool
         
         var body: some View {
             HStack(spacing: Constants.hstackSpacing) {
@@ -27,11 +28,13 @@ extension DetailPageView.InfoCard {
                         .font(HerpiFont.semibold_14)
                         .foregroundStyle(HerpiColor.Title.primary)
                 }
+                .skeleton(isLoading: isLoading)
                 
                 KFImage(info.addedBy.avatar.asURL())
                     .resizable()
                     .aspectRatio(.one, contentMode: .fit)
                     .frame(height: Constants.imageHeight)
+                    .skeleton(isLoading: isLoading)
                     .clipShape(.circle)
             }
         }
