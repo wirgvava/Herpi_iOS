@@ -29,6 +29,13 @@ struct NavigationFeature {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+            case .path(.element(_, let childAction)):
+                // Centralized navigation handling for all child pages
+                if let destination = extractDestination(from: childAction) {
+                    state.path.append(destination)
+                }
+                return .none
+                
             case .path:
                 return .none
 
@@ -46,5 +53,15 @@ struct NavigationFeature {
             }
         }
         .forEach(\.path, action: \.path)
+    }
+    
+    // MARK: - Destination Extraction
+    /// Add new cases here when adding pages that can navigate
+    private func extractDestination(from action: Path.Action) -> Path.State? {
+        switch action {
+        case .reptileDetail(.push(let destination)): destination
+        case .search(.push(let destination)): destination
+        default: nil
+        }
     }
 }

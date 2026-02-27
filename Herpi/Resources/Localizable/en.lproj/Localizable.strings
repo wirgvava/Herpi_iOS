@@ -1,5 +1,6 @@
 
-
+// MARK: - Common
+"Common.Back" = "Back";
 
 // MARK: - MainPage
 "MainPage.Header.Region" = "Region";

@@ -6,6 +6,13 @@ import HerpiFoundation
 
 enum L {
 
+  enum Common {
+    /// Back
+     static var back: String {
+        return L.tr("Localizable", "Common.Back")
+    }
+  }
+
   enum DetailPage {
     /// Author
      static var author: String {

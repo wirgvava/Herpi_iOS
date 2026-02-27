@@ -14,6 +14,7 @@ extension NavigationFeature {
     enum Path {
         case search(SearchPageFeature)
         case reptileDetail(DetailPageFeature)
+        case map(MapPageFeature)
     }
 }
 
@@ -28,6 +29,9 @@ struct NavigationDestinationView: View {
             
         case .reptileDetail(let detailStore):
             DetailPageView(store: detailStore)
+            
+        case .map(let mapStore):
+            MapPageView(store: mapStore)
         }
     }
 }

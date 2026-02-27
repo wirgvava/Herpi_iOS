@@ -23,6 +23,8 @@ struct DetailPageFeature {
     
     // MARK: - Action
     enum Action {
+        case push(NavigationFeature.Path.State)
+        
         case didTapOnShare
         case didTapOnPhoto(Int)
         case didTapOnExpandMap
@@ -32,6 +34,9 @@ struct DetailPageFeature {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+            case .push:
+                return .none
+                
             case .didTapOnShare:
                 let reptileId = state.reptileId
                 return .run { _ in
@@ -43,8 +48,7 @@ struct DetailPageFeature {
                 return .none
                 
             case .didTapOnExpandMap:
-                // TODO: - Open Expanded map
-                return .none
+                return .send(.push(.map(.init(coverage: state.coverage))))
             }
         }
     }

@@ -9,6 +9,7 @@ import SwiftUI
 import HerpiUI
 import HerpiModels
 import MapKit
+import ComposableArchitecture
 
 extension DetailPageView {
     struct DistributionArea: View {
@@ -22,30 +23,20 @@ extension DetailPageView {
                     .font(HerpiFont.semibold_16)
                     .foregroundStyle(HerpiColor.Title.primary)
                     .skeleton(isLoading: isLoading)
-                
-                ZStack(alignment: .bottom) {
-                    DistributionMapView(
-                        region: Constants.region,
-                        coverage: coverage
-                    )
-                    .frame(height: Constants.mapHeight)
-                    .skeleton(isLoading: isLoading)
-                    .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
-                    
-                    if !isLoading {
-                        RoundedRectangle(cornerRadius: Constants.buttonCornerRadius)
-                            .fill(HerpiColor.tint)
-                            .frame(height: Constants.buttonHeight)
-                            .shadow(radius: Constants.buttonShadowRadius)
-                            .padding()
-                            .overlay {
-                                Text(L.DetailPage.openMapButton)
-                                    .font(HerpiFont.semibold_16)
-                                    .foregroundStyle(HerpiColor.white)
-                            }
-                            .onTapGesture { expandMap() }
-                    }
-                }
+
+                MapPageView(
+                    store: Store(
+                        initialState: MapPageFeature.State(
+                            coverage: coverage,
+                            typeOfPage: .detail
+                        ),
+                        reducer: { MapPageFeature() }
+                    ),
+                    onButtonTap: expandMap
+                )
+                .frame(height: Constants.mapHeight)
+                .skeleton(isLoading: isLoading)
+                .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
             }
         }
         

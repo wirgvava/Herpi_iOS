@@ -1,5 +1,6 @@
 
-
+// MARK: - Common
+"Common.Back" = "უკან";
 
 // MARK: - MainPage
 "MainPage.Header.Region" = "რეგიონი";
