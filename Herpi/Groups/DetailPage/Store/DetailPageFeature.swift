@@ -19,6 +19,8 @@ struct DetailPageFeature {
         var detailedInfo: DetailedInfoModel = mockDetailedInfo
         var coverage: CoverageModel = mockCoverage
         var isLoading: Bool = false
+        var showGallery: Bool = false
+        var selectedPhotoIndex: Int = .zero
     }
     
     // MARK: - Action
@@ -26,8 +28,9 @@ struct DetailPageFeature {
         case push(NavigationFeature.Path.State)
         
         case didTapOnShare
-        case didTapOnPhoto(Int)
         case didTapOnExpandMap
+        case didTapOnPhoto(Int)
+        case dismissGallery
     }
     
     // MARK: - Body
@@ -43,12 +46,23 @@ struct DetailPageFeature {
                     await shareReptile(reptileId: reptileId)
                 }
                 
-            case .didTapOnPhoto:
-                // TODO: - Open Photo browser
-                return .none
-                
             case .didTapOnExpandMap:
                 return .send(.push(.map(.init(coverage: state.coverage))))
+                
+            case .didTapOnPhoto(let photoId):
+                if let index = state.detailedInfo.gallery.firstIndex(where: { $0.id == photoId }) {
+                    state.selectedPhotoIndex = index
+                }
+                withAnimation {
+                    state.showGallery = true
+                }
+                return .none
+                
+            case .dismissGallery:
+                withAnimation {
+                    state.showGallery = false
+                }
+                return .none
             }
         }
     }

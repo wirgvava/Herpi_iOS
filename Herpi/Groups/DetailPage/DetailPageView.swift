@@ -60,7 +60,23 @@ struct DetailPageView: View {
                         store.send(.didTapOnShare)
                     }
                 )
-                .padding(.horizontal, Constants.contentHorizontalPadding)                
+                .padding(.horizontal, Constants.contentHorizontalPadding)
+                
+                /// Gallery
+                if store.showGallery {
+                    GalleryPageView(
+                        store: .init(
+                            initialState: GalleryPageFeature.State(
+                                gallery: store.detailedInfo.gallery,
+                                selectedIndex: store.selectedPhotoIndex
+                            ),
+                            reducer: { GalleryPageFeature() }
+                        ),
+                        dismissAction: {
+                            store.send(.dismissGallery)
+                        }
+                    )
+                }
             }
         }
     }
