@@ -67,15 +67,21 @@ struct MainPageView: View {
                             ),
                             reducer: { ChooseLocationFeature() }
                         ),
-                        cancelAction: {
-                            store.send(.dismissPickLocationSheet)
-                        },
                         completeAction: { latitude, longitude in
                             store.send(.locationUpdated(latitude: latitude, longitude: longitude))
                             store.send(.dismissPickLocationSheet)
                         }
                     )
                 }
+            }
+            .sheet(isPresented: $store.disabledLocationAlertPresented, onDismiss: {
+                store.send(.dismissDisabledLocationAlert)
+            }) {
+                DisabledLocationAlert(
+                    openSettingsAction: {
+                        store.send(.openSystemSettings)
+                    }
+                )
             }
         }
     }

@@ -12,7 +12,8 @@ import ComposableArchitecture
 struct ChooseLocationSheet: View {
     
     @Perception.Bindable var store: StoreOf<ChooseLocationFeature>
-    var cancelAction: () -> Void
+    @Environment(\.presentationMode) private var presentationMode
+    
     var completeAction: (Double, Double) -> Void
     
     var body: some View {
@@ -41,7 +42,7 @@ struct ChooseLocationSheet: View {
                             
                             Footer(
                                 currentLocationString: store.currentLocationString,
-                                cancelAction: { cancelAction() },
+                                cancelAction: { presentationMode.wrappedValue.dismiss() },
                                 completeAction: { completeAction(store.latitude, store.longitude) }
                             )
                         }

@@ -31,6 +31,7 @@ extension MainPageView {
             var currentLocationString: String = .empty
             var locationAuthorizationStatus: CLAuthorizationStatus = .notDetermined
             var pickLocationSheetPresented: Bool = false
+            var disabledLocationAlertPresented: Bool = false
         }
 
         // MARK: - Action
@@ -42,6 +43,9 @@ extension MainPageView {
             case categorySelected(String)
             case presentPickLocationSheet
             case dismissPickLocationSheet
+            case presentDisabledLocationAlert
+            case dismissDisabledLocationAlert
+            case openSystemSettings
             
             case requestLocationPermission
             case locationAuthorizationChanged(CLAuthorizationStatus)
@@ -55,6 +59,7 @@ extension MainPageView {
         }
         
         // MARK: - Dependencies
+        @Dependency(\.openURL) var openURL
         @Dependency(\.locationClient) var locationClient
 
         var body: some Reducer<State, Action> {
@@ -85,6 +90,14 @@ extension MainPageView {
                     state.pickLocationSheetPresented = false
                     return .none
                     
+                case .presentDisabledLocationAlert:
+                    state.disabledLocationAlertPresented = true
+                    return .none
+                    
+                case .dismissDisabledLocationAlert:
+                    state.disabledLocationAlertPresented = false
+                    return .none
+                    
                 case .requestLocationPermission:
                     return .run { send in
                         let status = await locationClient.authorizationStatus()
@@ -93,11 +106,20 @@ extension MainPageView {
                         // Set up delegate stream FIRST before requesting anything
                         let delegateStream = await locationClient.delegate()
                         
-                        if status == .notDetermined {
+                        switch status {
+                        case .notDetermined:
                             await locationClient.requestWhenInUseAuthorization()
-                        } else if status == .authorizedWhenInUse || status == .authorizedAlways {
+                            
+                        case .authorizedWhenInUse, .authorizedAlways:
                             // Already authorized, request location immediately
                             await locationClient.requestLocation()
+                            
+                        case .denied, .restricted:
+                            // Should presented DisabledLocationAlert
+                            await send(.presentDisabledLocationAlert)
+                        
+                        @unknown default:
+                            break
                         }
                         
                         for await event in delegateStream {
@@ -154,6 +176,13 @@ extension MainPageView {
                 case .reverseGeocodeFailed:
                     state.currentLocationString = L.MainPage.Header.pickLocation
                     return .none
+                    
+                case .openSystemSettings:
+                    return .run { _ in
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            await openURL(url)
+                        }
+                    }
 
                 // MARK: Child features
                 case .nearbyReptiles(.didTappedReptileCard(let id)):
