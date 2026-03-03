@@ -45,6 +45,7 @@ struct AppView: View {
             // MARK: - Content
             VStack(spacing: .zero) {
                 Header(
+                    currentLocation: store.currentLocation,
                     menuAction: { store.send(.menuButtonTapped) },
                     pickLocationAction: { store.send(.pickLocationTapped) },
                     chatAction: { store.send(.chatButtonTapped) },

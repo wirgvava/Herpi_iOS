@@ -21,7 +21,7 @@ struct AppFeature {
         var menuLastDragOffset: CGFloat = .zero
         var menuDragProgress: CGFloat = .zero
         var isHorizontalDrag: Bool = false
-        var locationPickerSheetShown: Bool = false
+        var currentLocation: String = .empty
         var currentLanguage: AppLanguage.Language = AppLanguage.currentLanguage
         
         var navigation = NavigationFeature.State()
@@ -76,8 +76,7 @@ struct AppFeature {
                 return .none
                 
             case .pickLocationTapped:
-                state.locationPickerSheetShown.toggle()
-                return .none
+                return .send(.mainPage(.presentPickLocationSheet))
                 
             case .chatButtonTapped:
                 AppAnalytics.logEvents(with: .click_chat)
@@ -148,6 +147,10 @@ struct AppFeature {
                 
             case .mainPage(.push(let destination)):
                 return .send(.navigation(.push(destination)))
+                
+            case .mainPage(.reverseGeocodeResponse(let currentLocation)):
+                state.currentLocation = currentLocation
+                return .none
                 
             case .mainPage:
                 return .none

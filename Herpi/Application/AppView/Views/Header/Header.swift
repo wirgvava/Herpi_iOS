@@ -10,6 +10,7 @@ import HerpiUI
 import HerpiFoundation
 
 struct Header: View {
+    var currentLocation: String
     var menuAction: () -> Void
     var pickLocationAction: () -> Void
     var chatAction: () -> Void
@@ -28,7 +29,7 @@ struct Header: View {
             
             switch typeOfHeader {
             case .main:
-                MainTypeHeader(pickLocationAction: pickLocationAction)
+                MainTypeHeader(currentLocation: currentLocation, pickLocationAction: pickLocationAction)
                 
             case .other:
                 OtherTypeHeader()
@@ -50,6 +51,7 @@ struct Header: View {
 
 #Preview {
     Header(
+        currentLocation: .empty,
         menuAction: { },
         pickLocationAction: { },
         chatAction: { }

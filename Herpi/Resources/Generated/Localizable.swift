@@ -6,6 +6,25 @@ import HerpiFoundation
 
 enum L {
 
+  enum ChooseLocation {
+    /// Cancel
+     static var cancel: String {
+        return L.tr("Localizable", "ChooseLocation.Cancel")
+    }
+    /// Complete
+     static var complete: String {
+        return L.tr("Localizable", "ChooseLocation.Complete")
+    }
+    /// Pick your location manually tapping on desired area
+     static var description: String {
+        return L.tr("Localizable", "ChooseLocation.Description")
+    }
+    /// Pick Location Manually
+     static var header: String {
+        return L.tr("Localizable", "ChooseLocation.Header")
+    }
+  }
+
   enum Common {
     /// Back
      static var back: String {
@@ -41,6 +60,25 @@ enum L {
     /// It is included in the red list of Georgia
      static var redFlagDescription: String {
         return L.tr("Localizable", "DetailPage.RedFlagDescription")
+    }
+  }
+
+  enum DisabledLocation {
+    /// Couldn't retrieve your current location. Current location is used to find species you may encounter in your area, so you won't be able to use this feature right now. \nCheck your location settings to turn on GPS.
+     static var description: String {
+        return L.tr("Localizable", "DisabledLocation.Description")
+    }
+    /// Location Service is not Available
+     static var header: String {
+        return L.tr("Localizable", "DisabledLocation.Header")
+    }
+    /// Understood
+     static var ok: String {
+        return L.tr("Localizable", "DisabledLocation.Ok")
+    }
+    /// Settings
+     static var settings: String {
+        return L.tr("Localizable", "DisabledLocation.Settings")
     }
   }
 

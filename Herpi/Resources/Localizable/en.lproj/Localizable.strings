@@ -34,3 +34,15 @@
 "DetailPage.CreditsTo" = "© %@";
 "DetailPage.DistributionAreas" = "Distribution areas";
 "DetailPage.OpenMapButton" = "Expand Map";
+
+// MARK: - Choose Location Page
+"ChooseLocation.Header" = "Pick Location Manually";
+"ChooseLocation.Description" = "Pick your location manually tapping on desired area";
+"ChooseLocation.Cancel" = "Cancel";
+"ChooseLocation.Complete" = "Complete";
+
+// MARK: - Disabled Location Alert
+"DisabledLocation.Header" = "Location Service is not Available";
+"DisabledLocation.Description" = "Couldn't retrieve your current location. Current location is used to find species you may encounter in your area, so you won't be able to use this feature right now. \nCheck your location settings to turn on GPS.";
+"DisabledLocation.Ok" = "Understood";
+"DisabledLocation.Settings" = "Settings";

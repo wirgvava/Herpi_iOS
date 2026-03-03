@@ -12,7 +12,7 @@ import ComposableArchitecture
 
 struct MainPageView: View {
     
-    let store: StoreOf<Feature>
+    @Perception.Bindable var store: StoreOf<Feature>
     
     var body: some View {
         WithPerceptionTracking {
@@ -51,6 +51,32 @@ struct MainPageView: View {
             .background(HerpiColor.background)
             .topCornerRadius(Constants.scrollViewCornerRadius)
             .ignoresSafeArea()
+            .onAppear {
+                store.send(.requestLocationPermission)
+            }
+            .sheet(isPresented: $store.pickLocationSheetPresented, onDismiss: {
+                store.send(.dismissPickLocationSheet)
+            }) {
+                WithPerceptionTracking {
+                    ChooseLocationSheet(
+                        store: .init(
+                            initialState: ChooseLocationFeature.State(
+                                latitude: store.latitude,
+                                longitude: store.longitude,
+                                currentLocationString: store.currentLocationString
+                            ),
+                            reducer: { ChooseLocationFeature() }
+                        ),
+                        cancelAction: {
+                            store.send(.dismissPickLocationSheet)
+                        },
+                        completeAction: { latitude, longitude in
+                            store.send(.locationUpdated(latitude: latitude, longitude: longitude))
+                            store.send(.dismissPickLocationSheet)
+                        }
+                    )
+                }
+            }
         }
     }
     

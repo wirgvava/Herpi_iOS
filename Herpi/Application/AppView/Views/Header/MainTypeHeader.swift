@@ -10,7 +10,7 @@ import HerpiUI
 
 extension Header {
     struct MainTypeHeader: View {
-        
+        var currentLocation: String
         var pickLocationAction: () -> Void
         
         var body: some View {
@@ -29,7 +29,7 @@ extension Header {
                             .frame(width: Constants.locationTickWidth)
                             .foregroundStyle(HerpiColor.white)
                         
-                        Text(L.MainPage.Header.pickLocation)
+                        Text(currentLocation.isEmpty ? L.MainPage.Header.pickLocation : currentLocation)
                             .font(HerpiFont.semibold_16)
                             .foregroundStyle(HerpiColor.white)
                     }

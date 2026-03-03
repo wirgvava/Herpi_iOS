@@ -34,3 +34,15 @@
 "DetailPage.CreditsTo" = "© %@";
 "DetailPage.DistributionAreas" = "გავრცელების არეალები";
 "DetailPage.OpenMapButton" = "რუკის გაშლა";
+
+// MARK: - Choose Location Page
+"ChooseLocation.Header" = "რეგიონის არჩევა";
+"ChooseLocation.Description" = "სასურველი ადგილის მოსანიშნად რუკაზე თითის ერთი შეხებით დასვით პინი და შემდეგ დააჭირე 'მონიშვნა'-ს.";
+"ChooseLocation.Cancel" = "გაუქმება";
+"ChooseLocation.Complete" = "მონიშვნა";
+
+// MARK: - Disabled Location Alert
+"DisabledLocation.Header" = "ადგილმდებარეობა გამორთულია";
+"DisabledLocation.Description" = "თქვენი ადგილმდებარეობის დადგენა ვერ მოხერხდა, რადგან თქვენი GPS გამორთულია. ადგილმდებარეობის ინფორმაცია გამოიყენება თქვენს არეალში გავრცელებული სახეობების მოსაძებნად, შესაბამისად ამ ფუნქციით სარგებლობას ვერ შეძლებთ. \nადგილმდებარეობის ჩასართავად შეამოწმეთ ლოკაციის პარამეტრები.";
+"DisabledLocation.Ok" = "გასაგებია";
+"DisabledLocation.Settings" = "პარამეტრები";
