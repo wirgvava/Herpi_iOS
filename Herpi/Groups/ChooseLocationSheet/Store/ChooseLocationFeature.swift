@@ -40,7 +40,7 @@ struct ChooseLocationFeature {
     }
     
     // MARK: - Body
-    var body: some ReducerOf<Self> {
+    var body: some Reducer<State, Action> {
         BindingReducer()
         Reduce { state, action in
             switch action {

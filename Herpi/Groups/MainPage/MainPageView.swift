@@ -12,77 +12,72 @@ import ComposableArchitecture
 
 struct MainPageView: View {
     
-    @Perception.Bindable var store: StoreOf<Feature>
+    @Bindable var store: StoreOf<Feature>
     
     var body: some View {
-        WithPerceptionTracking {
-            ScrollView {
-                VStack(spacing: Constants.viewPadding) {
-                    SearchBar(
-                        viewType: .button,
-                        placeholder: L.SearchBar.placeholder
-                    )
-                    .onTapGesture { store.send(.searchTapped) }
-                    
-                    CategoriesView(
-                        selectedCategory: store.selectedCategory,
-                        categories: store.categories,
-                        onCategorySelected: { category in
-                            store.send(.categorySelected(category))
-                        }
-                    )
-                    
-                    NearbyReptilesView(
-                        store: store.scope(
-                            state: \.nearbyReptiles,
-                            action: \.nearbyReptiles
-                        )
-                    )
-                    
-                    ReptilesListView(
-                        store: store.scope(
-                            state: \.reptiles,
-                            action: \.reptilesList
-                        )
-                    )
-                }
-                .padding(Constants.viewPadding)
-            }
-            .background(HerpiColor.background)
-            .topCornerRadius(Constants.scrollViewCornerRadius)
-            .ignoresSafeArea()
-            .onAppear {
-                store.send(.requestLocationPermission)
-            }
-            .sheet(isPresented: $store.pickLocationSheetPresented, onDismiss: {
-                store.send(.dismissPickLocationSheet)
-            }) {
-                WithPerceptionTracking {
-                    ChooseLocationSheet(
-                        store: .init(
-                            initialState: ChooseLocationFeature.State(
-                                latitude: store.latitude,
-                                longitude: store.longitude,
-                                currentLocationString: store.currentLocationString
-                            ),
-                            reducer: { ChooseLocationFeature() }
-                        ),
-                        completeAction: { latitude, longitude in
-                            store.send(.locationUpdated(latitude: latitude, longitude: longitude))
-                            store.send(.dismissPickLocationSheet)
-                        }
-                    )
-                }
-            }
-            .sheet(isPresented: $store.disabledLocationAlertPresented, onDismiss: {
-                store.send(.dismissDisabledLocationAlert)
-            }) {
-                DisabledLocationAlert(
-                    openSettingsAction: {
-                        store.send(.openSystemSettings)
+        ScrollView {
+            VStack(spacing: Constants.viewPadding) {
+                SearchBar(
+                    viewType: .button,
+                    placeholder: L.SearchBar.placeholder
+                )
+                .onTapGesture { store.send(.searchTapped) }
+                
+                CategoriesView(
+                    selectedCategory: store.selectedCategory,
+                    categories: store.categories,
+                    onCategorySelected: { category in
+                        store.send(.categorySelected(category))
                     }
                 )
+                
+                NearbyReptilesView(
+                    store: store.scope(
+                        state: \.nearbyReptiles,
+                        action: \.nearbyReptiles
+                    )
+                )
+                
+                ReptilesListView(
+                    store: store.scope(
+                        state: \.reptiles,
+                        action: \.reptilesList
+                    )
+                )
             }
+            .padding(Constants.viewPadding)
+        }
+        .background(HerpiColor.background)
+        .topCornerRadius(Constants.scrollViewCornerRadius)
+        .ignoresSafeArea()
+        .onAppear {
+            store.send(.location(.requestPermission))
+        }
+        .sheet(isPresented: $store.location.isPickLocationSheetPresented, onDismiss: {
+            store.send(.location(.setPickLocationSheetPresented(false)))
+        }) {
+            ChooseLocationSheet(
+                store: .init(
+                    initialState: ChooseLocationFeature.State(
+                        latitude: store.location.latitude,
+                        longitude: store.location.longitude,
+                        currentLocationString: store.location.currentLocationString
+                    ),
+                    reducer: { ChooseLocationFeature() }
+                ),
+                completeAction: { latitude, longitude in
+                    store.send(.location(.locationUpdated(latitude: latitude, longitude: longitude)))
+                }
+            )
+        }
+        .sheet(isPresented: $store.location.isDisabledLocationAlertPresented, onDismiss: {
+            store.send(.location(.setDisabledLocationAlertPresented(false)))
+        }) {
+            DisabledLocationAlert(
+                openSettingsAction: {
+                    store.send(.location(.openSystemSettings))
+                }
+            )
         }
     }
     

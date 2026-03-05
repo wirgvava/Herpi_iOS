@@ -11,48 +11,48 @@ import ComposableArchitecture
 
 struct ChooseLocationSheet: View {
     
-    @Perception.Bindable var store: StoreOf<ChooseLocationFeature>
+    @Bindable var store: StoreOf<ChooseLocationFeature>
     @Environment(\.presentationMode) private var presentationMode
-    
     var completeAction: (Double, Double) -> Void
     
     var body: some View {
-        WithPerceptionTracking {
-            GeometryReader { geometry in
-                let availableHeight = geometry.size.height
-                let mapHeight = max(Constants.mapMinHeight, availableHeight - Constants.fixedContentHeight)
+        GeometryReader { geometry in
+            let availableHeight = geometry.size.height
+            let mapHeight = max(Constants.mapMinHeight, availableHeight - Constants.fixedContentHeight)
+            
+            ZStack {
+                Color.white.ignoresSafeArea()
                 
-                WithPerceptionTracking {
-                    ZStack {
-                        Color.white.ignoresSafeArea()
-                        
-                        VStack(spacing: Constants.vstackSpacing) {
-                            Header()
-                            
-                            MapView(
-                                latitude: store.latitude,
-                                longitude: store.longitude,
-                                annotationCoordinate: store.annotationCoordinate,
-                                onTap: { coordinate in
-                                    store.send(.mapTapped(coordinate))
-                                }
-                            )
-                            .frame(height: mapHeight)
-                            .clipShape(RoundedRectangle(cornerRadius: Constants.mapCornerRadius))
-                            
-                            Footer(
-                                currentLocationString: store.currentLocationString,
-                                cancelAction: { presentationMode.wrappedValue.dismiss() },
-                                completeAction: { completeAction(store.latitude, store.longitude) }
-                            )
+                VStack(spacing: Constants.vstackSpacing) {
+                    Header()
+                    
+                    MapView(
+                        latitude: store.latitude,
+                        longitude: store.longitude,
+                        annotationCoordinate: store.annotationCoordinate,
+                        onTap: { coordinate in
+                            store.send(.mapTapped(coordinate))
                         }
-                        .padding(Constants.padding)
-                    }
+                    )
+                    .frame(height: mapHeight)
+                    .clipShape(RoundedRectangle(cornerRadius: Constants.mapCornerRadius))
+                    
+                    Footer(
+                        currentLocationString: store.currentLocationString,
+                        cancelAction: {
+                            presentationMode.wrappedValue.dismiss()
+                        },
+                        completeAction: {
+                            completeAction(store.latitude, store.longitude)
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    )
                 }
+                .padding(Constants.padding)
             }
-            .presentationDetents([.medium, .large], selection: $store.selectedDetent)
-            .presentationDragIndicator(.visible)
         }
+        .presentationDetents([.medium, .large], selection: $store.selectedDetent)
+        .presentationDragIndicator(.visible)
     }
     
     struct Constants {

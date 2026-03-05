@@ -16,33 +16,31 @@ struct NearbyReptilesView: View {
     let store: StoreOf<NearbyReptilesFeature>
     
     var body: some View {
-        WithPerceptionTracking {
-            VStack(spacing: .zero) {
-                if store.reptiles.isEmpty {
-                    EmptyNearbyReptilesView()
-                        .skeleton(isLoading: store.isLoading)
-                } else {
-                    SectionHeader(
-                        header: L.MainPage.NearbyReptiles.header,
-                        description: L.MainPage.NearbyReptiles.description
-                    )
-                    
-                    NearbyReptilesCollection(
-                        reptiles: store.reptiles,
-                        currentPage: store.currentPage,
-                        isLoading: store.isLoading,
-                        pageChanged: { page in
-                            store.send(.pageChanged(page))
-                        }, cardTapped: { id in
-                            store.send(.didTappedReptileCard(id))
-                        }
-                    )
-                    .padding(.top, Constants.collectionTopPadding)
-                }
+        VStack(spacing: .zero) {
+            if store.reptiles.isEmpty {
+                EmptyNearbyReptilesView()
+                    .skeleton(isLoading: store.isLoading)
+            } else {
+                SectionHeader(
+                    header: L.MainPage.NearbyReptiles.header,
+                    description: L.MainPage.NearbyReptiles.description
+                )
+                
+                NearbyReptilesCollection(
+                    reptiles: store.reptiles,
+                    currentPage: store.currentPage,
+                    isLoading: store.isLoading,
+                    pageChanged: { page in
+                        store.send(.pageChanged(page))
+                    }, cardTapped: { id in
+                        store.send(.didTappedReptileCard(id))
+                    }
+                )
+                .padding(.top, Constants.collectionTopPadding)
             }
-            .onAppear {
-                store.send(.fetchReptiles)
-            }
+        }
+        .onAppear {
+            store.send(.fetchReptiles)
         }
     }
     

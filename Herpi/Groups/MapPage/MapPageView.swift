@@ -17,32 +17,30 @@ struct MapPageView: View {
     var onButtonTap: (() -> Void)?
     
     var body: some View {
-        WithPerceptionTracking {
-            ZStack(alignment: .bottom) {
-                DistributionMapView(
-                    region: Constants.region,
-                    coverage: store.coverage
-                )
-                .ignoresSafeArea()
-                
-                RoundedRectangle(cornerRadius: Constants.buttonCornerRadius)
-                    .fill(HerpiColor.tint)
-                    .frame(height: Constants.buttonHeight)
-                    .shadow(radius: Constants.buttonShadowRadius)
-                    .padding()
-                    .overlay {
-                        Text(store.typeOfPage == .detail ? L.DetailPage.openMapButton : L.Common.back)
-                            .font(HerpiFont.semibold_16)
-                            .foregroundStyle(HerpiColor.white)
+        ZStack(alignment: .bottom) {
+            DistributionMapView(
+                region: Constants.region,
+                coverage: store.coverage
+            )
+            .ignoresSafeArea()
+            
+            RoundedRectangle(cornerRadius: Constants.buttonCornerRadius)
+                .fill(HerpiColor.tint)
+                .frame(height: Constants.buttonHeight)
+                .shadow(radius: Constants.buttonShadowRadius)
+                .padding()
+                .overlay {
+                    Text(store.typeOfPage == .detail ? L.DetailPage.openMapButton : L.Common.back)
+                        .font(HerpiFont.semibold_16)
+                        .foregroundStyle(HerpiColor.white)
+                }
+                .onTapGesture {
+                    if let onButtonTap {
+                        onButtonTap()
+                    } else {
+                        store.send(.dismiss)
                     }
-                    .onTapGesture {
-                        if let onButtonTap {
-                            onButtonTap()
-                        } else {
-                            store.send(.dismiss)
-                        }
-                    }
-            }
+                }
         }
     }
     

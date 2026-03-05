@@ -7,79 +7,44 @@
 
 import SwiftUI
 import Kingfisher
+import ComposableArchitecture
 
 struct PhotoView: View {
-    let url: String
-    @Binding var isZooming: Bool
     
-    @State private var scale: CGFloat = 1.0
-    @State private var lastScale: CGFloat = 1.0
-    @State private var offset: CGSize = .zero
-    @State private var lastOffset: CGSize = .zero
-    
-    private var isZoomed: Bool { scale > 1.0 }
+    let store: StoreOf<PhotoFeature>
     
     var body: some View {
         GeometryReader { geometry in
-            KFImage(url.asURL())
+            KFImage(store.url.asURL())
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .scaleEffect(scale)
-                .offset(offset)
+                .scaleEffect(store.scale)
+                .offset(store.offset)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .gesture(
                     MagnificationGesture()
                         .onChanged { value in
-                            let delta = value / lastScale
-                            lastScale = value
-                            scale = min(max(scale * delta, 1.0), Constants.maxZoom)
-                            isZooming = scale > 1.0
+                            store.send(.magnificationChanged(value))
                         }
                         .onEnded { _ in
-                            lastScale = 1.0
-                            if scale <= 1.0 {
-                                withAnimation(.spring()) {
-                                    scale = 1.0
-                                    offset = .zero
-                                    lastOffset = .zero
-                                    isZooming = false
-                                }
-                            }
+                            store.send(.magnificationEnded, animation: .spring())
                         }
                 )
                 .simultaneousGesture(
-                    DragGesture(minimumDistance: isZoomed ? .zero : .infinity)
+                    DragGesture(minimumDistance: store.isZoomed ? .zero : .infinity)
                         .onChanged { value in
-                            offset = CGSize(
-                                width: lastOffset.width + value.translation.width,
-                                height: lastOffset.height + value.translation.height
-                            )
+                            store.send(.dragChanged(value.translation))
                         }
                         .onEnded { _ in
-                            lastOffset = offset
+                            store.send(.dragEnded)
                         }
                 )
                 .simultaneousGesture(
                     TapGesture(count: 2)
                         .onEnded {
-                            withAnimation(.spring()) {
-                                if scale > 1.0 {
-                                    scale = 1.0
-                                    offset = .zero
-                                    lastOffset = .zero
-                                    isZooming = false
-                                } else {
-                                    scale = Constants.doubleTapZoom
-                                    isZooming = true
-                                }
-                            }
+                            store.send(.doubleTapped, animation: .spring())
                         }
                 )
         }
-    }
-    
-    struct Constants {
-        static let maxZoom: CGFloat = 4.0
-        static let doubleTapZoom: CGFloat = 2.5
     }
 }

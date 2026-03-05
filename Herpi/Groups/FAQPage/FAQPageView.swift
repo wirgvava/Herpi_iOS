@@ -14,30 +14,26 @@ struct FAQPageView: View {
     let store: StoreOf<FAQPageFeature>
     
     var body: some View {
-        WithPerceptionTracking {
-            ScrollView {
-                VStack(alignment: .leading, spacing: Constants.vstackSpacing) {
-                    Text(L.Menu.faq)
-                        .font(HerpiFont.bold_16)
-                        .foregroundStyle(HerpiColor.Title.primary)
-                    
-                    ForEach(store.faq) { faq in
-                        WithPerceptionTracking {
-                            FAQCard(faq: faq)
-                                .skeleton(isLoading: store.isLoading)
-                        }
-                    }
-                }
-                .padding(.vertical, Constants.vstackSpacing)
-                .padding(.horizontal, Constants.horizontalPadding)
-                .onAppear {
-                    store.send(.fetchFAQ)
+        ScrollView {
+            VStack(alignment: .leading, spacing: Constants.vstackSpacing) {
+                Text(L.Menu.faq)
+                    .font(HerpiFont.bold_16)
+                    .foregroundStyle(HerpiColor.Title.primary)
+                
+                ForEach(store.faq) { faq in
+                    FAQCard(faq: faq)
+                        .skeleton(isLoading: store.isLoading)
                 }
             }
-            .background(HerpiColor.background)
-            .topCornerRadius(Constants.scrollViewCornerRadius)
-            .ignoresSafeArea()
+            .padding(.vertical, Constants.vstackSpacing)
+            .padding(.horizontal, Constants.horizontalPadding)
+            .onAppear {
+                store.send(.fetchFAQ)
+            }
         }
+        .background(HerpiColor.background)
+        .topCornerRadius(Constants.scrollViewCornerRadius)
+        .ignoresSafeArea()
     }
     
     struct Constants {

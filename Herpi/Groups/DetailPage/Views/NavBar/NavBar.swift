@@ -17,9 +17,7 @@ extension DetailPageView {
                 HStack {
                     BackButton()
                     Spacer()
-                    ShareButton {
-                        shareAction()
-                    }
+                    ShareButton { shareAction() }
                 }
                 
                 Spacer()

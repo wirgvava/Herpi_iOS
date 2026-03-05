@@ -11,30 +11,28 @@ import ComposableArchitecture
 
 struct AppView: View {
     
-    @Perception.Bindable var store: StoreOf<AppFeature>
+    @Bindable var store: StoreOf<AppFeature>
             
     var body: some View {
-        WithPerceptionTracking {
-            if store.isAppLoading {
-                LaunchPageView()
-                    .onAppear {
-                        store.send(.onAppear)
-                    }
-                
-            } else {
-                NavigationStack(
-                    path: $store.scope(
-                        state: \.navigation.path,
-                        action: \.navigation.path
-                    )
-                ) {
-                    mainContent
-                } destination: { store in
-                    NavigationDestinationView(store: store)
-                        .navigationBarHidden(true)
+        if store.isAppLoading {
+            LaunchPageView()
+                .onAppear {
+                    store.send(.onAppear)
                 }
-                .id(store.currentLanguage)
+            
+        } else {
+            NavigationStack(
+                path: $store.scope(
+                    state: \.navigation.path,
+                    action: \.navigation.path
+                )
+            ) {
+                mainContent
+            } destination: { store in
+                NavigationDestinationView(store: store)
+                    .navigationBarHidden(true)
             }
+            .id(store.currentLanguage)
         }
     }
     
@@ -46,7 +44,7 @@ struct AppView: View {
             VStack(spacing: .zero) {
                 Header(
                     currentLocation: store.currentLocation,
-                    menuAction: { store.send(.menuButtonTapped) },
+                    menuAction: { store.send(.sideMenu(.open)) },
                     pickLocationAction: { store.send(.pickLocationTapped) },
                     chatAction: { store.send(.chatButtonTapped) },
                     typeOfHeader: store.menu.menuState == .main ? .main : .other
@@ -82,12 +80,12 @@ struct AppView: View {
             
             // Dimming overlay - appears when sidebar is open
             Rectangle()
-                .fill(.black.opacity(store.dimmingOverlayOpacity))
+                .fill(.black.opacity(store.sideMenu.dimmingOverlayOpacity))
                 .ignoresSafeArea()
-                .opacity(store.menuDragProgress)
-                .allowsHitTesting(store.menuDragProgress > .zero)
+                .opacity(store.sideMenu.dragProgress)
+                .allowsHitTesting(store.sideMenu.dragProgress > .zero)
                 .onTapGesture {
-                    store.send(.closeMenu)
+                    store.send(.sideMenu(.close))
                 }
             
             // MARK: - Side Menu
@@ -97,13 +95,13 @@ struct AppView: View {
                     action: \.menu
                 )
             )
-            .frame(width: store.menuWidth)
-            .offset(x: store.menuOffset - store.menuWidth)
+            .frame(width: store.sideMenu.width)
+            .offset(x: store.sideMenu.offset - store.sideMenu.width)
         }
         .simultaneousGesture(
             DragGesture()
-                .onChanged { store.send(.menuDragChanged($0)) }
-                .onEnded { store.send(.menuDragEnded($0)) }
+                .onChanged { store.send(.sideMenu(.dragChanged($0))) }
+                .onEnded { store.send(.sideMenu(.dragEnded($0))) }
         )
     }
 }
