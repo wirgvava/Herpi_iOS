@@ -67,10 +67,7 @@ extension MainPageView {
 
             Reduce { state, action in
                 switch action {
-                case .binding:
-                    return .none
-
-                case .push:
+                case .binding, .push:
                     return .none
 
                 // MARK: UI Actions
@@ -100,46 +97,7 @@ extension MainPageView {
                     
                 case .requestLocationPermission:
                     return .run { send in
-                        let status = await locationClient.authorizationStatus()
-                        await send(.locationAuthorizationChanged(status))
-                        
-                        // Set up delegate stream FIRST before requesting anything
-                        let delegateStream = await locationClient.delegate()
-                        
-                        switch status {
-                        case .notDetermined:
-                            await locationClient.requestWhenInUseAuthorization()
-                            
-                        case .authorizedWhenInUse, .authorizedAlways:
-                            // Already authorized, request location immediately
-                            await locationClient.requestLocation()
-                            
-                        case .denied, .restricted:
-                            // Should presented DisabledLocationAlert
-                            await send(.presentDisabledLocationAlert)
-                        
-                        @unknown default:
-                            break
-                        }
-                        
-                        for await event in delegateStream {
-                            switch event {
-                            case .didChangeAuthorization(let newStatus):
-                                await send(.locationAuthorizationChanged(newStatus))
-                                if newStatus == .authorizedWhenInUse || newStatus == .authorizedAlways {
-                                    await locationClient.requestLocation()
-                                }
-                            case .didUpdateLocations(let coordinates):
-                                if let coordinate = coordinates.last {
-                                    await send(.locationUpdated(
-                                        latitude: coordinate.lat,
-                                        longitude: coordinate.lng
-                                    ))
-                                }
-                            case .didFailWithError:
-                                break
-                            }
-                        }
+                        await requestLocationPermission(send)
                     }
                     
                 case .locationAuthorizationChanged(let status):
@@ -153,20 +111,7 @@ extension MainPageView {
                     
                 case .reverseGeocodeLocation(let latitude, let longitude):
                     return .run { send in
-                        let location = CLLocation(latitude: latitude, longitude: longitude)
-                        let geocoder = CLGeocoder()
-                        
-                        do {
-                            let placemarks = try await geocoder.reverseGeocodeLocation(location)
-                            if let placemark = placemarks.first {
-                                let locationString = formatPlacemark(placemark)
-                                await send(.reverseGeocodeResponse(locationString))
-                            } else {
-                                await send(.reverseGeocodeFailed)
-                            }
-                        } catch {
-                            await send(.reverseGeocodeFailed)
-                        }
+                        await reverseGeocodeLocation(send, latitude: latitude, longitude: longitude)
                     }
                     
                 case .reverseGeocodeResponse(let locationString):
@@ -188,13 +133,10 @@ extension MainPageView {
                 case .nearbyReptiles(.didTappedReptileCard(let id)):
                      return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
 
-                case .nearbyReptiles:
-                    return .none
-
                 case .reptilesList(.didTappedReptileCard(let id)):
                      return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
 
-                case .reptilesList:
+                case .nearbyReptiles, .reptilesList:
                     return .none
                 }
             }
@@ -212,6 +154,67 @@ extension MainPageView {
                 action: \.reptilesList
             ) {
                 ReptilesListFeature()
+            }
+        }
+        
+        // MARK: - Helpers
+        private func requestLocationPermission(_ send: Send<MainPageView.Feature.Action>) async {
+            let status = await locationClient.authorizationStatus()
+            await send(.locationAuthorizationChanged(status))
+            
+            // Set up delegate stream FIRST before requesting anything
+            let delegateStream = await locationClient.delegate()
+            
+            switch status {
+            case .notDetermined:
+                await locationClient.requestWhenInUseAuthorization()
+                
+            case .authorizedWhenInUse, .authorizedAlways:
+                // Already authorized, request location immediately
+                await locationClient.requestLocation()
+                
+            case .denied, .restricted:
+                // Should presented DisabledLocationAlert
+                await send(.presentDisabledLocationAlert)
+            
+            @unknown default:
+                break
+            }
+            
+            for await event in delegateStream {
+                switch event {
+                case .didChangeAuthorization(let newStatus):
+                    await send(.locationAuthorizationChanged(newStatus))
+                    if newStatus == .authorizedWhenInUse || newStatus == .authorizedAlways {
+                        await locationClient.requestLocation()
+                    }
+                case .didUpdateLocations(let coordinates):
+                    if let coordinate = coordinates.last {
+                        await send(.locationUpdated(
+                            latitude: coordinate.lat,
+                            longitude: coordinate.lng
+                        ))
+                    }
+                case .didFailWithError:
+                    break
+                }
+            }
+        }
+        
+        private func reverseGeocodeLocation(_ send: Send<MainPageView.Feature.Action>, latitude: Double, longitude: Double) async {
+            let location = CLLocation(latitude: latitude, longitude: longitude)
+            let geocoder = CLGeocoder()
+            
+            do {
+                let placemarks = try await geocoder.reverseGeocodeLocation(location)
+                if let placemark = placemarks.first {
+                    let locationString = formatPlacemark(placemark)
+                    await send(.reverseGeocodeResponse(locationString))
+                } else {
+                    await send(.reverseGeocodeFailed)
+                }
+            } catch {
+                await send(.reverseGeocodeFailed)
             }
         }
     }

@@ -128,10 +128,6 @@ struct AppFeature {
                 state.menuLastDragOffset = state.menuOffset
                 return .none
                 
-                // MARK: Navigation
-            case .navigation:
-                return .none
-                
                 // MARK: Child features
             case .menu(.didChangeMenuState(_)):
                 return .run { send in
@@ -142,9 +138,6 @@ struct AppFeature {
                 state.currentLanguage = AppLanguage.currentLanguage
                 return .none
                 
-            case .menu:
-                return .none
-                
             case .mainPage(.push(let destination)):
                 return .send(.navigation(.push(destination)))
                 
@@ -152,13 +145,7 @@ struct AppFeature {
                 state.currentLocation = currentLocation
                 return .none
                 
-            case .mainPage:
-                return .none
-                
-            case .teamPage:
-                return .none
-                
-            case .faqPage:
+            case .navigation, .menu, .mainPage, .teamPage, .faqPage:
                 return .none
             }
         }
