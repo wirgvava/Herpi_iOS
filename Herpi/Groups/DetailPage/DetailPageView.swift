@@ -17,7 +17,7 @@ struct DetailPageView: View {
     var body: some View {
         ZStack {
             ScrollView {
-                BackgroundImage(url: store.detailedInfo.image.asURL())
+                BackgroundImage(url: store.detailedInfo.image)
                     .skeleton(isLoading: store.isLoading)
                 
                 VStack(spacing: Constants.vstackSpacing) {

@@ -8,7 +8,6 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
-import Kingfisher
 
 struct TeamMemberCard: View {
     
@@ -22,16 +21,14 @@ struct TeamMemberCard: View {
     var body: some View {
         VStack(spacing: Constants.vstackSpacing) {
             HStack(alignment: .top, spacing: Constants.hstackSpacing) {
-                KFImage(member.avatar.asURL())
-                    .placeholder {
-                        Image(.placeholder)
-                            .resizable()
-                            .aspectRatio(.one, contentMode: .fill)
-                    }
-                    .resizable()
-                    .aspectRatio(.one, contentMode: .fill)
-                    .frame(width: Constants.avatarWidth)
-                    .clipShape(.circle)
+                CachedAsyncImage(url: member.avatar, placeholder: {
+                    Image(.placeholder)
+                        .resizable()
+                        .aspectRatio(.one, contentMode: .fill)
+                })
+                .aspectRatio(.one, contentMode: .fill)
+                .frame(width: Constants.avatarWidth)
+                .clipShape(.circle)
                 
                 VStack(alignment: .leading) {
                     Text(member.fullName)
@@ -63,14 +60,15 @@ struct TeamMemberCard: View {
             if isExpanded {
                 HStack(spacing: Constants.socialSpacing) {
                     ForEach(member.socialNetworks) { social in
-                        KFImage(social.networkLogoUrl.asURL())
-                            .resizable()
+                        CachedAsyncImage(url: social.networkLogoUrl)
                             .aspectRatio(.one, contentMode: .fit)
                             .frame(width: Constants.socialNetworkLogoWidth)
                             .onTapGesture {
                                 didTapOnSocialNetwork(social)
                             }
                     }
+                    
+                    Spacer()
                 }
                 .transition(.opacity.combined(with: .move(edge: .top)))
             }

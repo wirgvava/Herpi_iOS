@@ -8,7 +8,6 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
-import Kingfisher
 
 struct SearchResultCard: View {
     
@@ -16,8 +15,7 @@ struct SearchResultCard: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: Constants.hstackSpacing) {
-            KFImage(reptile.image.asURL())
-                .resizable()
+            CachedAsyncImage(url: reptile.image)
                 .frame(width: Constants.imageWidth, height: Constants.imageHeight)
                 .cornerRadius(Constants.imageCornerRadius)
             

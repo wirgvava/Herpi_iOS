@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import Kingfisher
+import HerpiUI
 
 extension DetailPageView {
     struct BackgroundImage: View {
-        var url: URL
+        var url: String
         private let imageHeight: CGFloat = 400
         private let gradientOpacity: Double = 0.8
         
@@ -19,8 +19,7 @@ extension DetailPageView {
                 let minY = geometry.frame(in: .global).minY
                 let isStretching = minY > .zero
                 
-                KFImage(url)
-                    .resizable()
+                CachedAsyncImage(url: url)
                     .scaledToFill()
                     .overlay {
                         LinearGradient(

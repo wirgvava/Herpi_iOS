@@ -43,6 +43,7 @@ struct AppFeature {
     
     // MARK: - Dependencies
     @Dependency(\.openURL) var openURL
+    @Dependency(\.dataSyncClient) var dataSyncClient
     
     var body: some Reducer<State, Action> {
         Scope(state: \.sideMenu, action: \.sideMenu) {
@@ -73,6 +74,10 @@ struct AppFeature {
             switch action {
             case .onAppear:
                 return .run { send in
+                    // Start background data sync
+                    await dataSyncClient.startSync()
+                    
+                    // Minimum loading time for splash screen
                     try await Task.sleep(for: .seconds(2))
                     await send(.appLoadingFinished, animation: .default)
                 }

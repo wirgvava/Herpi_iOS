@@ -8,7 +8,6 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
-import Kingfisher
 
 struct NearbyReptileCard: View {
     
@@ -17,9 +16,7 @@ struct NearbyReptileCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
-            KFImage(reptile.image.asURL())
-                .placeholder({ Image(.placeholder) })
-                .resizable()
+            CachedAsyncImage(url: reptile.image, placeholder: { Image(.placeholder)  })
                 .frame(width: Constants.imageWidth, height: Constants.imageHeight)
                 .cornerRadius(Constants.imageCornerRadius)
                 .skeleton(isLoading: isLoading)

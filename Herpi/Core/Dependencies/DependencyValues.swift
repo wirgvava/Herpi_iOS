@@ -12,4 +12,14 @@ extension DependencyValues {
         get { self[LocationClient.self] }
         set { self[LocationClient.self] = newValue }
     }
+    
+    var apiClient: APIClient {
+        get { self[APIClient.self] }
+        set { self[APIClient.self] = newValue }
+    }
+    
+    var dataSyncClient: DataSyncClient {
+        get { self[DataSyncClient.self] }
+        set { self[DataSyncClient.self] = newValue }
+    }
 }

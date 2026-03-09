@@ -18,9 +18,7 @@ public struct TeamMember: Codable, Sendable, Identifiable, Equatable {
     public var fullName: String {
         return firstName + " " + lastName
     }
-    
-    public var isExpanded: Bool = false
-    
+        
     public init(
         id: Int = .zero,
         firstName: String = .empty,

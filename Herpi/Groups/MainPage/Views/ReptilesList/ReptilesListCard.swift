@@ -8,7 +8,6 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
-import Kingfisher
 
 struct ReptilesListCard: View {
     
@@ -58,8 +57,7 @@ struct ReptilesListCard: View {
             Spacer()
             
             // Image
-            KFImage(reptile.transparentThumbnail.asURL())
-                .resizable()
+            CachedAsyncImage(url: reptile.transparentThumbnail)
                 .aspectRatio(.one, contentMode: .fit)
                 .frame(height: Constants.imageHeight)
             

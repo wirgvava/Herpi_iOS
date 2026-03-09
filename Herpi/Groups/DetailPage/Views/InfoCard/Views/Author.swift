@@ -8,7 +8,6 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
-import Kingfisher
 
 extension DetailPageView.InfoCard {
     struct Author: View {
@@ -30,8 +29,7 @@ extension DetailPageView.InfoCard {
                 }
                 .skeleton(isLoading: isLoading)
                 
-                KFImage(info.addedBy.avatar.asURL())
-                    .resizable()
+                CachedAsyncImage(url: info.addedBy.avatar)
                     .aspectRatio(.one, contentMode: .fit)
                     .frame(height: Constants.imageHeight)
                     .skeleton(isLoading: isLoading)

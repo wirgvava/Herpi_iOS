@@ -15,7 +15,7 @@ struct TeamPageFeature {
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var team: TeamModel = mockTeam
+        var team: TeamModel = mockTeam /// default data for skeleton animation.
         var isLoading: Bool = false
     }
     
@@ -29,6 +29,7 @@ struct TeamPageFeature {
     
     // MARK: - Dependencies
     @Dependency(\.openURL) var openURL
+    @Dependency(\.apiClient) var apiClient
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
@@ -36,8 +37,10 @@ struct TeamPageFeature {
             case .fetchTeam:
                 state.isLoading = true
                 return .run { send in
-                    let team: TeamModel = mockTeam
+                    let team = try await apiClient.fetchTeam()
                     await send(.didReceivedResponse(team))
+                } catch: { error, send in
+                    print("[TeamPage] Failed to fetch team: \(error)")
                 }
                 
             case .didReceivedResponse(let team):

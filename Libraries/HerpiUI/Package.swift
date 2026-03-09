@@ -14,13 +14,15 @@ let package = Package(
             targets: ["HerpiUI"]),
     ],
     dependencies: [
-        .package(path: "../HerpiFoundation")
+        .package(path: "../HerpiFoundation"),
+        .package(url: "https://github.com/onevcat/Kingfisher", from: "8.0.0")
     ],
     targets: [
         .target(
             name: "HerpiUI",
             dependencies: [
-                .product(name: "HerpiFoundation", package: "HerpiFoundation")
+                .product(name: "HerpiFoundation", package: "HerpiFoundation"),
+                .product(name: "Kingfisher", package: "Kingfisher")
             ]
         )
     ]

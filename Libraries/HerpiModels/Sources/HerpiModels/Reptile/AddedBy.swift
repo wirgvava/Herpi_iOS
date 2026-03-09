@@ -11,7 +11,7 @@ public struct AddedBy: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var firstName: String
     public var lastName: String
-    public var avatar: String
+    public var avatar: String?
     
     public var fullName: String {
         return firstName + " " + lastName
@@ -21,7 +21,7 @@ public struct AddedBy: Codable, Sendable, Identifiable, Equatable {
         id: Int = .zero,
         firstName: String = .empty,
         lastName: String = .empty,
-        avatar: String = .empty
+        avatar: String? = nil
     ) {
         self.id = id
         self.firstName = firstName

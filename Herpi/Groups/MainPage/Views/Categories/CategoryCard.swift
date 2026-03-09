@@ -9,7 +9,6 @@ import SwiftUI
 import HerpiUI
 import HerpiModels
 import HerpiFoundation
-import Kingfisher
 
 struct CategoryCard: View {
     var isSelected: Bool
@@ -21,9 +20,7 @@ struct CategoryCard: View {
                 .fill(isSelected ? HerpiColor.tint : HerpiColor.white)
                 .frame(width: Constants.cardWidth, height: Constants.cardHeight)
                 .overlay {
-                    KFImage(category.iconUrl.asURL())
-                        .resizable()
-                        .renderingMode(.template)
+                    CachedAsyncImage(url: category.iconUrl, placeholder: { }, renderingMode: .template)
                         .aspectRatio(.one, contentMode: .fit)
                         .frame(width: Constants.imageWidth)
                         .foregroundStyle(isSelected ? HerpiColor.white : HerpiColor.dark)

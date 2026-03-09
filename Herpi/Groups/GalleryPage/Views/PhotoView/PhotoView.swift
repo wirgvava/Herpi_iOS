@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+import HerpiUI
 import ComposableArchitecture
 
 struct PhotoView: View {
@@ -15,8 +15,7 @@ struct PhotoView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            KFImage(store.url.asURL())
-                .resizable()
+            CachedAsyncImage(url: store.url)
                 .aspectRatio(contentMode: .fit)
                 .scaleEffect(store.scale)
                 .offset(store.offset)

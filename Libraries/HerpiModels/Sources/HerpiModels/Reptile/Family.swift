@@ -10,12 +10,12 @@ import HerpiFoundation
 public struct Family: Codable, Sendable, Identifiable, Equatable {
     public var id: Int
     public var name: String
-    public var image: String
+    public var image: String?
     
     public init(
         id: Int = .zero,
         name: String = .empty,
-        image: String = .empty
+        image: String? = nil
     ) {
         self.id = id
         self.name = name

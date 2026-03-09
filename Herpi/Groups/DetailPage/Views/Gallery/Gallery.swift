@@ -8,7 +8,6 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
-import Kingfisher
 
 extension DetailPageView {
     struct Gallery: View {
@@ -33,8 +32,7 @@ extension DetailPageView {
                     ) {
                         ForEach(info.gallery, id: \.id) { photo in
                             ZStack(alignment: .bottomLeading) {
-                                KFImage(photo.url.asURL())
-                                    .resizable()
+                                CachedAsyncImage(url: photo.url)
                                     .scaledToFill()
                                     .frame(
                                         width: Constants.imageWidth,
