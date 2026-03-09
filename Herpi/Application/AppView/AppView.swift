@@ -97,6 +97,15 @@ struct AppView: View {
             )
             .frame(width: store.sideMenu.width)
             .offset(x: store.sideMenu.offset - store.sideMenu.width)
+            
+            // MARK: - Error Alert
+            ErrorAlert(
+                title: store.errorMessage ?? .empty,
+                isPresented: store.errorMessage != nil
+            )
+            .onTapGesture {
+                store.send(.dismissError)
+            }
         }
         .simultaneousGesture(
             DragGesture()

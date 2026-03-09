@@ -30,6 +30,7 @@ extension MainPageView {
         enum Action: BindableAction {
             case binding(BindingAction<State>)
             case push(NavigationFeature.Path.State)
+            case didFailWithError(String)
 
             case searchTapped
             case categorySelected(String)
@@ -56,7 +57,7 @@ extension MainPageView {
 
             Reduce { state, action in
                 switch action {
-                case .binding, .push:
+                case .binding, .push, .didFailWithError:
                     return .none
 
                 case .searchTapped:

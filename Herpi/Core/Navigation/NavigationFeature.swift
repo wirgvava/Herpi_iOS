@@ -23,6 +23,7 @@ struct NavigationFeature {
         case push(Path.State)
         case popToRoot
         case pop
+        case didFailWithError(String)
     }
 
     // MARK: - Body
@@ -33,6 +34,10 @@ struct NavigationFeature {
                 // Centralized navigation handling for all child pages
                 if let destination = extractDestination(from: childAction) {
                     state.path.append(destination)
+                }
+                // Centralized error handling for all child pages
+                if let errorMessage = extractError(from: childAction) {
+                    return .send(.didFailWithError(errorMessage))
                 }
                 return .none
                 
@@ -50,6 +55,10 @@ struct NavigationFeature {
             case .pop:
                 _ = state.path.popLast()
                 return .none
+                
+            case .didFailWithError:
+                // Handled by parent (AppFeature)
+                return .none
             }
         }
         .forEach(\.path, action: \.path)
@@ -61,6 +70,16 @@ struct NavigationFeature {
         switch action {
         case .reptileDetail(.push(let destination)): destination
         case .search(.push(let destination)): destination
+        default: nil
+        }
+    }
+    
+    // MARK: - Error Extraction
+    /// Add new cases here when adding pages that can fail
+    private func extractError(from action: Path.Action) -> String? {
+        switch action {
+        case .reptileDetail(.didFailWithError(let message)): message
+        case .search(.didFailWithError(let message)): message
         default: nil
         }
     }

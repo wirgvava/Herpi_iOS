@@ -17,6 +17,7 @@ struct AppFeature {
         var isAppLoading: Bool = true
         var currentLocation: String = .empty
         var currentLanguage: AppLanguage.Language = AppLanguage.currentLanguage
+        var errorMessage: String? = nil
         
         var sideMenu = SideMenuFeature.State()
         var navigation = NavigationFeature.State()
@@ -39,6 +40,8 @@ struct AppFeature {
         case mainPage(MainPageView.Feature.Action)
         case teamPage(TeamPageFeature.Action)
         case faqPage(FAQPageFeature.Action)
+        case showError(String)
+        case dismissError
     }
     
     // MARK: - Dependencies
@@ -69,7 +72,7 @@ struct AppFeature {
         Scope(state: \.faqPage, action: \.faqPage) {
             FAQPageFeature()
         }
-
+        
         Reduce { state, action in
             switch action {
             case .onAppear:
@@ -111,6 +114,29 @@ struct AppFeature {
             case .mainPage(.location(.reverseGeocodeResponse(let currentLocation))):
                 state.currentLocation = currentLocation
                 return .none
+                
+            case .showError(let message):
+                state.errorMessage = message
+                return .run { send in
+                    try await Task.sleep(for: .seconds(5))
+                    await send(.dismissError, animation: .easeOut)
+                }
+                
+            case .dismissError:
+                state.errorMessage = nil
+                return .none
+                
+            case .mainPage(.didFailWithError(let message)):
+                return .send(.showError(message))
+                
+            case .teamPage(.didFailWithError(let message)):
+                return .send(.showError(message))
+                
+            case .faqPage(.didFailWithError(let message)):
+                return .send(.showError(message))
+                
+            case .navigation(.didFailWithError(let message)):
+                return .send(.showError(message))
                 
             case .sideMenu, .navigation, .menu, .mainPage, .teamPage, .faqPage:
                 return .none

@@ -25,6 +25,7 @@ struct SearchPageFeature {
         case binding(BindingAction<State>)
         case search(query: String)
         case didReceivedResponse(SearchResponseModel)
+        case didFailWithError(String)
         case didTappedOnCard(id: Int)
 
         case push(NavigationFeature.Path.State)
@@ -60,6 +61,10 @@ struct SearchPageFeature {
                 return .none
 
             case .push:
+                return .none
+                
+            case .didFailWithError:
+                // Handled by parent (NavigationFeature -> AppFeature)
                 return .none
 
                 // MARK: API Actions

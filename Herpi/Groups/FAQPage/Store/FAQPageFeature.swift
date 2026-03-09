@@ -23,6 +23,7 @@ struct FAQPageFeature {
     enum Action {
         case fetchFAQ
         case didReceivedResponse(FAQModel)
+        case didFailWithError(String)
     }
     
     var body: some Reducer<State, Action> {
@@ -38,6 +39,9 @@ struct FAQPageFeature {
             case .didReceivedResponse(let faq):
                 state.isLoading = false
                 state.faq = faq
+                return .none
+                
+            case .didFailWithError:
                 return .none
             }
         }

@@ -23,6 +23,7 @@ struct TeamPageFeature {
     enum Action {
         case fetchTeam
         case didReceivedResponse(TeamModel)
+        case didFailWithError(String)
         case didTapOnEmail(String)
         case didTapOnSocialNetwork(String, SocialNetwork)
     }
@@ -36,16 +37,20 @@ struct TeamPageFeature {
             switch action {
             case .fetchTeam:
                 state.isLoading = true
+                
                 return .run { send in
                     let team = try await apiClient.fetchTeam()
                     await send(.didReceivedResponse(team))
                 } catch: { error, send in
-                    print("[TeamPage] Failed to fetch team: \(error)")
+                    await send(.didFailWithError(error.localizedDescription))
                 }
                 
             case .didReceivedResponse(let team):
                 state.isLoading = false
                 state.team = team
+                return .none
+                
+            case .didFailWithError:
                 return .none
                 
             case .didTapOnEmail(let email):

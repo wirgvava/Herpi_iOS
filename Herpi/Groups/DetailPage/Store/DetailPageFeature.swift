@@ -26,6 +26,7 @@ struct DetailPageFeature {
     // MARK: - Action
     enum Action {
         case push(NavigationFeature.Path.State)
+        case didFailWithError(String)
         
         case didTapOnShare
         case didTapOnExpandMap
@@ -38,6 +39,10 @@ struct DetailPageFeature {
         Reduce { state, action in
             switch action {
             case .push:
+                return .none
+                
+            case .didFailWithError:
+                // Handled by parent (NavigationFeature -> AppFeature)
                 return .none
                 
             case .didTapOnShare:
