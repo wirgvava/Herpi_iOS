@@ -163,3 +163,9 @@ public let mockNearbyReptile9: NearbyReptileModel = .init(
     image: "https://api.herpi.ge/uploads/2141.jpg",
     addedBy: mockAddedBy
 )
+
+public let mockNearbyReptiles: [NearbyReptileModel] = [
+    mockNearbyReptile1, mockNearbyReptile2, mockNearbyReptile3, mockNearbyReptile4,
+    mockNearbyReptile5, mockNearbyReptile6, mockNearbyReptile7, mockNearbyReptile8,
+    mockNearbyReptile9
+]

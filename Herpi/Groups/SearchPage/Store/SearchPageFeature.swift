@@ -35,6 +35,9 @@ struct SearchPageFeature {
     private enum CancelID {
         case search
     }
+    
+    // MARK: - Dependencies
+    @Dependency(\.apiClient) var apiClient
 
     // MARK: - Reducer
     var body: some Reducer<State, Action> {
@@ -68,12 +71,13 @@ struct SearchPageFeature {
                 return .none
 
                 // MARK: API Actions
-            case .search(query: _):
+            case .search(let query):
                 state.isLoading = true
                 return .run { send in
-                    // TODO: Replace with actual API call
-                    let response = SearchResponseModel(data: mockSearchedData)
+                    let response = try await apiClient.searchReptiles(query: query)
                     await send(.didReceivedResponse(response))
+                } catch: { error, send in
+                    await send(.didFailWithError(error.localizedDescription))
                 }
 
             case .didReceivedResponse(let response):

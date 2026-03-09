@@ -39,9 +39,9 @@ struct NearbyReptilesView: View {
                 .padding(.top, Constants.collectionTopPadding)
             }
         }
-        .onAppear {
-            store.send(.fetchReptiles)
-        }
+//        .onAppear {
+//            store.send(.fetchReptiles)
+//        }
     }
     
     struct Constants {

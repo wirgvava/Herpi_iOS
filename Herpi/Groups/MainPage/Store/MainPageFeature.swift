@@ -16,20 +16,20 @@ extension MainPageView {
         // MARK: - State
         @ObservableState
         struct State: Equatable {
-            var categories: CategoriesModel = mockCategories
-            var selectedCategory: String = mockCategories.first?.titleTurned ?? .empty
+            var categories: CategoriesModel = mockCategories /// default data for skeleton animation
+            var selectedCategory: String = .empty
             
             var location = LocationFeature.State()
             var nearbyReptiles = NearbyReptilesFeature.State()
-            var reptiles = ReptilesListFeature.State(
-                selectedCategory: mockCategories.first?.titleTurned ?? .empty
-            )
+            var reptiles = ReptilesListFeature.State()
         }
 
         // MARK: - Action
         enum Action: BindableAction {
             case binding(BindingAction<State>)
             case push(NavigationFeature.Path.State)
+            case onAppear
+            case categoriesReceived(CategoriesModel)
             case didFailWithError(String)
 
             case searchTapped
@@ -39,6 +39,9 @@ extension MainPageView {
             case nearbyReptiles(NearbyReptilesFeature.Action)
             case reptilesList(ReptilesListFeature.Action)
         }
+        
+        // MARK: - Dependencies
+        @Dependency(\.apiClient) var apiClient
 
         var body: some Reducer<State, Action> {
             BindingReducer()
@@ -59,6 +62,21 @@ extension MainPageView {
                 switch action {
                 case .binding, .push, .didFailWithError:
                     return .none
+                    
+                case .onAppear:
+                    return .run { send in
+                        let categories = try await apiClient.fetchCategories()
+                        await send(.categoriesReceived(categories))
+                        await send(.location(.requestPermission))
+                    } catch: { error, send in
+                        await send(.didFailWithError(error.localizedDescription))
+                    }
+                    
+                case .categoriesReceived(let categories):
+                    state.categories = categories
+                    state.selectedCategory = categories.first?.titleTurned ?? .empty
+                    state.reptiles = ReptilesListFeature.State(selectedCategory: state.selectedCategory)
+                    return .none
 
                 case .searchTapped:
                     return .send(.push(.search(SearchPageFeature.State())))
@@ -71,9 +89,19 @@ extension MainPageView {
                 // MARK: Child feature actions
                 case .nearbyReptiles(.didTappedReptileCard(let id)):
                     return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
+                    
+                case .nearbyReptiles(.didFailWithError(let errorMessage)):
+                    return .send(.didFailWithError(errorMessage))
 
                 case .reptilesList(.didTappedReptileCard(let id)):
                     return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
+                    
+                case .reptilesList(.didFailWithError(let errorMessage)):
+                    return .send(.didFailWithError(errorMessage))
+                    
+                case .location(.locationUpdated(let latitude, let longitude)):
+                    state.nearbyReptiles = NearbyReptilesFeature.State(latitude: latitude, longitude: longitude)
+                    return .send(.nearbyReptiles(.fetchReptiles))
 
                 case .location, .nearbyReptiles, .reptilesList:
                     return .none

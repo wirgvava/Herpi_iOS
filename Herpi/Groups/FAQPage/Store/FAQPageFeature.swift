@@ -15,7 +15,7 @@ struct FAQPageFeature {
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var faq: FAQModel = []
+        var faq: FAQModel = mockFAQModel /// default data for skeleton animation
         var isLoading: Bool = false
     }
     
@@ -26,14 +26,20 @@ struct FAQPageFeature {
         case didFailWithError(String)
     }
     
+    // MARK: - Dependencies
+    @Dependency(\.apiClient) var apiClient
+    
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case .fetchFAQ:
                 state.isLoading = true
+                
                 return .run { send in
-                    let faq: FAQModel = mockFAQModel
+                    let faq = try await apiClient.fetchFAQ()
                     await send(.didReceivedResponse(faq))
+                } catch: { error, send in
+                    await send(.didFailWithError(error.localizedDescription))
                 }
                 
             case .didReceivedResponse(let faq):

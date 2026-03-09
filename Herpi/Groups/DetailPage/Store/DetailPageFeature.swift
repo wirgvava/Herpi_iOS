@@ -16,8 +16,8 @@ struct DetailPageFeature {
     @ObservableState
     struct State: Equatable {
         let reptileId: Int
-        var detailedInfo: DetailedInfoModel = mockDetailedInfo
-        var coverage: CoverageModel = mockCoverage
+        var detailedInfo: DetailedInfoModel = mockDetailedInfo /// default data for skeleton animation
+        var coverage: CoverageModel = mockCoverage /// default data for skeleton animation
         var isLoading: Bool = false
         var showGallery: Bool = false
         var selectedPhotoIndex: Int = .zero
@@ -26,6 +26,9 @@ struct DetailPageFeature {
     // MARK: - Action
     enum Action {
         case push(NavigationFeature.Path.State)
+        case onAppear
+        case didReceivedDetailedInfo(DetailedInfoModel)
+        case didReceivedCoverage(CoverageModel)
         case didFailWithError(String)
         
         case didTapOnShare
@@ -34,15 +37,37 @@ struct DetailPageFeature {
         case dismissGallery
     }
     
+    // MARK: - Dependencies
+    @Dependency(\.apiClient) var apiClient
+    
     // MARK: - Body
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-            case .push:
+            case .push, .didFailWithError:
                 return .none
                 
-            case .didFailWithError:
-                // Handled by parent (NavigationFeature -> AppFeature)
+            case .onAppear:
+                let id = state.reptileId
+                state.isLoading = true
+                
+                return .run { send in
+                    let detailedInfo = try await apiClient.fetchDetailedInfo(reptileId: id)
+                    await send(.didReceivedDetailedInfo(detailedInfo))
+                    
+                    let coverage = try await apiClient.fetchCoverage(reptileId: id)
+                    await send(.didReceivedCoverage(coverage))
+                } catch: { error, send in
+                    await send(.didFailWithError(error.localizedDescription))
+                }
+                
+            case .didReceivedDetailedInfo(let detailedInfo):
+                state.isLoading = false
+                state.detailedInfo = detailedInfo
+                return .none
+                
+            case .didReceivedCoverage(let coverage):
+                state.coverage = coverage
                 return .none
                 
             case .didTapOnShare:

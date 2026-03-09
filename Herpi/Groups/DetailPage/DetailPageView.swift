@@ -77,6 +77,9 @@ struct DetailPageView: View {
                 )
             }
         }
+        .onAppear {
+            store.send(.onAppear)
+        }
     }
     
     struct Constants {

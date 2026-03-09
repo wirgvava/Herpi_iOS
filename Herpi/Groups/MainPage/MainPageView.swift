@@ -51,7 +51,7 @@ struct MainPageView: View {
         .topCornerRadius(Constants.scrollViewCornerRadius)
         .ignoresSafeArea()
         .onAppear {
-            store.send(.location(.requestPermission))
+            store.send(.onAppear)
         }
         .sheet(isPresented: $store.location.isPickLocationSheetPresented, onDismiss: {
             store.send(.location(.setPickLocationSheetPresented(false)))
