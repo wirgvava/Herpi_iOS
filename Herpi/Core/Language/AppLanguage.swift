@@ -20,5 +20,8 @@ final class AppLanguage {
     
     static func setLanguage(_ language: Language) {
         UserDefaultsManager.shared.set(language.rawValue, forKey: .appLanguage)
+        
+        // Send analitics
+        AppAnalytics.log(AppAnalytics.Language.changed(code: language.rawValue))
     }
 }

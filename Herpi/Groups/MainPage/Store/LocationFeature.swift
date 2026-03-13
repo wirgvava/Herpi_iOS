@@ -60,6 +60,7 @@ extension MainPageView {
                     return .none
                     
                 case .setDisabledLocationAlertPresented(let isPresented):
+                    AppAnalytics.log(AppAnalytics.NearbySpecies.notFound(reason: .locationOff))
                     state.isDisabledLocationAlertPresented = isPresented
                     return .none
                     

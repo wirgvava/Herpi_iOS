@@ -77,6 +77,7 @@ struct DetailPageFeature {
                 }
                 
             case .didTapOnExpandMap:
+                AppAnalytics.log(AppAnalytics.Interaction.expandedDistributionMap(specieId: state.reptileId))
                 return .send(.push(.map(.init(coverage: state.coverage))))
                 
             case .didTapOnPhoto(let photoId):
@@ -126,7 +127,7 @@ struct DetailPageFeature {
             popover.permittedArrowDirections = []
         }
         
-        AppAnalytics.logEvents(with: .share, paramName: .specie_id, paramData: reptileId)
+        AppAnalytics.log(AppAnalytics.Interaction.shared(specieId: reptileId))
         
         topController.present(activityVC, animated: true)
     }

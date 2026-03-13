@@ -79,21 +79,26 @@ extension MainPageView {
                     return .none
 
                 case .searchTapped:
+                    AppAnalytics.log(AppAnalytics.Navigation.openedSearch)
                     return .send(.push(.search(SearchPageFeature.State())))
 
                 case .categorySelected(let category):
                     state.selectedCategory = category
                     state.reptiles.selectedCategory = category
+                    
+                    AppAnalytics.log(AppAnalytics.Category.selected(id: category))
                     return .none
 
                 // MARK: Child feature actions
                 case .nearbyReptiles(.didTappedReptileCard(let id)):
+                    AppAnalytics.log(AppAnalytics.Navigation.openedNearbySpecieDetails(specieId: id))
                     return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
                     
                 case .nearbyReptiles(.didFailWithError(let errorMessage)):
                     return .send(.didFailWithError(errorMessage))
 
                 case .reptilesList(.didTappedReptileCard(let id)):
+                    AppAnalytics.log(AppAnalytics.Navigation.openedDetails(specieId: id))
                     return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
                     
                 case .reptilesList(.didFailWithError(let errorMessage)):

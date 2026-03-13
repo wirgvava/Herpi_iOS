@@ -33,6 +33,8 @@ struct FAQPageFeature {
         Reduce { state, action in
             switch action {
             case .fetchFAQ:
+                AppAnalytics.log(AppAnalytics.Navigation.openedFAQ)
+                
                 state.isLoading = true
                 
                 return .run { send in

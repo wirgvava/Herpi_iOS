@@ -52,6 +52,10 @@ struct NearbyReptilesFeature {
                 state.isLoading = false
                 state.reptiles = reptiles
                 state.currentPage = .zero
+                
+                if state.reptiles.isEmpty {
+                    AppAnalytics.log(AppAnalytics.NearbySpecies.notFound(reason: .nonInArea))
+                }
                 return .none
                 
             case let .pageChanged(page):

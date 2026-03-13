@@ -90,10 +90,11 @@ struct AppFeature {
                 return .none
                 
             case .pickLocationTapped:
+                AppAnalytics.log(AppAnalytics.Interaction.clickedPickLocationManually)
                 return .send(.mainPage(.location(.setPickLocationSheetPresented(true))))
                 
             case .chatButtonTapped:
-                AppAnalytics.logEvents(with: .click_chat)
+                AppAnalytics.log(AppAnalytics.Interaction.clickedChat)
                 return .run { _ in
                     if let url = URL(string: AppConstants.chatUrl) {
                         await openURL(url)

@@ -87,6 +87,7 @@ struct SearchPageFeature {
 
                 // MARK: UI Actions
             case .didTappedOnCard(let id):
+                AppAnalytics.log(AppAnalytics.Navigation.openedDetails(specieId: id))
                 return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
             }
         }

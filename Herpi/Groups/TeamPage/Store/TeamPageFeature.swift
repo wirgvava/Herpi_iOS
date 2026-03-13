@@ -36,6 +36,8 @@ struct TeamPageFeature {
         Reduce { state, action in
             switch action {
             case .fetchTeam:
+                AppAnalytics.log(AppAnalytics.Navigation.openedTeam)
+                
                 state.isLoading = true
                 
                 return .run { send in
@@ -54,7 +56,7 @@ struct TeamPageFeature {
                 return .none
                 
             case .didTapOnEmail(let email):
-                AppAnalytics.logEvents(with: .click_team_email, paramName: .member, paramData: email)
+                AppAnalytics.log(AppAnalytics.Team.clickedEmail(member: email))
                 
                 return .run { _ in
                     if let url = URL(string: "mailto:\(email)") {
@@ -63,13 +65,7 @@ struct TeamPageFeature {
                 }
                 
             case .didTapOnSocialNetwork(let email, let social):
-                AppAnalytics.logEvents(
-                    with: .click_team_social_link,
-                    parameters: [
-                        "member" : email,
-                        "network" : social.network
-                    ]
-                )
+                AppAnalytics.log(AppAnalytics.Team.clickedSocialLink(member: email, network: social.network))
                 
                 return .run { _ in
                     if let url = URL(string: social.url) {

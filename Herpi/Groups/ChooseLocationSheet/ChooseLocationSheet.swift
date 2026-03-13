@@ -43,6 +43,7 @@ struct ChooseLocationSheet: View {
                             presentationMode.wrappedValue.dismiss()
                         },
                         completeAction: {
+                            AppAnalytics.log(AppAnalytics.Interaction.pickedLocationManually)
                             completeAction(store.latitude, store.longitude)
                             presentationMode.wrappedValue.dismiss()
                         }
