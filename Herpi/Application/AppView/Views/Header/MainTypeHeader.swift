@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiUI
+import HerpiFoundation
 
 extension Header {
     struct MainTypeHeader: View {
@@ -20,6 +21,7 @@ extension Header {
                     .foregroundStyle(HerpiColor.white.opacity(Constants.regionTitleOpacity))
                 
                 Button {
+                    HapticsManager.light.vibrate()
                     pickLocationAction()
                 } label: {
                     HStack {

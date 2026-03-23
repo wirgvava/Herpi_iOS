@@ -18,6 +18,7 @@ public struct ChatButton: View {
     
     public var body: some View {
         Button {
+            HapticsManager.light.vibrate()
             action()
         } label: {
             Image(.message)

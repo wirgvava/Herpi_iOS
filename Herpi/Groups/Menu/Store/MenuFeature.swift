@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HerpiFoundation
 import ComposableArchitecture
 
 @Reducer
@@ -28,7 +29,10 @@ struct MenuFeature {
             switch action {
             case .didChangeMenuState(let menuState):
                 state.menuState = menuState
-                return .none
+                
+                return .run { _ in
+                    await HapticsManager.selection.vibrate()
+                }
                 
             case .didSwitchedLanguage(let selectedIndex):
                 return .run { _ in

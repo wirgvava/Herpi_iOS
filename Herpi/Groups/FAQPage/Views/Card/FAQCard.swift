@@ -8,6 +8,7 @@
 import SwiftUI
 import HerpiUI
 import HerpiModels
+import HerpiFoundation
 
 struct FAQCard: View {
     
@@ -44,6 +45,8 @@ struct FAQCard: View {
         .background(isExpanded ? HerpiColor.tint : HerpiColor.white)
         .cornerRadius(Constants.cardCornerRadius)
         .onTapGesture {
+            HapticsManager.soft.vibrate()
+            
             withAnimation(.snappy) {
                 isExpanded.toggle()
             }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HerpiFoundation
 
 public struct LanguageSwitcher: View {
     private var selectedIndex: Int
@@ -23,7 +24,10 @@ public struct LanguageSwitcher: View {
             Text("GEO")
                 .font(HerpiFont.semibold_16)
                 .foregroundColor(selectedIndex == .zero ? HerpiColor.creme : HerpiColor.white)
-                .onTapGesture { action(.zero) }
+                .onTapGesture {
+                    HapticsManager.selection.vibrate()
+                    action(.zero)
+                }
             
             Rectangle()
                 .fill(HerpiColor.dark)
@@ -32,7 +36,10 @@ public struct LanguageSwitcher: View {
             Text("ENG")
                 .font(HerpiFont.semibold_16)
                 .foregroundColor(selectedIndex == .one ? HerpiColor.creme : HerpiColor.white)
-                .onTapGesture { action(.one) }
+                .onTapGesture {
+                    HapticsManager.selection.vibrate()
+                    action(.one)
+                }
         }
         .frame(width: Constants.width, height: Constants.height)
         .background(HerpiColor.white.opacity(Constants.opacity))

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiUI
+import HerpiFoundation
 
 struct DisabledLocationAlert: View {
     
@@ -26,6 +27,9 @@ struct DisabledLocationAlert: View {
         }
         .presentationDetents([.medium])
         .presentationDragIndicator(.visible)
+        .onAppear {
+            HapticsManager.warning.vibrate()
+        }
     }
     
     // Image
@@ -54,6 +58,7 @@ struct DisabledLocationAlert: View {
     var buttons: some View {
         HStack(spacing: Constants.buttonsSpacing) {
             Button {
+                HapticsManager.light.vibrate()
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 Text(L.DisabledLocation.ok)
@@ -64,6 +69,7 @@ struct DisabledLocationAlert: View {
             }
             
             Button {
+                HapticsManager.light.vibrate()
                 openSettingsAction()
             } label: {
                 Text(L.DisabledLocation.settings)

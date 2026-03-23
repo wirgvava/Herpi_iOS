@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiModels
+import HerpiFoundation
 import ComposableArchitecture
 
 @Reducer
@@ -88,7 +89,11 @@ struct SearchPageFeature {
                 // MARK: UI Actions
             case .didTappedOnCard(let id):
                 AppAnalytics.log(AppAnalytics.Navigation.openedDetails(specieId: id))
-                return .send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
+                
+                return .run { send in
+                    await HapticsManager.soft.vibrate()
+                    await send(.push(.reptileDetail(DetailPageFeature.State(reptileId: id))))
+                }
             }
         }
     }

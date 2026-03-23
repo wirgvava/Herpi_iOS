@@ -16,6 +16,7 @@ public struct BackButton: View {
     
     public var body: some View {
         Button {
+            HapticsManager.light.vibrate()
             presentationMode.wrappedValue.dismiss()
         } label: {
             Image(.backArrow)

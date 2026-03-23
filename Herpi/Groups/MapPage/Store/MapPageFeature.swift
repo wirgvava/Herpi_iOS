@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiModels
+import HerpiFoundation
 import ComposableArchitecture
 
 @Reducer
@@ -38,6 +39,7 @@ struct MapPageFeature {
             switch action {
             case .dismiss:
                 return .run { _ in
+                    await HapticsManager.light.vibrate()
                     await dismiss()
                 }
             }

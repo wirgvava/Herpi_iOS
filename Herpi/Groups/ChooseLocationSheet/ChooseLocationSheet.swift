@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiUI
+import HerpiFoundation
 import ComposableArchitecture
 
 struct ChooseLocationSheet: View {
@@ -31,6 +32,7 @@ struct ChooseLocationSheet: View {
                         longitude: store.longitude,
                         annotationCoordinate: store.annotationCoordinate,
                         onTap: { coordinate in
+                            HapticsManager.selection.vibrate()
                             store.send(.mapTapped(coordinate))
                         }
                     )
@@ -40,9 +42,11 @@ struct ChooseLocationSheet: View {
                     Footer(
                         currentLocationString: store.currentLocationString,
                         cancelAction: {
+                            HapticsManager.light.vibrate()
                             presentationMode.wrappedValue.dismiss()
                         },
                         completeAction: {
+                            HapticsManager.success.vibrate()
                             AppAnalytics.log(AppAnalytics.Interaction.pickedLocationManually)
                             completeAction(store.latitude, store.longitude)
                             presentationMode.wrappedValue.dismiss()

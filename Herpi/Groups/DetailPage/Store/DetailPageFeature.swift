@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiModels
+import HerpiFoundation
 import ComposableArchitecture
 
 @Reducer
@@ -78,7 +79,12 @@ struct DetailPageFeature {
                 
             case .didTapOnExpandMap:
                 AppAnalytics.log(AppAnalytics.Interaction.expandedDistributionMap(specieId: state.reptileId))
-                return .send(.push(.map(.init(coverage: state.coverage))))
+                
+                let coverage = state.coverage
+                return .run { send in
+                    await HapticsManager.light.vibrate()
+                    await send(.push(.map(.init(coverage: coverage))))
+                }
                 
             case .didTapOnPhoto(let photoId):
                 if let index = state.detailedInfo.gallery.firstIndex(where: { $0.id == photoId }) {
@@ -87,13 +93,17 @@ struct DetailPageFeature {
                 withAnimation {
                     state.showGallery = true
                 }
-                return .none
+                return .run { _ in
+                    await HapticsManager.light.vibrate()
+                }
                 
             case .dismissGallery:
                 withAnimation {
                     state.showGallery = false
                 }
-                return .none
+                return .run { _ in
+                    await HapticsManager.light.vibrate()
+                }
             }
         }
     }

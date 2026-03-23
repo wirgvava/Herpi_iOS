@@ -20,14 +20,4 @@ struct AppConstants {
     
     static let chatUrl = "https://m.me/reptiledb"
     static let contactUrl = "https://herpi.ge/contact"
-        
-//    struct AdMob {
-//        static let interstetialID: String = {
-//            Bundle.main.infoDictionary?["GADInterstitialID"] as? String ?? .empty
-//        }()
-//        
-//        static let bannerId: String = {
-//            Bundle.main.infoDictionary?["GADBannerID"] as? String ?? .empty
-//        }()
-//    }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HerpiFoundation
 
 public struct ErrorAlert: View {
     var title: String
@@ -30,6 +31,10 @@ public struct ErrorAlert: View {
         .padding()
         .offset(y: isPresented ? .zero : Constants.offsetWhenNotPresented)
         .animation(.spring(duration: Constants.animationDuration, bounce: Constants.animationBounce), value: isPresented)
+        .onAppear {
+            guard !title.isEmpty else { return }
+            HapticsManager.error.vibrate()
+        }
     }
     
     struct Constants {

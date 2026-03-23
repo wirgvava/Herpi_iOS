@@ -18,6 +18,7 @@ public struct MenuButton: View {
     
     public var body: some View {
         Button {
+            HapticsManager.light.vibrate()
             action()
         } label: {
             Image(.menu)

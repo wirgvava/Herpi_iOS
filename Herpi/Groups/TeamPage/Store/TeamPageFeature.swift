@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HerpiModels
+import HerpiFoundation
 import ComposableArchitecture
 
 @Reducer
@@ -59,6 +60,8 @@ struct TeamPageFeature {
                 AppAnalytics.log(AppAnalytics.Team.clickedEmail(member: email))
                 
                 return .run { _ in
+                    await HapticsManager.light.vibrate()
+                    
                     if let url = URL(string: "mailto:\(email)") {
                         await openURL(url)
                     }
@@ -68,6 +71,8 @@ struct TeamPageFeature {
                 AppAnalytics.log(AppAnalytics.Team.clickedSocialLink(member: email, network: social.network))
                 
                 return .run { _ in
+                    await HapticsManager.light.vibrate()
+                    
                     if let url = URL(string: social.url) {
                         await openURL(url)
                     }
