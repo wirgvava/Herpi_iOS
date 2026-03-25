@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 import HerpiModels
 import HerpiFoundation
 import ComposableArchitecture
@@ -31,6 +32,7 @@ struct DetailPageFeature {
         case didReceivedDetailedInfo(DetailedInfoModel)
         case didReceivedCoverage(CoverageModel)
         case didFailWithError(String)
+        case requestReviewIfNeeded
         
         case didTapOnShare
         case didTapOnExpandMap
@@ -67,11 +69,16 @@ struct DetailPageFeature {
             case .didReceivedDetailedInfo(let detailedInfo):
                 state.isLoading = false
                 state.detailedInfo = detailedInfo
-                return .none
+                return .send(.requestReviewIfNeeded)
                 
             case .didReceivedCoverage(let coverage):
                 state.coverage = coverage
                 return .none
+                
+            case .requestReviewIfNeeded:
+                return .run { _ in
+                    await requestStoreReviewIfNeeded()
+                }
                 
             case .didTapOnShare:
                 let reptileId = state.reptileId
@@ -121,6 +128,30 @@ struct DetailPageFeature {
                 }
             }
         }
+    }
+    
+    // MARK: - Store Review
+    private static let reviewThreshold = 3
+    
+    @MainActor
+    private func requestStoreReviewIfNeeded() {
+        let manager = UserDefaultsManager.shared
+        
+        // Don't request if already requested
+        guard !manager.getBool(forKey: .hasRequestedReview) else { return }
+        
+        // Increment view count
+        let currentCount = manager.getInt(forKey: .detailPageViewCount) + 1
+        manager.set(currentCount, forKey: .detailPageViewCount)
+        
+        // Request review after threshold views
+        guard currentCount >= Self.reviewThreshold else { return }
+        
+        // Request review
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        
+        SKStoreReviewController.requestReview(in: windowScene)
+        manager.set(true, forKey: .hasRequestedReview)
     }
     
     // MARK: - Share Action

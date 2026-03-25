@@ -14,6 +14,8 @@ final class UserDefaultsManager: Sendable {
   
     enum Keys: String {
         case appLanguage
+        case detailPageViewCount
+        case hasRequestedReview
     }
     
     // - Strings
@@ -23,5 +25,23 @@ final class UserDefaultsManager: Sendable {
     
     func get(forKey key: Keys) -> String {
         return UserDefaults.standard.string(forKey: key.rawValue) ?? .empty
+    }
+    
+    // - Integers
+    func set(_ value: Int, forKey key: Keys) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+    
+    func getInt(forKey key: Keys) -> Int {
+        return UserDefaults.standard.integer(forKey: key.rawValue)
+    }
+    
+    // - Booleans
+    func set(_ value: Bool, forKey key: Keys) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+    
+    func getBool(forKey key: Keys) -> Bool {
+        return UserDefaults.standard.bool(forKey: key.rawValue)
     }
 }
