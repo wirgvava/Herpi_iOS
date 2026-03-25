@@ -36,7 +36,7 @@ struct MenuView: View {
                 
                 // Language Switcher
                 LanguageSwitcher(
-                    selectedIndex: AppLanguage.currentLanguage == .ka ? .zero : .one
+                    selectedIndex: store.selectedLanguageIndex
                 ) { selectedIndex in
                     store.send(.didSwitchedLanguage(selectedIndex))
                 }

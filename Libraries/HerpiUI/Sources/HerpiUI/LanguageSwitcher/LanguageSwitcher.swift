@@ -24,9 +24,7 @@ public struct LanguageSwitcher: View {
             button(
                 text: "GEO",
                 foregroundColorState: selectedIndex == .zero,
-                onTap: {
-                    action(.zero)
-                }
+                onTap: { action(.zero) }
             )
             
             Rectangle()
@@ -38,9 +36,7 @@ public struct LanguageSwitcher: View {
             button(
                 text: "ENG",
                 foregroundColorState: selectedIndex == .one,
-                onTap: {
-                    action(.one)
-                }
+                onTap: { action(.one) }
             )
         }
         .frame(width: Constants.width, height: Constants.height)

@@ -16,6 +16,7 @@ struct MenuFeature {
     @ObservableState
     struct State: Equatable {
         var menuState: MenuStates = .main
+        var selectedLanguageIndex: Int = AppLanguage.currentLanguage == .ka ? 0 : 1
     }
     
     // MARK: - Action
@@ -35,9 +36,10 @@ struct MenuFeature {
                 }
                 
             case .didSwitchedLanguage(let selectedIndex):
-                return .run { _ in
-                    AppLanguage.setLanguage(selectedIndex == .zero ? .ka : .en)
-                }
+                state.selectedLanguageIndex = selectedIndex
+                let newLanguage: AppLanguage.Language = selectedIndex == .zero ? .ka : .en
+                AppLanguage.setLanguage(newLanguage)
+                return .none
             }
         }
     }
