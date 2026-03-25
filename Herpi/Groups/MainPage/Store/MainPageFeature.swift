@@ -20,6 +20,7 @@ extension MainPageView {
             var categories: CategoriesModel = mockCategories /// default data for skeleton animation
             var selectedCategory: String = .empty
             var isCategoriesScrolling: Bool = false
+            var hasLoadedInitialData: Bool = false
             
             var location = LocationFeature.State()
             var nearbyReptiles = NearbyReptilesFeature.State()
@@ -67,7 +68,28 @@ extension MainPageView {
                     return .none
                     
                 case .onAppear:
+                    // Skip if already loaded (e.g., returning from detail page)
+                    guard !state.hasLoadedInitialData else { return .none }
+                    state.hasLoadedInitialData = true
+                    
+                    // Check for saved location and fetch nearby reptiles immediately
+                    let savedLat = UserDefaultsManager.shared.getDouble(forKey: .lastLatitude)
+                    let savedLng = UserDefaultsManager.shared.getDouble(forKey: .lastLongitude)
+                    let hasSavedLocation = savedLat != .zero && savedLng != .zero
+                    
+                    if hasSavedLocation {
+                        state.nearbyReptiles = NearbyReptilesFeature.State(
+                            latitude: savedLat,
+                            longitude: savedLng
+                        )
+                    }
+                    
                     return .run { send in
+                        // Fetch nearby reptiles immediately if we have saved location
+                        if hasSavedLocation {
+                            await send(.nearbyReptiles(.fetchReptiles))
+                        }
+                        
                         let categories = try await apiClient.fetchCategories()
                         await send(.categoriesReceived(categories))
                         await send(.location(.requestPermission))
@@ -123,8 +145,23 @@ extension MainPageView {
                     return .send(.didFailWithError(errorMessage))
                     
                 case .location(.locationUpdated(let latitude, let longitude)):
-                    state.nearbyReptiles = NearbyReptilesFeature.State(latitude: latitude, longitude: longitude)
-                    return .send(.nearbyReptiles(.fetchReptiles))
+                    let currentLat = state.nearbyReptiles.latitude
+                    let currentLng = state.nearbyReptiles.longitude
+                    
+                    // Only re-fetch if location changed significantly (more than ~100m)
+                    let latDiff = abs(latitude - currentLat)
+                    let lngDiff = abs(longitude - currentLng)
+                    let threshold = 0.001 // ~111 meters
+                    
+                    let locationChanged = currentLat == .zero || currentLng == .zero ||
+                                          latDiff > threshold || lngDiff > threshold
+                    
+                    if locationChanged {
+                        state.nearbyReptiles = NearbyReptilesFeature.State(latitude: latitude, longitude: longitude)
+                        return .send(.nearbyReptiles(.fetchReptiles))
+                    }
+                    
+                    return .none
 
                 case .location, .nearbyReptiles, .reptilesList:
                     return .none

@@ -16,6 +16,8 @@ final class UserDefaultsManager: Sendable {
         case appLanguage
         case detailPageViewCount
         case hasRequestedReview
+        case lastLatitude
+        case lastLongitude
     }
     
     // - Strings
@@ -43,5 +45,14 @@ final class UserDefaultsManager: Sendable {
     
     func getBool(forKey key: Keys) -> Bool {
         return UserDefaults.standard.bool(forKey: key.rawValue)
+    }
+    
+    // - Doubles
+    func set(_ value: Double, forKey key: Keys) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+    
+    func getDouble(forKey key: Keys) -> Double {
+        return UserDefaults.standard.double(forKey: key.rawValue)
     }
 }

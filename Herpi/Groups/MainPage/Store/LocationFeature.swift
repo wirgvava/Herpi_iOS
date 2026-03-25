@@ -84,6 +84,11 @@ extension MainPageView {
                 case .locationUpdated(let latitude, let longitude):
                     state.latitude = latitude
                     state.longitude = longitude
+                    
+                    // Save location for next app launch
+                    UserDefaultsManager.shared.set(latitude, forKey: .lastLatitude)
+                    UserDefaultsManager.shared.set(longitude, forKey: .lastLongitude)
+                    
                     return .send(.reverseGeocode(latitude: latitude, longitude: longitude))
                     
                 case .reverseGeocode(let latitude, let longitude):
