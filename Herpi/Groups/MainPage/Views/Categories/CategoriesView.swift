@@ -11,7 +11,7 @@ import HerpiModels
 struct CategoriesView: View {
     var selectedCategory: String
     var categories: CategoriesModel
-    var onCategorySelected: (String) -> Void
+    var onCategorySelected: (String, String) -> Void
     var onScrollingChanged: ((Bool) -> Void)? = nil
     
     var body: some View {
@@ -25,7 +25,7 @@ struct CategoriesView: View {
                     .padding(.trailing, Constants.spacing)
                     .onTapGesture {
                         withAnimation {
-                            onCategorySelected(category.titleTurned)
+                            onCategorySelected(category.id, category.titleTurned)
                         }
                     }
                 }
@@ -56,6 +56,6 @@ struct CategoriesView: View {
     CategoriesView(
         selectedCategory: mockCategories.first!.titleTurned,
         categories: mockCategories,
-        onCategorySelected: { _ in }
+        onCategorySelected: { _, _ in }
     )
 }

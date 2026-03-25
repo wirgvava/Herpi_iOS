@@ -35,7 +35,7 @@ extension MainPageView {
             case didFailWithError(String)
 
             case searchTapped
-            case categorySelected(String)
+            case categorySelected(id: String, name: String)
             case setCategoriesScrolling(Bool)
 
             case location(LocationFeature.Action)
@@ -88,13 +88,12 @@ extension MainPageView {
                         await send(.push(.search(SearchPageFeature.State())))
                     }
 
-                case .categorySelected(let category):
-                    state.selectedCategory = category
-                    state.reptiles.selectedCategory = category
-                    
-                    AppAnalytics.log(AppAnalytics.Category.selected(id: category))
-                    return .run { _ in
+                case .categorySelected(let id, let name):
+                    state.selectedCategory = name
+                    AppAnalytics.log(AppAnalytics.Category.selected(id: id))
+                    return .run { send in
                         await HapticsManager.light.vibrate()
+                        await send(.reptilesList(.categoryChanged(id: id, name: name)))
                     }
                     
                 case .setCategoriesScrolling(let isScrolling):

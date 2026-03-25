@@ -26,8 +26,8 @@ struct MainPageView: View {
                 CategoriesView(
                     selectedCategory: store.selectedCategory,
                     categories: store.categories,
-                    onCategorySelected: { category in
-                        store.send(.categorySelected(category))
+                    onCategorySelected: { id, name in
+                        store.send(.categorySelected(id: id, name: name))
                     },
                     onScrollingChanged: { isScrolling in
                         store.send(.setCategoriesScrolling(isScrolling))
