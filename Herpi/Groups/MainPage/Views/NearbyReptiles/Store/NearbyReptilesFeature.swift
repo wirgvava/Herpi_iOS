@@ -19,6 +19,7 @@ struct NearbyReptilesFeature {
         var isLoading: Bool = false
         var latitude: Double = .zero
         var longitude: Double = .zero
+        var isScrollingHorizontally: Bool = false
     }
     
     // MARK: - Action
@@ -28,6 +29,7 @@ struct NearbyReptilesFeature {
         case reptilesResponse(NearbyReptilesModel)
         case didFailWithError(String)
         case didTappedReptileCard(Int)
+        case setIsScrollingHorizontally(Bool)
     }
     
     // MARK: - Dependencies
@@ -63,6 +65,10 @@ struct NearbyReptilesFeature {
                 return .none
                 
             case .didTappedReptileCard, .didFailWithError:
+                return .none
+                
+            case .setIsScrollingHorizontally(let isScrolling):
+                state.isScrollingHorizontally = isScrolling
                 return .none
             }
         }

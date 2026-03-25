@@ -24,6 +24,7 @@ struct NearbyReptileCard: View {
             Text(reptile.name)
                 .font(HerpiFont.semibold_13)
                 .foregroundStyle(HerpiColor.Title.secondary)
+                .lineLimit(.one)
                 .skeleton(isLoading: isLoading)
                 .padding(.top, Constants.titleTopPadding)
             
@@ -37,6 +38,7 @@ struct NearbyReptileCard: View {
                 .skeleton(isLoading: isLoading)
                 .padding(.top, Constants.venomousCardTopPadding)
         }
+        .frame(width: Constants.imageWidth)
     }
  
     struct Constants {
@@ -58,5 +60,5 @@ struct NearbyReptileCard: View {
 }
 
 #Preview {
-    NearbyReptileCard(reptile: mockNearbyReptile1, isLoading: false)
+    NearbyReptileCard(reptile: mockNearbyReptile8, isLoading: false)
 }

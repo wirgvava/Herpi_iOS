@@ -16,6 +16,7 @@ struct NearbyReptilesCollection: View {
     var isLoading: Bool
     var pageChanged: (Int) -> Void
     var cardTapped: (Int) -> Void
+    var onScrollingChanged: ((Bool) -> Void)? = nil
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -47,6 +48,18 @@ struct NearbyReptilesCollection: View {
             .onPreferenceChange(ViewOffsetKey.self) { positions in
                 updateCurrentPage(positions: positions)
             }
+            .simultaneousGesture(
+                DragGesture(minimumDistance: Constants.dragGestureMinimumDistance)
+                    .onChanged { value in
+                        let isHorizontal = abs(value.translation.width) > abs(value.translation.height)
+                        if isHorizontal {
+                            onScrollingChanged?(true)
+                        }
+                    }
+                    .onEnded { _ in
+                        onScrollingChanged?(false)
+                    }
+            )
             
             PageControll(
                 pageCount: totalPages,
@@ -81,6 +94,7 @@ struct NearbyReptilesCollection: View {
         static let rowsCount: Int = 2
         static let gridSpacing: CGFloat = 24
         static let itemsPerPage: Int = Constants.rowsCount * 2
+        static let dragGestureMinimumDistance: CGFloat = 5
         static let namedRef: String = "scroll"
         
         @MainActor static let pageWidth: CGFloat =  (Constants.cardWidth + Constants.gridSpacing) * 2

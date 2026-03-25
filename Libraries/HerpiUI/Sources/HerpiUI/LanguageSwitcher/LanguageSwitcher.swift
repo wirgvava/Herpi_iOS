@@ -20,30 +20,45 @@ public struct LanguageSwitcher: View {
     
     // - Body
     public var body: some View {
-        HStack {
-            Text("GEO")
-                .font(HerpiFont.semibold_16)
-                .foregroundColor(selectedIndex == .zero ? HerpiColor.creme : HerpiColor.white)
-                .onTapGesture {
-                    HapticsManager.selection.vibrate()
+        HStack(spacing: .zero) {
+            button(
+                text: "GEO",
+                foregroundColorState: selectedIndex == .zero,
+                onTap: {
                     action(.zero)
                 }
+            )
             
             Rectangle()
                 .fill(HerpiColor.dark)
                 .frame(width: .one, height: Constants.halfOfHeight)
-            
-            Text("ENG")
-                .font(HerpiFont.semibold_16)
-                .foregroundColor(selectedIndex == .one ? HerpiColor.creme : HerpiColor.white)
-                .onTapGesture {
-                    HapticsManager.selection.vibrate()
+                .padding(.vertical)
+                .background(HerpiColor.white.opacity(Constants.opacity))
+     
+            button(
+                text: "ENG",
+                foregroundColorState: selectedIndex == .one,
+                onTap: {
                     action(.one)
                 }
+            )
         }
         .frame(width: Constants.width, height: Constants.height)
-        .background(HerpiColor.white.opacity(Constants.opacity))
         .cornerRadius(Constants.halfOfHeight)
+    }
+    
+    private func button(text: String, foregroundColorState: Bool, onTap: @escaping () -> Void) -> some View {
+        Rectangle()
+            .fill(HerpiColor.white.opacity(Constants.opacity))
+            .overlay {
+                Text(text)
+                    .font(HerpiFont.semibold_16)
+                    .foregroundColor(foregroundColorState ? HerpiColor.creme : HerpiColor.white)
+                    .onTapGesture {
+                        HapticsManager.selection.vibrate()
+                        onTap()
+                    }
+            }
     }
     
     struct Constants {

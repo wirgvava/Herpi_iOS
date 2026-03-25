@@ -34,14 +34,13 @@ struct NearbyReptilesView: View {
                         store.send(.pageChanged(page))
                     }, cardTapped: { id in
                         store.send(.didTappedReptileCard(id))
+                    }, onScrollingChanged: { isScrolling in
+                        store.send(.setIsScrollingHorizontally(isScrolling))
                     }
                 )
                 .padding(.top, Constants.collectionTopPadding)
             }
         }
-//        .onAppear {
-//            store.send(.fetchReptiles)
-//        }
     }
     
     struct Constants {

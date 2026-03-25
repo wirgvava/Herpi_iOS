@@ -36,10 +36,12 @@ struct DetailPageFeature {
         case didTapOnExpandMap
         case didTapOnPhoto(Int)
         case dismissGallery
+        case didEndedDragGesture(value: DragGesture.Value)
     }
     
     // MARK: - Dependencies
     @Dependency(\.apiClient) var apiClient
+    @Dependency(\.dismiss) var dismiss
     
     // MARK: - Body
     var body: some Reducer<State, Action> {
@@ -103,6 +105,19 @@ struct DetailPageFeature {
                 }
                 return .run { _ in
                     await HapticsManager.light.vibrate()
+                }
+                
+            case .didEndedDragGesture(let value):
+                return .run { _ in
+                    let horizontalDistance = value.translation.width
+                    let verticalDistance = abs(value.translation.height)
+                    
+                    // Check if swipe started from left edge and is mostly horizontal
+                    if value.startLocation.x < 50 &&
+                        horizontalDistance > 80 &&
+                        horizontalDistance > verticalDistance * 1.5 {
+                        await dismiss()
+                    }
                 }
             }
         }

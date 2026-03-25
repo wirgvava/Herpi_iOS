@@ -80,6 +80,10 @@ struct DetailPageView: View {
         .onAppear {
             store.send(.onAppear)
         }
+        .gesture(
+            DragGesture()
+                .onEnded { store.send(.didEndedDragGesture(value: $0)) }
+        )
     }
     
     struct Constants {

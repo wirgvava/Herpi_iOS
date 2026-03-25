@@ -108,6 +108,7 @@ struct AppView: View {
             }
         }
         .simultaneousGesture(
+            store.mainPage.isCategoriesScrolling || store.mainPage.nearbyReptiles.isScrollingHorizontally ? nil :
             DragGesture()
                 .onChanged { store.send(.sideMenu(.dragChanged($0))) }
                 .onEnded { store.send(.sideMenu(.dragEnded($0))) }

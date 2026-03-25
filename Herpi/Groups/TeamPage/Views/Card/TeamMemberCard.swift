@@ -53,6 +53,7 @@ struct TeamMemberCard: View {
                     HStack {
                         Spacer()
                         Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                            .foregroundStyle(HerpiColor.dark)
                     }
                     Spacer()
                 }

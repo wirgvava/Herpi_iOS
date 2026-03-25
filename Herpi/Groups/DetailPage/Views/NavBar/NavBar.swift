@@ -19,6 +19,7 @@ extension DetailPageView {
                     Spacer()
                     ShareButton { shareAction() }
                 }
+                .padding(.top)
                 
                 Spacer()
             }

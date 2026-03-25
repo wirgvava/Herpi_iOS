@@ -19,6 +19,7 @@ extension MainPageView {
         struct State: Equatable {
             var categories: CategoriesModel = mockCategories /// default data for skeleton animation
             var selectedCategory: String = .empty
+            var isCategoriesScrolling: Bool = false
             
             var location = LocationFeature.State()
             var nearbyReptiles = NearbyReptilesFeature.State()
@@ -35,6 +36,7 @@ extension MainPageView {
 
             case searchTapped
             case categorySelected(String)
+            case setCategoriesScrolling(Bool)
 
             case location(LocationFeature.Action)
             case nearbyReptiles(NearbyReptilesFeature.Action)
@@ -94,6 +96,10 @@ extension MainPageView {
                     return .run { _ in
                         await HapticsManager.light.vibrate()
                     }
+                    
+                case .setCategoriesScrolling(let isScrolling):
+                    state.isCategoriesScrolling = isScrolling
+                    return .none
 
                 // MARK: Child feature actions
                 case .nearbyReptiles(.didTappedReptileCard(let id)):

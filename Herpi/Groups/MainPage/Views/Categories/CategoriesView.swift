@@ -12,6 +12,7 @@ struct CategoriesView: View {
     var selectedCategory: String
     var categories: CategoriesModel
     var onCategorySelected: (String) -> Void
+    var onScrollingChanged: ((Bool) -> Void)? = nil
     
     var body: some View {
         ScrollView(.horizontal) {
@@ -31,10 +32,23 @@ struct CategoriesView: View {
             }
         }
         .scrollIndicators(.hidden)
+        .simultaneousGesture(
+            DragGesture(minimumDistance: Constants.dragGestureMinimumDistance)
+                .onChanged { value in
+                    let isHorizontal = abs(value.translation.width) > abs(value.translation.height)
+                    if isHorizontal {
+                        onScrollingChanged?(true)
+                    }
+                }
+                .onEnded { _ in
+                    onScrollingChanged?(false)
+                }
+        )
     }
     
     struct Constants {
         static let spacing: CGFloat = 24
+        static let dragGestureMinimumDistance: CGFloat = 5
     }
 }
 

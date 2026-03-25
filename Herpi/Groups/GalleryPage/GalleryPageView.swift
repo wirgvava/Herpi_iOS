@@ -61,7 +61,7 @@ struct GalleryPageView: View {
     struct Constants {
         static let bgOpacity: Double = 0.8
         static let backButtonWidth: CGFloat = 25
-        static let horizontalPadding: CGFloat = 30
+        static let horizontalPadding: CGFloat = 16
     }
 }
 
