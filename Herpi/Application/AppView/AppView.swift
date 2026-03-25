@@ -33,6 +33,9 @@ struct AppView: View {
                     .navigationBarHidden(true)
             }
             .id(store.currentLanguage)
+            .onOpenURL { url in
+                store.send(.handleDeepLink(url))
+            }
         }
     }
     

@@ -33,6 +33,7 @@ struct AppFeature {
         case appLoadingFinished
         case pickLocationTapped
         case chatButtonTapped
+        case handleDeepLink(URL)
         
         case sideMenu(SideMenuFeature.Action)
         case navigation(NavigationFeature.Action)
@@ -101,6 +102,10 @@ struct AppFeature {
                     }
                 }
                 
+            case .handleDeepLink(let url):
+                guard let reptileId = parseReptileId(from: url) else { return .none }
+                return .send(.navigation(.push(.reptileDetail(.init(reptileId: reptileId)))))
+                
             // MARK: Child feature actions
             case .menu(.didChangeMenuState(_)):
                 return .send(.sideMenu(.close), animation: .default)
@@ -143,5 +148,16 @@ struct AppFeature {
                 return .none
             }
         }
+    }
+    
+    // MARK: - Deep Link Parsing
+    private func parseReptileId(from url: URL) -> Int? {
+        let pathComponents = url.pathComponents
+        guard pathComponents.count >= 3,
+              pathComponents[1] == "reptiles",
+              let reptileId = Int(pathComponents[2]) else {
+            return nil
+        }
+        return reptileId
     }
 }
