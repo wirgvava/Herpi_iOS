@@ -48,18 +48,7 @@ struct NearbyReptilesCollection: View {
             .onPreferenceChange(ViewOffsetKey.self) { positions in
                 updateCurrentPage(positions: positions)
             }
-            .simultaneousGesture(
-                DragGesture(minimumDistance: Constants.dragGestureMinimumDistance)
-                    .onChanged { value in
-                        let isHorizontal = abs(value.translation.width) > abs(value.translation.height)
-                        if isHorizontal {
-                            onScrollingChanged?(true)
-                        }
-                    }
-                    .onEnded { _ in
-                        onScrollingChanged?(false)
-                    }
-            )
+            .scrollDetector(onScrollingChanged: onScrollingChanged)
             
             PageControll(
                 pageCount: totalPages,
@@ -94,7 +83,6 @@ struct NearbyReptilesCollection: View {
         static let rowsCount: Int = 2
         static let gridSpacing: CGFloat = 24
         static let itemsPerPage: Int = Constants.rowsCount * 2
-        static let dragGestureMinimumDistance: CGFloat = 5
         static let namedRef: String = "scroll"
         
         @MainActor static let pageWidth: CGFloat =  (Constants.cardWidth + Constants.gridSpacing) * 2
@@ -104,5 +92,38 @@ struct NearbyReptilesCollection: View {
                 (2 * MainPageView.Constants.viewPadding)
             )
         ) / 2
+    }
+}
+
+// MARK: - Scroll Detector
+private extension View {
+    @ViewBuilder
+    func scrollDetector(onScrollingChanged: ((Bool) -> Void)?) -> some View {
+        if #available(iOS 18.0, *) {
+            self.onScrollPhaseChange { _, newPhase in
+                switch newPhase {
+                case .interacting, .tracking, .decelerating, .animating:
+                    onScrollingChanged?(true)
+                case .idle:
+                    onScrollingChanged?(false)
+                }
+            }
+        } else {
+            self.background(
+                GeometryReader { geometry in
+                    Color.clear
+                        .preference(
+                            key: ScrollOffsetPreferenceKey.self,
+                            value: geometry.frame(in: .global).minX
+                        )
+                }
+            )
+            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { _ in
+                onScrollingChanged?(true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    onScrollingChanged?(false)
+                }
+            }
+        }
     }
 }
