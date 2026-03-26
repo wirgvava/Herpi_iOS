@@ -38,6 +38,7 @@ struct NearbyReptilesCollection: View {
                                 }
                             )
                             .onTapGesture {
+                                guard !isLoading else { return }
                                 cardTapped(reptile.id)
                             }
                     }

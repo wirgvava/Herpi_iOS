@@ -14,9 +14,9 @@ struct NearbyReptilesFeature {
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var reptiles: NearbyReptilesModel = []
+        var reptiles: NearbyReptilesModel = mockNearbyReptiles /// mock data for skeleton animation.
         var currentPage: Int = .zero
-        var isLoading: Bool = false
+        var isLoading: Bool = true
         var latitude: Double = .zero
         var longitude: Double = .zero
         var isScrollingHorizontally: Bool = false

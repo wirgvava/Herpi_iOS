@@ -166,6 +166,5 @@ public let mockNearbyReptile9: NearbyReptileModel = .init(
 
 public let mockNearbyReptiles: [NearbyReptileModel] = [
     mockNearbyReptile1, mockNearbyReptile2, mockNearbyReptile3, mockNearbyReptile4,
-    mockNearbyReptile5, mockNearbyReptile6, mockNearbyReptile7, mockNearbyReptile8,
-    mockNearbyReptile9
+    mockNearbyReptile5, mockNearbyReptile6, mockNearbyReptile7, mockNearbyReptile8
 ]
